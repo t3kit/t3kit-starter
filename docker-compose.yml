@@ -13,7 +13,7 @@ services:
     ports:
       - "$DB_PORT:3306"
     volumes:
-      - ./docker_conf/mysqlconf:/etc/mysql/mysql.conf.d$CACHED
+      - ./db/mysql/config/mysqld.cnf:/etc/mysql/mysql.conf.d$CACHED
 
   web:
     container_name: $WEB_CONTAINER_NAME
@@ -21,7 +21,6 @@ services:
     ports:
       - "${WEB_PORT}:80"
     volumes:
-      - ./docker_conf:/docker_conf$CACHED
       - .:/var/www/html$CACHED
       - /var/www/html/var/
       - /var/www/html/public/typo3temp/
@@ -39,4 +38,4 @@ services:
       - DB_PASSWORD=$DB_PASSWORD
       - DB_ROOT_PASSWORD=$DB_ROOT_PASSWORD
 
-    command: "sh /docker_conf/run.sh"
+    command: "sh /var/www/html/docker_config/run.sh"
