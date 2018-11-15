@@ -13,7 +13,7 @@ services:
     ports:
       - "$DB_PORT:3306"
     volumes:
-      - ./db/mysql/config/mysqld.cnf:/etc/mysql/mysql.conf.d$CACHED
+      - ./db/mysql/config:/etc/mysql/mysql.conf.d$CACHED
 
   web:
     container_name: $WEB_CONTAINER_NAME
@@ -29,8 +29,6 @@ services:
       - GROUPID=$WEB_GROUPID
 
       - WEB_CONTAINER_NAME=$WEB_CONTAINER_NAME
-      - SOLR_CONTAINER_NAME=$SOLR_CONTAINER_NAME
-      - MAILHOG_CONTAINER_NAME=$MAILHOG_CONTAINER_NAME
 
       - DB_CONTAINER_NAME=$DB_CONTAINER_NAME
       - DB_NAME=$DB_NAME
