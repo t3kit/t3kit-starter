@@ -16,7 +16,7 @@ return [
                 'charset' => 'utf8mb4',
                 'dbname' => 't3kit9',
                 'driver' => 'mysqli',
-                'host' => 't3kit9_db',
+                'host' => 'localhost',
                 'password' => '1234',
                 'port' => 3306,
                 'tableoptions' => [
