@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "03baba2467ba80cc42221883cb92bdc4",
+    "content-hash": "0491ffdd976ba9503f89eb219afa3ebe",
     "packages": [
         {
             "name": "cogpowered/finediff",
@@ -3984,6 +3984,58 @@
                 }
             ],
             "description": "The reports module groups several system reports.",
+            "homepage": "https://typo3.org",
+            "time": "2018-10-30T10:45:30+00:00"
+        },
+        {
+            "name": "typo3/cms-rsaauth",
+            "version": "v9.5.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/TYPO3-CMS/rsaauth.git",
+                "reference": "5765b47dbf3e49fee8dbe632f4e7018361468586"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/TYPO3-CMS/rsaauth/zipball/5765b47dbf3e49fee8dbe632f4e7018361468586",
+                "reference": "5765b47dbf3e49fee8dbe632f4e7018361468586",
+                "shasum": ""
+            },
+            "require": {
+                "typo3/cms-core": "9.5.1"
+            },
+            "conflict": {
+                "typo3/cms": "*"
+            },
+            "replace": {
+                "rsaauth": "*"
+            },
+            "type": "typo3-cms-framework",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "9.5.x-dev"
+                },
+                "typo3/cms": {
+                    "extension-key": "rsaauth"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "TYPO3\\CMS\\Rsaauth\\": "Classes/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "TYPO3 Core Team",
+                    "email": "typo3cms@typo3.org",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Contains a service to authenticate TYPO3 BE and FE users using private/public key encryption of passwords",
             "homepage": "https://typo3.org",
             "time": "2018-10-30T10:45:30+00:00"
         },
