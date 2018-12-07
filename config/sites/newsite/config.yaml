@@ -1,0 +1,92 @@
+rootPageId: 1
+base: 'https://newsite.com'
+baseVariants: {  }
+languages:
+  -
+    title: English
+    enabled: true
+    languageId: '0'
+    base: /
+    typo3Language: default
+    locale: en_US.UTF-8
+    iso-639-1: en
+    navigationTitle: ''
+    hreflang: en-US
+    direction: ltr
+    flag: en-us-gb
+  -
+    title: Swedish
+    enabled: true
+    languageId: '1'
+    base: /se/
+    typo3Language: sv
+    locale: sv_SE.UTF-8
+    iso-639-1: sv
+    navigationTitle: ''
+    hreflang: sv-SE
+    direction: ltr
+    fallbackType: fallback
+    fallbacks: '0'
+    flag: se
+  -
+    title: German
+    enabled: true
+    languageId: '2'
+    base: /de/
+    typo3Language: de
+    locale: de_DE.UTF-8
+    iso-639-1: de
+    navigationTitle: ''
+    hreflang: de-DE
+    direction: ltr
+    fallbackType: fallback
+    fallbacks: '0'
+    flag: de
+  -
+    title: Norwegian
+    enabled: true
+    languageId: '3'
+    base: /no/
+    typo3Language: 'no'
+    locale: no_NO.UTF-8
+    iso-639-1: 'no'
+    navigationTitle: ''
+    hreflang: no-NO
+    direction: ltr
+    fallbackType: fallback
+    fallbacks: '0'
+    flag: 'no'
+  -
+    title: Danish
+    enabled: true
+    languageId: '4'
+    base: /dk/
+    typo3Language: da
+    locale: da_DK.UTF-8
+    iso-639-1: da
+    navigationTitle: ''
+    hreflang: da-DK
+    direction: ltr
+    fallbackType: fallback
+    fallbacks: '0'
+    flag: dk
+  -
+    title: French
+    enabled: true
+    languageId: '5'
+    base: /fr/
+    typo3Language: fr
+    locale: fr_FR.UTF-8
+    iso-639-1: fr
+    navigationTitle: ''
+    hreflang: fr-FR
+    direction: ltr
+    fallbackType: fallback
+    fallbacks: '0'
+    flag: fr
+errorHandling: {  }
+routes:
+  -
+    route: robots.txt
+    type: staticText
+    content: "User-agent: *\r\nDisallow: /typo3/\r\nDisallow: /typo3_src/\r\nAllow: /typo3/sysext/frontend/Resources/Public/*\r\n"
