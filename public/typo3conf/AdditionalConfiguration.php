@@ -22,8 +22,9 @@ switch (\TYPO3\CMS\Core\Utility\GeneralUtility::getApplicationContext()) {
         $GLOBALS['TYPO3_CONF_VARS']['SYS']['devIPmask'] = '*';
         $GLOBALS['TYPO3_CONF_VARS']['SYS']['displayErrors'] = 1;
         $GLOBALS['TYPO3_CONF_VARS']['SYS']['errorHandlerErrors'] = 30711; // Default = 30466
-        $GLOBALS['TYPO3_CONF_VARS']['SYS']['exceptionalErrors'] = 14325; // Default = 4096
+        $GLOBALS['TYPO3_CONF_VARS']['SYS']['exceptionalErrors'] = 12290; // Default = 4096
         $GLOBALS['TYPO3_CONF_VARS']['SYS']['belogErrorReporting'] = 30711; // Default = 30711
+
     break; //__________________________________________________________________________________________________________________
 
 
@@ -46,7 +47,7 @@ switch (\TYPO3\CMS\Core\Utility\GeneralUtility::getApplicationContext()) {
         $GLOBALS['TYPO3_CONF_VARS']['SYS']['devIPmask'] = '*';
         $GLOBALS['TYPO3_CONF_VARS']['SYS']['displayErrors'] = 1;
         $GLOBALS['TYPO3_CONF_VARS']['SYS']['errorHandlerErrors'] = 30711; // Default = 30466
-        $GLOBALS['TYPO3_CONF_VARS']['SYS']['exceptionalErrors'] = 14325; // Default = 4096
+        $GLOBALS['TYPO3_CONF_VARS']['SYS']['exceptionalErrors'] = 12290; // Default = 4096
         $GLOBALS['TYPO3_CONF_VARS']['SYS']['belogErrorReporting'] = 30711; // Default = 30711
 
     break; //__________________________________________________________________________________________________________________
@@ -73,7 +74,7 @@ switch (\TYPO3\CMS\Core\Utility\GeneralUtility::getApplicationContext()) {
         $GLOBALS['TYPO3_CONF_VARS']['SYS']['devIPmask'] = '*';
         $GLOBALS['TYPO3_CONF_VARS']['SYS']['displayErrors'] = 1;
         $GLOBALS['TYPO3_CONF_VARS']['SYS']['errorHandlerErrors'] = 30711; // Default = 30466
-        $GLOBALS['TYPO3_CONF_VARS']['SYS']['exceptionalErrors'] = 14325; // Default = 4096
+        $GLOBALS['TYPO3_CONF_VARS']['SYS']['exceptionalErrors'] = 12290; // Default = 4096
         $GLOBALS['TYPO3_CONF_VARS']['SYS']['belogErrorReporting'] = 30711; // Default = 30711
 
     break; //__________________________________________________________________________________________________________________
@@ -94,7 +95,7 @@ switch (\TYPO3\CMS\Core\Utility\GeneralUtility::getApplicationContext()) {
         $GLOBALS['TYPO3_CONF_VARS']['SYS']['devIPmask'] = '';
         $GLOBALS['TYPO3_CONF_VARS']['SYS']['displayErrors'] = 0;
         $GLOBALS['TYPO3_CONF_VARS']['SYS']['errorHandlerErrors'] = 30466; // Default = 30466
-        $GLOBALS['TYPO3_CONF_VARS']['SYS']['exceptionalErrors'] = 12290; // // Default = 4096
+        $GLOBALS['TYPO3_CONF_VARS']['SYS']['exceptionalErrors'] = 4096; // // Default = 4096
         $GLOBALS['TYPO3_CONF_VARS']['SYS']['belogErrorReporting'] = 4437; // Default = 30711
     break; //__________________________________________________________________________________________________________________
 }
