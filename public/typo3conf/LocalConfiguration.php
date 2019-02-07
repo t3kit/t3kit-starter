@@ -14,16 +14,11 @@ return [
         'Connections' => [
             'Default' => [
                 'charset' => 'utf8mb4',
-                'dbname' => 't3kit9',
                 'driver' => 'mysqli',
-                'host' => 'localhost',
-                'password' => '1234',
-                'port' => 3306,
                 'tableoptions' => [
                     'charset' => 'utf8mb4',
                     'collate' => 'utf8mb4_unicode_ci',
                 ],
-                'user' => 'root',
             ],
         ],
     ],
