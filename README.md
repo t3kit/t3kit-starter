@@ -4,6 +4,20 @@
 
 ***
 
+### Required dependencies
+
+#### To install dependencies
+
+* [Git](https://git-scm.com/)
+* [Composer](https://getcomposer.org/) >= v1.8.0
+
+#### For local development using Docker
+
+* [Docker](https://docs.docker.com/install/) >= v18.09.1
+* [Docker Compose](https://docs.docker.com/compose/install/) >= v1.23.2
+
+***
+
 ### [Start nginx-proxy for t3kit9](https://github.com/t3kit/nproxy)
 
 ```shell
