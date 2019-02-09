@@ -1,5 +1,6 @@
 #!/bin/bash
 OUT_FILE=${1:-"t3kit9.sql"}
+BASEDIR=$(dirname "$0")
 
 CLEAR_TABLES=(
     "be_sessions"
@@ -42,10 +43,10 @@ echo "Updating data..."
 mysql -uroot -p$DB_ROOT_PASSWORD -h$DB_CONTAINER_NAME -e "UPDATE sys_template SET constants = '', config = '' WHERE uid = 1;" "$DB_NAME"
 
 echo "Dumping db..."
-mysqldump -uroot -p$DB_ROOT_PASSWORD -h$DB_CONTAINER_NAME "$DB_NAME" > /var/www/html/db/mysql/"$OUT_FILE"
+mysqldump -uroot -p$DB_ROOT_PASSWORD -h$DB_CONTAINER_NAME "$DB_NAME" > $BASEDIR/"$OUT_FILE"
 
 echo "Output in ${OUT_FILE}"
 
 echo "Merge be_users.sql dump, must include admin user with password admin1234"
-cat /var/www/html/db/mysql/be_users.sql >> "/var/www/html/db/mysql/${OUT_FILE}"
+cat $BASEDIR/be_users.sql >> "$BASEDIR/${OUT_FILE}"
 echo "Done"
