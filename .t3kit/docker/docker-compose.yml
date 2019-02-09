@@ -32,7 +32,7 @@ services:
       - DB_NAME=${DB_NAME:-t3kit9}
       - DB_USER=${DB_USER:-root}
     volumes:
-      - .:/var/www/html${CACHED:-}
+      - ../../:/var/www/html${CACHED:-}
 
 networks:
   default:
