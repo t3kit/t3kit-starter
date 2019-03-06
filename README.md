@@ -27,7 +27,7 @@ For all t3kit projects, we need just a one `nginx-proxy` started as a separate D
 ```shell
 git clone git@github.com:t3kit/nproxy.git
 cd nproxy
-docker compose up -d
+docker-compose up -d
 ```
 
 ### nproxy with docker
@@ -66,7 +66,7 @@ composer install --ignore-platform-reqs
 
 3. Change `PROJECT_NAME` variable in `.env` file. It should be the same as a virtual host name. By default, it is `t3kit9`
 
-4. Change others variables in `.env` file if it needed. Follow instructions inside of `.enf` file. By default, it is enough just to change only one `PROJECT_NAME` variable.
+4. Change others variables in `.env` file if it needed. Follow instructions inside of `.env` file. By default, it is enough just to change only one `PROJECT_NAME` variable.
 
 5. `docker-compose up`
 
