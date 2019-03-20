@@ -1,50 +1,76 @@
 {
-    "require": {
-        "php": "^7.2",
-
-        "typo3/cms-backend": "~9.5.1",
-        "typo3/cms-core": "~9.5.1",
-        "typo3/cms-extbase": "~9.5.1",
-        "typo3/cms-extensionmanager": "~9.5.1",
-        "typo3/cms-filelist": "~9.5.1",
-        "typo3/cms-fluid": "~9.5.1",
-        "typo3/cms-frontend": "~9.5.1",
-        "typo3/cms-install": "~9.5.1",
-        "typo3/cms-recordlist": "~9.5.1",
-
-        "typo3/cms-about": "~9.5.1",
-        "typo3/cms-adminpanel": "~9.5.1",
-        "typo3/cms-belog": "~9.5.1",
-        "typo3/cms-beuser": "~9.5.1",
-        "typo3/cms-fluid-styled-content": "~9.5.1",
-        "typo3/cms-form": "~9.5.1",
-        "typo3/cms-impexp": "~9.5.1",
-        "typo3/cms-info": "~9.5.1",
-        "typo3/cms-lowlevel": "~9.5.1",
-        "typo3/cms-recycler": "~9.5.1",
-        "typo3/cms-redirects": "~9.5.1",
-        "typo3/cms-reports": "~9.5.1",
-        "typo3/cms-rte-ckeditor": "~9.5.1",
-        "typo3/cms-scheduler": "~9.5.1",
-        "typo3/cms-seo": "~9.5.1",
-        "typo3/cms-setup": "~9.5.1",
-        "typo3/cms-tstemplate": "~9.5.1",
-        "typo3/cms-viewpage": "~9.5.1",
-
-        "typo3/cms-t3editor": "~9.5.1",
-        "typo3/cms-felogin": "~9.5.1",
-        "typo3/cms-filemetadata": "~9.5.1",
-        "typo3/cms-sys-note": "~9.5.1",
-
-        "typo3/cms-feedit": "~9.5.1",
-        "typo3/cms-indexed-search": "~9.5.1",
-        "typo3/cms-linkvalidator": "~9.5.1",
-        "typo3/cms-opendocs": "~9.5.1",
-        "typo3/cms-sys-action": "~9.5.1",
-        "typo3/cms-taskcenter": "~9.5.1",
-        "typo3/cms-workspaces": "~9.5.1",
-
-
-        "georgringer/news": "~7.0.8"
-    }
+	"name": "t3kit/t3kit-starter",
+	"description": "Starter point for t3kit project. t3kit and TYPO3 dependencies, folder structure, custom site configurations, local environment based on Docker, CI/CD configs",
+	"type": "project",
+	"keywords": [
+		"t3kit",
+		"typo3",
+		"cms",
+		"starter",
+		"t3kit9"
+	],
+	"homepage": "http://t3kit.com",
+	"license": "GPL-2.0-or-later",
+	"authors": [
+		{
+			"name": "t3kit Community",
+			"homepage": "https://github.com/t3kit"
+		}
+	],
+	"support": {
+		"issues": "https://github.com/t3kit/t3kit-starter/issues",
+		"forum": "https://typo3.slack.com/messages/t3kit",
+		"source": "https://github.com/t3kit/t3kit-starter",
+		"docs": "https://github.com/t3kit/t3kit-starter"
+	},
+	"require": {
+		"typo3/minimal": "^9.5",
+		"typo3/cms-about": "^9.5",
+		"typo3/cms-adminpanel": "^9.5",
+		"typo3/cms-belog": "^9.5",
+		"typo3/cms-beuser": "^9.5",
+		"typo3/cms-fluid-styled-content": "^9.5",
+		"typo3/cms-form": "~9.5.1",
+		"typo3/cms-impexp": "^9.5",
+		"typo3/cms-info": "~9.5.1",
+		"typo3/cms-lowlevel": "^9.5",
+		"typo3/cms-recycler": "^9.5",
+		"typo3/cms-redirects": "^9.5",
+		"typo3/cms-reports": "^9.5",
+		"typo3/cms-rte-ckeditor": "^9.5",
+		"typo3/cms-scheduler": "^9.5",
+		"typo3/cms-seo": "~9.5.1",
+		"typo3/cms-setup": "^9.5",
+		"typo3/cms-tstemplate": "^9.5",
+		"typo3/cms-viewpage": "^9.5",
+		"typo3/cms-t3editor": "^9.5",
+		"typo3/cms-felogin": "^9.5",
+		"typo3/cms-filemetadata": "^9.5",
+		"typo3/cms-sys-note": "^9.5",
+		"typo3/cms-feedit": "^9.5",
+		"typo3/cms-indexed-search": "^9.5",
+		"typo3/cms-linkvalidator": "^9.5",
+		"typo3/cms-opendocs": "^9.5",
+		"typo3/cms-sys-action": "^9.5",
+		"typo3/cms-taskcenter": "^9.5",
+		"typo3/cms-workspaces": "^9.5",
+		"helhum/typo3-console": "^5.5.5"
+	},
+	"require-dev": {},
+	"suggest": {},
+	"prefer-stable": true,
+	"config": {
+		"platform": {
+			"php": "7.2"
+		}
+	},
+	"scripts": {
+		"typo3-cms-scripts": [
+			"typo3cms install:generatepackagestates",
+			"typo3cms install:fixfolderstructure"
+		],
+		"post-autoload-dump": [
+			"@typo3-cms-scripts"
+		]
+	}
 }
