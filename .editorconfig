@@ -3,14 +3,14 @@
 
 root = true
 
-# Unix-style newlines with a newline ending every file
 [*]
 charset = utf-8
+# Get rid of whitespace to avoid diffs with a bunch of EOL changes
+trim_trailing_whitespace = true
+# Unix-style newlines with a newline ending every file
 end_of_line = lf
 insert_final_newline = true
-trim_trailing_whitespace = true
-
-# general config
+# Common config (CSS-Files, SCSS/LESS-Files, PHP-Files, MD-Files )
 indent_style = space
 indent_size = 4
 
@@ -24,41 +24,60 @@ indent_size = 2
 indent_style = tab
 indent_size = 4
 
-# JS-Files
+# TS/JS-Files
+[*.ts]
+indent_style = space
+indent_size = 2
 [*.js]
 indent_style = space
 indent_size = 2
+
+# JSON-Files
+[*.json]
+indent_style = tab
+indent_size = 4
 
 # ReST-Files
 [*.rst]
 indent_style = space
 indent_size = 3
 
+# YAML-Files
+[{*.yaml,*.yml}]
+indent_style = space
+indent_size = 2
+
+# package.json
+# .travis.yml
+# .stylelintrc
+[{package.json,.travis.yml,.stylelintrc}]
+indent_style = space
+indent_size = 2
+
 # TypoScript
-[*.{txt,ts,setupts,constantsts,pagets,typoscript,tsconfig}]
-indent_size = 2
+[*.typoscript]
 indent_style = space
-
-[*.{json,yml,yaml,md}]
 indent_size = 2
+[*.tsconfig]
 indent_style = space
+indent_size = 2
 
+# XLF-Files
 [*.xlf]
 indent_style = tab
 indent_size = 4
 
-[*.{xml,xsd,sql}]
-indent_size = 2
+# SQL-Files
+[*.sql]
 indent_style = tab
-
-[*.md]
-trim_trailing_whitespace = false
-
-[.stylelintrc]
 indent_size = 2
-indent_style = space
 
 # .htaccess
 [{_.htaccess,.htaccess}]
 indent_style = tab
 indent_size = 4
+
+# XML-Files
+[*.xml]
+indent_size = 2
+indent_style = tab
