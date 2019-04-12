@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 5.7.24, for Linux (x86_64)
+-- MySQL dump 10.13  Distrib 5.7.25, for Linux (x86_64)
 --
 -- Host: t3kit9_db    Database: t3kit9
 -- ------------------------------------------------------
--- Server version	5.7.24
+-- Server version	5.7.25
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -376,58 +376,6 @@ LOCK TABLES `cf_cache_imagesizes_tags` WRITE;
 UNLOCK TABLES;
 
 --
--- Table structure for table `cf_cache_news_category`
---
-
-DROP TABLE IF EXISTS `cf_cache_news_category`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `cf_cache_news_category` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `identifier` varchar(250) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-  `expires` int(10) unsigned NOT NULL DEFAULT '0',
-  `content` longblob,
-  PRIMARY KEY (`id`),
-  KEY `cache_id` (`identifier`(180),`expires`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `cf_cache_news_category`
---
-
-LOCK TABLES `cf_cache_news_category` WRITE;
-/*!40000 ALTER TABLE `cf_cache_news_category` DISABLE KEYS */;
-/*!40000 ALTER TABLE `cf_cache_news_category` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `cf_cache_news_category_tags`
---
-
-DROP TABLE IF EXISTS `cf_cache_news_category_tags`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `cf_cache_news_category_tags` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `identifier` varchar(250) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-  `tag` varchar(250) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-  PRIMARY KEY (`id`),
-  KEY `cache_id` (`identifier`(191)),
-  KEY `cache_tag` (`tag`(191))
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `cf_cache_news_category_tags`
---
-
-LOCK TABLES `cf_cache_news_category_tags` WRITE;
-/*!40000 ALTER TABLE `cf_cache_news_category_tags` DISABLE KEYS */;
-/*!40000 ALTER TABLE `cf_cache_news_category_tags` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `cf_cache_pages`
 --
 
@@ -636,6 +584,58 @@ LOCK TABLES `cf_extbase_datamapfactory_datamap_tags` WRITE;
 UNLOCK TABLES;
 
 --
+-- Table structure for table `cf_workspaces_cache`
+--
+
+DROP TABLE IF EXISTS `cf_workspaces_cache`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `cf_workspaces_cache` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `identifier` varchar(250) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `expires` int(10) unsigned NOT NULL DEFAULT '0',
+  `content` longblob,
+  PRIMARY KEY (`id`),
+  KEY `cache_id` (`identifier`(180),`expires`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `cf_workspaces_cache`
+--
+
+LOCK TABLES `cf_workspaces_cache` WRITE;
+/*!40000 ALTER TABLE `cf_workspaces_cache` DISABLE KEYS */;
+/*!40000 ALTER TABLE `cf_workspaces_cache` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `cf_workspaces_cache_tags`
+--
+
+DROP TABLE IF EXISTS `cf_workspaces_cache_tags`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `cf_workspaces_cache_tags` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `identifier` varchar(250) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `tag` varchar(250) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  PRIMARY KEY (`id`),
+  KEY `cache_id` (`identifier`(191)),
+  KEY `cache_tag` (`tag`(191))
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `cf_workspaces_cache_tags`
+--
+
+LOCK TABLES `cf_workspaces_cache_tags` WRITE;
+/*!40000 ALTER TABLE `cf_workspaces_cache_tags` DISABLE KEYS */;
+/*!40000 ALTER TABLE `cf_workspaces_cache_tags` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `fe_groups`
 --
 
@@ -761,6 +761,322 @@ LOCK TABLES `fe_users` WRITE;
 UNLOCK TABLES;
 
 --
+-- Table structure for table `index_config`
+--
+
+DROP TABLE IF EXISTS `index_config`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `index_config` (
+  `uid` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `pid` int(10) unsigned NOT NULL DEFAULT '0',
+  `tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `crdate` int(10) unsigned NOT NULL DEFAULT '0',
+  `cruser_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `hidden` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `starttime` int(10) unsigned NOT NULL DEFAULT '0',
+  `description` text COLLATE utf8mb4_unicode_ci,
+  `set_id` int(11) NOT NULL DEFAULT '0',
+  `session_data` mediumtext COLLATE utf8mb4_unicode_ci,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `type` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `depth` int(10) unsigned NOT NULL DEFAULT '0',
+  `table2index` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `alternative_source_pid` int(10) unsigned NOT NULL DEFAULT '0',
+  `get_params` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `fieldlist` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `externalUrl` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `indexcfgs` text COLLATE utf8mb4_unicode_ci,
+  `chashcalc` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `filepath` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `extensions` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `timer_next_indexing` int(11) NOT NULL DEFAULT '0',
+  `timer_frequency` int(11) NOT NULL DEFAULT '0',
+  `timer_offset` int(11) NOT NULL DEFAULT '0',
+  `url_deny` text COLLATE utf8mb4_unicode_ci,
+  `recordsbatch` int(11) NOT NULL DEFAULT '0',
+  `records_indexonchange` smallint(6) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`uid`),
+  KEY `parent` (`pid`,`hidden`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `index_config`
+--
+
+LOCK TABLES `index_config` WRITE;
+/*!40000 ALTER TABLE `index_config` DISABLE KEYS */;
+/*!40000 ALTER TABLE `index_config` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `index_debug`
+--
+
+DROP TABLE IF EXISTS `index_debug`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `index_debug` (
+  `phash` int(11) NOT NULL DEFAULT '0',
+  `debuginfo` mediumtext COLLATE utf8mb4_unicode_ci,
+  PRIMARY KEY (`phash`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `index_debug`
+--
+
+LOCK TABLES `index_debug` WRITE;
+/*!40000 ALTER TABLE `index_debug` DISABLE KEYS */;
+/*!40000 ALTER TABLE `index_debug` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `index_fulltext`
+--
+
+DROP TABLE IF EXISTS `index_fulltext`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `index_fulltext` (
+  `phash` int(11) NOT NULL DEFAULT '0',
+  `fulltextdata` mediumtext COLLATE utf8mb4_unicode_ci,
+  `metaphonedata` mediumtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  PRIMARY KEY (`phash`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `index_fulltext`
+--
+
+LOCK TABLES `index_fulltext` WRITE;
+/*!40000 ALTER TABLE `index_fulltext` DISABLE KEYS */;
+/*!40000 ALTER TABLE `index_fulltext` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `index_grlist`
+--
+
+DROP TABLE IF EXISTS `index_grlist`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `index_grlist` (
+  `uniqid` int(11) NOT NULL AUTO_INCREMENT,
+  `phash` int(11) NOT NULL DEFAULT '0',
+  `phash_x` int(11) NOT NULL DEFAULT '0',
+  `hash_gr_list` int(11) NOT NULL DEFAULT '0',
+  `gr_list` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  PRIMARY KEY (`uniqid`),
+  KEY `joinkey` (`phash`,`hash_gr_list`),
+  KEY `phash_grouping` (`phash_x`,`hash_gr_list`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `index_grlist`
+--
+
+LOCK TABLES `index_grlist` WRITE;
+/*!40000 ALTER TABLE `index_grlist` DISABLE KEYS */;
+/*!40000 ALTER TABLE `index_grlist` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `index_phash`
+--
+
+DROP TABLE IF EXISTS `index_phash`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `index_phash` (
+  `phash` int(11) NOT NULL DEFAULT '0',
+  `phash_grouping` int(11) NOT NULL DEFAULT '0',
+  `cHashParams` blob,
+  `static_page_arguments` blob,
+  `data_filename` varchar(1024) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `data_page_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `data_page_reg1` int(10) unsigned NOT NULL DEFAULT '0',
+  `data_page_type` int(10) unsigned NOT NULL DEFAULT '0',
+  `data_page_mp` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `gr_list` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `item_type` varchar(5) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `item_title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `item_description` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `item_mtime` int(11) NOT NULL DEFAULT '0',
+  `tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `item_size` int(11) NOT NULL DEFAULT '0',
+  `contentHash` int(11) NOT NULL DEFAULT '0',
+  `crdate` int(11) NOT NULL DEFAULT '0',
+  `parsetime` int(11) NOT NULL DEFAULT '0',
+  `sys_language_uid` int(11) NOT NULL DEFAULT '0',
+  `item_crdate` int(11) NOT NULL DEFAULT '0',
+  `externalUrl` smallint(6) NOT NULL DEFAULT '0',
+  `recordUid` int(11) NOT NULL DEFAULT '0',
+  `freeIndexUid` int(11) NOT NULL DEFAULT '0',
+  `freeIndexSetId` int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`phash`),
+  KEY `phash_grouping` (`phash_grouping`),
+  KEY `freeIndexUid` (`freeIndexUid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `index_phash`
+--
+
+LOCK TABLES `index_phash` WRITE;
+/*!40000 ALTER TABLE `index_phash` DISABLE KEYS */;
+/*!40000 ALTER TABLE `index_phash` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `index_rel`
+--
+
+DROP TABLE IF EXISTS `index_rel`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `index_rel` (
+  `phash` int(11) NOT NULL DEFAULT '0',
+  `wid` int(11) NOT NULL DEFAULT '0',
+  `count` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `first` int(10) unsigned NOT NULL DEFAULT '0',
+  `freq` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `flags` smallint(5) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`phash`,`wid`),
+  KEY `wid` (`wid`,`phash`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `index_rel`
+--
+
+LOCK TABLES `index_rel` WRITE;
+/*!40000 ALTER TABLE `index_rel` DISABLE KEYS */;
+/*!40000 ALTER TABLE `index_rel` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `index_section`
+--
+
+DROP TABLE IF EXISTS `index_section`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `index_section` (
+  `uniqid` int(11) NOT NULL AUTO_INCREMENT,
+  `phash` int(11) NOT NULL DEFAULT '0',
+  `phash_t3` int(11) NOT NULL DEFAULT '0',
+  `rl0` int(10) unsigned NOT NULL DEFAULT '0',
+  `rl1` int(10) unsigned NOT NULL DEFAULT '0',
+  `rl2` int(10) unsigned NOT NULL DEFAULT '0',
+  `page_id` int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`uniqid`),
+  KEY `joinkey` (`phash`,`rl0`),
+  KEY `page_id` (`page_id`),
+  KEY `rl0` (`rl0`,`rl1`,`phash`),
+  KEY `rl0_2` (`rl0`,`phash`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `index_section`
+--
+
+LOCK TABLES `index_section` WRITE;
+/*!40000 ALTER TABLE `index_section` DISABLE KEYS */;
+/*!40000 ALTER TABLE `index_section` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `index_stat_search`
+--
+
+DROP TABLE IF EXISTS `index_stat_search`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `index_stat_search` (
+  `uid` int(11) NOT NULL AUTO_INCREMENT,
+  `searchstring` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `searchoptions` blob,
+  `tstamp` int(11) NOT NULL DEFAULT '0',
+  `feuser_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `cookie` varchar(32) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `IP` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `hits` int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`uid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `index_stat_search`
+--
+
+LOCK TABLES `index_stat_search` WRITE;
+/*!40000 ALTER TABLE `index_stat_search` DISABLE KEYS */;
+/*!40000 ALTER TABLE `index_stat_search` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `index_stat_word`
+--
+
+DROP TABLE IF EXISTS `index_stat_word`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `index_stat_word` (
+  `uid` int(11) NOT NULL AUTO_INCREMENT,
+  `word` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `index_stat_search_id` int(11) NOT NULL DEFAULT '0',
+  `tstamp` int(11) NOT NULL DEFAULT '0',
+  `pageid` int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`uid`),
+  KEY `tstamp` (`tstamp`,`word`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `index_stat_word`
+--
+
+LOCK TABLES `index_stat_word` WRITE;
+/*!40000 ALTER TABLE `index_stat_word` DISABLE KEYS */;
+/*!40000 ALTER TABLE `index_stat_word` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `index_words`
+--
+
+DROP TABLE IF EXISTS `index_words`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `index_words` (
+  `wid` int(11) NOT NULL DEFAULT '0',
+  `baseword` varchar(60) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `metaphone` int(11) NOT NULL DEFAULT '0',
+  `is_stopword` smallint(6) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`wid`),
+  KEY `baseword` (`baseword`),
+  KEY `metaphone` (`metaphone`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `index_words`
+--
+
+LOCK TABLES `index_words` WRITE;
+/*!40000 ALTER TABLE `index_words` DISABLE KEYS */;
+/*!40000 ALTER TABLE `index_words` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `pages`
 --
 
@@ -871,6 +1187,73 @@ INSERT INTO `pages` VALUES (1,0,1544198148,1544186933,1,0,0,0,0,'',256,'Root Pag
 UNLOCK TABLES;
 
 --
+-- Table structure for table `sys_action`
+--
+
+DROP TABLE IF EXISTS `sys_action`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `sys_action` (
+  `uid` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `pid` int(10) unsigned NOT NULL DEFAULT '0',
+  `tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `crdate` int(10) unsigned NOT NULL DEFAULT '0',
+  `cruser_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `hidden` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `sorting` int(11) NOT NULL DEFAULT '0',
+  `description` text COLLATE utf8mb4_unicode_ci,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `type` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `t1_userprefix` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `t1_copy_of_user` int(11) NOT NULL DEFAULT '0',
+  `t1_allowed_groups` tinytext COLLATE utf8mb4_unicode_ci,
+  `t2_data` blob,
+  `assign_to_groups` int(11) NOT NULL DEFAULT '0',
+  `t1_create_user_dir` smallint(6) NOT NULL DEFAULT '0',
+  `t3_listPid` int(11) NOT NULL DEFAULT '0',
+  `t3_tables` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `t4_recordsToEdit` text COLLATE utf8mb4_unicode_ci,
+  PRIMARY KEY (`uid`),
+  KEY `cruser_id` (`cruser_id`),
+  KEY `parent` (`pid`,`hidden`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `sys_action`
+--
+
+LOCK TABLES `sys_action` WRITE;
+/*!40000 ALTER TABLE `sys_action` DISABLE KEYS */;
+/*!40000 ALTER TABLE `sys_action` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `sys_action_asgr_mm`
+--
+
+DROP TABLE IF EXISTS `sys_action_asgr_mm`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `sys_action_asgr_mm` (
+  `uid_local` int(10) unsigned NOT NULL DEFAULT '0',
+  `uid_foreign` int(10) unsigned NOT NULL DEFAULT '0',
+  `sorting` int(10) unsigned NOT NULL DEFAULT '0',
+  KEY `uid_local` (`uid_local`),
+  KEY `uid_foreign` (`uid_foreign`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `sys_action_asgr_mm`
+--
+
+LOCK TABLES `sys_action_asgr_mm` WRITE;
+/*!40000 ALTER TABLE `sys_action_asgr_mm` DISABLE KEYS */;
+/*!40000 ALTER TABLE `sys_action_asgr_mm` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `sys_be_shortcuts`
 --
 
@@ -935,22 +1318,11 @@ CREATE TABLE `sys_category` (
   `title` tinytext COLLATE utf8mb4_unicode_ci NOT NULL,
   `parent` int(11) NOT NULL DEFAULT '0',
   `items` int(11) NOT NULL DEFAULT '0',
-  `fe_group` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
-  `images` int(10) unsigned DEFAULT '0',
-  `single_pid` int(10) unsigned NOT NULL DEFAULT '0',
-  `shortcut` int(11) NOT NULL DEFAULT '0',
-  `import_id` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-  `import_source` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-  `seo_title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-  `seo_description` text COLLATE utf8mb4_unicode_ci,
-  `seo_headline` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-  `seo_text` text COLLATE utf8mb4_unicode_ci,
   PRIMARY KEY (`uid`),
   KEY `category_parent` (`parent`),
   KEY `category_list` (`pid`,`deleted`,`sys_language_uid`),
   KEY `parent` (`pid`,`deleted`,`hidden`),
-  KEY `t3ver_oid` (`t3ver_oid`,`t3ver_wsid`),
-  KEY `import` (`import_id`,`import_source`)
+  KEY `t3ver_oid` (`t3ver_oid`,`t3ver_wsid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -1355,7 +1727,6 @@ CREATE TABLE `sys_file_reference` (
   `link` varchar(1024) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
   `crop` varchar(4000) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
   `autoplay` smallint(6) NOT NULL DEFAULT '0',
-  `showinpreview` smallint(6) NOT NULL DEFAULT '0',
   PRIMARY KEY (`uid`),
   KEY `tablenames_fieldname` (`tablenames`(32),`fieldname`(12)),
   KEY `deleted` (`deleted`),
@@ -1391,7 +1762,7 @@ CREATE TABLE `sys_file_storage` (
   `cruser_id` int(10) unsigned NOT NULL DEFAULT '0',
   `deleted` smallint(5) unsigned NOT NULL DEFAULT '0',
   `description` text COLLATE utf8mb4_unicode_ci,
-  `name` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
   `driver` tinytext COLLATE utf8mb4_unicode_ci,
   `configuration` text COLLATE utf8mb4_unicode_ci,
   `is_default` smallint(6) NOT NULL DEFAULT '0',
@@ -1543,7 +1914,6 @@ CREATE TABLE `sys_lockedrecords` (
 
 LOCK TABLES `sys_lockedrecords` WRITE;
 /*!40000 ALTER TABLE `sys_lockedrecords` DISABLE KEYS */;
-INSERT INTO `sys_lockedrecords` VALUES (22,1,1544198208,'pages',2,0,'admin',0);
 /*!40000 ALTER TABLE `sys_lockedrecords` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1665,6 +2035,31 @@ LOCK TABLES `sys_note` WRITE;
 UNLOCK TABLES;
 
 --
+-- Table structure for table `sys_preview`
+--
+
+DROP TABLE IF EXISTS `sys_preview`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `sys_preview` (
+  `keyword` varchar(32) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `tstamp` int(11) NOT NULL DEFAULT '0',
+  `endtime` int(11) NOT NULL DEFAULT '0',
+  `config` text COLLATE utf8mb4_unicode_ci,
+  PRIMARY KEY (`keyword`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `sys_preview`
+--
+
+LOCK TABLES `sys_preview` WRITE;
+/*!40000 ALTER TABLE `sys_preview` DISABLE KEYS */;
+/*!40000 ALTER TABLE `sys_preview` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `sys_redirect`
 --
 
@@ -1758,7 +2153,7 @@ CREATE TABLE `sys_registry` (
   `entry_value` mediumblob,
   PRIMARY KEY (`uid`),
   UNIQUE KEY `entry_identifier` (`entry_namespace`,`entry_key`)
-) ENGINE=InnoDB AUTO_INCREMENT=197 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=201 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1767,7 +2162,7 @@ CREATE TABLE `sys_registry` (
 
 LOCK TABLES `sys_registry` WRITE;
 /*!40000 ALTER TABLE `sys_registry` DISABLE KEYS */;
-INSERT INTO `sys_registry` VALUES (1,'installUpdate','TYPO3\\CMS\\Install\\Updates\\ExtensionManagerTables',_binary 'i:1;'),(2,'installUpdate','TYPO3\\CMS\\Install\\Updates\\WizardDoneToRegistry',_binary 'i:1;'),(3,'installUpdate','TYPO3\\CMS\\Install\\Updates\\StartModuleUpdate',_binary 'i:1;'),(4,'installUpdate','TYPO3\\CMS\\Install\\Updates\\FrontendUserImageUpdateWizard',_binary 'i:1;'),(5,'installUpdate','TYPO3\\CMS\\Install\\Updates\\DatabaseRowsUpdateWizard',_binary 'i:1;'),(6,'installUpdate','TYPO3\\CMS\\Install\\Updates\\CommandLineBackendUserRemovalUpdate',_binary 'i:1;'),(7,'installUpdate','TYPO3\\CMS\\Install\\Updates\\FillTranslationSourceField',_binary 'i:1;'),(8,'installUpdate','TYPO3\\CMS\\Install\\Updates\\SectionFrameToFrameClassUpdate',_binary 'i:1;'),(9,'installUpdate','TYPO3\\CMS\\Install\\Updates\\SplitMenusUpdate',_binary 'i:1;'),(10,'installUpdate','TYPO3\\CMS\\Install\\Updates\\BulletContentElementUpdate',_binary 'i:1;'),(11,'installUpdate','TYPO3\\CMS\\Install\\Updates\\UploadContentElementUpdate',_binary 'i:1;'),(12,'installUpdate','TYPO3\\CMS\\Install\\Updates\\MigrateFscStaticTemplateUpdate',_binary 'i:1;'),(13,'installUpdate','TYPO3\\CMS\\Install\\Updates\\FileReferenceUpdate',_binary 'i:1;'),(14,'installUpdate','TYPO3\\CMS\\Install\\Updates\\MigrateFeSessionDataUpdate',_binary 'i:1;'),(15,'installUpdate','TYPO3\\CMS\\Install\\Updates\\Compatibility7ExtractionUpdate',_binary 'i:1;'),(16,'installUpdate','TYPO3\\CMS\\Install\\Updates\\FormLegacyExtractionUpdate',_binary 'i:1;'),(17,'installUpdate','TYPO3\\CMS\\Install\\Updates\\RteHtmlAreaExtractionUpdate',_binary 'i:1;'),(18,'installUpdate','TYPO3\\CMS\\Install\\Updates\\LanguageSortingUpdate',_binary 'i:1;'),(19,'installUpdate','TYPO3\\CMS\\Install\\Updates\\Typo3DbExtractionUpdate',_binary 'i:1;'),(20,'installUpdate','TYPO3\\CMS\\Install\\Updates\\FuncExtractionUpdate',_binary 'i:1;'),(21,'installUpdate','TYPO3\\CMS\\Install\\Updates\\MigrateUrlTypesInPagesUpdate',_binary 'i:1;'),(22,'installUpdate','TYPO3\\CMS\\Install\\Updates\\SeparateSysHistoryFromSysLogUpdate',_binary 'i:1;'),(23,'installUpdate','TYPO3\\CMS\\Install\\Updates\\RedirectExtractionUpdate',_binary 'i:1;'),(24,'installUpdate','TYPO3\\CMS\\Install\\Updates\\BackendUserStartModuleUpdate',_binary 'i:1;'),(25,'installUpdate','TYPO3\\CMS\\Install\\Updates\\MigratePagesLanguageOverlayUpdate',_binary 'i:1;'),(26,'installUpdate','TYPO3\\CMS\\Install\\Updates\\MigratePagesLanguageOverlayBeGroupsAccessRights',_binary 'i:1;'),(27,'installUpdate','TYPO3\\CMS\\Install\\Updates\\BackendLayoutIconUpdateWizard',_binary 'i:1;'),(28,'installUpdate','TYPO3\\CMS\\Install\\Updates\\RedirectsExtensionUpdate',_binary 'i:1;'),(29,'installUpdate','TYPO3\\CMS\\Install\\Updates\\AdminPanelInstall',_binary 'i:1;'),(30,'installUpdate','TYPO3\\CMS\\Install\\Updates\\PopulatePageSlugs',_binary 'i:1;'),(31,'installUpdate','TYPO3\\CMS\\Install\\Updates\\Argon2iPasswordHashes',_binary 'i:1;'),(32,'installUpdate','TYPO3\\CMS\\Form\\Hooks\\FormFileExtensionUpdate',_binary 'i:1;'),(33,'core','formProtectionSessionToken:1',_binary 's:64:\"99712591b9b6de7930680634e64a9e86e9da10f5b59612e4adaf4eae59809870\";'),(34,'extensionDataImport','typo3conf/ext/news/ext_tables_static+adt.sql',_binary 's:0:\"\";'),(35,'extensionScannerNotAffected','b6058a0dc990a2c719ebaf093f5fc02f',_binary 's:32:\"b6058a0dc990a2c719ebaf093f5fc02f\";'),(36,'extensionScannerNotAffected','e872218b822e4a3de6e5ae039fdd2f60',_binary 's:32:\"e872218b822e4a3de6e5ae039fdd2f60\";'),(37,'extensionScannerNotAffected','84958529cec39361876616e3725c4f9b',_binary 's:32:\"84958529cec39361876616e3725c4f9b\";'),(38,'extensionScannerNotAffected','4d29c858bfb700ee214348c776bd7fee',_binary 's:32:\"4d29c858bfb700ee214348c776bd7fee\";'),(39,'extensionScannerNotAffected','1c5a05a66768940687520074a52c2d99',_binary 's:32:\"1c5a05a66768940687520074a52c2d99\";'),(40,'extensionScannerNotAffected','27cb6bf0a45fb36cd7ac73a2c0a572ef',_binary 's:32:\"27cb6bf0a45fb36cd7ac73a2c0a572ef\";'),(41,'extensionScannerNotAffected','256574d860279e77e16ec42976515826',_binary 's:32:\"256574d860279e77e16ec42976515826\";'),(42,'extensionScannerNotAffected','7ae9bb35f967eb5454fdad16c2dda2a0',_binary 's:32:\"7ae9bb35f967eb5454fdad16c2dda2a0\";'),(43,'extensionScannerNotAffected','09d630c80626c1b76089fcc5c01a6ebb',_binary 's:32:\"09d630c80626c1b76089fcc5c01a6ebb\";'),(44,'extensionScannerNotAffected','515ba3726a1dfded6ef6b83d1581ec83',_binary 's:32:\"515ba3726a1dfded6ef6b83d1581ec83\";'),(45,'extensionScannerNotAffected','b574d667526a9ced164a0a2094790f8e',_binary 's:32:\"b574d667526a9ced164a0a2094790f8e\";'),(46,'extensionScannerNotAffected','5c839ed8d50245529e253ef4eea38268',_binary 's:32:\"5c839ed8d50245529e253ef4eea38268\";'),(47,'extensionScannerNotAffected','3f8faefc1fe5b54d8903efdfee5ac291',_binary 's:32:\"3f8faefc1fe5b54d8903efdfee5ac291\";'),(48,'extensionScannerNotAffected','3ea2e88429bdcbbd9cfe70d1705d0823',_binary 's:32:\"3ea2e88429bdcbbd9cfe70d1705d0823\";'),(49,'extensionScannerNotAffected','67442386f8c3115084d1214937e3b4a8',_binary 's:32:\"67442386f8c3115084d1214937e3b4a8\";'),(50,'extensionScannerNotAffected','aeba5d0706fd347bdc5272f996118fea',_binary 's:32:\"aeba5d0706fd347bdc5272f996118fea\";'),(51,'extensionScannerNotAffected','c406c1b4bb1a5dfd9c08d4559bb8e8ee',_binary 's:32:\"c406c1b4bb1a5dfd9c08d4559bb8e8ee\";'),(52,'extensionScannerNotAffected','66917c534366520df96a319aa595aadf',_binary 's:32:\"66917c534366520df96a319aa595aadf\";'),(53,'extensionScannerNotAffected','c7bfdc48f32344ba1d1ae63f65de7271',_binary 's:32:\"c7bfdc48f32344ba1d1ae63f65de7271\";'),(54,'extensionScannerNotAffected','b6955ff14a49b23c4b55a16ceda2f53f',_binary 's:32:\"b6955ff14a49b23c4b55a16ceda2f53f\";'),(55,'extensionScannerNotAffected','69fd020132adb9da7343bbdd09cc7207',_binary 's:32:\"69fd020132adb9da7343bbdd09cc7207\";'),(56,'extensionScannerNotAffected','13d6f701b41fb36f0e0083a22bb85002',_binary 's:32:\"13d6f701b41fb36f0e0083a22bb85002\";'),(57,'extensionScannerNotAffected','4fb09912c38414756af594202cb2f690',_binary 's:32:\"4fb09912c38414756af594202cb2f690\";'),(58,'extensionScannerNotAffected','02a805a392483b732732f93901406ceb',_binary 's:32:\"02a805a392483b732732f93901406ceb\";'),(59,'extensionScannerNotAffected','19376586fba8888a27efd8af6a4583cf',_binary 's:32:\"19376586fba8888a27efd8af6a4583cf\";'),(60,'extensionScannerNotAffected','0d9fbf4a461435c9eeedb3cc130dace5',_binary 's:32:\"0d9fbf4a461435c9eeedb3cc130dace5\";'),(61,'extensionScannerNotAffected','491537cef95923e1e1df8619a5bd9924',_binary 's:32:\"491537cef95923e1e1df8619a5bd9924\";'),(62,'extensionScannerNotAffected','2c3b83bfc1f271ba9a860c00e99d9b6f',_binary 's:32:\"2c3b83bfc1f271ba9a860c00e99d9b6f\";'),(63,'extensionScannerNotAffected','e307efdd6ecb8c3fd0bea412d0a0db1c',_binary 's:32:\"e307efdd6ecb8c3fd0bea412d0a0db1c\";'),(64,'extensionScannerNotAffected','b7dcfcaa6b61b22e1ed9e3040eb7af44',_binary 's:32:\"b7dcfcaa6b61b22e1ed9e3040eb7af44\";'),(65,'extensionScannerNotAffected','0d60eaef00c478199d475ca60d7340c7',_binary 's:32:\"0d60eaef00c478199d475ca60d7340c7\";'),(66,'extensionScannerNotAffected','bd1929903ae77d7a33efa0feb711cfb6',_binary 's:32:\"bd1929903ae77d7a33efa0feb711cfb6\";'),(67,'extensionScannerNotAffected','0bee48ca87fa9b61a2a7047f53e638d9',_binary 's:32:\"0bee48ca87fa9b61a2a7047f53e638d9\";'),(68,'extensionScannerNotAffected','bb9a966a09e9ef5a034900a4bca6ef96',_binary 's:32:\"bb9a966a09e9ef5a034900a4bca6ef96\";'),(69,'extensionScannerNotAffected','b75fd56db65b57134ee3a392333164e6',_binary 's:32:\"b75fd56db65b57134ee3a392333164e6\";'),(70,'extensionScannerNotAffected','5dfdf6cf1184deae70be20b67437408a',_binary 's:32:\"5dfdf6cf1184deae70be20b67437408a\";'),(71,'extensionScannerNotAffected','3a288da8230d042aa0fefe3c9d010fc9',_binary 's:32:\"3a288da8230d042aa0fefe3c9d010fc9\";'),(72,'extensionScannerNotAffected','7f95a3579a446aecec1217a456433f0f',_binary 's:32:\"7f95a3579a446aecec1217a456433f0f\";'),(73,'extensionScannerNotAffected','12b246daad701f9511c661587d1f4e6a',_binary 's:32:\"12b246daad701f9511c661587d1f4e6a\";'),(74,'extensionScannerNotAffected','d1e1110b267f6c82aac369fe44d1026f',_binary 's:32:\"d1e1110b267f6c82aac369fe44d1026f\";'),(75,'extensionScannerNotAffected','71ebec4960c1b84c199c5a33277b084d',_binary 's:32:\"71ebec4960c1b84c199c5a33277b084d\";'),(76,'extensionScannerNotAffected','09e682d75e634e3ceb0f7f98527b1505',_binary 's:32:\"09e682d75e634e3ceb0f7f98527b1505\";'),(77,'extensionScannerNotAffected','0aaa78219033da9093ecded3a045d686',_binary 's:32:\"0aaa78219033da9093ecded3a045d686\";'),(78,'extensionScannerNotAffected','a8b76974d80653cd9d3e19cf8fbbc54d',_binary 's:32:\"a8b76974d80653cd9d3e19cf8fbbc54d\";'),(79,'extensionScannerNotAffected','e1a09d1fd8685d6062cf3e7799e126f9',_binary 's:32:\"e1a09d1fd8685d6062cf3e7799e126f9\";'),(80,'extensionScannerNotAffected','37263679ea002b67d6c926e96199e0cb',_binary 's:32:\"37263679ea002b67d6c926e96199e0cb\";'),(81,'extensionScannerNotAffected','e41e345fdcabb5d16cf9cbcaf5f6770c',_binary 's:32:\"e41e345fdcabb5d16cf9cbcaf5f6770c\";'),(82,'extensionScannerNotAffected','e164383a65972e81d1d4ceed1b787c5c',_binary 's:32:\"e164383a65972e81d1d4ceed1b787c5c\";'),(83,'extensionScannerNotAffected','31eabeee23cfbd2e810ec7163f298fe2',_binary 's:32:\"31eabeee23cfbd2e810ec7163f298fe2\";'),(84,'extensionScannerNotAffected','150c7c72278375a02383fdf867b9a14e',_binary 's:32:\"150c7c72278375a02383fdf867b9a14e\";'),(85,'extensionScannerNotAffected','6432bc49b3ce263444fc37946991380f',_binary 's:32:\"6432bc49b3ce263444fc37946991380f\";'),(86,'extensionScannerNotAffected','bdc0f4f5595a74816951068c8e603ff5',_binary 's:32:\"bdc0f4f5595a74816951068c8e603ff5\";'),(87,'extensionScannerNotAffected','92344b99f1fe6cc5a0510fc906ec7307',_binary 's:32:\"92344b99f1fe6cc5a0510fc906ec7307\";'),(88,'extensionScannerNotAffected','6366dd14c672aa71ebf03205723f68a2',_binary 's:32:\"6366dd14c672aa71ebf03205723f68a2\";'),(89,'extensionScannerNotAffected','0de71175cd69f6922e46015ac1646084',_binary 's:32:\"0de71175cd69f6922e46015ac1646084\";'),(90,'extensionScannerNotAffected','5e3556a907f7c423702aafe5bd21283b',_binary 's:32:\"5e3556a907f7c423702aafe5bd21283b\";'),(91,'extensionScannerNotAffected','21afaa7b702cf1385561bd6b642116a7',_binary 's:32:\"21afaa7b702cf1385561bd6b642116a7\";'),(92,'extensionScannerNotAffected','5f19c061916be2a684833b270fd025ff',_binary 's:32:\"5f19c061916be2a684833b270fd025ff\";'),(93,'extensionScannerNotAffected','397c9a4bcca973b3b451be07aae2d85d',_binary 's:32:\"397c9a4bcca973b3b451be07aae2d85d\";'),(94,'extensionScannerNotAffected','495b6dbd9d1177542a6a517dd465341a',_binary 's:32:\"495b6dbd9d1177542a6a517dd465341a\";'),(95,'extensionScannerNotAffected','bf0cb1ebffe995bc39723cb13738ea6a',_binary 's:32:\"bf0cb1ebffe995bc39723cb13738ea6a\";'),(96,'extensionScannerNotAffected','beca0f5ba50c5d2b5f353ab75c518dbb',_binary 's:32:\"beca0f5ba50c5d2b5f353ab75c518dbb\";'),(97,'extensionScannerNotAffected','a870578153931344fab060242d58d0a4',_binary 's:32:\"a870578153931344fab060242d58d0a4\";'),(98,'extensionScannerNotAffected','903e049f3830f4d521ae8b1b140ea6da',_binary 's:32:\"903e049f3830f4d521ae8b1b140ea6da\";'),(99,'extensionScannerNotAffected','244de3e3bf16bd6ecc7abdd9f5134baa',_binary 's:32:\"244de3e3bf16bd6ecc7abdd9f5134baa\";'),(100,'extensionScannerNotAffected','3eae74ce8bf1dda88a3956580f0ee095',_binary 's:32:\"3eae74ce8bf1dda88a3956580f0ee095\";'),(101,'extensionScannerNotAffected','dc4027985e6fc1e36977379ef3f9dcf3',_binary 's:32:\"dc4027985e6fc1e36977379ef3f9dcf3\";'),(102,'extensionScannerNotAffected','9f82ca1ddade0553507e9c8ac6f1d7a2',_binary 's:32:\"9f82ca1ddade0553507e9c8ac6f1d7a2\";'),(103,'extensionScannerNotAffected','95b239b067877f564b9f0aa505974841',_binary 's:32:\"95b239b067877f564b9f0aa505974841\";'),(104,'extensionScannerNotAffected','cc57748e8798b0147782cf3a9e868015',_binary 's:32:\"cc57748e8798b0147782cf3a9e868015\";'),(105,'extensionScannerNotAffected','00d7d3a7bb4187e3a130a8207ce29332',_binary 's:32:\"00d7d3a7bb4187e3a130a8207ce29332\";'),(106,'extensionScannerNotAffected','8c0a471eb1e62a9df7e2a0ab710144ab',_binary 's:32:\"8c0a471eb1e62a9df7e2a0ab710144ab\";'),(107,'extensionScannerNotAffected','fab5136ce7b5f9f57c60a9039df2e5ef',_binary 's:32:\"fab5136ce7b5f9f57c60a9039df2e5ef\";'),(108,'extensionScannerNotAffected','cc713e699e7593f9415a896a262ebc8e',_binary 's:32:\"cc713e699e7593f9415a896a262ebc8e\";'),(109,'extensionScannerNotAffected','4446e163f2527d13cef9b690a59d41a0',_binary 's:32:\"4446e163f2527d13cef9b690a59d41a0\";'),(110,'extensionScannerNotAffected','833341ba546d9e185948509a7e393971',_binary 's:32:\"833341ba546d9e185948509a7e393971\";'),(111,'extensionScannerNotAffected','3b082c2f15d19c95a2274f2f9cf67936',_binary 's:32:\"3b082c2f15d19c95a2274f2f9cf67936\";'),(112,'extensionScannerNotAffected','d998d1c5937bc157a2eb5f3bbcc03eb6',_binary 's:32:\"d998d1c5937bc157a2eb5f3bbcc03eb6\";'),(113,'extensionScannerNotAffected','40eb418fb3ba92596aa54b3bdb22e6c5',_binary 's:32:\"40eb418fb3ba92596aa54b3bdb22e6c5\";'),(114,'extensionScannerNotAffected','fbccd8af153362f5b3b2ab590f2cc8d8',_binary 's:32:\"fbccd8af153362f5b3b2ab590f2cc8d8\";'),(115,'extensionScannerNotAffected','5d6acfcf63df912878a53dfb4f88f66c',_binary 's:32:\"5d6acfcf63df912878a53dfb4f88f66c\";'),(116,'extensionScannerNotAffected','ea758535c683fee78b32d2683f912624',_binary 's:32:\"ea758535c683fee78b32d2683f912624\";'),(117,'extensionScannerNotAffected','f55d0a8bf02260a90d0dfd562fd3011f',_binary 's:32:\"f55d0a8bf02260a90d0dfd562fd3011f\";'),(118,'extensionScannerNotAffected','9522a14ae76b26966c6383c435872cf2',_binary 's:32:\"9522a14ae76b26966c6383c435872cf2\";'),(119,'extensionScannerNotAffected','ba01e41c82b0218933f2c05542aec142',_binary 's:32:\"ba01e41c82b0218933f2c05542aec142\";'),(120,'extensionScannerNotAffected','d544bdbde714a2ec968cb3270273fc18',_binary 's:32:\"d544bdbde714a2ec968cb3270273fc18\";'),(121,'extensionScannerNotAffected','7bf45c02a5c39c6babccb5ea80a820ac',_binary 's:32:\"7bf45c02a5c39c6babccb5ea80a820ac\";'),(122,'extensionScannerNotAffected','c526c9a91d824901b33106452ac6e8ed',_binary 's:32:\"c526c9a91d824901b33106452ac6e8ed\";'),(123,'extensionScannerNotAffected','747e64fff64dd7432e84a08fe738067a',_binary 's:32:\"747e64fff64dd7432e84a08fe738067a\";'),(124,'extensionScannerNotAffected','8d99ace37d1d1b36fbab3a9d6304e918',_binary 's:32:\"8d99ace37d1d1b36fbab3a9d6304e918\";'),(125,'extensionScannerNotAffected','75c7482d4c872119dc23cc9961de969f',_binary 's:32:\"75c7482d4c872119dc23cc9961de969f\";'),(126,'extensionScannerNotAffected','da20688d2c914dfbb71b99797a2b5231',_binary 's:32:\"da20688d2c914dfbb71b99797a2b5231\";'),(127,'extensionScannerNotAffected','72c258a3117014a78af0f85780f13910',_binary 's:32:\"72c258a3117014a78af0f85780f13910\";'),(128,'extensionScannerNotAffected','2b495b045a49a5002f033f663268e460',_binary 's:32:\"2b495b045a49a5002f033f663268e460\";'),(129,'extensionScannerNotAffected','c7d2136d519fa26627008c5c7ef0b7b8',_binary 's:32:\"c7d2136d519fa26627008c5c7ef0b7b8\";'),(130,'extensionScannerNotAffected','d8ddb8d308daf783e702d6ff4197b630',_binary 's:32:\"d8ddb8d308daf783e702d6ff4197b630\";'),(131,'extensionScannerNotAffected','329a78b9a0cb7a8fce549d1f99750626',_binary 's:32:\"329a78b9a0cb7a8fce549d1f99750626\";'),(132,'extensionScannerNotAffected','65d3c5339cf7b511f4f892427a5a294f',_binary 's:32:\"65d3c5339cf7b511f4f892427a5a294f\";'),(133,'extensionScannerNotAffected','8e57538a6b4eb5977b710dda86c19a79',_binary 's:32:\"8e57538a6b4eb5977b710dda86c19a79\";'),(134,'extensionScannerNotAffected','91ea87d2b06ea4f647e043148d951c52',_binary 's:32:\"91ea87d2b06ea4f647e043148d951c52\";'),(135,'extensionScannerNotAffected','dfaf4db240d3f4883278b2f285c5607e',_binary 's:32:\"dfaf4db240d3f4883278b2f285c5607e\";'),(136,'extensionScannerNotAffected','ef964a1af3f6b67b0d07ca547295e593',_binary 's:32:\"ef964a1af3f6b67b0d07ca547295e593\";'),(137,'extensionScannerNotAffected','db580c43603bc85dce820925c0391148',_binary 's:32:\"db580c43603bc85dce820925c0391148\";'),(138,'extensionScannerNotAffected','94935c6e14d0aff251bb66552a78774e',_binary 's:32:\"94935c6e14d0aff251bb66552a78774e\";'),(139,'extensionScannerNotAffected','8bcdcb5cb360544051b268949bfe5793',_binary 's:32:\"8bcdcb5cb360544051b268949bfe5793\";'),(140,'extensionScannerNotAffected','782a296528be3f95640e8fb1ca72b61b',_binary 's:32:\"782a296528be3f95640e8fb1ca72b61b\";'),(141,'extensionScannerNotAffected','a59be9db96adc138df8439284a35f1b1',_binary 's:32:\"a59be9db96adc138df8439284a35f1b1\";'),(142,'extensionScannerNotAffected','527ce8c82e1edc7b70b66cc1d02da129',_binary 's:32:\"527ce8c82e1edc7b70b66cc1d02da129\";'),(143,'extensionScannerNotAffected','2de6f2010831b2dbebe1c566382968d9',_binary 's:32:\"2de6f2010831b2dbebe1c566382968d9\";'),(144,'extensionScannerNotAffected','e5dd393081248480e9fa7e37a885f13a',_binary 's:32:\"e5dd393081248480e9fa7e37a885f13a\";'),(145,'extensionScannerNotAffected','da4784251913511a4be69adb66dc6248',_binary 's:32:\"da4784251913511a4be69adb66dc6248\";'),(146,'extensionScannerNotAffected','6e37d32633631b068e06299c8acffee3',_binary 's:32:\"6e37d32633631b068e06299c8acffee3\";'),(147,'extensionScannerNotAffected','144cc46f4036b271da85fa68c7e31ec6',_binary 's:32:\"144cc46f4036b271da85fa68c7e31ec6\";'),(148,'extensionScannerNotAffected','cf8d1a14b1b80b1832a9f6f5535c7246',_binary 's:32:\"cf8d1a14b1b80b1832a9f6f5535c7246\";'),(149,'extensionScannerNotAffected','97d8364d14683e5c99cf3d61d245757b',_binary 's:32:\"97d8364d14683e5c99cf3d61d245757b\";'),(150,'extensionScannerNotAffected','0c459dcc62586cfa204795abe134f611',_binary 's:32:\"0c459dcc62586cfa204795abe134f611\";'),(151,'extensionScannerNotAffected','dd4f137389ebdeacaae2a4dec7d17993',_binary 's:32:\"dd4f137389ebdeacaae2a4dec7d17993\";'),(152,'extensionScannerNotAffected','6539b2eef11f6335580d5c96f1ba17de',_binary 's:32:\"6539b2eef11f6335580d5c96f1ba17de\";'),(153,'extensionScannerNotAffected','e76d8583899c660d9b8f059f1e70b398',_binary 's:32:\"e76d8583899c660d9b8f059f1e70b398\";'),(154,'extensionScannerNotAffected','bf64fd0e3399cba335ba6da86212a590',_binary 's:32:\"bf64fd0e3399cba335ba6da86212a590\";'),(155,'extensionScannerNotAffected','39927fae0bdc126decd803df9975697b',_binary 's:32:\"39927fae0bdc126decd803df9975697b\";'),(156,'extensionScannerNotAffected','543adcda9a07c1be6be6863f4fc3de89',_binary 's:32:\"543adcda9a07c1be6be6863f4fc3de89\";'),(157,'extensionScannerNotAffected','606a1ff02c65e772c51feaa1ea681234',_binary 's:32:\"606a1ff02c65e772c51feaa1ea681234\";'),(158,'extensionScannerNotAffected','151c9d2f31222002de31eed443ffbe64',_binary 's:32:\"151c9d2f31222002de31eed443ffbe64\";'),(159,'extensionScannerNotAffected','b14123a706b2df80a6f05db2948c20a7',_binary 's:32:\"b14123a706b2df80a6f05db2948c20a7\";'),(160,'extensionScannerNotAffected','cbd21e7f03086cafbdc9e29aca0d7de9',_binary 's:32:\"cbd21e7f03086cafbdc9e29aca0d7de9\";'),(161,'extensionScannerNotAffected','27ab68dff32c68264a8f5052ce2bfa39',_binary 's:32:\"27ab68dff32c68264a8f5052ce2bfa39\";'),(162,'extensionScannerNotAffected','6b28fe44430f57ad36119ad15d1aed79',_binary 's:32:\"6b28fe44430f57ad36119ad15d1aed79\";'),(163,'extensionScannerNotAffected','66ed9c10913b6a895e8f53f17d242d2a',_binary 's:32:\"66ed9c10913b6a895e8f53f17d242d2a\";'),(164,'extensionScannerNotAffected','a2541c8ae57e07e86192ed8cc132718a',_binary 's:32:\"a2541c8ae57e07e86192ed8cc132718a\";'),(165,'extensionScannerNotAffected','e145f6079b7f9d0ec06e99a2b076c0a8',_binary 's:32:\"e145f6079b7f9d0ec06e99a2b076c0a8\";'),(166,'extensionScannerNotAffected','538801047ed609227d9cf1ff6302f69d',_binary 's:32:\"538801047ed609227d9cf1ff6302f69d\";'),(167,'extensionScannerNotAffected','fe9d92d904771d25be5c921f92995d2c',_binary 's:32:\"fe9d92d904771d25be5c921f92995d2c\";'),(168,'extensionScannerNotAffected','2d7e49260d1feaedd48d810213ffb538',_binary 's:32:\"2d7e49260d1feaedd48d810213ffb538\";'),(169,'extensionScannerNotAffected','ad00c9bfc110d595723c667ef024d8e9',_binary 's:32:\"ad00c9bfc110d595723c667ef024d8e9\";'),(170,'extensionScannerNotAffected','1476ca2c06acc6b6cb8bac78b0633bf6',_binary 's:32:\"1476ca2c06acc6b6cb8bac78b0633bf6\";'),(171,'extensionScannerNotAffected','9f6b69352cc9437112c62aa2b5543692',_binary 's:32:\"9f6b69352cc9437112c62aa2b5543692\";'),(172,'extensionScannerNotAffected','fd1adc61cb6d986a3e7a4dd65609fcba',_binary 's:32:\"fd1adc61cb6d986a3e7a4dd65609fcba\";'),(173,'extensionScannerNotAffected','b53560dfb6ad7c0d067ec228b9d158d6',_binary 's:32:\"b53560dfb6ad7c0d067ec228b9d158d6\";'),(174,'extensionScannerNotAffected','9db18807754661411e84d91946f6c47b',_binary 's:32:\"9db18807754661411e84d91946f6c47b\";'),(175,'extensionScannerNotAffected','3af67f0226440b92916c9ac47ecc0f45',_binary 's:32:\"3af67f0226440b92916c9ac47ecc0f45\";'),(176,'extensionScannerNotAffected','6c5f4f222fa331e0d9c48f759e24ae74',_binary 's:32:\"6c5f4f222fa331e0d9c48f759e24ae74\";'),(177,'extensionScannerNotAffected','395c667c9c22c654b68e8602b377ef7e',_binary 's:32:\"395c667c9c22c654b68e8602b377ef7e\";'),(178,'extensionScannerNotAffected','95a788a9e8bdf766bb7b24c46f66589b',_binary 's:32:\"95a788a9e8bdf766bb7b24c46f66589b\";'),(179,'extensionScannerNotAffected','bd3841546ff3c306e782b477cda497f0',_binary 's:32:\"bd3841546ff3c306e782b477cda497f0\";'),(180,'extensionScannerNotAffected','0a6f2835e55a235c905a1705df41cee7',_binary 's:32:\"0a6f2835e55a235c905a1705df41cee7\";'),(181,'extensionScannerNotAffected','5590384861718c5d1aec43a3a7aeed9d',_binary 's:32:\"5590384861718c5d1aec43a3a7aeed9d\";'),(182,'extensionScannerNotAffected','388a9b5cf2dc024abce1ccda0c00666b',_binary 's:32:\"388a9b5cf2dc024abce1ccda0c00666b\";'),(183,'extensionScannerNotAffected','53f2e9f92611d61893d2d1b9d2131d15',_binary 's:32:\"53f2e9f92611d61893d2d1b9d2131d15\";'),(184,'extensionScannerNotAffected','c2cb531b3769bfe93d36c2d6a43a436a',_binary 's:32:\"c2cb531b3769bfe93d36c2d6a43a436a\";'),(185,'extensionScannerNotAffected','aea1390a84313285af1f87cb50d8213e',_binary 's:32:\"aea1390a84313285af1f87cb50d8213e\";'),(186,'extensionScannerNotAffected','96c7a3f1fc0fe11bcdc7115a31b16f93',_binary 's:32:\"96c7a3f1fc0fe11bcdc7115a31b16f93\";'),(187,'extensionScannerNotAffected','ff0771e45e03394ed17c8783e5e083d6',_binary 's:32:\"ff0771e45e03394ed17c8783e5e083d6\";'),(188,'extensionScannerNotAffected','f9d942cb02be7865d4818bda14172e5e',_binary 's:32:\"f9d942cb02be7865d4818bda14172e5e\";'),(189,'extensionScannerNotAffected','dc7a8fcd17770995da8b75572938b712',_binary 's:32:\"dc7a8fcd17770995da8b75572938b712\";'),(190,'extensionScannerNotAffected','d70cecc33fb1c59414665bc6865b8684',_binary 's:32:\"d70cecc33fb1c59414665bc6865b8684\";'),(191,'extensionScannerNotAffected','8181fb86d49358beab7d215f40f9b9d0',_binary 's:32:\"8181fb86d49358beab7d215f40f9b9d0\";'),(192,'extensionScannerNotAffected','846385e26abb209c7484fae2f0e714a4',_binary 's:32:\"846385e26abb209c7484fae2f0e714a4\";'),(193,'extensionScannerNotAffected','f7cc244676b74f17ca6bdb46707637f4',_binary 's:32:\"f7cc244676b74f17ca6bdb46707637f4\";'),(194,'extensionScannerNotAffected','ec85f46288965aa648ce9a1e37f2b58a',_binary 's:32:\"ec85f46288965aa648ce9a1e37f2b58a\";'),(195,'extensionScannerNotAffected','97459c0367812d1fb78d00f024ff20aa',_binary 's:32:\"97459c0367812d1fb78d00f024ff20aa\";'),(196,'core','sys_refindex_lastUpdate',_binary 'i:1542289923;');
+INSERT INTO `sys_registry` VALUES (1,'installUpdate','TYPO3\\CMS\\Install\\Updates\\ExtensionManagerTables',_binary 'i:1;'),(2,'installUpdate','TYPO3\\CMS\\Install\\Updates\\WizardDoneToRegistry',_binary 'i:1;'),(3,'installUpdate','TYPO3\\CMS\\Install\\Updates\\StartModuleUpdate',_binary 'i:1;'),(4,'installUpdate','TYPO3\\CMS\\Install\\Updates\\FrontendUserImageUpdateWizard',_binary 'i:1;'),(5,'installUpdate','TYPO3\\CMS\\Install\\Updates\\DatabaseRowsUpdateWizard',_binary 'i:1;'),(6,'installUpdate','TYPO3\\CMS\\Install\\Updates\\CommandLineBackendUserRemovalUpdate',_binary 'i:1;'),(7,'installUpdate','TYPO3\\CMS\\Install\\Updates\\FillTranslationSourceField',_binary 'i:1;'),(8,'installUpdate','TYPO3\\CMS\\Install\\Updates\\SectionFrameToFrameClassUpdate',_binary 'i:1;'),(9,'installUpdate','TYPO3\\CMS\\Install\\Updates\\SplitMenusUpdate',_binary 'i:1;'),(10,'installUpdate','TYPO3\\CMS\\Install\\Updates\\BulletContentElementUpdate',_binary 'i:1;'),(11,'installUpdate','TYPO3\\CMS\\Install\\Updates\\UploadContentElementUpdate',_binary 'i:1;'),(12,'installUpdate','TYPO3\\CMS\\Install\\Updates\\MigrateFscStaticTemplateUpdate',_binary 'i:1;'),(13,'installUpdate','TYPO3\\CMS\\Install\\Updates\\FileReferenceUpdate',_binary 'i:1;'),(14,'installUpdate','TYPO3\\CMS\\Install\\Updates\\MigrateFeSessionDataUpdate',_binary 'i:1;'),(15,'installUpdate','TYPO3\\CMS\\Install\\Updates\\Compatibility7ExtractionUpdate',_binary 'i:1;'),(16,'installUpdate','TYPO3\\CMS\\Install\\Updates\\FormLegacyExtractionUpdate',_binary 'i:1;'),(17,'installUpdate','TYPO3\\CMS\\Install\\Updates\\RteHtmlAreaExtractionUpdate',_binary 'i:1;'),(18,'installUpdate','TYPO3\\CMS\\Install\\Updates\\LanguageSortingUpdate',_binary 'i:1;'),(19,'installUpdate','TYPO3\\CMS\\Install\\Updates\\Typo3DbExtractionUpdate',_binary 'i:1;'),(20,'installUpdate','TYPO3\\CMS\\Install\\Updates\\FuncExtractionUpdate',_binary 'i:1;'),(21,'installUpdate','TYPO3\\CMS\\Install\\Updates\\MigrateUrlTypesInPagesUpdate',_binary 'i:1;'),(22,'installUpdate','TYPO3\\CMS\\Install\\Updates\\SeparateSysHistoryFromSysLogUpdate',_binary 'i:1;'),(23,'installUpdate','TYPO3\\CMS\\Install\\Updates\\RedirectExtractionUpdate',_binary 'i:1;'),(24,'installUpdate','TYPO3\\CMS\\Install\\Updates\\BackendUserStartModuleUpdate',_binary 'i:1;'),(25,'installUpdate','TYPO3\\CMS\\Install\\Updates\\MigratePagesLanguageOverlayUpdate',_binary 'i:1;'),(26,'installUpdate','TYPO3\\CMS\\Install\\Updates\\MigratePagesLanguageOverlayBeGroupsAccessRights',_binary 'i:1;'),(27,'installUpdate','TYPO3\\CMS\\Install\\Updates\\BackendLayoutIconUpdateWizard',_binary 'i:1;'),(28,'installUpdate','TYPO3\\CMS\\Install\\Updates\\RedirectsExtensionUpdate',_binary 'i:1;'),(29,'installUpdate','TYPO3\\CMS\\Install\\Updates\\AdminPanelInstall',_binary 'i:1;'),(30,'installUpdate','TYPO3\\CMS\\Install\\Updates\\PopulatePageSlugs',_binary 'i:1;'),(31,'installUpdate','TYPO3\\CMS\\Install\\Updates\\Argon2iPasswordHashes',_binary 'i:1;'),(32,'installUpdate','TYPO3\\CMS\\Form\\Hooks\\FormFileExtensionUpdate',_binary 'i:1;'),(33,'core','formProtectionSessionToken:1',_binary 's:64:\"355b93cf128516e51241fe8aeca89e9e1f67e203cfed567f003f352616fac55b\";'),(34,'extensionDataImport','typo3conf/ext/news/ext_tables_static+adt.sql',_binary 's:0:\"\";'),(35,'extensionScannerNotAffected','b6058a0dc990a2c719ebaf093f5fc02f',_binary 's:32:\"b6058a0dc990a2c719ebaf093f5fc02f\";'),(36,'extensionScannerNotAffected','e872218b822e4a3de6e5ae039fdd2f60',_binary 's:32:\"e872218b822e4a3de6e5ae039fdd2f60\";'),(37,'extensionScannerNotAffected','84958529cec39361876616e3725c4f9b',_binary 's:32:\"84958529cec39361876616e3725c4f9b\";'),(38,'extensionScannerNotAffected','4d29c858bfb700ee214348c776bd7fee',_binary 's:32:\"4d29c858bfb700ee214348c776bd7fee\";'),(39,'extensionScannerNotAffected','1c5a05a66768940687520074a52c2d99',_binary 's:32:\"1c5a05a66768940687520074a52c2d99\";'),(40,'extensionScannerNotAffected','27cb6bf0a45fb36cd7ac73a2c0a572ef',_binary 's:32:\"27cb6bf0a45fb36cd7ac73a2c0a572ef\";'),(41,'extensionScannerNotAffected','256574d860279e77e16ec42976515826',_binary 's:32:\"256574d860279e77e16ec42976515826\";'),(42,'extensionScannerNotAffected','7ae9bb35f967eb5454fdad16c2dda2a0',_binary 's:32:\"7ae9bb35f967eb5454fdad16c2dda2a0\";'),(43,'extensionScannerNotAffected','09d630c80626c1b76089fcc5c01a6ebb',_binary 's:32:\"09d630c80626c1b76089fcc5c01a6ebb\";'),(44,'extensionScannerNotAffected','515ba3726a1dfded6ef6b83d1581ec83',_binary 's:32:\"515ba3726a1dfded6ef6b83d1581ec83\";'),(45,'extensionScannerNotAffected','b574d667526a9ced164a0a2094790f8e',_binary 's:32:\"b574d667526a9ced164a0a2094790f8e\";'),(46,'extensionScannerNotAffected','5c839ed8d50245529e253ef4eea38268',_binary 's:32:\"5c839ed8d50245529e253ef4eea38268\";'),(47,'extensionScannerNotAffected','3f8faefc1fe5b54d8903efdfee5ac291',_binary 's:32:\"3f8faefc1fe5b54d8903efdfee5ac291\";'),(48,'extensionScannerNotAffected','3ea2e88429bdcbbd9cfe70d1705d0823',_binary 's:32:\"3ea2e88429bdcbbd9cfe70d1705d0823\";'),(49,'extensionScannerNotAffected','67442386f8c3115084d1214937e3b4a8',_binary 's:32:\"67442386f8c3115084d1214937e3b4a8\";'),(50,'extensionScannerNotAffected','aeba5d0706fd347bdc5272f996118fea',_binary 's:32:\"aeba5d0706fd347bdc5272f996118fea\";'),(51,'extensionScannerNotAffected','c406c1b4bb1a5dfd9c08d4559bb8e8ee',_binary 's:32:\"c406c1b4bb1a5dfd9c08d4559bb8e8ee\";'),(52,'extensionScannerNotAffected','66917c534366520df96a319aa595aadf',_binary 's:32:\"66917c534366520df96a319aa595aadf\";'),(53,'extensionScannerNotAffected','c7bfdc48f32344ba1d1ae63f65de7271',_binary 's:32:\"c7bfdc48f32344ba1d1ae63f65de7271\";'),(54,'extensionScannerNotAffected','b6955ff14a49b23c4b55a16ceda2f53f',_binary 's:32:\"b6955ff14a49b23c4b55a16ceda2f53f\";'),(55,'extensionScannerNotAffected','69fd020132adb9da7343bbdd09cc7207',_binary 's:32:\"69fd020132adb9da7343bbdd09cc7207\";'),(56,'extensionScannerNotAffected','13d6f701b41fb36f0e0083a22bb85002',_binary 's:32:\"13d6f701b41fb36f0e0083a22bb85002\";'),(57,'extensionScannerNotAffected','4fb09912c38414756af594202cb2f690',_binary 's:32:\"4fb09912c38414756af594202cb2f690\";'),(58,'extensionScannerNotAffected','02a805a392483b732732f93901406ceb',_binary 's:32:\"02a805a392483b732732f93901406ceb\";'),(59,'extensionScannerNotAffected','19376586fba8888a27efd8af6a4583cf',_binary 's:32:\"19376586fba8888a27efd8af6a4583cf\";'),(60,'extensionScannerNotAffected','0d9fbf4a461435c9eeedb3cc130dace5',_binary 's:32:\"0d9fbf4a461435c9eeedb3cc130dace5\";'),(61,'extensionScannerNotAffected','491537cef95923e1e1df8619a5bd9924',_binary 's:32:\"491537cef95923e1e1df8619a5bd9924\";'),(62,'extensionScannerNotAffected','2c3b83bfc1f271ba9a860c00e99d9b6f',_binary 's:32:\"2c3b83bfc1f271ba9a860c00e99d9b6f\";'),(63,'extensionScannerNotAffected','e307efdd6ecb8c3fd0bea412d0a0db1c',_binary 's:32:\"e307efdd6ecb8c3fd0bea412d0a0db1c\";'),(64,'extensionScannerNotAffected','b7dcfcaa6b61b22e1ed9e3040eb7af44',_binary 's:32:\"b7dcfcaa6b61b22e1ed9e3040eb7af44\";'),(65,'extensionScannerNotAffected','0d60eaef00c478199d475ca60d7340c7',_binary 's:32:\"0d60eaef00c478199d475ca60d7340c7\";'),(66,'extensionScannerNotAffected','bd1929903ae77d7a33efa0feb711cfb6',_binary 's:32:\"bd1929903ae77d7a33efa0feb711cfb6\";'),(67,'extensionScannerNotAffected','0bee48ca87fa9b61a2a7047f53e638d9',_binary 's:32:\"0bee48ca87fa9b61a2a7047f53e638d9\";'),(68,'extensionScannerNotAffected','bb9a966a09e9ef5a034900a4bca6ef96',_binary 's:32:\"bb9a966a09e9ef5a034900a4bca6ef96\";'),(69,'extensionScannerNotAffected','b75fd56db65b57134ee3a392333164e6',_binary 's:32:\"b75fd56db65b57134ee3a392333164e6\";'),(70,'extensionScannerNotAffected','5dfdf6cf1184deae70be20b67437408a',_binary 's:32:\"5dfdf6cf1184deae70be20b67437408a\";'),(71,'extensionScannerNotAffected','3a288da8230d042aa0fefe3c9d010fc9',_binary 's:32:\"3a288da8230d042aa0fefe3c9d010fc9\";'),(72,'extensionScannerNotAffected','7f95a3579a446aecec1217a456433f0f',_binary 's:32:\"7f95a3579a446aecec1217a456433f0f\";'),(73,'extensionScannerNotAffected','12b246daad701f9511c661587d1f4e6a',_binary 's:32:\"12b246daad701f9511c661587d1f4e6a\";'),(74,'extensionScannerNotAffected','d1e1110b267f6c82aac369fe44d1026f',_binary 's:32:\"d1e1110b267f6c82aac369fe44d1026f\";'),(75,'extensionScannerNotAffected','71ebec4960c1b84c199c5a33277b084d',_binary 's:32:\"71ebec4960c1b84c199c5a33277b084d\";'),(76,'extensionScannerNotAffected','09e682d75e634e3ceb0f7f98527b1505',_binary 's:32:\"09e682d75e634e3ceb0f7f98527b1505\";'),(77,'extensionScannerNotAffected','0aaa78219033da9093ecded3a045d686',_binary 's:32:\"0aaa78219033da9093ecded3a045d686\";'),(78,'extensionScannerNotAffected','a8b76974d80653cd9d3e19cf8fbbc54d',_binary 's:32:\"a8b76974d80653cd9d3e19cf8fbbc54d\";'),(79,'extensionScannerNotAffected','e1a09d1fd8685d6062cf3e7799e126f9',_binary 's:32:\"e1a09d1fd8685d6062cf3e7799e126f9\";'),(80,'extensionScannerNotAffected','37263679ea002b67d6c926e96199e0cb',_binary 's:32:\"37263679ea002b67d6c926e96199e0cb\";'),(81,'extensionScannerNotAffected','e41e345fdcabb5d16cf9cbcaf5f6770c',_binary 's:32:\"e41e345fdcabb5d16cf9cbcaf5f6770c\";'),(82,'extensionScannerNotAffected','e164383a65972e81d1d4ceed1b787c5c',_binary 's:32:\"e164383a65972e81d1d4ceed1b787c5c\";'),(83,'extensionScannerNotAffected','31eabeee23cfbd2e810ec7163f298fe2',_binary 's:32:\"31eabeee23cfbd2e810ec7163f298fe2\";'),(84,'extensionScannerNotAffected','150c7c72278375a02383fdf867b9a14e',_binary 's:32:\"150c7c72278375a02383fdf867b9a14e\";'),(85,'extensionScannerNotAffected','6432bc49b3ce263444fc37946991380f',_binary 's:32:\"6432bc49b3ce263444fc37946991380f\";'),(86,'extensionScannerNotAffected','bdc0f4f5595a74816951068c8e603ff5',_binary 's:32:\"bdc0f4f5595a74816951068c8e603ff5\";'),(87,'extensionScannerNotAffected','92344b99f1fe6cc5a0510fc906ec7307',_binary 's:32:\"92344b99f1fe6cc5a0510fc906ec7307\";'),(88,'extensionScannerNotAffected','6366dd14c672aa71ebf03205723f68a2',_binary 's:32:\"6366dd14c672aa71ebf03205723f68a2\";'),(89,'extensionScannerNotAffected','0de71175cd69f6922e46015ac1646084',_binary 's:32:\"0de71175cd69f6922e46015ac1646084\";'),(90,'extensionScannerNotAffected','5e3556a907f7c423702aafe5bd21283b',_binary 's:32:\"5e3556a907f7c423702aafe5bd21283b\";'),(91,'extensionScannerNotAffected','21afaa7b702cf1385561bd6b642116a7',_binary 's:32:\"21afaa7b702cf1385561bd6b642116a7\";'),(92,'extensionScannerNotAffected','5f19c061916be2a684833b270fd025ff',_binary 's:32:\"5f19c061916be2a684833b270fd025ff\";'),(93,'extensionScannerNotAffected','397c9a4bcca973b3b451be07aae2d85d',_binary 's:32:\"397c9a4bcca973b3b451be07aae2d85d\";'),(94,'extensionScannerNotAffected','495b6dbd9d1177542a6a517dd465341a',_binary 's:32:\"495b6dbd9d1177542a6a517dd465341a\";'),(95,'extensionScannerNotAffected','bf0cb1ebffe995bc39723cb13738ea6a',_binary 's:32:\"bf0cb1ebffe995bc39723cb13738ea6a\";'),(96,'extensionScannerNotAffected','beca0f5ba50c5d2b5f353ab75c518dbb',_binary 's:32:\"beca0f5ba50c5d2b5f353ab75c518dbb\";'),(97,'extensionScannerNotAffected','a870578153931344fab060242d58d0a4',_binary 's:32:\"a870578153931344fab060242d58d0a4\";'),(98,'extensionScannerNotAffected','903e049f3830f4d521ae8b1b140ea6da',_binary 's:32:\"903e049f3830f4d521ae8b1b140ea6da\";'),(99,'extensionScannerNotAffected','244de3e3bf16bd6ecc7abdd9f5134baa',_binary 's:32:\"244de3e3bf16bd6ecc7abdd9f5134baa\";'),(100,'extensionScannerNotAffected','3eae74ce8bf1dda88a3956580f0ee095',_binary 's:32:\"3eae74ce8bf1dda88a3956580f0ee095\";'),(101,'extensionScannerNotAffected','dc4027985e6fc1e36977379ef3f9dcf3',_binary 's:32:\"dc4027985e6fc1e36977379ef3f9dcf3\";'),(102,'extensionScannerNotAffected','9f82ca1ddade0553507e9c8ac6f1d7a2',_binary 's:32:\"9f82ca1ddade0553507e9c8ac6f1d7a2\";'),(103,'extensionScannerNotAffected','95b239b067877f564b9f0aa505974841',_binary 's:32:\"95b239b067877f564b9f0aa505974841\";'),(104,'extensionScannerNotAffected','cc57748e8798b0147782cf3a9e868015',_binary 's:32:\"cc57748e8798b0147782cf3a9e868015\";'),(105,'extensionScannerNotAffected','00d7d3a7bb4187e3a130a8207ce29332',_binary 's:32:\"00d7d3a7bb4187e3a130a8207ce29332\";'),(106,'extensionScannerNotAffected','8c0a471eb1e62a9df7e2a0ab710144ab',_binary 's:32:\"8c0a471eb1e62a9df7e2a0ab710144ab\";'),(107,'extensionScannerNotAffected','fab5136ce7b5f9f57c60a9039df2e5ef',_binary 's:32:\"fab5136ce7b5f9f57c60a9039df2e5ef\";'),(108,'extensionScannerNotAffected','cc713e699e7593f9415a896a262ebc8e',_binary 's:32:\"cc713e699e7593f9415a896a262ebc8e\";'),(109,'extensionScannerNotAffected','4446e163f2527d13cef9b690a59d41a0',_binary 's:32:\"4446e163f2527d13cef9b690a59d41a0\";'),(110,'extensionScannerNotAffected','833341ba546d9e185948509a7e393971',_binary 's:32:\"833341ba546d9e185948509a7e393971\";'),(111,'extensionScannerNotAffected','3b082c2f15d19c95a2274f2f9cf67936',_binary 's:32:\"3b082c2f15d19c95a2274f2f9cf67936\";'),(112,'extensionScannerNotAffected','d998d1c5937bc157a2eb5f3bbcc03eb6',_binary 's:32:\"d998d1c5937bc157a2eb5f3bbcc03eb6\";'),(113,'extensionScannerNotAffected','40eb418fb3ba92596aa54b3bdb22e6c5',_binary 's:32:\"40eb418fb3ba92596aa54b3bdb22e6c5\";'),(114,'extensionScannerNotAffected','fbccd8af153362f5b3b2ab590f2cc8d8',_binary 's:32:\"fbccd8af153362f5b3b2ab590f2cc8d8\";'),(115,'extensionScannerNotAffected','5d6acfcf63df912878a53dfb4f88f66c',_binary 's:32:\"5d6acfcf63df912878a53dfb4f88f66c\";'),(116,'extensionScannerNotAffected','ea758535c683fee78b32d2683f912624',_binary 's:32:\"ea758535c683fee78b32d2683f912624\";'),(117,'extensionScannerNotAffected','f55d0a8bf02260a90d0dfd562fd3011f',_binary 's:32:\"f55d0a8bf02260a90d0dfd562fd3011f\";'),(118,'extensionScannerNotAffected','9522a14ae76b26966c6383c435872cf2',_binary 's:32:\"9522a14ae76b26966c6383c435872cf2\";'),(119,'extensionScannerNotAffected','ba01e41c82b0218933f2c05542aec142',_binary 's:32:\"ba01e41c82b0218933f2c05542aec142\";'),(120,'extensionScannerNotAffected','d544bdbde714a2ec968cb3270273fc18',_binary 's:32:\"d544bdbde714a2ec968cb3270273fc18\";'),(121,'extensionScannerNotAffected','7bf45c02a5c39c6babccb5ea80a820ac',_binary 's:32:\"7bf45c02a5c39c6babccb5ea80a820ac\";'),(122,'extensionScannerNotAffected','c526c9a91d824901b33106452ac6e8ed',_binary 's:32:\"c526c9a91d824901b33106452ac6e8ed\";'),(123,'extensionScannerNotAffected','747e64fff64dd7432e84a08fe738067a',_binary 's:32:\"747e64fff64dd7432e84a08fe738067a\";'),(124,'extensionScannerNotAffected','8d99ace37d1d1b36fbab3a9d6304e918',_binary 's:32:\"8d99ace37d1d1b36fbab3a9d6304e918\";'),(125,'extensionScannerNotAffected','75c7482d4c872119dc23cc9961de969f',_binary 's:32:\"75c7482d4c872119dc23cc9961de969f\";'),(126,'extensionScannerNotAffected','da20688d2c914dfbb71b99797a2b5231',_binary 's:32:\"da20688d2c914dfbb71b99797a2b5231\";'),(127,'extensionScannerNotAffected','72c258a3117014a78af0f85780f13910',_binary 's:32:\"72c258a3117014a78af0f85780f13910\";'),(128,'extensionScannerNotAffected','2b495b045a49a5002f033f663268e460',_binary 's:32:\"2b495b045a49a5002f033f663268e460\";'),(129,'extensionScannerNotAffected','c7d2136d519fa26627008c5c7ef0b7b8',_binary 's:32:\"c7d2136d519fa26627008c5c7ef0b7b8\";'),(130,'extensionScannerNotAffected','d8ddb8d308daf783e702d6ff4197b630',_binary 's:32:\"d8ddb8d308daf783e702d6ff4197b630\";'),(131,'extensionScannerNotAffected','329a78b9a0cb7a8fce549d1f99750626',_binary 's:32:\"329a78b9a0cb7a8fce549d1f99750626\";'),(132,'extensionScannerNotAffected','65d3c5339cf7b511f4f892427a5a294f',_binary 's:32:\"65d3c5339cf7b511f4f892427a5a294f\";'),(133,'extensionScannerNotAffected','8e57538a6b4eb5977b710dda86c19a79',_binary 's:32:\"8e57538a6b4eb5977b710dda86c19a79\";'),(134,'extensionScannerNotAffected','91ea87d2b06ea4f647e043148d951c52',_binary 's:32:\"91ea87d2b06ea4f647e043148d951c52\";'),(135,'extensionScannerNotAffected','dfaf4db240d3f4883278b2f285c5607e',_binary 's:32:\"dfaf4db240d3f4883278b2f285c5607e\";'),(136,'extensionScannerNotAffected','ef964a1af3f6b67b0d07ca547295e593',_binary 's:32:\"ef964a1af3f6b67b0d07ca547295e593\";'),(137,'extensionScannerNotAffected','db580c43603bc85dce820925c0391148',_binary 's:32:\"db580c43603bc85dce820925c0391148\";'),(138,'extensionScannerNotAffected','94935c6e14d0aff251bb66552a78774e',_binary 's:32:\"94935c6e14d0aff251bb66552a78774e\";'),(139,'extensionScannerNotAffected','8bcdcb5cb360544051b268949bfe5793',_binary 's:32:\"8bcdcb5cb360544051b268949bfe5793\";'),(140,'extensionScannerNotAffected','782a296528be3f95640e8fb1ca72b61b',_binary 's:32:\"782a296528be3f95640e8fb1ca72b61b\";'),(141,'extensionScannerNotAffected','a59be9db96adc138df8439284a35f1b1',_binary 's:32:\"a59be9db96adc138df8439284a35f1b1\";'),(142,'extensionScannerNotAffected','527ce8c82e1edc7b70b66cc1d02da129',_binary 's:32:\"527ce8c82e1edc7b70b66cc1d02da129\";'),(143,'extensionScannerNotAffected','2de6f2010831b2dbebe1c566382968d9',_binary 's:32:\"2de6f2010831b2dbebe1c566382968d9\";'),(144,'extensionScannerNotAffected','e5dd393081248480e9fa7e37a885f13a',_binary 's:32:\"e5dd393081248480e9fa7e37a885f13a\";'),(145,'extensionScannerNotAffected','da4784251913511a4be69adb66dc6248',_binary 's:32:\"da4784251913511a4be69adb66dc6248\";'),(146,'extensionScannerNotAffected','6e37d32633631b068e06299c8acffee3',_binary 's:32:\"6e37d32633631b068e06299c8acffee3\";'),(147,'extensionScannerNotAffected','144cc46f4036b271da85fa68c7e31ec6',_binary 's:32:\"144cc46f4036b271da85fa68c7e31ec6\";'),(148,'extensionScannerNotAffected','cf8d1a14b1b80b1832a9f6f5535c7246',_binary 's:32:\"cf8d1a14b1b80b1832a9f6f5535c7246\";'),(149,'extensionScannerNotAffected','97d8364d14683e5c99cf3d61d245757b',_binary 's:32:\"97d8364d14683e5c99cf3d61d245757b\";'),(150,'extensionScannerNotAffected','0c459dcc62586cfa204795abe134f611',_binary 's:32:\"0c459dcc62586cfa204795abe134f611\";'),(151,'extensionScannerNotAffected','dd4f137389ebdeacaae2a4dec7d17993',_binary 's:32:\"dd4f137389ebdeacaae2a4dec7d17993\";'),(152,'extensionScannerNotAffected','6539b2eef11f6335580d5c96f1ba17de',_binary 's:32:\"6539b2eef11f6335580d5c96f1ba17de\";'),(153,'extensionScannerNotAffected','e76d8583899c660d9b8f059f1e70b398',_binary 's:32:\"e76d8583899c660d9b8f059f1e70b398\";'),(154,'extensionScannerNotAffected','bf64fd0e3399cba335ba6da86212a590',_binary 's:32:\"bf64fd0e3399cba335ba6da86212a590\";'),(155,'extensionScannerNotAffected','39927fae0bdc126decd803df9975697b',_binary 's:32:\"39927fae0bdc126decd803df9975697b\";'),(156,'extensionScannerNotAffected','543adcda9a07c1be6be6863f4fc3de89',_binary 's:32:\"543adcda9a07c1be6be6863f4fc3de89\";'),(157,'extensionScannerNotAffected','606a1ff02c65e772c51feaa1ea681234',_binary 's:32:\"606a1ff02c65e772c51feaa1ea681234\";'),(158,'extensionScannerNotAffected','151c9d2f31222002de31eed443ffbe64',_binary 's:32:\"151c9d2f31222002de31eed443ffbe64\";'),(159,'extensionScannerNotAffected','b14123a706b2df80a6f05db2948c20a7',_binary 's:32:\"b14123a706b2df80a6f05db2948c20a7\";'),(160,'extensionScannerNotAffected','cbd21e7f03086cafbdc9e29aca0d7de9',_binary 's:32:\"cbd21e7f03086cafbdc9e29aca0d7de9\";'),(161,'extensionScannerNotAffected','27ab68dff32c68264a8f5052ce2bfa39',_binary 's:32:\"27ab68dff32c68264a8f5052ce2bfa39\";'),(162,'extensionScannerNotAffected','6b28fe44430f57ad36119ad15d1aed79',_binary 's:32:\"6b28fe44430f57ad36119ad15d1aed79\";'),(163,'extensionScannerNotAffected','66ed9c10913b6a895e8f53f17d242d2a',_binary 's:32:\"66ed9c10913b6a895e8f53f17d242d2a\";'),(164,'extensionScannerNotAffected','a2541c8ae57e07e86192ed8cc132718a',_binary 's:32:\"a2541c8ae57e07e86192ed8cc132718a\";'),(165,'extensionScannerNotAffected','e145f6079b7f9d0ec06e99a2b076c0a8',_binary 's:32:\"e145f6079b7f9d0ec06e99a2b076c0a8\";'),(166,'extensionScannerNotAffected','538801047ed609227d9cf1ff6302f69d',_binary 's:32:\"538801047ed609227d9cf1ff6302f69d\";'),(167,'extensionScannerNotAffected','fe9d92d904771d25be5c921f92995d2c',_binary 's:32:\"fe9d92d904771d25be5c921f92995d2c\";'),(168,'extensionScannerNotAffected','2d7e49260d1feaedd48d810213ffb538',_binary 's:32:\"2d7e49260d1feaedd48d810213ffb538\";'),(169,'extensionScannerNotAffected','ad00c9bfc110d595723c667ef024d8e9',_binary 's:32:\"ad00c9bfc110d595723c667ef024d8e9\";'),(170,'extensionScannerNotAffected','1476ca2c06acc6b6cb8bac78b0633bf6',_binary 's:32:\"1476ca2c06acc6b6cb8bac78b0633bf6\";'),(171,'extensionScannerNotAffected','9f6b69352cc9437112c62aa2b5543692',_binary 's:32:\"9f6b69352cc9437112c62aa2b5543692\";'),(172,'extensionScannerNotAffected','fd1adc61cb6d986a3e7a4dd65609fcba',_binary 's:32:\"fd1adc61cb6d986a3e7a4dd65609fcba\";'),(173,'extensionScannerNotAffected','b53560dfb6ad7c0d067ec228b9d158d6',_binary 's:32:\"b53560dfb6ad7c0d067ec228b9d158d6\";'),(174,'extensionScannerNotAffected','9db18807754661411e84d91946f6c47b',_binary 's:32:\"9db18807754661411e84d91946f6c47b\";'),(175,'extensionScannerNotAffected','3af67f0226440b92916c9ac47ecc0f45',_binary 's:32:\"3af67f0226440b92916c9ac47ecc0f45\";'),(176,'extensionScannerNotAffected','6c5f4f222fa331e0d9c48f759e24ae74',_binary 's:32:\"6c5f4f222fa331e0d9c48f759e24ae74\";'),(177,'extensionScannerNotAffected','395c667c9c22c654b68e8602b377ef7e',_binary 's:32:\"395c667c9c22c654b68e8602b377ef7e\";'),(178,'extensionScannerNotAffected','95a788a9e8bdf766bb7b24c46f66589b',_binary 's:32:\"95a788a9e8bdf766bb7b24c46f66589b\";'),(179,'extensionScannerNotAffected','bd3841546ff3c306e782b477cda497f0',_binary 's:32:\"bd3841546ff3c306e782b477cda497f0\";'),(180,'extensionScannerNotAffected','0a6f2835e55a235c905a1705df41cee7',_binary 's:32:\"0a6f2835e55a235c905a1705df41cee7\";'),(181,'extensionScannerNotAffected','5590384861718c5d1aec43a3a7aeed9d',_binary 's:32:\"5590384861718c5d1aec43a3a7aeed9d\";'),(182,'extensionScannerNotAffected','388a9b5cf2dc024abce1ccda0c00666b',_binary 's:32:\"388a9b5cf2dc024abce1ccda0c00666b\";'),(183,'extensionScannerNotAffected','53f2e9f92611d61893d2d1b9d2131d15',_binary 's:32:\"53f2e9f92611d61893d2d1b9d2131d15\";'),(184,'extensionScannerNotAffected','c2cb531b3769bfe93d36c2d6a43a436a',_binary 's:32:\"c2cb531b3769bfe93d36c2d6a43a436a\";'),(185,'extensionScannerNotAffected','aea1390a84313285af1f87cb50d8213e',_binary 's:32:\"aea1390a84313285af1f87cb50d8213e\";'),(186,'extensionScannerNotAffected','96c7a3f1fc0fe11bcdc7115a31b16f93',_binary 's:32:\"96c7a3f1fc0fe11bcdc7115a31b16f93\";'),(187,'extensionScannerNotAffected','ff0771e45e03394ed17c8783e5e083d6',_binary 's:32:\"ff0771e45e03394ed17c8783e5e083d6\";'),(188,'extensionScannerNotAffected','f9d942cb02be7865d4818bda14172e5e',_binary 's:32:\"f9d942cb02be7865d4818bda14172e5e\";'),(189,'extensionScannerNotAffected','dc7a8fcd17770995da8b75572938b712',_binary 's:32:\"dc7a8fcd17770995da8b75572938b712\";'),(190,'extensionScannerNotAffected','d70cecc33fb1c59414665bc6865b8684',_binary 's:32:\"d70cecc33fb1c59414665bc6865b8684\";'),(191,'extensionScannerNotAffected','8181fb86d49358beab7d215f40f9b9d0',_binary 's:32:\"8181fb86d49358beab7d215f40f9b9d0\";'),(192,'extensionScannerNotAffected','846385e26abb209c7484fae2f0e714a4',_binary 's:32:\"846385e26abb209c7484fae2f0e714a4\";'),(193,'extensionScannerNotAffected','f7cc244676b74f17ca6bdb46707637f4',_binary 's:32:\"f7cc244676b74f17ca6bdb46707637f4\";'),(194,'extensionScannerNotAffected','ec85f46288965aa648ce9a1e37f2b58a',_binary 's:32:\"ec85f46288965aa648ce9a1e37f2b58a\";'),(195,'extensionScannerNotAffected','97459c0367812d1fb78d00f024ff20aa',_binary 's:32:\"97459c0367812d1fb78d00f024ff20aa\";'),(196,'core','sys_refindex_lastUpdate',_binary 'i:1555078311;'),(197,'tx_reports','status.highestSeverity',_binary 'i:2;'),(198,'extensionDataImport','typo3/sysext/workspaces/ext_tables_static+adt.sql',_binary 's:0:\"\";'),(199,'extensionDataImport','typo3/sysext/indexed_search/ext_tables_static+adt.sql',_binary 's:0:\"\";'),(200,'languagePacks','baseUrl',_binary 's:32:\"https://typo3.org/fileadmin/ter/\";');
 /*!40000 ALTER TABLE `sys_registry` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1826,6 +2221,92 @@ CREATE TABLE `sys_template` (
 LOCK TABLES `sys_template` WRITE;
 /*!40000 ALTER TABLE `sys_template` DISABLE KEYS */;
 /*!40000 ALTER TABLE `sys_template` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `sys_workspace`
+--
+
+DROP TABLE IF EXISTS `sys_workspace`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `sys_workspace` (
+  `uid` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `pid` int(10) unsigned NOT NULL DEFAULT '0',
+  `tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `deleted` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `description` text COLLATE utf8mb4_unicode_ci,
+  `title` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `adminusers` varchar(4000) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `members` varchar(4000) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `reviewers` varchar(4000) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `db_mountpoints` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `file_mountpoints` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `publish_time` int(11) NOT NULL DEFAULT '0',
+  `unpublish_time` int(11) NOT NULL DEFAULT '0',
+  `freeze` smallint(6) NOT NULL DEFAULT '0',
+  `live_edit` smallint(6) NOT NULL DEFAULT '0',
+  `vtypes` smallint(6) NOT NULL DEFAULT '0',
+  `swap_modes` smallint(6) NOT NULL DEFAULT '0',
+  `publish_access` smallint(6) NOT NULL DEFAULT '0',
+  `custom_stages` int(11) NOT NULL DEFAULT '0',
+  `stagechg_notification` smallint(6) NOT NULL DEFAULT '0',
+  `edit_notification_defaults` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `edit_notification_preselection` smallint(6) NOT NULL DEFAULT '3',
+  `edit_allow_notificaton_settings` smallint(6) NOT NULL DEFAULT '0',
+  `publish_notification_defaults` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `publish_notification_preselection` smallint(6) NOT NULL DEFAULT '3',
+  `publish_allow_notificaton_settings` smallint(6) NOT NULL DEFAULT '0',
+  `execute_notification_defaults` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `execute_notification_preselection` smallint(6) NOT NULL DEFAULT '3',
+  `execute_allow_notificaton_settings` smallint(6) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`uid`),
+  KEY `parent` (`pid`,`deleted`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `sys_workspace`
+--
+
+LOCK TABLES `sys_workspace` WRITE;
+/*!40000 ALTER TABLE `sys_workspace` DISABLE KEYS */;
+/*!40000 ALTER TABLE `sys_workspace` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `sys_workspace_stage`
+--
+
+DROP TABLE IF EXISTS `sys_workspace_stage`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `sys_workspace_stage` (
+  `uid` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `pid` int(10) unsigned NOT NULL DEFAULT '0',
+  `tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `deleted` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `sorting` int(11) NOT NULL DEFAULT '0',
+  `title` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `responsible_persons` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `default_mailcomment` text COLLATE utf8mb4_unicode_ci,
+  `parentid` int(11) NOT NULL DEFAULT '0',
+  `parenttable` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `notification_defaults` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `allow_notificaton_settings` smallint(6) NOT NULL DEFAULT '0',
+  `notification_preselection` smallint(6) NOT NULL DEFAULT '8',
+  PRIMARY KEY (`uid`),
+  KEY `parent` (`pid`,`deleted`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `sys_workspace_stage`
+--
+
+LOCK TABLES `sys_workspace_stage` WRITE;
+/*!40000 ALTER TABLE `sys_workspace_stage` DISABLE KEYS */;
+/*!40000 ALTER TABLE `sys_workspace_stage` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -1917,12 +2398,10 @@ CREATE TABLE `tt_content` (
   `table_tfoot` smallint(5) unsigned NOT NULL DEFAULT '0',
   `tx_impexp_origuid` int(11) NOT NULL DEFAULT '0',
   `categories` int(11) NOT NULL DEFAULT '0',
-  `tx_news_related_news` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`uid`),
   KEY `parent` (`pid`,`sorting`),
   KEY `t3ver_oid` (`t3ver_oid`,`t3ver_wsid`),
-  KEY `language` (`l18n_parent`,`sys_language_uid`),
-  KEY `index_newscontent` (`tx_news_related_news`)
+  KEY `language` (`l18n_parent`,`sys_language_uid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -2043,259 +2522,35 @@ LOCK TABLES `tx_impexp_presets` WRITE;
 UNLOCK TABLES;
 
 --
--- Table structure for table `tx_news_domain_model_link`
+-- Table structure for table `tx_linkvalidator_link`
 --
 
-DROP TABLE IF EXISTS `tx_news_domain_model_link`;
+DROP TABLE IF EXISTS `tx_linkvalidator_link`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `tx_news_domain_model_link` (
+CREATE TABLE `tx_linkvalidator_link` (
   `uid` int(11) NOT NULL AUTO_INCREMENT,
-  `pid` int(11) NOT NULL DEFAULT '0',
-  `tstamp` int(11) NOT NULL DEFAULT '0',
-  `crdate` int(11) NOT NULL DEFAULT '0',
-  `cruser_id` int(11) NOT NULL DEFAULT '0',
-  `sys_language_uid` int(11) NOT NULL DEFAULT '0',
-  `l10n_parent` int(11) NOT NULL DEFAULT '0',
-  `l10n_diffsource` mediumtext COLLATE utf8mb4_unicode_ci,
-  `l10n_source` int(11) NOT NULL DEFAULT '0',
-  `t3ver_oid` int(11) NOT NULL DEFAULT '0',
-  `t3ver_id` int(11) NOT NULL DEFAULT '0',
-  `t3_origuid` int(11) NOT NULL DEFAULT '0',
-  `t3ver_wsid` int(11) NOT NULL DEFAULT '0',
-  `t3ver_label` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-  `t3ver_state` smallint(6) NOT NULL DEFAULT '0',
-  `t3ver_stage` smallint(6) NOT NULL DEFAULT '0',
-  `t3ver_count` int(11) NOT NULL DEFAULT '0',
-  `t3ver_tstamp` int(11) NOT NULL DEFAULT '0',
-  `t3ver_move_id` int(11) NOT NULL DEFAULT '0',
-  `sorting` int(11) NOT NULL DEFAULT '0',
-  `deleted` smallint(6) NOT NULL DEFAULT '0',
-  `hidden` smallint(6) NOT NULL DEFAULT '0',
-  `description` text COLLATE utf8mb4_unicode_ci,
-  `l10n_state` text COLLATE utf8mb4_unicode_ci,
-  `parent` int(11) NOT NULL DEFAULT '0',
-  `title` tinytext COLLATE utf8mb4_unicode_ci,
-  `uri` text COLLATE utf8mb4_unicode_ci,
-  PRIMARY KEY (`uid`),
-  KEY `parent` (`pid`),
-  KEY `t3ver_oid` (`t3ver_oid`,`t3ver_wsid`)
+  `record_uid` int(11) NOT NULL DEFAULT '0',
+  `record_pid` int(11) NOT NULL DEFAULT '0',
+  `headline` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `field` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `table_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `link_title` text COLLATE utf8mb4_unicode_ci,
+  `url` text COLLATE utf8mb4_unicode_ci,
+  `url_response` text COLLATE utf8mb4_unicode_ci,
+  `last_check` int(11) NOT NULL DEFAULT '0',
+  `link_type` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  PRIMARY KEY (`uid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `tx_news_domain_model_link`
+-- Dumping data for table `tx_linkvalidator_link`
 --
 
-LOCK TABLES `tx_news_domain_model_link` WRITE;
-/*!40000 ALTER TABLE `tx_news_domain_model_link` DISABLE KEYS */;
-/*!40000 ALTER TABLE `tx_news_domain_model_link` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `tx_news_domain_model_news`
---
-
-DROP TABLE IF EXISTS `tx_news_domain_model_news`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `tx_news_domain_model_news` (
-  `uid` int(11) NOT NULL AUTO_INCREMENT,
-  `pid` int(11) NOT NULL DEFAULT '0',
-  `tstamp` int(11) NOT NULL DEFAULT '0',
-  `crdate` int(11) NOT NULL DEFAULT '0',
-  `cruser_id` int(11) NOT NULL DEFAULT '0',
-  `t3ver_oid` int(11) NOT NULL DEFAULT '0',
-  `t3ver_id` int(11) NOT NULL DEFAULT '0',
-  `t3ver_wsid` int(11) NOT NULL DEFAULT '0',
-  `t3ver_label` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-  `t3ver_state` smallint(6) NOT NULL DEFAULT '0',
-  `t3ver_stage` smallint(6) NOT NULL DEFAULT '0',
-  `t3ver_count` int(11) NOT NULL DEFAULT '0',
-  `t3ver_tstamp` int(11) NOT NULL DEFAULT '0',
-  `t3ver_move_id` int(11) NOT NULL DEFAULT '0',
-  `t3_origuid` int(11) NOT NULL DEFAULT '0',
-  `editlock` smallint(6) NOT NULL DEFAULT '0',
-  `sys_language_uid` int(11) NOT NULL DEFAULT '0',
-  `l10n_parent` int(11) NOT NULL DEFAULT '0',
-  `l10n_diffsource` mediumtext COLLATE utf8mb4_unicode_ci,
-  `l10n_source` int(11) NOT NULL DEFAULT '0',
-  `deleted` smallint(6) NOT NULL DEFAULT '0',
-  `hidden` smallint(6) NOT NULL DEFAULT '0',
-  `starttime` int(11) NOT NULL DEFAULT '0',
-  `endtime` int(11) NOT NULL DEFAULT '0',
-  `fe_group` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
-  `notes` text COLLATE utf8mb4_unicode_ci,
-  `l10n_state` text COLLATE utf8mb4_unicode_ci,
-  `sorting` int(11) NOT NULL DEFAULT '0',
-  `title` tinytext COLLATE utf8mb4_unicode_ci,
-  `teaser` text COLLATE utf8mb4_unicode_ci,
-  `bodytext` mediumtext COLLATE utf8mb4_unicode_ci,
-  `datetime` int(11) NOT NULL DEFAULT '0',
-  `archive` int(11) NOT NULL DEFAULT '0',
-  `author` tinytext COLLATE utf8mb4_unicode_ci,
-  `author_email` tinytext COLLATE utf8mb4_unicode_ci,
-  `categories` int(11) NOT NULL DEFAULT '0',
-  `related` int(11) NOT NULL DEFAULT '0',
-  `related_from` int(11) NOT NULL DEFAULT '0',
-  `related_files` tinytext COLLATE utf8mb4_unicode_ci,
-  `fal_related_files` int(10) unsigned DEFAULT '0',
-  `related_links` tinytext COLLATE utf8mb4_unicode_ci,
-  `type` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
-  `keywords` text COLLATE utf8mb4_unicode_ci,
-  `description` text COLLATE utf8mb4_unicode_ci,
-  `tags` int(11) NOT NULL DEFAULT '0',
-  `media` text COLLATE utf8mb4_unicode_ci,
-  `fal_media` int(10) unsigned DEFAULT '0',
-  `internalurl` text COLLATE utf8mb4_unicode_ci,
-  `externalurl` text COLLATE utf8mb4_unicode_ci,
-  `istopnews` int(11) NOT NULL DEFAULT '0',
-  `content_elements` int(11) NOT NULL DEFAULT '0',
-  `path_segment` varchar(2048) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `alternative_title` tinytext COLLATE utf8mb4_unicode_ci,
-  `import_id` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-  `import_source` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-  PRIMARY KEY (`uid`),
-  KEY `parent` (`pid`),
-  KEY `sys_language_uid_l10n_parent` (`sys_language_uid`,`l10n_parent`),
-  KEY `import` (`import_id`,`import_source`),
-  KEY `t3ver_oid` (`t3ver_oid`,`t3ver_wsid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `tx_news_domain_model_news`
---
-
-LOCK TABLES `tx_news_domain_model_news` WRITE;
-/*!40000 ALTER TABLE `tx_news_domain_model_news` DISABLE KEYS */;
-/*!40000 ALTER TABLE `tx_news_domain_model_news` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `tx_news_domain_model_news_related_mm`
---
-
-DROP TABLE IF EXISTS `tx_news_domain_model_news_related_mm`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `tx_news_domain_model_news_related_mm` (
-  `uid_local` int(11) NOT NULL DEFAULT '0',
-  `uid_foreign` int(11) NOT NULL DEFAULT '0',
-  `sorting` int(11) NOT NULL DEFAULT '0',
-  `sorting_foreign` int(11) NOT NULL DEFAULT '0',
-  KEY `uid_local` (`uid_local`),
-  KEY `uid_foreign` (`uid_foreign`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `tx_news_domain_model_news_related_mm`
---
-
-LOCK TABLES `tx_news_domain_model_news_related_mm` WRITE;
-/*!40000 ALTER TABLE `tx_news_domain_model_news_related_mm` DISABLE KEYS */;
-/*!40000 ALTER TABLE `tx_news_domain_model_news_related_mm` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `tx_news_domain_model_news_tag_mm`
---
-
-DROP TABLE IF EXISTS `tx_news_domain_model_news_tag_mm`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `tx_news_domain_model_news_tag_mm` (
-  `uid_local` int(11) NOT NULL DEFAULT '0',
-  `uid_foreign` int(11) NOT NULL DEFAULT '0',
-  `sorting` int(11) NOT NULL DEFAULT '0',
-  KEY `uid_local` (`uid_local`),
-  KEY `uid_foreign` (`uid_foreign`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `tx_news_domain_model_news_tag_mm`
---
-
-LOCK TABLES `tx_news_domain_model_news_tag_mm` WRITE;
-/*!40000 ALTER TABLE `tx_news_domain_model_news_tag_mm` DISABLE KEYS */;
-/*!40000 ALTER TABLE `tx_news_domain_model_news_tag_mm` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `tx_news_domain_model_news_ttcontent_mm`
---
-
-DROP TABLE IF EXISTS `tx_news_domain_model_news_ttcontent_mm`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `tx_news_domain_model_news_ttcontent_mm` (
-  `uid_local` int(11) NOT NULL DEFAULT '0',
-  `uid_foreign` int(11) NOT NULL DEFAULT '0',
-  `sorting` int(11) NOT NULL DEFAULT '0',
-  KEY `uid_local` (`uid_local`),
-  KEY `uid_foreign` (`uid_foreign`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `tx_news_domain_model_news_ttcontent_mm`
---
-
-LOCK TABLES `tx_news_domain_model_news_ttcontent_mm` WRITE;
-/*!40000 ALTER TABLE `tx_news_domain_model_news_ttcontent_mm` DISABLE KEYS */;
-/*!40000 ALTER TABLE `tx_news_domain_model_news_ttcontent_mm` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `tx_news_domain_model_tag`
---
-
-DROP TABLE IF EXISTS `tx_news_domain_model_tag`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `tx_news_domain_model_tag` (
-  `uid` int(11) NOT NULL AUTO_INCREMENT,
-  `pid` int(11) NOT NULL DEFAULT '0',
-  `tstamp` int(11) NOT NULL DEFAULT '0',
-  `crdate` int(11) NOT NULL DEFAULT '0',
-  `cruser_id` int(11) NOT NULL DEFAULT '0',
-  `deleted` smallint(6) NOT NULL DEFAULT '0',
-  `hidden` smallint(6) NOT NULL DEFAULT '0',
-  `notes` text COLLATE utf8mb4_unicode_ci,
-  `sorting` int(11) NOT NULL DEFAULT '0',
-  `sys_language_uid` int(11) NOT NULL DEFAULT '0',
-  `l10n_parent` int(11) NOT NULL DEFAULT '0',
-  `l10n_diffsource` mediumtext COLLATE utf8mb4_unicode_ci,
-  `l10n_source` int(11) NOT NULL DEFAULT '0',
-  `t3ver_oid` int(11) NOT NULL DEFAULT '0',
-  `t3ver_id` int(11) NOT NULL DEFAULT '0',
-  `t3_origuid` int(11) NOT NULL DEFAULT '0',
-  `t3ver_wsid` int(11) NOT NULL DEFAULT '0',
-  `t3ver_label` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-  `t3ver_state` smallint(6) NOT NULL DEFAULT '0',
-  `t3ver_stage` smallint(6) NOT NULL DEFAULT '0',
-  `t3ver_count` int(11) NOT NULL DEFAULT '0',
-  `t3ver_tstamp` int(11) NOT NULL DEFAULT '0',
-  `t3ver_move_id` int(11) NOT NULL DEFAULT '0',
-  `title` tinytext COLLATE utf8mb4_unicode_ci,
-  `seo_title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-  `seo_description` text COLLATE utf8mb4_unicode_ci,
-  `seo_headline` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-  `seo_text` text COLLATE utf8mb4_unicode_ci,
-  PRIMARY KEY (`uid`),
-  KEY `parent` (`pid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `tx_news_domain_model_tag`
---
-
-LOCK TABLES `tx_news_domain_model_tag` WRITE;
-/*!40000 ALTER TABLE `tx_news_domain_model_tag` DISABLE KEYS */;
-/*!40000 ALTER TABLE `tx_news_domain_model_tag` ENABLE KEYS */;
+LOCK TABLES `tx_linkvalidator_link` WRITE;
+/*!40000 ALTER TABLE `tx_linkvalidator_link` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tx_linkvalidator_link` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -2315,8 +2570,8 @@ CREATE TABLE `tx_scheduler_task` (
   `lastexecution_time` int(10) unsigned NOT NULL DEFAULT '0',
   `lastexecution_failure` text COLLATE utf8mb4_unicode_ci,
   `lastexecution_context` varchar(3) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-  `serialized_task_object` blob,
-  `serialized_executions` blob,
+  `serialized_task_object` mediumblob,
+  `serialized_executions` mediumblob,
   `task_group` int(10) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`uid`),
   KEY `index_nextexecution` (`nextexecution`)
@@ -2373,7 +2628,7 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-12-07 15:56:58
+-- Dump completed on 2019-04-12 14:17:33
 -- MySQL dump 10.13  Distrib 5.7.24, for Linux (x86_64)
 --
 -- Host: t3kit9_db    Database: t3kit9

@@ -5,7 +5,6 @@ BASEDIR=$(dirname "$0")
 CLEAR_TABLES=(
     "be_sessions"
     "be_users"
-    "cache_md5params"
     "cache_treelist"
     "cf_adminpanel_requestcache"
     "cf_adminpanel_requestcache_tags"
