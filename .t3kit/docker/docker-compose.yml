@@ -24,8 +24,8 @@ services:
     container_name: ${PROJECT_NAME}_web
     image: ${WEB_IMAGE:-t3kit/ubuntu18.04-php7.2-apache:1.2.0}
     environment:
-      - VIRTUAL_HOST=${PROJECT_NAME}.${LOCALHOST_DOMAIN:-local}
-      - TYPO3_CONTEXT=${TYPO3_CONTEXT:-Development/t3kit9}
+      - VIRTUAL_HOST=${PROJECT_NAME}.${LOCALHOST_TOP_DOMAIN:-local}
+      - TYPO3_CONTEXT=${TYPO3_CONTEXT:-Development}
 
       - DB_CONTAINER_NAME=${PROJECT_NAME}_db
       - DB_ROOT_PASSWORD=${DB_ROOT_PASSWORD:-1234}
