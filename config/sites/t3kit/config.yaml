@@ -92,4 +92,8 @@ routes:
   -
     route: robots.txt
     type: staticText
-    content: "User-agent: *\r\nDisallow: /typo3/\r\nDisallow: /typo3_src/\r\nAllow: /typo3/sysext/frontend/Resources/Public/*\r\n"
+    content: "User-agent: *\r\n\r\nDisallow: /typo3/\r\nDisallow: /typo3conf/\r\nAllow: /typo3conf/ext/\r\n\r\n# sitemap\r\nSitemap: https://BASE_DOMAIN/sitemap.xml"
+  -
+    route: humans.txt
+    type: staticText
+    content: "/* TEAM */\r\nTeam: t3kit\r\nSite: https://github.com/t3kit, http://t3kit.com\r\n\r\n/* SITE */\r\nStandards: HTML5, CSS3, PHP7\r\nComponents: TYPO3 v9, t3kit9, Bootstrap 4"

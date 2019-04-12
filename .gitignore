@@ -2,7 +2,6 @@
 /var
 /vendor
 /public/*
-!public/humans.txt
 !/public/typo3conf
 /public/typo3conf/*
 !/public/typo3conf/LocalConfiguration.php
