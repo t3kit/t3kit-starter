@@ -1,6 +1,9 @@
-rootPageId: 2
-base: 'http://t3kit9.local:8889'
-baseVariants: {  }
+rootPageId: 1
+base: 'http://demo.t3kit.com'
+baseVariants:
+  -
+    base: 'http://t3kit9.local'
+    condition: 'applicationContext == "Development"'
 languages:
   -
     title: English
