@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "33ba03aec9763583562cad383733f747",
+    "content-hash": "97259dc519dcb8cb0b084de4d9dea5db",
     "packages": [
         {
             "name": "cogpowered/finediff",
@@ -4419,61 +4419,6 @@
                 }
             ],
             "description": "Shows the frontend webpage inside the backend frameset.",
-            "homepage": "https://typo3.org",
-            "time": "2019-03-04T20:25:08+00:00"
-        },
-        {
-            "name": "typo3/cms-workspaces",
-            "version": "v9.5.5",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/TYPO3-CMS/workspaces.git",
-                "reference": "1054969c7757d968038e10a6171235efb9c16b31"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/TYPO3-CMS/workspaces/zipball/1054969c7757d968038e10a6171235efb9c16b31",
-                "reference": "1054969c7757d968038e10a6171235efb9c16b31",
-                "shasum": ""
-            },
-            "require": {
-                "typo3/cms-core": "9.5.5"
-            },
-            "conflict": {
-                "typo3/cms": "*"
-            },
-            "replace": {
-                "typo3/cms-version": "*",
-                "workspaces": "*"
-            },
-            "type": "typo3-cms-framework",
-            "extra": {
-                "typo3/class-alias-loader": {
-                    "class-alias-maps": [
-                        "Migrations/Code/ClassAliasMap.php"
-                    ]
-                },
-                "typo3/cms": {
-                    "extension-key": "workspaces"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "TYPO3\\CMS\\Workspaces\\": "Classes/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "TYPO3 Core Team",
-                    "email": "typo3cms@typo3.org",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Adds workspaces functionality with custom stages to TYPO3.",
             "homepage": "https://typo3.org",
             "time": "2019-03-04T20:25:08+00:00"
         },
