@@ -3,7 +3,7 @@ version: "3.7"
 services:
 
   db:
-    container_name: ${PROJECT_NAME}_db
+    container_name: ${COMPOSE_PROJECT_NAME}_db
     image: ${DB_IMAGE:-mysql:5.7}
     command:
       - --disable-log-bin
@@ -21,13 +21,13 @@ services:
       - MYSQL_ROOT_PASSWORD=${DB_ROOT_PASSWORD:-1234}
 
   web:
-    container_name: ${PROJECT_NAME}_web
+    container_name: ${COMPOSE_PROJECT_NAME}_web
     image: ${WEB_IMAGE:-t3kit/ubuntu18.04-php7.2-apache:1.2.0}
     environment:
-      - VIRTUAL_HOST=${PROJECT_NAME}.${LOCALHOST_TOP_DOMAIN:-local}
+      - VIRTUAL_HOST=${COMPOSE_PROJECT_NAME}.${LOCALHOST_TOP_DOMAIN:-local}
       - TYPO3_CONTEXT=${TYPO3_CONTEXT:-Development}
 
-      - DB_CONTAINER_NAME=${PROJECT_NAME}_db
+      - DB_CONTAINER_NAME=${COMPOSE_PROJECT_NAME}_db
       - DB_ROOT_PASSWORD=${DB_ROOT_PASSWORD:-1234}
       - DB_NAME=${DB_NAME:-t3kit9}
       - DB_USER=${DB_USER:-root}
