@@ -54,9 +54,9 @@
 
 2. **!!!Step only for MAC users**. Uncomment `CACHED=:cached` in `.env` file to increase [Docker performance on Mac.](https://docs.docker.com/docker-for-mac/osxfs-caching/)
 
-3. Change `PROJECT_NAME` variable in `.env` file. It should be the same as a virtual host name without suffix `.local`. By default, it is `t3kit9`
+3. Change `COMPOSE_PROJECT_NAME` variable in `.env` file. It should be the same as a virtual host name without suffix `.local`. By default, it is `t3kit9`
 
-4. Change others variables in `.env` file if it needed. Follow instructions inside of `.env` file. By default, it is enough just to change only one `PROJECT_NAME` variable.
+4. Change others variables in `.env` file if it needed. Follow instructions inside of `.env` file. By default, it is enough just to change only one `COMPOSE_PROJECT_NAME` variable.
 
 5. Start all Docker services for a local development environment `docker-compose up -d`
 
