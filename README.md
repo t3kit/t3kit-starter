@@ -72,6 +72,14 @@
 
 - `docker-compose down`
 
+### phpMyAdmin
+
+#### Run phpMyAdmin docker container and connect it to needed DB host
+
+```shell
+docker run --name pma -d -e PMA_ARBITRARY=1 --network nproxy -p 8083:80 phpmyadmin/phpmyadmin
+```
+
 ***
 
 ## Production
