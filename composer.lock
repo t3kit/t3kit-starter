@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "97259dc519dcb8cb0b084de4d9dea5db",
+    "content-hash": "831b70d42ab4bd56eccd6f4bb09d9a7f",
     "packages": [
         {
             "name": "cogpowered/finediff",
@@ -2192,6 +2192,52 @@
             "description": "Symfony Yaml Component",
             "homepage": "https://symfony.com",
             "time": "2019-03-30T15:58:42+00:00"
+        },
+        {
+            "name": "t3kit/t3kit",
+            "version": "dev-t3kit9",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/t3kit/t3kit.git",
+                "reference": "dc321f69309af0dec1695dd118393094bb7fea8e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/t3kit/t3kit/zipball/dc321f69309af0dec1695dd118393094bb7fea8e",
+                "reference": "dc321f69309af0dec1695dd118393094bb7fea8e",
+                "shasum": ""
+            },
+            "require": {
+                "typo3/cms-felogin": "^9.5",
+                "typo3/cms-fluid-styled-content": "^9.5",
+                "typo3/cms-form": "^9.5",
+                "typo3/cms-indexed-search": "^9.5",
+                "typo3/cms-rte-ckeditor": "^9.5",
+                "typo3/cms-seo": "^9.5",
+                "typo3/cms-tstemplate": "^9.5",
+                "typo3/minimal": "^9.5"
+            },
+            "type": "typo3-cms-extension",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "t3kit Community",
+                    "homepage": "https://github.com/t3kit"
+                }
+            ],
+            "description": "t3kit project. A TYPO3 website starterkit.",
+            "homepage": "http://t3kit.com",
+            "keywords": [
+                "cms",
+                "starter",
+                "t3kit",
+                "t3kit9",
+                "typo3"
+            ],
+            "time": "2019-04-19T14:18:48+00:00"
         },
         {
             "name": "typo3/class-alias-loader",
@@ -4557,7 +4603,9 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "t3kit/t3kit": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": [],
