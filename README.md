@@ -50,34 +50,42 @@
 
    _*Note: To continue with Docker you need to create an environment `.env` file for your project based on an example `.env.example`._
 
-1. `cp .t3kit/docker/.env.example .env`
+1. `composer env` or `cp .t3kit/docker/.env.example .env`
 
-2. **!!!Step only for MAC users**. Uncomment `CACHED=:cached` in `.env` file to increase [Docker performance on Mac.](https://docs.docker.com/docker-for-mac/osxfs-caching/)
+2. Change `COMPOSE_PROJECT_NAME` variable in `.env` file. It should be the same as a virtual host name without suffix `.local`. By default, it is `t3kit9`
 
-3. Change `COMPOSE_PROJECT_NAME` variable in `.env` file. It should be the same as a virtual host name without suffix `.local`. By default, it is `t3kit9`
+3. **!!!OS-specific changes in .env file**
+    - **macOS**
+        - Uncomment `CACHED=:cached` in `.env` file to increase [Docker performance on Mac.](https://docs.docker.com/docker-for-mac/osxfs-caching/)
+    - **Ubuntu**
+        - Uncomment and set your host user id `USERID=` in `.env` file to make shared folder writable.
 
 4. Change others variables in `.env` file if it needed. Follow instructions inside of `.env` file. By default, it is enough just to change only one `COMPOSE_PROJECT_NAME` variable.
 
 5. Start all Docker services for a local development environment `docker-compose up -d`
 
-6. Setup t3kit starter database `docker-compose exec web /var/www/html/.t3kit/db/setupdb.sh`
+6. Setup t3kit starter database `composer dbup` or `docker-compose exec web /var/www/html/.t3kit/db/setupdb.sh`
 
 ### t3kit database manipulation - Setup/Restore/Pack
 
-- Setup t3kit db: `docker-compose exec web /var/www/html/.t3kit/db/setupdb.sh`
-- Restore t3kit db: `docker-compose exec web /var/www/html/.t3kit/db/restoredb.sh`
-- Pack (save) t3kit db: `docker-compose exec web /var/www/html/.t3kit/db/packdb.sh`
+- Setup t3kit db: `composer dbup` or `docker-compose exec web /var/www/html/.t3kit/db/setupdb.sh`
+- Restore t3kit db: `composer dbre` or `docker-compose exec web /var/www/html/.t3kit/db/restoredb.sh`
+- Pack (save) t3kit db: `composer dbp` or `docker-compose exec web /var/www/html/.t3kit/db/packdb.sh`
 
 ### Stop and remove Docker services for a local development environment
 
 - `docker-compose down`
+
+### Run a command in a running WEB container
+
+- `docker-compose exec web bash`
 
 ### phpMyAdmin
 
 #### Run phpMyAdmin docker container and connect it to needed DB host
 
 ```shell
-docker run --name pma -d -e PMA_ARBITRARY=1 --network nproxy -p 8083:80 phpmyadmin/phpmyadmin
+docker run --name pma -d -e PMA_ARBITRARY=1 --restart=unless-stopped --network nproxy -p 8083:80 phpmyadmin/phpmyadmin
 ```
 
 ***
