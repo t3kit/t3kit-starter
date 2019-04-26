@@ -27,12 +27,15 @@ services:
       - VIRTUAL_HOST=${COMPOSE_PROJECT_NAME}.${LOCALHOST_TOP_DOMAIN:-local}
       - TYPO3_CONTEXT=${TYPO3_CONTEXT:-Development}
 
-      - DB_CONTAINER_NAME=${COMPOSE_PROJECT_NAME}_db
+      - DB_HOST=${COMPOSE_PROJECT_NAME}_db
       - DB_ROOT_PASSWORD=${DB_ROOT_PASSWORD:-1234}
       - DB_NAME=${DB_NAME:-t3kit9}
       - DB_USER=${DB_USER:-root}
+
+      - USERID=${USERID:-}
     volumes:
       - ../../:/var/www/html${CACHED:-}
+    command: "./.t3kit/docker/up.sh"
 
 networks:
   default:
