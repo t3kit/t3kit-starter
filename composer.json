@@ -74,8 +74,15 @@
 			"typo3cms install:generatepackagestates",
 			"typo3cms install:fixfolderstructure"
 		],
+		"pre-install-cmd": [
+			"composer validate --no-check-all --strict"
+		],
 		"post-autoload-dump": [
 			"@typo3-cms-scripts"
-		]
+		],
+		"env": "cp .t3kit/docker/.env.example .env",
+		"dbup": "docker-compose exec -T web /var/www/html/.t3kit/db/setupdb.sh",
+		"dbre": "docker-compose exec -T web /var/www/html/.t3kit/db/restoredb.sh",
+		"dbp": "docker-compose exec -T web /var/www/html/.t3kit/db/packdb.sh"
 	}
 }
