@@ -1,7 +1,12 @@
 #!/bin/bash
-OUT_FILE=${1:-"t3kit9.sql"}
-BASEDIR=$(dirname "$0")
 
+# ####################################
+BASEDIR=$(dirname "$0")
+# Generate temporary DB configuration
+source $BASEDIR/mysql_cnf.sh
+# ####################################
+
+OUT_FILE=${1:-"t3kit9.sql"}
 CLEAR_TABLES=(
     "be_sessions"
     "be_users"
@@ -25,27 +30,27 @@ CLEAR_TABLES=(
     "sys_history"
     "sys_log"
     "tx_extensionmanager_domain_model_extension"
-    "tx_extensionmanager_domain_model_repository"
 
     # extensions
 
 )
 
-echo "Clearing tables...";
+echo "Cleanup $DB_NAME tables";
 for TABLE in "${CLEAR_TABLES[@]}"
 do
-mysql -uroot -p$DB_ROOT_PASSWORD -h$DB_CONTAINER_NAME -e "TRUNCATE TABLE ${TABLE}" "$DB_NAME"
+    mysql --defaults-extra-file=$BASEDIR/mysql.cnf -e "TRUNCATE TABLE ${TABLE}" "$DB_NAME"
 done
 
-echo "Updating data..."
 # Empty constants and setup for sys_template 1
-mysql -uroot -p$DB_ROOT_PASSWORD -h$DB_CONTAINER_NAME -e "UPDATE sys_template SET constants = '', config = '' WHERE uid = 1;" "$DB_NAME"
+mysql --defaults-extra-file=$BASEDIR/mysql.cnf -e "UPDATE sys_template SET constants = '', config = '' WHERE uid = 1;" "$DB_NAME"
 
-echo "Dumping db..."
-mysqldump -uroot -p$DB_ROOT_PASSWORD -h$DB_CONTAINER_NAME "$DB_NAME" > $BASEDIR/"$OUT_FILE"
+echo "DB dump -> ${OUT_FILE}"
+mysqldump --defaults-extra-file=$BASEDIR/mysql.cnf "$DB_NAME" > $BASEDIR/"$OUT_FILE"
 
-echo "Output in ${OUT_FILE}"
-
-echo "Merge be_users.sql dump, must include admin user with password admin1234"
+echo "Merge be_users.sql table, must include 'admin' user with password 'admin1234'"
 cat $BASEDIR/be_users.sql >> "$BASEDIR/${OUT_FILE}"
+
+# Remove temporary DB configuration
+rm $MYSQL_CONFIG
+
 echo "Done"

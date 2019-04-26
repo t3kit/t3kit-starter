@@ -5,7 +5,7 @@ switch (\TYPO3\CMS\Core\Utility\GeneralUtility::getApplicationContext()) {
     case 'Development': // =========================================================================
         // SetEnv TYPO3_CONTEXT Development
         // DB
-        $GLOBALS['TYPO3_CONF_VARS']['DB']['Connections']['Default']['host'] = getenv('DB_CONTAINER_NAME');
+        $GLOBALS['TYPO3_CONF_VARS']['DB']['Connections']['Default']['host'] = getenv('DB_HOST');
         $GLOBALS['TYPO3_CONF_VARS']['DB']['Connections']['Default']['dbname'] = getenv('DB_NAME');
         $GLOBALS['TYPO3_CONF_VARS']['DB']['Connections']['Default']['user'] = getenv('DB_USER');
         $GLOBALS['TYPO3_CONF_VARS']['DB']['Connections']['Default']['password'] = getenv('DB_ROOT_PASSWORD');
@@ -32,7 +32,7 @@ switch (\TYPO3\CMS\Core\Utility\GeneralUtility::getApplicationContext()) {
     case 'Testing': // =============================================================================================
         // SetEnv TYPO3_CONTEXT Testing
         // DB
-        $GLOBALS['TYPO3_CONF_VARS']['DB']['Connections']['Default']['host'] = getenv('DB_CONTAINER_NAME');
+        $GLOBALS['TYPO3_CONF_VARS']['DB']['Connections']['Default']['host'] = getenv('DB_HOST');
         $GLOBALS['TYPO3_CONF_VARS']['DB']['Connections']['Default']['dbname'] = getenv('DB_NAME');
         $GLOBALS['TYPO3_CONF_VARS']['DB']['Connections']['Default']['user'] = getenv('DB_USER');
         $GLOBALS['TYPO3_CONF_VARS']['DB']['Connections']['Default']['password'] = getenv('DB_ROOT_PASSWORD');
