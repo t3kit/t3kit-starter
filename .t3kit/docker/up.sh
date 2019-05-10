@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Make www-data user use id from hosts user to make shared folder writable.
+# Make www-data user use id from hosts user to make shared folder writable. (!!!Only for Ubuntu)
 if [ -z "$USERID" ]
 then
       echo "USERID variable is not set."

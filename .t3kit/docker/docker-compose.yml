@@ -25,7 +25,7 @@ services:
     image: ${WEB_IMAGE:-t3kit/ubuntu18.04-php7.2-apache:1.2.0}
     environment:
       - VIRTUAL_HOST=${COMPOSE_PROJECT_NAME}.${LOCALHOST_TOP_DOMAIN:-local}
-      - TYPO3_CONTEXT=${TYPO3_CONTEXT:-Development}
+      - TYPO3_CONTEXT=${TYPO3_CONTEXT:-Development/localEnv/Docker}
 
       - DB_HOST=${COMPOSE_PROJECT_NAME}_db
       - DB_ROOT_PASSWORD=${DB_ROOT_PASSWORD:-1234}
