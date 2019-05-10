@@ -57,7 +57,7 @@
         "typo3/cms-sys-action": "^9.5",
         "typo3/cms-taskcenter": "^9.5",
 
-		"helhum/typo3-console": "^5.5.5",
+		"helhum/typo3-console": "^5.5",
 
 		"t3kit/t3kit": "dev-t3kit9"
 	},
