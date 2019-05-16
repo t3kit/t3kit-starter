@@ -3,7 +3,7 @@ base: 'http://demo.t3kit.com'
 baseVariants:
   -
     base: 'http://t3kit9.local'
-    condition: 'applicationContext == "Development"'
+    condition: 'applicationContext == "Development/local"'
 languages:
   -
     title: English
