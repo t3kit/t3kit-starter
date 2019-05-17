@@ -22,7 +22,7 @@ services:
 
   web:
     container_name: ${COMPOSE_PROJECT_NAME}_web
-    image: ${WEB_IMAGE:-t3kit/ubuntu18.04-php7.2-apache:1.2.0}
+    image: ${WEB_IMAGE:-t3kit/ubuntu18.04-php7.2-apache:1.2.1}
     environment:
       - VIRTUAL_HOST=${COMPOSE_PROJECT_NAME}.${LOCALHOST_TOP_DOMAIN:-local}
       - TYPO3_CONTEXT=${TYPO3_CONTEXT:-Development/local}
@@ -35,7 +35,6 @@ services:
       - USERID=${USERID:-}
     volumes:
       - ../../:/var/www/html${CACHED:-}
-    command: "./.t3kit/docker/up.sh"
 
 networks:
   default:
