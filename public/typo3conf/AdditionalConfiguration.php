@@ -14,7 +14,7 @@ switch (\TYPO3\CMS\Core\Core\Environment::getContext()) {
         $GLOBALS['TYPO3_CONF_VARS']['DB']['Connections']['Default']['host'] = getenv('DB_HOST');
         $GLOBALS['TYPO3_CONF_VARS']['DB']['Connections']['Default']['dbname'] = getenv('DB_NAME');
         $GLOBALS['TYPO3_CONF_VARS']['DB']['Connections']['Default']['user'] = getenv('DB_USER');
-        $GLOBALS['TYPO3_CONF_VARS']['DB']['Connections']['Default']['password'] = getenv('DB_ROOT_PASSWORD');
+        $GLOBALS['TYPO3_CONF_VARS']['DB']['Connections']['Default']['password'] = getenv('MYSQL_ROOT_PASSWORD');
 
         // BE
         $GLOBALS['TYPO3_CONF_VARS']['BE']['sessionTimeout'] = 28800;
@@ -46,7 +46,7 @@ switch (\TYPO3\CMS\Core\Core\Environment::getContext()) {
         $GLOBALS['TYPO3_CONF_VARS']['DB']['Connections']['Default']['host'] = getenv('DB_HOST');
         $GLOBALS['TYPO3_CONF_VARS']['DB']['Connections']['Default']['dbname'] = getenv('DB_NAME');
         $GLOBALS['TYPO3_CONF_VARS']['DB']['Connections']['Default']['user'] = getenv('DB_USER');
-        $GLOBALS['TYPO3_CONF_VARS']['DB']['Connections']['Default']['password'] = getenv('DB_ROOT_PASSWORD');
+        $GLOBALS['TYPO3_CONF_VARS']['DB']['Connections']['Default']['password'] = getenv('MYSQL_ROOT_PASSWORD');
 
         // BE
         $GLOBALS['TYPO3_CONF_VARS']['BE']['sessionTimeout'] = 3600;

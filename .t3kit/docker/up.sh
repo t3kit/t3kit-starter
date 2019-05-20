@@ -1,20 +1,19 @@
 #!/bin/bash
 
 # Make www-data user use id from hosts user to make shared folder writable. (!!!Only for Ubuntu)
-if [ -z "$USERID" ]
+if [ -z "$USER_ID" ]
 then
-      echo "USERID variable is not set."
-      echo "$(id www-data)"
+      echo "USER_ID variable is not set."
 else
     # fetch current userid and groupid for user www-data
     WWW_DATA_USERID=$(id -u www-data)
     # if current userid doesn't equal the one from .env, force id of user to the one from .env
-    if [ "$WWW_DATA_USERID" -ne "${USERID}" ];then
-        echo "usermod -u ${USERID} www-data"
-        usermod -u ${USERID} www-data
+    if [ "$WWW_DATA_USERID" -ne "${USER_ID}" ];then
+        echo "usermod -u ${USER_ID} www-data"
+        usermod -u ${USER_ID} www-data
     fi
-    echo "$(id www-data)"
 fi
+echo "$(id www-data)"
 
 # start apache
 exec apachectl -D FOREGROUND
