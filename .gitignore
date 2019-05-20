@@ -7,12 +7,9 @@
 !/public/typo3conf/LocalConfiguration.php
 !/public/typo3conf/AdditionalConfiguration.php
 
-# t3kit specific
-.env
-
-# IDE specific
-.idea/
-.vscode/
 
 # others
+.env
+.idea/
+.vscode/
 .DS_Store

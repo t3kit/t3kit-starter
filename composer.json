@@ -64,7 +64,7 @@
 	"require-dev": {},
 	"suggest": {},
 	"autoload": {},
-	"minimum-stability": "stable",
+	"minimum-stability": "dev",
 	"prefer-stable": true,
 	"config": {
 		"platform": {
@@ -82,7 +82,10 @@
 		"post-autoload-dump": [
 			"@typo3-cms-scripts"
 		],
-		"env": "cp .t3kit/docker/.env.example .env",
+		"post-create-project-cmd": [
+			"composer env"
+		],
+		"env": "cp .t3kit/docker/local.env .env",
 		"dbup": "docker-compose exec -T web /var/www/html/.t3kit/db/setupdb.sh",
 		"dbre": "docker-compose exec -T web /var/www/html/.t3kit/db/restoredb.sh",
 		"dbp": "docker-compose exec -T web /var/www/html/.t3kit/db/packdb.sh"
