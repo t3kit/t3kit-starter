@@ -66,16 +66,16 @@ composer create-project -s dev --remove-vcs t3kit/t3kit-starter [<directory>] [<
 
     _*Note: use this pattern `PROJECT_NAME.local` to add new virtual host. For example `t3kit9.local`_
 
-    1. `nano /etc/hosts`
-    2. add a new line at the end `127.0.0.1 PROJECT_NAME.local`
+    - `nano /etc/hosts`
+    - add a new line at the end `127.0.0.1 PROJECT_NAME.local`
 
 3. Configure local development environment variables
 
-   _*Note: To continue with Docker you need to create an environment `.env` file for your project based on an example `local.env`. It will be created automatically with `composer create-project` command, but if you are starting a project using another method (e.g., `git clone & composer install`) then you need to created `.env` file manually -> `composer env` or `cp .t3kit/docker/local.env .env`._
+   _*Note: To continue with Docker you need to create an environment `.env` file for your project based on an example `local.env`. It will be created automatically with `composer create-project` command, but if you are starting a project using another method (e.g., `git clone & composer install`) then you need to created `.env` file manually: `composer env` or `cp .t3kit/docker/local.env .env`._
 
-    1. Change `COMPOSE_PROJECT_NAME` variable in `.env` file. It should be the same as a virtual host name without suffix `.local`. By default, it is `t3kit9`
+    - Change `COMPOSE_PROJECT_NAME` variable in `.env` file. It should be the same as a virtual host name without suffix `.local`. By default, it is `t3kit9`
 
-    2. **!!!OS-specific settings in `.env` file**
+    - OS-specific settings in `.env` file
         - **Ubuntu**
             - Disable CACHED volumes because it's redundant in Ubuntu. Comment `CACHED=:cached` variable in `.env` file.
             - Uncomment and set your host user id `USER_ID=` in `.env` file to make shared folder writable.
