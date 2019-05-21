@@ -5,7 +5,7 @@
 </p>
 
 <h2 align="center">t3kit-starter</h2>
-<h3 align="center">Starter point for a project based on t3kit</h3>
+<h3 align="center">Starter point for a new project based on t3kit</h3>
 <p align="center"><a href="https://t3kit.gitbook.io/doc/"><strong>t3kit documentation</strong></a></p>
 
 ## Table of contents
@@ -60,31 +60,31 @@ composer create-project -s dev --remove-vcs t3kit/t3kit-starter [<directory>] [<
 
 ## Setup a local development environment based on Docker
 
-### 1. Check that [nginx-proxy](#nginx-proxy) started
+1. Check that [nginx-proxy](#nginx-proxy) started
 
-### 2. Add new virtual host on your local machine
+2. Add new virtual host on your local machine
 
-  _*Note: use this pattern `PROJECT_NAME.local` to add new virtual host. For example `t3kit9.local`_
+    _*Note: use this pattern `PROJECT_NAME.local` to add new virtual host. For example `t3kit9.local`_
 
-1. `nano /etc/hosts`
-2. add a new line at the end `127.0.0.1 PROJECT_NAME.local`
+    1. `nano /etc/hosts`
+    2. add a new line at the end `127.0.0.1 PROJECT_NAME.local`
 
-### 3. Configure local development environment variables
+3. Configure local development environment variables
 
-   _*Note: To continue with Docker you need to create an environment `.env` file for your project based on an example `local.env`. It will be created automatically with `composer create-project` command, but if you are starting a project using another method (e.g., git clone & composer install) then you need to created .env file manually -> `composer env` or `cp .t3kit/docker/local.env .env`._
+   _*Note: To continue with Docker you need to create an environment `.env` file for your project based on an example `local.env`. It will be created automatically with `composer create-project` command, but if you are starting a project using another method (e.g., `git clone & composer install`) then you need to created `.env` file manually -> `composer env` or `cp .t3kit/docker/local.env .env`._
 
-1. Change `COMPOSE_PROJECT_NAME` variable in `.env` file. It should be the same as a virtual host name without suffix `.local`. By default, it is `t3kit9`
+    1. Change `COMPOSE_PROJECT_NAME` variable in `.env` file. It should be the same as a virtual host name without suffix `.local`. By default, it is `t3kit9`
 
-2. **!!!OS-specific settings in .env file**
-    - **Ubuntu**
-        - Disable CACHED volumes in Ubuntu. Comment `CACHED=:cached` variable in `.env` file.
-        - Uncomment and set your host user id `USER_ID=` in `.env` file to make shared folder writable.
+    2. **!!!OS-specific settings in `.env` file**
+        - **Ubuntu**
+            - Disable CACHED volumes because it's redundant in Ubuntu. Comment `CACHED=:cached` variable in `.env` file.
+            - Uncomment and set your host user id `USER_ID=` in `.env` file to make shared folder writable.
 
-### 4. Start all Docker services for a local development environment `docker-compose up -d`
+4. Start all Docker services for a local development environment `docker-compose up -d`
 
-### 5. Setup t3kit starter database `composer dbup` or `docker-compose exec web /var/www/html/.t3kit/db/setupdb.sh`
+5. Setup t3kit starter database `composer dbup` or `docker-compose exec web /var/www/html/.t3kit/db/setupdb.sh`
 
-### 6. Open `t3kit.local` in browser
+6. Open `t3kit.local` in browser
 
 ## Local development additional info
 
