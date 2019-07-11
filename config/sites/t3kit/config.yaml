@@ -87,7 +87,11 @@ languages:
     fallbackType: fallback
     fallbacks: '0'
     flag: fr
-errorHandling: {  }
+errorHandling:
+  -
+    errorCode: '404'
+    errorHandler: Page
+    errorContentSource: 't3://page?uid=9'
 routes:
   -
     route: robots.txt
@@ -97,3 +101,7 @@ routes:
     route: humans.txt
     type: staticText
     content: "/* TEAM */\r\nTeam: t3kit\r\nSite: https://github.com/t3kit, http://t3kit.com\r\n\r\n/* SITE */\r\nStandards: HTML5, CSS3, PHP7\r\nComponents: TYPO3 v9, t3kit9, Bootstrap 4"
+  -
+    route: sitemap.xml
+    type: uri
+    source: 't3://page?uid=1 - - - &type=1533906435'
