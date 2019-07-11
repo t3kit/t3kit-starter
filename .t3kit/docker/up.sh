@@ -15,5 +15,17 @@ else
 fi
 echo "$(id www-data)"
 
+
+# Add VIRTUAL HOST to hosts file on web container
+if [ -n "$(grep $VIRTUAL_HOST /etc/hosts)" ]
+
+then
+    echo "$VIRTUAL_HOST already exists"
+else
+    sh -c -e "echo '127.0.0.1 ${VIRTUAL_HOST}' >> /etc/hosts"
+    echo "$VIRTUAL_HOST added succesfully"
+fi
+
+
 # start apache
 exec apachectl -D FOREGROUND
