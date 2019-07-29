@@ -49,12 +49,10 @@
 		"typo3/cms-filemetadata": "^9.5",
 		"typo3/cms-sys-note": "^9.5",
 
-		"typo3/cms-feedit": "^9.5",
+
 		"typo3/cms-indexed-search": "^9.5",
 		"typo3/cms-linkvalidator": "^9.5",
 		"typo3/cms-opendocs": "^9.5",
-		"typo3/cms-sys-action": "^9.5",
-		"typo3/cms-taskcenter": "^9.5",
 
 		"helhum/typo3-console": "^5.5",
 
