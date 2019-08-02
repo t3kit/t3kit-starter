@@ -47,9 +47,9 @@ It includes:
 ## Required dependencies
 
 - [Git](https://git-scm.com/)
-- [Composer](https://getcomposer.org/) >= v1.8.0
-- [Docker](https://docs.docker.com/install/) >= v18.09.1
-- [Docker Compose](https://docs.docker.com/compose/install/) >= v1.23.2
+- [Composer](https://getcomposer.org/) >= v1.8.6
+- [Docker](https://docs.docker.com/install/) >= v19.03.1
+- [Docker Compose](https://docs.docker.com/compose/install/) >= v1.24.1
 
 ## Quick start a new project
 
