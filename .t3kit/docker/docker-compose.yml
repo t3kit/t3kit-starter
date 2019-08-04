@@ -34,7 +34,7 @@ services:
 
       - USER_ID=${USER_ID:-}
     volumes:
-      - ../../:/var/www/html${CACHED:-}
+      - ../../:/var/www/html${FILE_SYSTEM_MODE:-}
     command: "./.t3kit/docker/up.sh"
 
 networks:
