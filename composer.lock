@@ -902,16 +902,16 @@
         },
         {
             "name": "nikic/php-parser",
-            "version": "v4.2.2",
+            "version": "v4.2.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nikic/PHP-Parser.git",
-                "reference": "1bd73cc04c3843ad8d6b0bfc0956026a151fc420"
+                "reference": "e612609022e935f3d0337c1295176505b41188c8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/1bd73cc04c3843ad8d6b0bfc0956026a151fc420",
-                "reference": "1bd73cc04c3843ad8d6b0bfc0956026a151fc420",
+                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/e612609022e935f3d0337c1295176505b41188c8",
+                "reference": "e612609022e935f3d0337c1295176505b41188c8",
                 "shasum": ""
             },
             "require": {
@@ -919,7 +919,7 @@
                 "php": ">=7.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "^6.5 || ^7.0"
+                "phpunit/phpunit": "^6.5 || ^7.0 || ^8.0"
             },
             "bin": [
                 "bin/php-parse"
@@ -949,7 +949,7 @@
                 "parser",
                 "php"
             ],
-            "time": "2019-05-25T20:07:01+00:00"
+            "time": "2019-08-12T20:17:41+00:00"
         },
         {
             "name": "psr/cache",
@@ -2387,12 +2387,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/t3kit/t3kit.git",
-                "reference": "a761913d21bc527e74ea0e62a1f66288f3bffb24"
+                "reference": "f22af05003761d32752b7a7cb0253a0148343aad"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/t3kit/t3kit/zipball/a761913d21bc527e74ea0e62a1f66288f3bffb24",
-                "reference": "a761913d21bc527e74ea0e62a1f66288f3bffb24",
+                "url": "https://api.github.com/repos/t3kit/t3kit/zipball/f22af05003761d32752b7a7cb0253a0148343aad",
+                "reference": "f22af05003761d32752b7a7cb0253a0148343aad",
                 "shasum": ""
             },
             "require": {
@@ -2429,7 +2429,7 @@
                 "t3kit9",
                 "typo3"
             ],
-            "time": "2019-08-10T15:22:34+00:00"
+            "time": "2019-08-14T16:01:11+00:00"
         },
         {
             "name": "typo3/class-alias-loader",
