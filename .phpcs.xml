@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<ruleset name="t3kit">
+    <rule ref="PSR2"/>
+    <file>public/typo3conf/AdditionalConfiguration.php</file>
+</ruleset>
