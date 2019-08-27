@@ -1,9 +1,10 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # ####################################
 BASEDIR=$(dirname "$0")
 # Generate temporary DB configuration
-source $BASEDIR/mysql_cnf.sh
+# shellcheck disable=SC1090
+source "$BASEDIR"/mysql_cnf.sh
 # ####################################
 
 OUT_FILE=${1:-"t3kit9.sql"}
@@ -38,33 +39,33 @@ CLEAR_TABLES=(
 echo "Cleanup $DB_NAME tables";
 for TABLE in "${CLEAR_TABLES[@]}"
 do
-    mysql --defaults-extra-file=$BASEDIR/mysql.cnf -e "TRUNCATE TABLE ${TABLE}" "$DB_NAME"
+    mysql --defaults-extra-file="$BASEDIR"/mysql.cnf -e "TRUNCATE TABLE ${TABLE}" "$DB_NAME"
 done
 
 # Empty constants and setup for sys_template 1
-mysql --defaults-extra-file=$BASEDIR/mysql.cnf -e "UPDATE sys_template SET constants = '', config = '' WHERE uid = 1;" "$DB_NAME"
+mysql --defaults-extra-file="$BASEDIR"/mysql.cnf -e "UPDATE sys_template SET constants = '', config = '' WHERE uid = 1;" "$DB_NAME"
 
 echo "DB dump -> ${OUT_FILE}"
-mysqldump --defaults-extra-file=$BASEDIR/mysql.cnf "$DB_NAME" > $BASEDIR/"$OUT_FILE"
+mysqldump --defaults-extra-file="$BASEDIR"/mysql.cnf "$DB_NAME" > "$BASEDIR"/"$OUT_FILE"
 
 echo "Merge be_users.sql table, must include 'admin' user with password 'admin1234'"
-cat $BASEDIR/be_users.sql >> "$BASEDIR/${OUT_FILE}"
+cat "$BASEDIR"/be_users.sql >> "$BASEDIR/${OUT_FILE}"
 
 
 # drop and restore DB
-if [ "`mysql --defaults-extra-file=$BASEDIR/mysql.cnf -e 'show databases;' | grep ${DB_NAME}`" == "${DB_NAME}" ]; then
+if [ "$(mysql --defaults-extra-file="$BASEDIR"/mysql.cnf -e 'show databases;' | grep "${DB_NAME}")" == "${DB_NAME}" ]; then
 
     # Drop database
     echo "DROP $DB_NAME DB"
-    mysql --defaults-extra-file=$BASEDIR/mysql.cnf -e "DROP DATABASE $DB_NAME;"
+    mysql --defaults-extra-file="$BASEDIR"/mysql.cnf -e "DROP DATABASE $DB_NAME;"
 
     # Create new database
     echo "CREATE NEW DATABASE $DB_NAME"
-    mysql --defaults-extra-file=$BASEDIR/mysql.cnf -e "CREATE DATABASE $DB_NAME"
-    mysql --defaults-extra-file=$BASEDIR/mysql.cnf $DB_NAME < $BASEDIR/t3kit9.sql
+    mysql --defaults-extra-file="$BASEDIR"/mysql.cnf -e "CREATE DATABASE $DB_NAME"
+    mysql --defaults-extra-file="$BASEDIR"/mysql.cnf "$DB_NAME" < "$BASEDIR"/t3kit9.sql
 fi
 
 # Remove temporary DB configuration
-rm $MYSQL_CONFIG
+rm "$MYSQL_CONFIG"
 
 echo "Done"
