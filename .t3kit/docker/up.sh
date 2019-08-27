@@ -3,7 +3,7 @@
 # Make www-data user use id from hosts user to make shared folder writable. (!!!Only for Ubuntu)
 if [ -z "$USER_ID" ]
 then
-      echo "USER_ID variable is not set."
+    echo "USER_ID variable is not set."
 else
     # fetch current userid and groupid for user www-data
     WWW_DATA_USERID=$(id -u www-data)

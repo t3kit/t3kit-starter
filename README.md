@@ -1,7 +1,7 @@
 <p align="center">
-  <a href="http://t3kit.com/">
-    <img src="http://t3kit.com/fileadmin/example_content/images/logo.png" alt="t3kit logo" width="120" height="56">
-  </a>
+    <a href="http://t3kit.com/">
+        <img src="http://t3kit.com/fileadmin/example_content/images/logo.png" alt="t3kit logo" width="120" height="56">
+    </a>
 </p>
 
 <h2 align="center">t3kit-starter</h2>
@@ -71,7 +71,7 @@ composer create-project -s dev --remove-vcs t3kit/t3kit-starter [<directory>] [<
 
 3. Configure local development environment variables
 
-   _*Note: To continue with Docker you need to create an environment `.env` file for your project based on an example `local.env`. It will be created automatically with `composer create-project` command, but if you are starting a project using another method (e.g., `git clone & composer install`) then you need to created `.env` file manually: `composer env` or `cp .t3kit/docker/local.env .env`._
+    _*Note: To continue with Docker you need to create an environment `.env` file for your project based on an example `local.env`. It will be created automatically with `composer create-project` command, but if you are starting a project using another method (e.g., `git clone & composer install`) then you need to created `.env` file manually: `composer env` or `cp .t3kit/docker/local.env .env`._
 
     - Change `COMPOSE_PROJECT_NAME` variable in `.env` file. It should be the same as a virtual host name without suffix `.local`. By default, it is `t3kit9`
 
