@@ -11,9 +11,9 @@ Security updates and maintenance for **t3kit** supported by **t3kit organization
 |8.9            |:white_check_mark:|
 |10             |                  |
 
-*Security updates support time for t3kit is the same as a Regular Maintainance period for TYPO3.
+*_Security updates support time for t3kit is the same as a **Regular Maintainance** period for **TYPO3**._
 
-[t3kit Roadmap]()
+[t3kit Roadmap](https://github.com/t3kit/t3kit-starter#roadmap)
 
 [TYPO3 Roadmap](https://typo3.org/cms/roadmap)
 
