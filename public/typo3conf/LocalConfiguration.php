@@ -79,13 +79,17 @@ return [
         ],
     ],
     'GFX' => [
+        'jpg_quality' => 80,
         'processor' => 'GraphicsMagick',
         'processor_allowTemporaryMasksAsPng' => false,
+        'processor_allowUpscaling' => false,
         'processor_colorspace' => 'RGB',
         'processor_effects' => false,
         'processor_enabled' => true,
+        'processor_interlace' => 'Line',
         'processor_path' => '/usr/bin/',
         'processor_path_lzw' => '/usr/bin/',
+        'processor_stripColorProfileCommand' => '+profile \'*\'',
     ],
     'MAIL' => [
         'transport' => 'sendmail',
