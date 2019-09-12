@@ -13,10 +13,10 @@
 ### t3kit-starter
 
 - [About](#about)
-- [What's included](#what's-included)
+- [What's included](#whats-included)
 - [Required dependencies](#required-dependencies)
 - [Quick start](#quick-start)
-- [Setup a local development environment based on Docker](#setup-a-local-development-environment-based-on-docker)
+- [Local development environment based on Docker](#local-development-environment-based-on-docker)
 - [Local development tools](#local-development-tools)
 - [Changelog](CHANGELOG.md)
 
@@ -30,7 +30,7 @@
 - [Code of Conduct](https://github.com/t3kit/.github/blob/master/CODE_OF_CONDUCT.md)
 - [Support](https://github.com/t3kit/.github/blob/master/SUPPORT.md)
 - [Security Policy](https://github.com/t3kit/.github/blob/master/SECURITY.md)
-- [t3kit 8.9](#t3kit8.9)
+- [t3kit 8.9](#t3kit89)
 - [t3kit 8](#t3kit8)
 - [t3kit 7](#t3kit7)
 
@@ -38,7 +38,7 @@
 
 ## About
 
-### *t3kit-starter* is a bunch of tools, configs, and best practices which should help you to kickstart new projects on a t3kit basis
+**t3kit-starter** is a bunch of tools, configs, and best practices which should help you to kickstart new projects on a t3kit basis
 
 ## What's included
 
@@ -69,7 +69,7 @@ composer create-project -s dev --keep-vcs t3kit/t3kit-starter [<directory>] [<ve
 
 ```
 
-## Setup a local development environment based on Docker
+## Local development environment based on Docker
 
 1. Check that [nginx-proxy](#nginx-proxy) started
 
@@ -97,21 +97,13 @@ composer create-project -s dev --keep-vcs t3kit/t3kit-starter [<directory>] [<ve
 
 6. Open `t3kit.local` in browser
 
-## Local development additional info
+## Local development tools
 
 ### t3kit database manipulation - Setup/Restore/Pack
 
 - Setup t3kit db: `composer dbup` or `docker-compose exec web /var/www/html/.t3kit/db/setupdb.sh`
 - Restore t3kit db: `composer dbre` or `docker-compose exec web /var/www/html/.t3kit/db/restoredb.sh`
 - Pack (save) t3kit db: `composer dbp` or `docker-compose exec web /var/www/html/.t3kit/db/packdb.sh`
-
-### Stop and remove Docker services for a local development environment
-
-- `docker-compose down`
-
-### Run a command in a running WEB container
-
-- `docker-compose exec web bash`
 
 ### phpMyAdmin
 
