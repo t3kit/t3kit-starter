@@ -10,26 +10,37 @@
 
 ## Table of contents
 
+### t3kit-starter
+
 - [About](#about)
+- [What's included](#what's-included)
 - [Required dependencies](#required-dependencies)
-- [Quick start a new project](#quick-start-a-new-project)
+- [Quick start](#quick-start)
 - [Setup a local development environment based on Docker](#setup-a-local-development-environment-based-on-docker)
 - [Local development tools](#local-development-tools)
-- [Documentation](#documentation)
-- [Structure](#structure)
-- [Report a bug or feature request](#report-a-bug-or-feature-request)
-- [Contributing](#contributing)
-- [Community](#community)
+- [Changelog](CHANGELOG.md)
+
+### General info about t3kit project
+
+- [t3kit Roadmap](#t3kit-roadmap)
 - [Versioning](#versioning)
-- [Changelog](https://github.com/t3kit/t3kit-starter/blob/master/CHANGELOG.md)
-- [t3kit8](#t3kit8)
-- [t3kit7](#t3kit7)
+- [t3kit project structure](#t3kit-project-structure)
+- [Documentation](https://t3kit.gitbook.io/doc)
+- [Contributing to t3kit](https://github.com/t3kit/.github/blob/master/CONTRIBUTING.md)
+- [Code of Conduct](https://github.com/t3kit/.github/blob/master/CODE_OF_CONDUCT.md)
+- [Support](https://github.com/t3kit/.github/blob/master/SUPPORT.md)
+- [Security Policy](https://github.com/t3kit/.github/blob/master/SECURITY.md)
+- [t3kit 8.9](#t3kit8.9)
+- [t3kit 8](#t3kit8)
+- [t3kit 7](#t3kit7)
 
 ***
 
 ## About
 
 ### *t3kit-starter* is a bunch of tools, configs, and best practices which should help you to kickstart new projects on a t3kit basis
+
+## What's included
 
 It includes:
 
@@ -51,10 +62,10 @@ It includes:
 - [Docker](https://docs.docker.com/install/) >= v19.03.1
 - [Docker Compose](https://docs.docker.com/compose/install/) >= v1.24.1
 
-## Quick start a new project
+## Quick start
 
 ```shell
-composer create-project -s dev --remove-vcs t3kit/t3kit-starter [<directory>] [<version>]
+composer create-project -s dev --keep-vcs t3kit/t3kit-starter [<directory>] [<version>]
 
 ```
 
@@ -135,26 +146,44 @@ docker run -d -p=80:80 --name=nproxy --restart=unless-stopped --network=nproxy -
 
 If there no needs to use **t3kit** starter database or **Docker configuration** for local development, then just delete folder `.t3kit` from the root of your project - `rm -r .t3kit`
 
-## Documentation
+***
 
-[t3kit doocumentation](https://t3kit.gitbook.io/doc/)
+## t3kit Roadmap
 
-## Structure
-
-## Report a bug or feature request
-
-## Contributing
-
-## Community
-
-- News and Releases info at [t3kit.com](http://t3kit.com/)
-- t3kit [Demo site](http://demo.t3kit.com/)
-- Official [t3kit Slack channel](https://typo3.slack.com/messages/C1QSXGMSR)
+|t3kit |TYPO3|Development|Release|Support & Maintenance|End of support|
+|------|-----|-----------|-------|---------------------|--------------|
+|v7    |v7   |❌         |02.2017|❌                   |02.2017       |
+|v8-8.8|v8   |❌         |02.2017|❌                   |02.2019       |
+|8.9   |v9   |❌         |01.2019|✅                   |04.2020       |
+|10    |v10  |✅         |❗**02.2020**|               |              |
+|11    |v11  |:x:        |_~08.2021_|                  |              |
 
 ## Versioning
 
-## Changelog
+Every **t3kit** release tagged by git tag using Semantic Versioning approach, but with t3kit specific change to **Major version number** which should be synchronized with particular TYPO3 version.
+
+- 1️⃣ first number - **Major version**: should be always the same as a last supported TYPO3 major version.
+- 2️⃣ second number - **Minor version**: new features and breaking changes to t3kit.
+- 3️⃣ third number - **Patch version**: pashes, bug fixes, documentation updates, code refactoring, tests and other small tasks.
+
+## t3kit project structure
+
+t3kit consist of **two** main parts plus additional extension which intended to help extend functionality for base t3kit components.
+
+- **t3kit-starter** - Starter point for a new project based on t3kit. GitHub project template, tools, configs, and best practices which should help you to kickstart new projects on a t3kit basis.
+
+- **t3kit** - main part of t3kit conception. It consists of new content elements, configurations, predefined BE layouts, menus, and scalable independent Front-End part.
+
+***
+
+## t3kit8.9
+
+Every part/extension of t3kit **v8.9** has a git branch `t3kit8.9` where you can find all last updates/commits for this particular version of t3kit.
 
 ## t3kit8
 
+Every part/extension of t3kit **v8** has a git branch `t3kit8` where you can find all last updates/commits for this particular version of t3kit.
+
 ## t3kit7
+
+Every part/extension of t3kit **v7** has a git branch `t3kit7` where you can find all last updates/commits for this particular version of t3kit.
