@@ -14,6 +14,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v1
 
+      - name: File list
+        run: ls -la
+
       - name: Install composer
         uses: "MilesChou/composer-action@master"
         with:
