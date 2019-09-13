@@ -1,7 +1,7 @@
 name: Check t3kit Coding Guidelines
 # https://github.com/t3kit/.github/blob/master/CONTRIBUTING.md#coding-rules
 
-on: [push]
+on: [push, pull_request]
 
 jobs:
   build:
@@ -15,9 +15,9 @@ jobs:
         uses: actions/checkout@v1
 
       - name: Install composer
-        uses: nick-zh/composer-php@master
+        uses: "MilesChou/composer-action@master"
         with:
-          action: 'install'
+          args: "install"
 
       - name: Echo the greeting's time
         run: echo 'Done'
