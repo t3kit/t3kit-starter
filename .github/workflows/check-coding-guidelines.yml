@@ -19,5 +19,10 @@ jobs:
         with:
           args: "install"
 
+      - name: Lint
+        uses: "MilesChou/composer-action@master"
+        with:
+          args: "lint"
+
       - name: Echo the greeting's time
         run: echo 'Done'
