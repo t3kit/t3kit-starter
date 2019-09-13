@@ -1,0 +1,23 @@
+name: Check t3kit Coding Guidelines
+# https://github.com/t3kit/.github/blob/master/CONTRIBUTING.md#coding-rules
+
+on: [push]
+
+jobs:
+  build:
+
+    name: Greeting
+
+    runs-on: ubuntu-18.04
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+
+      - name: Install composer
+        uses: nick-zh/composer-php@master
+        with:
+          action: 'install'
+
+      - name: Echo the greeting's time
+        run: echo 'Done'
