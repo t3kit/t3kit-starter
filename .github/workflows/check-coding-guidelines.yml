@@ -18,6 +18,11 @@ jobs:
         run: ls -la
 
       - name: Install composer
+        uses: docker://koalaman/shellcheck-alpine:stable
+        with:
+          args: "find . -type f -name '*.sh' -exec shellcheck '{}' +"
+
+      - name: Install composer
         uses: docker://composer:1.9
         with:
           args: "install"
@@ -44,6 +49,11 @@ jobs:
 
       - name: Build the stack
         run: docker-compose up -d
+
+      - name: Setup DB
+        uses: docker://composer:1.9
+        with:
+          args: "run-script dbup"
 
       - name: Docker compose ps
         run: docker-compose ps
