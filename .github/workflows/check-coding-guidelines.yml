@@ -18,12 +18,12 @@ jobs:
         run: ls -la
 
       - name: Install composer
-        uses: "MilesChou/composer-action@master"
+        uses: docker://composer:1.9
         with:
           args: "install"
 
       - name: Lint
-        uses: "MilesChou/composer-action@master"
+        uses: docker://composer:1.9
         with:
           args: "lint"
 
