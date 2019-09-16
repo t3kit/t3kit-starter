@@ -17,10 +17,8 @@ jobs:
       - name: File list
         run: ls -la
 
-      - name: Install composer
-        uses: docker://koalaman/shellcheck-alpine:stable
-        with:
-          args: "find . -type f -name '*.sh' -exec shellcheck '{}' +"
+      - name: Shellcheck
+        run: docker run --rm -v "$PWD:/mnt" koalaman/shellcheck-alpine:stable find . -type f -name '*.sh' -exec shellcheck '{}' +
 
       - name: Install composer
         uses: docker://composer:1.9
@@ -51,9 +49,10 @@ jobs:
         run: docker-compose up -d
 
       - name: Setup DB
-        uses: docker://composer:1.9
-        with:
-          args: "run-script dbup"
+        run: docker-compose exec -T web /var/www/html/.t3kit/db/setupdb.sh
+
+      - name: Docker ps
+        run: docker ps -a
 
       - name: Docker compose ps
         run: docker-compose ps
