@@ -34,14 +34,8 @@ jobs:
         run: docker-compose ps
 
       - name: Docker nproxy
-      - run:|
-        docker network create nproxy
-        docker run -d -p=80:80 --name=nproxy --network=nproxy -v=/var/run/docker.sock:/tmp/docker.sock:ro jwilder/nginx-proxy
-
-      - name: Docker nproxy
-      - run:|
-        docker network create nproxy
-        docker run -d -p=80:80 --name=nproxy --network=nproxy -v=/var/run/docker.sock:/tmp/docker.sock:ro jwilder/nginx-proxy
+        run: docker network create nproxy
+        run: docker run -d -p=80:80 --name=nproxy --network=nproxy -v=/var/run/docker.sock:/tmp/docker.sock:ro jwilder/nginx-proxy
 
       - name: Build the stack
         run: docker-compose up -d
