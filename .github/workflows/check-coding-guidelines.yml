@@ -27,10 +27,15 @@ jobs:
         with:
           args: "run-script lint"
 
+      - name: Env
+        uses: docker://composer:1.9
+        with:
+          args: "run-script env"
+
       - name: Docker ps
         run: docker ps -a
 
-      - name: Docker ps
+      - name: Docker compose ps
         run: docker-compose ps
 
       - run: docker network create nproxy
@@ -40,7 +45,7 @@ jobs:
       - name: Build the stack
         run: docker-compose up -d
 
-      - name: Docker ps
+      - name: Docker compose ps
         run: docker-compose ps
 
       - name: Echo the greeting's time
