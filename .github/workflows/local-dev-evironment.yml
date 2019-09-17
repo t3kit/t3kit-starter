@@ -1,4 +1,4 @@
-name: Local development environment based on Docker
+name: t3kit local development environment based on Docker
 # https://github.com/t3kit/t3kit-starter#local-development-environment-based-on-docker
 
 on: [push, pull_request]
@@ -6,44 +6,39 @@ on: [push, pull_request]
 jobs:
   build:
 
-    name: Local development env
+    name: t3kit local development
 
     runs-on: ubuntu-18.04
 
     steps:
       - uses: actions/checkout@v1
 
-      - name: Install composer
+      - name: Install t3kit Composer dependencies
         uses: docker://composer:1.9
         with:
           args: "install"
 
-      - name: Env
+      - name: Setup t3kit dev environment
         uses: docker://composer:1.9
         with:
           args: "run-script env"
 
-      - name: Docker ps
-        run: docker ps -a
+      - name: Create t3kit network
+        run: docker network create nproxy
 
-      - name: Docker compose ps
-        run: docker-compose ps
+      - name: Run nginx-proxy
+        run: docker run -d -p=80:80 --network=nproxy -v=/var/run/docker.sock:/tmp/docker.sock:ro jwilder/nginx-proxy
 
-      - run: docker network create nproxy
-
-      - run: docker run -d -p=80:80 --name=nproxy --network=nproxy -v=/var/run/docker.sock:/tmp/docker.sock:ro jwilder/nginx-proxy
-
-      - name: Build the stack
+      - name: Run t3kit containers
         run: docker-compose up -d
 
-      - name: Setup DB
-        run: docker-compose exec -T web /var/www/html/.t3kit/db/setupdb.sh
-
-      - name: Docker ps
-        run: docker ps -a
-
-      - name: Docker compose ps
+      - name: Show running containers
         run: docker-compose ps
 
-      - name: Echo the greeting's time
-        run: echo 'Done'
+      - run: docker pull appropriate/curl
+
+      - name: Setup t3kit database
+        run: docker-compose exec -T web /var/www/html/.t3kit/db/setupdb.sh
+
+      - name: Curl t3kit9.local
+        run: "docker run --network=nproxy appropriate/curl -vfsS -H 'Host: t3kit9.local' nproxy"
