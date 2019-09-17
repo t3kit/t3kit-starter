@@ -11,8 +11,6 @@ jobs:
     runs-on: ubuntu-18.04
 
     steps:
-      - run: curl localhost
-
       - uses: actions/checkout@v1
 
       - name: Install t3kit Composer dependencies
@@ -63,4 +61,7 @@ jobs:
         run: docker-compose exec -T web /var/www/html/.t3kit/db/setupdb.sh
 
       - name: Curl t3kit9.local
-        run: "docker run --network=nproxy appropriate/curl -vfsS -H 'Host: t3kit9.local' nproxy"
+        run: curl -vfsSL t3kit9.local
+
+      - name: Curl t3kit9.local/typo3
+        run: curl -vfsSL t3kit9.local/typo3
