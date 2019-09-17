@@ -1,4 +1,4 @@
-name: t3kit local development environment based on Docker
+name: Local development environment
 # https://github.com/t3kit/t3kit-starter#local-development-environment-based-on-docker
 
 on: [push, pull_request]
@@ -6,7 +6,7 @@ on: [push, pull_request]
 jobs:
   build:
 
-    name: t3kit local development
+    name: Setup t3kit local development environment
 
     runs-on: ubuntu-18.04
 
@@ -59,7 +59,10 @@ jobs:
         run: docker-compose exec -T web /var/www/html/.t3kit/db/setupdb.sh
 
       - name: Curl t3kit9.local
-        run: "curl -vfsSL -H 'Host: t3kit9.local' localhost"
+        run: "curl -v -H 'Host: t3kit9.local' localhost"
+
+      - name: nproxy logs
+        run: "docker logs --tail 50 nproxy"
 
       - name: Curl t3kit9.local/typo3
         run: "curl -vfsSL -H 'Host: t3kit9.local' localhost/typo3"

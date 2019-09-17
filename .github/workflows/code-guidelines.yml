@@ -1,4 +1,4 @@
-name: t3kit Code Guidelines
+name: Code Guidelines
 # https://github.com/t3kit/.github/blob/master/CONTRIBUTING.md#coding-rules
 
 on: [push, pull_request]
@@ -6,7 +6,7 @@ on: [push, pull_request]
 jobs:
   build:
 
-    name: t3kit Code Guidelines
+    name: Lint code
 
     runs-on: ubuntu-18.04
 
