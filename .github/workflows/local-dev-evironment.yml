@@ -58,6 +58,12 @@ jobs:
       - name: Setup t3kit database
         run: docker-compose exec -T web /var/www/html/.t3kit/db/setupdb.sh
 
+      - run: docker exec nproxy cat /etc/nginx/conf.d/default.conf
+
+      - run: docker-restart
+
+      - run: docker exec nproxy cat /etc/nginx/conf.d/default.conf
+
       - name: Curl t3kit9.local
         run: "curl -v -H 'Host: t3kit9.local' localhost"
 
