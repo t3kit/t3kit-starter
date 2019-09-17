@@ -27,7 +27,7 @@ jobs:
         run: docker network create nproxy
 
       - name: Run nginx-proxy
-        run: docker run -d -p=80:80 --network=nproxy -v=/var/run/docker.sock:/tmp/docker.sock:ro jwilder/nginx-proxy
+        run: docker run -d -p=80:80 --name=nproxy --network=nproxy -v=/var/run/docker.sock:/tmp/docker.sock:ro jwilder/nginx-proxy
 
       - name: Run t3kit containers
         run: docker-compose up -d
@@ -42,13 +42,13 @@ jobs:
 
       - run: docker network inspect nproxy
 
-      - run: docker-compose exec web ping -c 2 db
+      - run: docker-compose exec -T web ping -c 2 db
 
-      - run: docker-compose exec web ping -c 2 nproxy
+      - run: docker-compose exec -T web ping -c 2 nproxy
 
-      - run: docker-compose exec web ping -c 2 web
+      - run: docker-compose exec -T web ping -c 2 web
 
-      - run: docker-compose exec web mysql --host=db --user=root --password=1234 -e "SHOW DATABASES;"
+      - run: docker-compose exec -T web mysql --host=db --user=root --password=1234 -e "SHOW DATABASES;"
 
       - run: docker pull appropriate/curl
 
