@@ -11,6 +11,8 @@ jobs:
     runs-on: ubuntu-18.04
 
     steps:
+      - run: curl localhost
+
       - uses: actions/checkout@v1
 
       - name: Install t3kit Composer dependencies
