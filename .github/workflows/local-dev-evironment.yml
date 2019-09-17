@@ -48,6 +48,11 @@ jobs:
 
       - run: docker-compose exec -T web ping -c 2 web
 
+      - name: Sleep
+        uses: maddox/actions/sleep@master
+        with:
+          args: "60"
+
       - run: docker-compose exec -T web mysql --host=db --user=root --password=1234 -e "SHOW DATABASES;"
 
       - run: docker pull appropriate/curl
