@@ -35,6 +35,21 @@ jobs:
       - name: Show running containers
         run: docker-compose ps
 
+
+      - run: docker ps -a
+
+      - run: docker network ls
+
+      - run: docker network inspect nproxy
+
+      - run: docker-compose exec web ping -c 2 db
+
+      - run: docker-compose exec web ping -c 2 nproxy
+
+      - run: docker-compose exec web ping -c 2 web
+
+      - run: docker-compose exec web mysql --host=db --user=root --password=1234 -e "SHOW DATABASES;"
+
       - run: docker pull appropriate/curl
 
       - name: Setup t3kit database
