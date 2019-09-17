@@ -51,11 +51,9 @@ jobs:
       - name: Sleep
         uses: maddox/actions/sleep@master
         with:
-          args: "60"
+          args: "120"
 
       - run: docker-compose exec -T web mysql --host=db --user=root --password=1234 -e "SHOW DATABASES;"
-
-      - run: docker pull appropriate/curl
 
       - name: Setup t3kit database
         run: docker-compose exec -T web /var/www/html/.t3kit/db/setupdb.sh
