@@ -13,13 +13,13 @@ jobs:
     steps:
       - uses: actions/checkout@v1
 
+      - name: Shellcheck
+        run: docker run --rm -v "$PWD:/mnt" koalaman/shellcheck-alpine:stable find . -type f -name '*.sh' -exec shellcheck '{}' +
+
       - run: npm install eclint
 
       - name: EditorConfig check
         run: node_modules/eclint/bin/eclint.js check "**/*.{sh,yml,yaml,json,xml,xlf,html}"
-
-      - name: Shellcheck
-        run: docker run --rm -v "$PWD:/mnt" koalaman/shellcheck-alpine:stable find . -type f -name '*.sh' -exec shellcheck '{}' +
 
       - name: Install Composer dependencies
         uses: docker://composer:1.9
