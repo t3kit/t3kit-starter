@@ -1,0 +1,49 @@
+name: Local development environment based on Docker
+# https://github.com/t3kit/t3kit-starter#local-development-environment-based-on-docker
+
+on: [push, pull_request]
+
+jobs:
+  build:
+
+    name: Local development env
+
+    runs-on: ubuntu-18.04
+
+    steps:
+      - uses: actions/checkout@v1
+
+      - name: Install composer
+        uses: docker://composer:1.9
+        with:
+          args: "install"
+
+      - name: Env
+        uses: docker://composer:1.9
+        with:
+          args: "run-script env"
+
+      - name: Docker ps
+        run: docker ps -a
+
+      - name: Docker compose ps
+        run: docker-compose ps
+
+      - run: docker network create nproxy
+
+      - run: docker run -d -p=80:80 --name=nproxy --network=nproxy -v=/var/run/docker.sock:/tmp/docker.sock:ro jwilder/nginx-proxy
+
+      - name: Build the stack
+        run: docker-compose up -d
+
+      - name: Setup DB
+        run: docker-compose exec -T web /var/www/html/.t3kit/db/setupdb.sh
+
+      - name: Docker ps
+        run: docker ps -a
+
+      - name: Docker compose ps
+        run: docker-compose ps
+
+      - name: Echo the greeting's time
+        run: echo 'Done'
