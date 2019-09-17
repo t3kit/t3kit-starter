@@ -59,7 +59,7 @@ jobs:
         run: docker-compose exec -T web /var/www/html/.t3kit/db/setupdb.sh
 
       - name: Curl t3kit9.local
-        run: curl -vfsSL t3kit9.local
+        run: "curl -vfsSL -H 'Host: t3kit9.local' localhost"
 
       - name: Curl t3kit9.local/typo3
-        run: curl -vfsSL t3kit9.local/typo3
+        run: "curl -vfsSL -H 'Host: t3kit9.local' localhost/typo3"
