@@ -29,8 +29,19 @@ jobs:
       - name: Run nginx-proxy
         run: docker run -d -p=80:80 --name=nproxy --network=nproxy -v=/var/run/docker.sock:/tmp/docker.sock:ro jwilder/nginx-proxy
 
+      - name: nproxy logs
+        run: "docker logs --tail 50 nproxy"
+
+      - name: Sleep 60s
+        uses: maddox/actions/sleep@master
+        with:
+          args: "60"
+
       - name: Run t3kit containers
         run: docker-compose up -d
+
+      - name: nproxy logs
+        run: "docker logs --tail 50 nproxy"
 
       - name: Show running containers
         run: docker-compose ps
@@ -48,7 +59,7 @@ jobs:
 
       - run: docker-compose exec -T web ping -c 2 web
 
-      - name: Sleep
+      - name: Sleep 120s
         uses: maddox/actions/sleep@master
         with:
           args: "120"
