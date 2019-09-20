@@ -56,11 +56,11 @@ jobs:
 
       - run: docker network inspect nproxy
 
-      - run: docker-compose -T exec web cat /etc/passwd
-
       - run: docker-compose logs web
 
-      - run: docker-compose -T exec web ls -lah
+      - run: docker-compose exec -T web cat /etc/passwd
+
+      - run: docker-compose exec -T web ls -lah
 
       - name: Sleep 120s
         uses: maddox/actions/sleep@master
