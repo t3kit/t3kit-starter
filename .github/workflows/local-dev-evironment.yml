@@ -32,11 +32,6 @@ jobs:
       - name: Run nginx-proxy
         run: docker run -d -p=80:80 --name=nproxy --network=nproxy -v=/var/run/docker.sock:/tmp/docker.sock:ro jwilder/nginx-proxy
 
-      - name: Sleep 60s
-        uses: maddox/actions/sleep@master
-        with:
-          args: "60"
-
       - name: modify nproxy
         run: docker exec -i nproxy tee nginx.tmpl < nginx.tmpl
 
@@ -61,11 +56,11 @@ jobs:
 
       - run: docker network inspect nproxy
 
-      - run: docker-compose exec -T web ping -c 2 db
+      - run: docker-compose exec web cat /etc/passwd
 
-      - run: docker-compose exec -T web ping -c 2 nproxy
+      - run: docker-compose logs web
 
-      - run: docker-compose exec -T web ping -c 2 web
+      - run: docker-compose exec web ls -lah
 
       - name: Sleep 120s
         uses: maddox/actions/sleep@master
