@@ -26,19 +26,28 @@ jobs:
       - name: Create t3kit network
         run: docker network create nproxy
 
-      - name: Run t3kit containers
-        run: docker-compose up -d
+      - name: Run nginx-proxy
+        run: docker run -d -p=80:80 --name=nproxy --network=nproxy -v=/var/run/docker.sock:/tmp/docker.sock:ro jwilder/nginx-proxy
 
       - name: Sleep 60s
         uses: maddox/actions/sleep@master
         with:
           args: "60"
 
-      - name: Run nginx-proxy
-        run: docker run -d -p=80:80 --name=nproxy --network=nproxy -v=/var/run/docker.sock:/tmp/docker.sock:ro jwilder/nginx-proxy
+      - name: modify nproxy
+        run: docker exec -i nproxy tee nginx.tmpl < nginx.tmpl
+
+      - name: nproxy restart
+        run: docker restart nproxy
 
       - name: nproxy logs
         run: "docker logs --tail 50 nproxy"
+
+      - name: cat nginx.tmpl
+        run: docker exec nproxy cat nginx.tmpl
+
+      - name: Run t3kit containers
+        run: docker-compose up -d
 
       - name: Show running containers
         run: docker-compose ps
