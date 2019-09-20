@@ -62,7 +62,7 @@ jobs:
 
       - run: docker-compose exec -T web ls -lah
 
-      - run: docker-compose exec -T web chown -R www-data:www-data var
+      - run: docker-compose exec -T web chown -R www-data:www-data .
 
       - run: docker-compose exec -T web ls -lah
 
