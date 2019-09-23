@@ -8,6 +8,10 @@
 <h3 align="center">Starter point for a new project based on t3kit</h3>
 <p align="center"><a href="https://t3kit.gitbook.io/doc/"><strong>t3kit documentation</strong></a></p>
 
+![](https://github.com/t3kit/t3kit-starter/workflows/Code%20Guidelines/badge.svg)
+![](https://github.com/t3kit/t3kit-starter/workflows/Local%20development%20environment/badge.svg)
+
+
 ## Table of contents
 
 ### t3kit-starter
