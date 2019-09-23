@@ -30,13 +30,7 @@ jobs:
         run: docker network create nproxy
 
       - name: Run nginx-proxy
-        run: docker run -d -p=80:80 --name=nproxy --network=nproxy -v=/var/run/docker.sock:/tmp/docker.sock:ro jwilder/nginx-proxy
-
-      - name: modify nproxy
-        run: docker exec -i nproxy tee nginx.tmpl < nginx.tmpl
-
-      - name: nproxy restart
-        run: docker restart nproxy
+        run: docker run -d -p=80:80 --name=nproxy --network=nproxy -v=/var/run/docker.sock:/tmp/docker.sock:ro t3kit/nproxy:1.0.0
 
       - name: nproxy logs
         run: "docker logs --tail 50 nproxy"
