@@ -11,8 +11,6 @@ jobs:
     runs-on: ubuntu-18.04
 
     steps:
-      - name: uid
-        run: id
 
       - uses: actions/checkout@v1
 
@@ -32,25 +30,11 @@ jobs:
       - name: Run nginx-proxy
         run: docker run -d -p=80:80 --name=nproxy --network=nproxy -v=/var/run/docker.sock:/tmp/docker.sock:ro t3kit/nproxy:1.0.0
 
-      - name: nproxy logs
-        run: "docker logs --tail 50 nproxy"
-
-      - name: cat nginx.tmpl
-        run: docker exec nproxy cat nginx.tmpl
-
       - name: Run t3kit containers
         run: docker-compose up -d
 
       - name: Show running containers
         run: docker-compose ps
-
-      - run: docker ps -a
-
-      - run: docker network ls
-
-      - run: docker network inspect nproxy
-
-      - run: docker-compose logs web
 
       - run: docker-compose exec -T web cat /etc/passwd
 
@@ -60,33 +44,19 @@ jobs:
 
       - run: docker-compose exec -T web ls -lah
 
-      - run: docker-compose exec -T web cd public | ls -lah
-
-      - name: Sleep 120s
+      - name: Sleep 100s
         uses: maddox/actions/sleep@master
         with:
           args: "100"
 
-      - run: docker-compose exec -T web mysql --host=db --user=root --password=1234 -e "SHOW DATABASES;"
-
       - name: Setup t3kit database
         run: docker-compose exec -T web /var/www/html/.t3kit/db/setupdb.sh
-
-      - run: docker exec nproxy cat /etc/nginx/conf.d/default.conf
-
-      - run: docker exec nproxy cat /etc/nginx/conf.d/default.conf
-
-      - name: Curl t3kit9.local
-        run: "curl -vfsSL -H 'Host: t3kit9.local' localhost"
 
       - name: Curl t3kit9.local
         run: "curl -vfsSL -H 'Host: t3kit9.local' --url 'localhost/'"
 
-      - name: Curl t3kit9.local/typo3
+      - name: Curl t3kit9.local from container
         run: "docker run --network=nproxy appropriate/curl -vfsSL -H 'Host: t3kit9.local' --url 'nproxy/'"
 
       - name: Curl t3kit9.local/typo3
         run: "curl -vfsSL -H 'Host: t3kit9.local' --url 'localhost/typo3/'"
-
-      - name: Curl t3kit9.local/typo3
-        run: "docker run --network=nproxy appropriate/curl -vfsSL -H 'Host: t3kit9.local' --url 'nproxy/typo3/'"
