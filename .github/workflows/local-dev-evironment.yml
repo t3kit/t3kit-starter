@@ -19,30 +19,24 @@ jobs:
         with:
           args: "install"
 
-      - name: Setup t3kit dev environment
+      - name: Add t3kit dev environment variables
         uses: docker://composer:1.9
         with:
           args: "run-script env"
 
-      - name: Create t3kit network
+      - name: Create nproxy Docker network
         run: docker network create nproxy
 
-      - name: Run nginx-proxy
+      - name: Run nginx-proxy for t3kit
         run: docker run -d -p=80:80 --name=nproxy --network=nproxy -v=/var/run/docker.sock:/tmp/docker.sock:ro t3kit/nproxy:1.0.0
 
       - name: Run t3kit containers
         run: docker-compose up -d
 
       - name: Show running containers
-        run: docker-compose ps
-
-      - run: docker-compose exec -T web cat /etc/passwd
-
-      - run: docker-compose exec -T web ls -lah
+        run: docker ps
 
       - run: docker-compose exec -T web chown -R www-data:www-data .
-
-      - run: docker-compose exec -T web ls -lah
 
       - name: Sleep 100s
         uses: maddox/actions/sleep@master
@@ -52,11 +46,11 @@ jobs:
       - name: Setup t3kit database
         run: docker-compose exec -T web /var/www/html/.t3kit/db/setupdb.sh
 
-      - name: Curl t3kit9.local
+      - name: curl t3kit9.local
         run: "curl -vfsSL -H 'Host: t3kit9.local' --url 'localhost/'"
 
-      - name: Curl t3kit9.local from container
+      - name: curl t3kit9.local from container
         run: "docker run --network=nproxy appropriate/curl -vfsSL -H 'Host: t3kit9.local' --url 'nproxy/'"
 
-      - name: Curl t3kit9.local/typo3
+      - name: curl t3kit9.local/typo3
         run: "curl -vfsSL -H 'Host: t3kit9.local' --url 'localhost/typo3/'"

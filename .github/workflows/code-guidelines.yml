@@ -26,9 +26,7 @@ jobs:
         with:
           args: "install"
 
-      - name: Lint code
+      - name: Run composer lint
         uses: docker://composer:1.9
         with:
           args: "run-script lint"
-
-
