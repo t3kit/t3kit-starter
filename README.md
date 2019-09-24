@@ -119,23 +119,15 @@ docker run --name pma -d -e PMA_ARBITRARY=1 --restart=unless-stopped --network n
 
 ### nginx-proxy
 
-#### [nginx-proxy for t3kit9 projects](https://github.com/t3kit/nproxy)
+#### [nginx-proxy for t3kit9 projects](https://github.com/t3kit/t3kit-dockerhub/tree/master/nproxy)
 
 For all t3kit projects, we need just a one `nginx-proxy` started as a separate Docker container. [Based on Automated Nginx Reverse Proxy for Docker](https://github.com/jwilder/nginx-proxy)
-
-##### Run nproxy with docker-compose
-
-```shell
-git clone git@github.com:t3kit/nproxy.git
-cd nproxy
-docker-compose up -d
-```
 
 ##### Run nproxy with docker
 
 ```shell
 docker network create nproxy
-docker run -d -p=80:80 --name=nproxy --restart=unless-stopped --network=nproxy -v=/var/run/docker.sock:/tmp/docker.sock:ro jwilder/nginx-proxy
+docker docker run -d -p=80:80 --name=nproxy --restart=unless-stopped --network=nproxy -v=/var/run/docker.sock:/tmp/docker.sock:ro t3kit/nproxy:1.0.0
 ```
 
 ### Clean up the project
