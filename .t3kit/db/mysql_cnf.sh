@@ -6,6 +6,5 @@ MYSQL_CONFIG="$BASEDIR/mysql.cnf"
 {
     echo "[client]";
     echo "password = $MYSQL_ROOT_PASSWORD";
-    echo "password = $MYSQL_ROOT_PASSWORD";
     echo "host = $DB_HOST";
 } > "$MYSQL_CONFIG"

@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
 
+set -eu pipefail
+
 # ####################################
-BASEDIR=$(dirname "$0")
+readonly BASEDIR=$(dirname "${BASH_SOURCE[0]}")
 # Generate temporary DB configuration
 # shellcheck disable=SC1090
 source "$BASEDIR"/mysql_cnf.sh
