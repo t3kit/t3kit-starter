@@ -11,7 +11,6 @@
 ![](https://github.com/t3kit/t3kit-starter/workflows/Code%20Guidelines/badge.svg)
 ![](https://github.com/t3kit/t3kit-starter/workflows/Local%20development%20environment/badge.svg)
 
-
 ## Table of contents
 
 ### t3kit-starter
@@ -26,17 +25,14 @@
 
 ### General info about t3kit project
 
-- [t3kit Roadmap](#t3kit-roadmap)
-- [Versioning](#versioning)
-- [t3kit project structure](#t3kit-project-structure)
 - [Documentation](https://t3kit.gitbook.io/doc)
+- [t3kit Roadmap](https://t3kit.gitbook.io/doc/t3kit-roadmap)
+- [Versioning](https://t3kit.gitbook.io/doc/t3kit-versioning)
+- [t3kit project structure](https://t3kit.gitbook.io/doc/t3kit-project-structure)
 - [Contributing to t3kit](https://github.com/t3kit/.github/blob/master/CONTRIBUTING.md)
 - [Code of Conduct](https://github.com/t3kit/.github/blob/master/CODE_OF_CONDUCT.md)
 - [Support](https://github.com/t3kit/.github/blob/master/SUPPORT.md)
 - [Security Policy](https://github.com/t3kit/.github/blob/master/SECURITY.md)
-- [t3kit 8.9](#t3kit89)
-- [t3kit 8](#t3kit8)
-- [t3kit 7](#t3kit7)
 
 ***
 
@@ -88,11 +84,11 @@ composer create-project -s dev --keep-vcs t3kit/t3kit-starter [<directory>] [<ve
 
     _*Note: To continue with Docker you need to create an environment `.env` file for your project based on an example `local.env`. It will be created automatically with `composer create-project` command, but if you are starting a project using another method (e.g., `git clone & composer install`) then you need to created `.env` file manually: `composer env` or `cp .t3kit/docker/local.env .env`._
 
-    - Change `COMPOSE_PROJECT_NAME` variable in `.env` file. It should be the same as a virtual host name without suffix `.local`. By default, it is `t3kit9`
+    - Change `COMPOSE_PROJECT_NAME` variable in `.env` file. It should be the same as a virtual host name. By default, it is `t3kit9.local`
 
     - OS-specific settings in `.env` file
         - **Ubuntu**
-            - Disable CACHED volumes because it's redundant in Ubuntu. Comment `CACHED=:cached` variable in `.env` file.
+            - Disable CACHED volumes because it's redundant in Ubuntu. Comment `CACHED=:delegated` variable in `.env` file.
             - Uncomment and set your host user id `USER_ID=` in `.env` file to make shared folder writable.
 
 4. Start all Docker services for a local development environment `docker-compose up -d`
@@ -133,45 +129,3 @@ docker docker run -d -p=80:80 --name=nproxy --restart=unless-stopped --network=n
 ### Clean up the project
 
 If there no needs to use **t3kit** starter database or **Docker configuration** for local development, then just delete folder `.t3kit` from the root of your project - `rm -r .t3kit`
-
-***
-
-## t3kit Roadmap
-
-|t3kit |Development|Release|Support & Maintenance|End of support|TYPO3|
-|------|-----------|-------|---------------------|--------------|-----|
-|v7    |❌         |02.2017|❌                   |02.2017       |v7   |
-|v8-8.8|❌         |02.2017|❌                   |02.2019       |v8   |
-|8.9   |❌         |01.2019|✅                   |04.2020       |v9   |
-|10    |✅         |**02.2020**|                 |              |v10  |
-|11    |❌         |_~08.2021_|                  |              |v11  |
-
-## Versioning
-
-Every **t3kit** release tagged by git tag using Semantic Versioning approach, but with t3kit specific change to **Major version number** which should be synchronized with particular TYPO3 version.
-
-- 1️⃣ first number - **Major version**: should be always the same as a last supported TYPO3 major version.
-- 2️⃣ second number - **Minor version**: new features and breaking changes to t3kit.
-- 3️⃣ third number - **Patch version**: pashes, bug fixes, documentation updates, code refactoring, tests and other small tasks.
-
-## t3kit project structure
-
-t3kit consist of **two** main parts plus additional extension which intended to help extend functionality for base t3kit components.
-
-- **t3kit-starter** - Starter point for a new project based on t3kit. GitHub project template, tools, configs, and best practices which should help you to kickstart new projects on a t3kit basis.
-
-- **t3kit** - main part of t3kit conception. It consists of new content elements, configurations, predefined BE layouts, menus, and scalable independent Front-End part.
-
-***
-
-## t3kit8.9
-
-Every part/extension of t3kit **v8.9** has a git branch `t3kit8.9` where you can find all last updates/commits for this particular version of t3kit.
-
-## t3kit8
-
-Every part/extension of t3kit **v8** has a git branch `t3kit8` where you can find all last updates/commits for this particular version of t3kit.
-
-## t3kit7
-
-Every part/extension of t3kit **v7** has a git branch `t3kit7` where you can find all last updates/commits for this particular version of t3kit.
