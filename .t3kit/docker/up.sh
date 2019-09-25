@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -eu pipefail
+
 # Make www-data user use id from hosts user to make shared folder writable. (!!!Only for Ubuntu)
 if [ -z "$USER_ID" ]
 then
