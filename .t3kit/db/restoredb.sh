@@ -23,7 +23,7 @@ if [ "$(mysql --defaults-extra-file="$BASEDIR"/mysql.cnf -e 'show databases;' | 
     # Create new database
     echo "CREATE NEW DATABASE $DB_NAME"
     mysql --defaults-extra-file="$BASEDIR"/mysql.cnf -e "CREATE DATABASE $DB_NAME"
-    mysql --defaults-extra-file="$BASEDIR"/mysql.cnf "$DB_NAME" < "$BASEDIR"/t3kit9.sql
+    mysql --defaults-extra-file="$BASEDIR"/mysql.cnf "$DB_NAME" < "$BASEDIR"/t3kit10.sql
 fi
 
 # Remove temporary DB configuration

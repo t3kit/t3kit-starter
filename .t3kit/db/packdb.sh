@@ -9,25 +9,24 @@ readonly BASEDIR=$(dirname "${BASH_SOURCE[0]}")
 source "$BASEDIR"/mysql_cnf.sh
 # ####################################
 
-OUT_FILE=${1:-"t3kit9.sql"}
+OUT_FILE="t3kit10.sql"
 CLEAR_TABLES=(
     "be_sessions"
     "be_users"
     "cache_treelist"
-    "cf_adminpanel_requestcache"
-    "cf_adminpanel_requestcache_tags"
-    "cf_cache_hash"
-    "cf_cache_hash_tags"
-    "cf_cache_imagesizes"
-    "cf_cache_imagesizes_tags"
-    "cf_cache_pages"
-    "cf_cache_pagesection"
-    "cf_cache_pagesection_tags"
-    "cf_cache_pages_tags"
-    "cf_cache_rootline"
-    "cf_cache_rootline_tags"
-    "cf_extbase_datamapfactory_datamap"
-    "cf_extbase_datamapfactory_datamap_tags"
+    "cache_adminpanel_requestcache"
+    "cache_adminpanel_requestcache_tags"
+    "cache_hash"
+    "cache_hash_tags"
+    "cache_imagesizes"
+    "cache_imagesizes_tags"
+    "cache_pages"
+    "cache_pagesection"
+    "cache_pagesection_tags"
+    "cache_pages_tags"
+    "cache_rootline"
+    "cache_rootline_tags"
+    "cache_treelist"
     "fe_sessions"
     "sys_file_processedfile"
     "sys_history"
@@ -64,7 +63,7 @@ if [ "$(mysql --defaults-extra-file="$BASEDIR"/mysql.cnf -e 'show databases;' | 
     # Create new database
     echo "CREATE NEW DATABASE $DB_NAME"
     mysql --defaults-extra-file="$BASEDIR"/mysql.cnf -e "CREATE DATABASE $DB_NAME"
-    mysql --defaults-extra-file="$BASEDIR"/mysql.cnf "$DB_NAME" < "$BASEDIR"/t3kit9.sql
+    mysql --defaults-extra-file="$BASEDIR"/mysql.cnf "$DB_NAME" < "$BASEDIR"/t3kit10.sql
 fi
 
 # Remove temporary DB configuration
