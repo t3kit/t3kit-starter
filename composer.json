@@ -24,39 +24,42 @@
     "docs": "https://github.com/t3kit/t3kit-starter"
   },
   "require": {
-    "typo3/minimal": "^9.5 || ^10.0.0",
+    "typo3/cms-backend": "^10.1.0",
+    "typo3/cms-core": "^10.1.0",
+    "typo3/cms-extbase": "^10.1.0",
+    "typo3/cms-extensionmanager": "^10.1.0",
+    "typo3/cms-filelist": "^10.1.0",
+    "typo3/cms-fluid": "^10.1.0",
+    "typo3/cms-frontend": "^10.1.0",
+    "typo3/cms-install": "^10.1.0",
+    "typo3/cms-recordlist": "^10.1.0",
 
-    "typo3/cms-about": "^9.5 || ^10.0.0",
-    "typo3/cms-adminpanel": "^9.5 || ^10.0.0",
-    "typo3/cms-belog": "^9.5 || ^10.0.0",
-    "typo3/cms-beuser": "^9.5 || ^10.0.0",
-    "typo3/cms-form": "^9.5 || ^10.0.0",
-    "typo3/cms-impexp": "^9.5 || ^10.0.0",
-    "typo3/cms-info": "^9.5 || ^10.0.0",
-    "typo3/cms-lowlevel": "^9.5 || ^10.0.0",
-    "typo3/cms-recycler": "^9.5 || ^10.0.0",
-    "typo3/cms-redirects": "^9.5 || ^10.0.0",
-    "typo3/cms-reports": "^9.5 || ^10.0.0",
-    "typo3/cms-rte-ckeditor": "^9.5 || ^10.0.0",
-    "typo3/cms-scheduler": "^9.5 || ^10.0.0",
-    "typo3/cms-seo": "^9.5 || ^10.0.0",
-    "typo3/cms-setup": "^9.5 || ^10.0.0",
-    "typo3/cms-tstemplate": "^9.5 || ^10.0.0",
-    "typo3/cms-viewpage": "^9.5 || ^10.0.0",
+    "typo3/cms-about": "^10.1.0",
+    "typo3/cms-adminpanel": "^10.1.0",
+    "typo3/cms-belog": "^10.1.0",
+    "typo3/cms-beuser": "^10.1.0",
+    "typo3/cms-form": "^10.1.0",
+    "typo3/cms-impexp": "^10.1.0",
+    "typo3/cms-info": "^10.1.0",
+    "typo3/cms-lowlevel": "^10.1.0",
+    "typo3/cms-recycler": "^10.1.0",
+    "typo3/cms-redirects": "^10.1.0",
+    "typo3/cms-reports": "^10.1.0",
+    "typo3/cms-rte-ckeditor": "^10.1.0",
+    "typo3/cms-scheduler": "^10.1.0",
+    "typo3/cms-seo": "^10.1.0",
+    "typo3/cms-setup": "^10.1.0",
+    "typo3/cms-tstemplate": "^10.1.0",
+    "typo3/cms-viewpage": "^10.1.0",
 
-    "typo3/cms-t3editor": "^9.5 || ^10.0.0",
-    "typo3/cms-felogin": "^9.5 || ^10.0.0",
-    "typo3/cms-filemetadata": "^9.5 || ^10.0.0",
-    "typo3/cms-sys-note": "^9.5 || ^10.0.0",
+    "typo3/cms-t3editor": "^10.1.0",
+    "typo3/cms-felogin": "^10.1.0",
+    "typo3/cms-filemetadata": "^10.1.0",
+    "typo3/cms-sys-note": "^10.1.0",
 
-
-    "typo3/cms-indexed-search": "^9.5 || ^10.0.0",
-    "typo3/cms-linkvalidator": "^9.5 || ^10.0.0",
-    "typo3/cms-opendocs": "^9.5 || ^10.0.0",
-
-    "helhum/typo3-console": "^5.5",
-
-    "t3kit/t3kit": "dev-t3kit9"
+    "typo3/cms-indexed-search": "^10.1.0",
+    "typo3/cms-linkvalidator": "^10.1.0",
+    "typo3/cms-opendocs": "^10.1.0"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "^3.4",
@@ -68,19 +71,17 @@
   "prefer-stable": true,
   "config": {
     "platform": {
-      "php": "7.2"
-    }
+      "php": "7.3"
+    },
+    "sort-packages": true
   },
   "scripts": {
     "typo3-cms-scripts": [
-      "typo3cms install:generatepackagestates",
-      "typo3cms install:fixfolderstructure"
     ],
     "pre-install-cmd": [
       "composer validate --no-check-all --strict"
     ],
     "post-autoload-dump": [
-      "@typo3-cms-scripts"
     ],
     "post-create-project-cmd": [
       "composer env"

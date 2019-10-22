@@ -21,7 +21,7 @@ services:
 
       - DB_HOST=${COMPOSE_PROJECT_NAME}_db
       - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD:-1234}
-      - DB_NAME=${DB_NAME:-t3kit9}
+      - DB_NAME=${DB_NAME:-t3kit10}
       - DB_USER=${DB_USER:-root}
 
       - USER_ID=${USER_ID:-}
