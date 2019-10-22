@@ -2,4 +2,5 @@
 <ruleset name="t3kit">
     <rule ref="PSR2"/>
     <file>public/typo3conf/AdditionalConfiguration.php</file>
+    <file>public/typo3conf/PackageStates.php</file>
 </ruleset>
