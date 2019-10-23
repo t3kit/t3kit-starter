@@ -95,6 +95,9 @@ return [
         'viewpage' => [
             'packagePath' => 'typo3/sysext/viewpage/',
         ],
+        't3kit' => [
+            'packagePath' => 'typo3conf/ext/t3kit/',
+        ],
     ],
     'version' => 5,
 ];

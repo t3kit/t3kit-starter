@@ -59,7 +59,9 @@
 
     "typo3/cms-indexed-search": "^10.1.0",
     "typo3/cms-linkvalidator": "^10.1.0",
-    "typo3/cms-opendocs": "^10.1.0"
+    "typo3/cms-opendocs": "^10.1.0",
+
+    "t3kit/t3kit": "dev-t3kit10"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "^3.4",

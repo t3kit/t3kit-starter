@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d262585c5e280576e264abe4199bf7fa",
+    "content-hash": "52ea03a8476b386eddba7d0e987d6b10",
     "packages": [
         {
             "name": "cogpowered/finediff",
@@ -3034,6 +3034,68 @@
             "time": "2019-09-11T15:41:19+00:00"
         },
         {
+            "name": "t3kit/t3kit",
+            "version": "dev-t3kit10",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/t3kit/t3kit.git",
+                "reference": "b51bc3f6f017aa57e1d147e62343514a93dd63ff"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/t3kit/t3kit/zipball/b51bc3f6f017aa57e1d147e62343514a93dd63ff",
+                "reference": "b51bc3f6f017aa57e1d147e62343514a93dd63ff",
+                "shasum": ""
+            },
+            "require": {
+                "typo3/cms-felogin": "^10.1.0",
+                "typo3/cms-form": "^10.1.0",
+                "typo3/cms-indexed-search": "^10.1.0",
+                "typo3/cms-rte-ckeditor": "^10.1.0",
+                "typo3/cms-seo": "^10.1.0",
+                "typo3/cms-tstemplate": "^10.1.0",
+                "typo3/minimal": "^10.1.0"
+            },
+            "require-dev": {
+                "heahdude/yaml-linter": "^1.0",
+                "helmich/typo3-typoscript-lint": "^2.0",
+                "sclable/xml-lint": "^0.2.4",
+                "squizlabs/php_codesniffer": "^3.4"
+            },
+            "type": "typo3-cms-extension",
+            "extra": {
+                "typo3/cms": {
+                    "web-dir": "build/public",
+                    "app-dir": "build"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "T3k\\t3kit\\": "Classes"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "t3kit Community",
+                    "homepage": "https://github.com/t3kit"
+                }
+            ],
+            "description": "t3kit project. A TYPO3 website starterkit.",
+            "homepage": "http://t3kit.com",
+            "keywords": [
+                "cms",
+                "starter",
+                "t3kit",
+                "t3kit10",
+                "typo3"
+            ],
+            "time": "2019-10-22T14:58:49+00:00"
+        },
+        {
             "name": "typo3/class-alias-loader",
             "version": "1.0.1",
             "source": {
@@ -5147,6 +5209,51 @@
             "time": "2019-10-01T08:18:18+00:00"
         },
         {
+            "name": "typo3/minimal",
+            "version": "v10.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/TYPO3/minimal.git",
+                "reference": "352720d8bbd61dd290497e6765ec8c2988e5108f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/TYPO3/minimal/zipball/352720d8bbd61dd290497e6765ec8c2988e5108f",
+                "reference": "352720d8bbd61dd290497e6765ec8c2988e5108f",
+                "shasum": ""
+            },
+            "require": {
+                "typo3/cms-backend": "~10.1.0",
+                "typo3/cms-core": "~10.1.0",
+                "typo3/cms-extbase": "~10.1.0",
+                "typo3/cms-extensionmanager": "~10.1.0",
+                "typo3/cms-filelist": "~10.1.0",
+                "typo3/cms-fluid": "~10.1.0",
+                "typo3/cms-frontend": "~10.1.0",
+                "typo3/cms-install": "~10.1.0",
+                "typo3/cms-recordlist": "~10.1.0"
+            },
+            "type": "metapackage",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "TYPO3 CMS Core Team",
+                    "homepage": "https://forge.typo3.org/projects/typo3cms-core",
+                    "role": "Developer"
+                },
+                {
+                    "name": "The TYPO3 Community",
+                    "homepage": "https://typo3.org/community/",
+                    "role": "Contributor"
+                }
+            ],
+            "description": "Minimal required set of TYPO3 extensions",
+            "time": "2019-10-02T08:34:56+00:00"
+        },
+        {
             "name": "typo3/phar-stream-wrapper",
             "version": "v3.1.3",
             "source": {
@@ -5386,7 +5493,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "t3kit/t3kit": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": [],
