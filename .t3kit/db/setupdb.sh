@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
+if [ -n "$GITHUB_ACTION" ]; then
+    echo "Skipping database import. This is a Github action, so mysql won't work."
+    exit 0
+fi
+
 set -eu pipefail
 
 # ####################################
@@ -8,7 +13,6 @@ readonly BASEDIR=$(dirname "${BASH_SOURCE[0]}")
 # shellcheck disable=SC1090
 source "$BASEDIR"/mysql_cnf.sh
 # ####################################
-
 
 echo "IMPORT T3KIT DATABASE INTO $DB_NAME"
 
