@@ -4,7 +4,7 @@
 if [ -n "$(command -v ddev)" ]; then
   read -rp "Would you like to set up and configure DDEV? [Y/n]: " SETUP_DDEV
 
-  if [ "$SETUP_DDEV" = "Y" ]; then
+  if [ "$SETUP_DDEV" != "Y" ]; then
     echo "OK. Won't install DDEV. You can do this later by running"
     echo "    .t3kit/ddev/setupddev.sh"
     exit 0
