@@ -1,10 +1,5 @@
 #!/usr/bin/env bash
 
-if [ -n "$GITHUB_ACTION" ]; then
-    echo "Skipping database import. This is a Github action, so mysql won't work."
-    exit 0
-fi
-
 set -eu pipefail
 
 # ####################################
