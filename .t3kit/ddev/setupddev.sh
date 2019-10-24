@@ -16,7 +16,7 @@ if [ -n "$(command -v ddev)" ]; then
 
     echo "The .ddev directory has been created."
 
-    cd "$BASEDIR"/../.. && ddev config --docroot=public --project-type=typo3 --php-version=7.2
+    cd "$BASEDIR"/../.. && ddev config --docroot=public --project-type=typo3 --php-version=7.3
 fi
 
 
