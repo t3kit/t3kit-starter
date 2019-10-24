@@ -1,9 +1,12 @@
-#!/bin/bash
+#!/usr/bin/env bash
+
+set -eu pipefail
 
 # ####################################
-BASEDIR=$(dirname "$0")
+readonly BASEDIR=$(dirname "${BASH_SOURCE[0]}")
 # Generate temporary DB configuration
-source $BASEDIR/mysql_cnf.sh
+# shellcheck disable=SC1090
+source "$BASEDIR"/mysql_cnf.sh
 # ####################################
 
 
@@ -24,11 +27,11 @@ fi;
 
 if [ "$CHANGE_DB" = "Y" ]; then
   mysql --defaults-extra-file=$BASEDIR/mysql.cnf -e "CREATE DATABASE IF NOT EXISTS $DB_NAME"
-  mysql --defaults-extra-file=$BASEDIR/mysql.cnf $DB_NAME < $BASEDIR/t3kit9.sql
+  mysql --defaults-extra-file=$BASEDIR/mysql.cnf $DB_NAME < $BASEDIR/t3kit10.sql
   echo "Done"
 fi
 
 # Remove temporary DB configuration
-rm $MYSQL_CONFIG
+rm "$MYSQL_CONFIG"
 
 

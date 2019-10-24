@@ -1,9 +1,9 @@
-rootPageId: 1
 base: 'http://demo.t3kit.com'
 baseVariants:
   -
-    base: 'http://t3kit9.local'
+    base: 'http://t3kit10.local'
     condition: 'applicationContext == "Development/local"'
+errorHandling: {  }
 languages:
   -
     title: English
@@ -13,10 +13,10 @@ languages:
     typo3Language: default
     locale: en_US.UTF-8
     iso-639-1: en
-    navigationTitle: ''
+    navigationTitle: English
     hreflang: en-US
     direction: ltr
-    flag: en-us-gb
+    flag: us
   -
     title: Swedish
     enabled: true
@@ -25,7 +25,7 @@ languages:
     typo3Language: sv
     locale: sv_SE.UTF-8
     iso-639-1: sv
-    navigationTitle: ''
+    navigationTitle: Swedish
     hreflang: sv-SE
     direction: ltr
     fallbackType: fallback
@@ -39,7 +39,7 @@ languages:
     typo3Language: de
     locale: de_DE.UTF-8
     iso-639-1: de
-    navigationTitle: ''
+    navigationTitle: German
     hreflang: de-DE
     direction: ltr
     fallbackType: fallback
@@ -53,7 +53,7 @@ languages:
     typo3Language: 'no'
     locale: no_NO.UTF-8
     iso-639-1: 'no'
-    navigationTitle: ''
+    navigationTitle: Norwegian
     hreflang: no-NO
     direction: ltr
     fallbackType: fallback
@@ -67,7 +67,7 @@ languages:
     typo3Language: da
     locale: da_DK.UTF-8
     iso-639-1: da
-    navigationTitle: ''
+    navigationTitle: Danish
     hreflang: da-DK
     direction: ltr
     fallbackType: fallback
@@ -81,17 +81,13 @@ languages:
     typo3Language: fr
     locale: fr_FR.UTF-8
     iso-639-1: fr
-    navigationTitle: ''
+    navigationTitle: French
     hreflang: fr-FR
     direction: ltr
     fallbackType: fallback
     fallbacks: '0'
     flag: fr
-errorHandling:
-  -
-    errorCode: '404'
-    errorHandler: Page
-    errorContentSource: 't3://page?uid=9'
+rootPageId: 1
 routes:
   -
     route: robots.txt
@@ -100,7 +96,7 @@ routes:
   -
     route: humans.txt
     type: staticText
-    content: "/* TEAM */\r\nTeam: t3kit\r\nSite: https://github.com/t3kit, http://t3kit.com\r\n\r\n/* SITE */\r\nStandards: HTML5, CSS3, PHP7\r\nComponents: TYPO3 v9, t3kit9, Bootstrap 4"
+    content: "/* TEAM */\r\nTeam: t3kit\r\nSite: https://github.com/t3kit, http://t3kit.com\r\n\r\n/* SITE */\r\nStandards: HTML5, CSS3, PHP7\r\nComponents: TYPO3 v10, t3kit10, Bootstrap 4"
   -
     route: sitemap.xml
     type: uri

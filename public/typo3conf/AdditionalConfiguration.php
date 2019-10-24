@@ -1,7 +1,6 @@
 <?php
 
 switch (\TYPO3\CMS\Core\Core\Environment::getContext()) {
-
     /*
     * ################################################
     * Development context for t3kit local development environment based on Docker Compose configuration
@@ -24,7 +23,7 @@ switch (\TYPO3\CMS\Core\Core\Environment::getContext()) {
         $GLOBALS['TYPO3_CONF_VARS']['FE']['debug'] = true;
 
         // SYS
-        $GLOBALS['TYPO3_CONF_VARS']['SYS']['sitename'] = 'TYPO3 :: t3kit9 :: Dev mode *(local)';
+        $GLOBALS['TYPO3_CONF_VARS']['SYS']['sitename'] = 'TYPO3 :: t3kit10 :: Dev mode *(local)';
         $GLOBALS['TYPO3_CONF_VARS']['SYS']['devIPmask'] = '*';
 
         $GLOBALS['TYPO3_CONF_VARS']['SYS']['systemLogLevel'] = 0;
@@ -33,7 +32,7 @@ switch (\TYPO3\CMS\Core\Core\Environment::getContext()) {
         $GLOBALS['TYPO3_CONF_VARS']['SYS']['belogErrorReporting'] = 30711; // Default = 30711
         $GLOBALS['TYPO3_CONF_VARS']['SYS']['exceptionalErrors'] = 12290; // Default = 12290
         $GLOBALS['TYPO3_CONF_VARS']['SYS']['trustedHostsPattern'] = getenv('VIRTUAL_HOST');
-    break; //_______________________________________________________________________________________
+        break; //_______________________________________________________________________________________
 
     /*
     * ################################################
@@ -57,14 +56,14 @@ switch (\TYPO3\CMS\Core\Core\Environment::getContext()) {
         $GLOBALS['TYPO3_CONF_VARS']['FE']['debug'] = false;
 
         // SYS
-        $GLOBALS['TYPO3_CONF_VARS']['SYS']['sitename'] = 'TYPO3 :: t3kit9 :: Production *(local)';
+        $GLOBALS['TYPO3_CONF_VARS']['SYS']['sitename'] = 'TYPO3 :: t3kit10 :: Production *(local)';
         $GLOBALS['TYPO3_CONF_VARS']['SYS']['devIPmask'] = '';
 
-        $GLOBALS['TYPO3_CONF_VARS']['SYS']['systemLogLevel'] = 3;
+        $GLOBALS['TYPO3_CONF_VARS']['SYS']['systemLogLevel'] = 2;
         $GLOBALS['TYPO3_CONF_VARS']['SYS']['displayErrors'] = 0;
         $GLOBALS['TYPO3_CONF_VARS']['SYS']['belogErrorReporting'] = 0;
         $GLOBALS['TYPO3_CONF_VARS']['SYS']['exceptionalErrors'] = 4096; // Default = 4096
-    break; //_______________________________________________________________________________________
+        break; //_______________________________________________________________________________________
 
     case 'Development':
         // SetEnv TYPO3_CONTEXT Development
@@ -76,7 +75,7 @@ switch (\TYPO3\CMS\Core\Core\Environment::getContext()) {
         $GLOBALS['TYPO3_CONF_VARS']['FE']['debug'] = true;
 
         // SYS
-        $GLOBALS['TYPO3_CONF_VARS']['SYS']['sitename'] = 'TYPO3 :: t3kit9 :: Dev mode';
+        $GLOBALS['TYPO3_CONF_VARS']['SYS']['sitename'] = 'TYPO3 :: t3kit10 :: Dev mode';
         $GLOBALS['TYPO3_CONF_VARS']['SYS']['devIPmask'] = '*';
 
         $GLOBALS['TYPO3_CONF_VARS']['SYS']['systemLogLevel'] = 0;
@@ -84,7 +83,7 @@ switch (\TYPO3\CMS\Core\Core\Environment::getContext()) {
         $GLOBALS['TYPO3_CONF_VARS']['SYS']['errorHandlerErrors'] = 30466; // Default = 30466
         $GLOBALS['TYPO3_CONF_VARS']['SYS']['belogErrorReporting'] = 30711; // Default = 30711
         $GLOBALS['TYPO3_CONF_VARS']['SYS']['exceptionalErrors'] = 12290; // Default = 12290
-    break; //_______________________________________________________________________________________
+        break; //_______________________________________________________________________________________
 
     case 'Production':
         // SetEnv TYPO3_CONTEXT Production
@@ -96,13 +95,12 @@ switch (\TYPO3\CMS\Core\Core\Environment::getContext()) {
         $GLOBALS['TYPO3_CONF_VARS']['FE']['debug'] = false;
 
         // SYS
-        $GLOBALS['TYPO3_CONF_VARS']['SYS']['sitename'] = 'TYPO3 :: t3kit9 :: Production';
+        $GLOBALS['TYPO3_CONF_VARS']['SYS']['sitename'] = 'TYPO3 :: t3kit10 :: Production';
         $GLOBALS['TYPO3_CONF_VARS']['SYS']['devIPmask'] = '';
 
-        $GLOBALS['TYPO3_CONF_VARS']['SYS']['systemLogLevel'] = 3;
+        $GLOBALS['TYPO3_CONF_VARS']['SYS']['systemLogLevel'] = 2;
         $GLOBALS['TYPO3_CONF_VARS']['SYS']['displayErrors'] = 0;
         $GLOBALS['TYPO3_CONF_VARS']['SYS']['belogErrorReporting'] = 0;
         $GLOBALS['TYPO3_CONF_VARS']['SYS']['exceptionalErrors'] = 4096; // Default = 4096
-    break; //_______________________________________________________________________________________
-
+        break; //_______________________________________________________________________________________
 }
