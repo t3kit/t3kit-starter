@@ -15,14 +15,14 @@ CHANGE_DB="Y"
 NUMBER_OF_ROWS=0
 
 # Check if the database exists
-if [[ -n "$(mysql --defaults-extra-file="$BASEDIR"/mysql.cnf -s -e \"SHOW DATABASES LIKE 'dbname';\")" ]]; then
+if [[ -n $(mysql --defaults-extra-file="$BASEDIR"/mysql.cnf -s -e 'SHOW DATABASES LIKE "dbname";') ]]; then
     NUMBER_OF_ROWS=$(mysql -s --skip-column-names -e "SELECT COUNT(DISTINCT table_name) FROM information_schema.columns WHERE table_schema = '$DB_NAME'");
 fi
 
 # Ask the user if it is OK to continue if there database is not empty
 if [ "$NUMBER_OF_ROWS" -gt 0 ]; then
     read -rp "The database $DB_NAME is not empty. Would you like to continue? [Y/n]: " CHANGE_DB
-fi;
+fi
 
 if [ "$CHANGE_DB" = "Y" ]; then
     mysql --defaults-extra-file="$BASEDIR"/mysql.cnf -e "CREATE DATABASE IF NOT EXISTS $DB_NAME"
