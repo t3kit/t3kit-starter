@@ -15,7 +15,7 @@ CHANGE_DB="Y"
 NUMBER_OF_ROWS=0
 
 # Check if the database exists
-if [[ -n "$(mysql -s -e \"SHOW DATABASES LIKE 'dbname';\")" ]]; then
+if [[ -n "$(mysql --defaults-extra-file="$BASEDIR"/mysql.cnf -s -e \"SHOW DATABASES LIKE 'dbname';\")" ]]; then
     NUMBER_OF_ROWS=$(mysql -s --skip-column-names -e "SELECT COUNT(DISTINCT table_name) FROM information_schema.columns WHERE table_schema = '$DB_NAME'");
 fi
 
@@ -25,8 +25,8 @@ if [ "$NUMBER_OF_ROWS" -gt 0 ]; then
 fi;
 
 if [ "$CHANGE_DB" = "Y" ]; then
-    mysql --defaults-extra-file="$BASEDIR/mysql.cnf" -e "CREATE DATABASE IF NOT EXISTS $DB_NAME"
-    mysql --defaults-extra-file="$BASEDIR/mysql.cnf" "$DB_NAME" < "$BASEDIR/t3kit10.sql"
+    mysql --defaults-extra-file="$BASEDIR"/mysql.cnf -e "CREATE DATABASE IF NOT EXISTS $DB_NAME"
+    mysql --defaults-extra-file="$BASEDIR"/mysql.cnf "$DB_NAME" < "$BASEDIR/t3kit10.sql"
     echo "Done"
 fi
 
