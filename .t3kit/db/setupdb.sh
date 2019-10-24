@@ -15,7 +15,7 @@ CHANGE_DB="Y"
 NUMBER_OF_ROWS=0
 
 # Check if the database exists
-if [[ -n $(mysql --defaults-extra-file="$BASEDIR"/mysql.cnf -s -e 'SHOW DATABASES LIKE "dbname";') ]]; then
+if [[ -n $(mysql --defaults-extra-file="$BASEDIR"/mysql.cnf -s -e "SHOW DATABASES LIKE '$DB_NAME';") ]]; then
     NUMBER_OF_ROWS=$(mysql -s --skip-column-names -e "SELECT COUNT(DISTINCT table_name) FROM information_schema.columns WHERE table_schema = '$DB_NAME'");
 fi
 
