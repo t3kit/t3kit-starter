@@ -12,11 +12,11 @@ if [ -n "$(command -v ddev)" ]; then
 
     BASEDIR=$(dirname "$0")
 
-    cp -r "$BASEDIR/dot-ddev-directory" ../../.ddev
+    cp -r "$BASEDIR"/dot-ddev-directory ../../.ddev
 
     echo "The .ddev directory has been created."
 
-    cd "$BASEDIR/../.." && ddev config --docroot=public --project-type=typo3 --php-version=7.2
+    cd "$BASEDIR"/../.. && ddev config --docroot=public --project-type=typo3 --php-version=7.2
 fi
 
 
