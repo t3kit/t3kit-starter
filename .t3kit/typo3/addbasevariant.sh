@@ -4,7 +4,7 @@ BASEDIR=$(dirname "$0")
 
 BASE_VARIANT=$1
 
-if [ ! -n "$BASE_VARIANT" ]; then
+if [ -z "$BASE_VARIANT" ]; then
   echo "No base variant supplied. Try again with"
   echo "    addbasevariant.sh 'http://example.com' [site name=t3kit]"
   exit 1
@@ -13,7 +13,7 @@ fi
 # Takes an optional second argument, the site name in the config/sites/ direcotry
 SITE_NAME=$2
 
-if [ ! -n "$SITE_NAME" ]; then
+if [ -z "$SITE_NAME" ]; then
   SITE_NAME="t3kit"
 fi
 
