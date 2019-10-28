@@ -18,7 +18,8 @@
 - [About](#about)
 - [What's included](#whats-included)
 - [Required dependencies](#required-dependencies)
-- [Quick start](#quick-start)
+- [File structure](#file-structure)
+- [Quick start a new project on t3kit base](#quick-start-a-new-project-on-t3kit-base)
 - [Local development environment based on Docker](#local-development-environment-based-on-docker)
 - [Local development tools](#local-development-tools)
 - [Changelog](CHANGELOG.md)
@@ -42,8 +43,6 @@
 
 ## What's included
 
-It includes:
-
 - Project folder structure
 - Composer configuration
 - t3kit and TYPO3 project dependencies
@@ -62,10 +61,41 @@ It includes:
 - [Docker](https://docs.docker.com/install/) >= v19.03.1
 - [Docker Compose](https://docs.docker.com/compose/install/) >= v1.24.1
 
-## Quick start
+## File structure
+
+```text
+t3kit-dockerhub/
+├── .github/          # github actions
+├── .t3kit/
+│   ├── community/   # community configuration for t3kit, not supported by t3kit team
+│   ├── db/          # t3kit database manipulation - Setup/Restore/Pack
+│   └── docker/      # t3kit local development config based on Docker
+├── config/
+└── public/
+    ├── typo3conf/
+    │   ├── AdditionalConfiguration.php
+    │   ├── LocalConfiguration.php
+    │   └── PackageStates.php
+    └── fileadmin/
+```
+
+### Community configuration
+
+We are open to any additional configuration on top of the t3kit. To add it just follow two rules below:
+
+1. It always should be inside `.t3kit/community/` folder
+2. t3kit team will not support it
+
+### Clean up the project
+
+If there no needs to use **t3kit** starter database or **Docker configuration** for local development, then just delete folder `.t3kit` from the root of your project - `rm -r .t3kit`
+
+***
+
+## Quick start a new project on t3kit base
 
 ```shell
-composer create-project -s dev --keep-vcs t3kit/t3kit-starter [<directory>] [<version>]
+composer create-project -s dev --remove-vcs t3kit/t3kit-starter [<directory>] [<version>]
 
 ```
 
@@ -75,7 +105,7 @@ composer create-project -s dev --keep-vcs t3kit/t3kit-starter [<directory>] [<ve
 
 2. Add new virtual host on your local machine
 
-    _*Note: use this pattern `PROJECT_NAME.local` to add new virtual host. For example `t3kit9.local`_
+    _*Note: use this pattern `PROJECT_NAME.local` to add new virtual host. For example `t3kit10.local`_
 
     - `nano /etc/hosts`
     - add a new line at the end `127.0.0.1 PROJECT_NAME.local`
@@ -84,18 +114,17 @@ composer create-project -s dev --keep-vcs t3kit/t3kit-starter [<directory>] [<ve
 
     _*Note: To continue with Docker you need to create an environment `.env` file for your project based on an example `local.env`. It will be created automatically with `composer create-project` command, but if you are starting a project using another method (e.g., `git clone & composer install`) then you need to created `.env` file manually: `composer env` or `cp .t3kit/docker/local.env .env`._
 
-    - Change `COMPOSE_PROJECT_NAME` variable in `.env` file. It should be the same as a virtual host name. By default, it is `t3kit9.local`
+    - Change `COMPOSE_PROJECT_NAME` variable in `.env` file. It should be the same as a virtual host name. By default, it is `t3kit10.local`
 
     - OS-specific settings in `.env` file
-        - **Ubuntu**
-            - Disable CACHED volumes because it's redundant in Ubuntu. Comment `CACHED=:delegated` variable in `.env` file.
+        - **Linux**
             - Uncomment and set your host user id `USER_ID=` in `.env` file to make shared folder writable.
 
 4. Start all Docker services for a local development environment `docker-compose up -d`
 
 5. Setup t3kit starter database `composer dbup` or `docker-compose exec web /var/www/html/.t3kit/db/setupdb.sh`
 
-6. Open `t3kit.local` in browser
+6. Open `t3kit10.local` in browser
 
 ## Local development tools
 
@@ -115,7 +144,7 @@ docker run --name pma -d -e PMA_ARBITRARY=1 --restart=unless-stopped --network n
 
 ### nginx-proxy
 
-#### [nginx-proxy for t3kit9 projects](https://github.com/t3kit/t3kit-dockerhub/tree/master/nproxy)
+#### [nginx-proxy for t3kit10 projects](https://github.com/t3kit/t3kit-dockerhub/tree/master/nproxy)
 
 For all t3kit projects, we need just a one `nginx-proxy` started as a separate Docker container. [Based on Automated Nginx Reverse Proxy for Docker](https://github.com/jwilder/nginx-proxy)
 
@@ -125,7 +154,3 @@ For all t3kit projects, we need just a one `nginx-proxy` started as a separate D
 docker network create nproxy
 docker run -d -p=80:80 --name=nproxy --restart=unless-stopped --network=nproxy -v=/var/run/docker.sock:/tmp/docker.sock:ro t3kit/nproxy:1.0.0
 ```
-
-### Clean up the project
-
-If there no needs to use **t3kit** starter database or **Docker configuration** for local development, then just delete folder `.t3kit` from the root of your project - `rm -r .t3kit`
