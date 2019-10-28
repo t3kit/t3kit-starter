@@ -86,8 +86,7 @@
     "post-autoload-dump": [
     ],
     "post-create-project-cmd": [
-      "composer env",
-      ".t3kit/ddev/setupddev.sh"
+      "composer env"
     ],
     "env": "cp .t3kit/docker/local.env .env",
     "dbup": "docker-compose exec -T web /var/www/html/.t3kit/db/setupdb.sh",

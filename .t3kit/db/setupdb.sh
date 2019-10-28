@@ -9,6 +9,7 @@ readonly BASEDIR=$(dirname "${BASH_SOURCE[0]}")
 source "$BASEDIR"/mysql_cnf.sh
 # ####################################
 
+
 echo "IMPORT T3KIT DATABASE INTO $DB_NAME"
 
 CHANGE_DB="Y"
@@ -32,5 +33,3 @@ fi
 
 # Remove temporary DB configuration
 rm "$MYSQL_CONFIG"
-
-
