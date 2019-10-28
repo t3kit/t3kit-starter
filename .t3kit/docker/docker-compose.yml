@@ -5,16 +5,17 @@ services:
   db:
     container_name: ${COMPOSE_PROJECT_NAME}_db
     image: ${DB_IMAGE:-mariadb:10.3}
+    environment:
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD:-1234}
+    volumes:
+      - db:/var/lib/mysql
     command:
       - --character-set-server=utf8mb4
       - --collation-server=utf8mb4_unicode_ci
 
-    environment:
-      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD:-1234}
-
   web:
     container_name: ${COMPOSE_PROJECT_NAME}_web
-    image: ${WEB_IMAGE:-t3kit/ubuntu18.04-php7.3-apache2.4:1.0.0}
+    image: ${WEB_IMAGE:-t3kit/10-php7.3-apache2.4-stretch:1.0.0}
     environment:
       - VIRTUAL_HOST=${COMPOSE_PROJECT_NAME}
       - TYPO3_CONTEXT=${TYPO3_CONTEXT:-Development/local}
@@ -25,11 +26,21 @@ services:
       - DB_USER=${DB_USER:-root}
 
       - USER_ID=${USER_ID:-}
+      - APACHE_RUN_USER=#${USER_ID:-33}
     volumes:
-      - ../../:/var/www/html${FILE_SYSTEM_MODE:-}
-    command: "./.t3kit/docker/up.sh"
+      - ../../:/var/www/html${FILE_SYSTEM_MODE:-:delegated}
+      - typo3temp:/var/www/html/public/typo3temp
+      - var:/var/www/html/var
 
 networks:
   default:
     external:
       name: nproxy
+
+volumes:
+  typo3temp:
+    name: ${COMPOSE_PROJECT_NAME}_typo3temp
+  var:
+    name: ${COMPOSE_PROJECT_NAME}_var
+  db:
+    name: ${COMPOSE_PROJECT_NAME}_db
