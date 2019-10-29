@@ -36,8 +36,6 @@ jobs:
       - name: Show running containers
         run: docker ps
 
-      - run: docker-compose exec -T web chown -R www-data:www-data .
-
       - name: Sleep 100s
         uses: maddox/actions/sleep@master
         with:

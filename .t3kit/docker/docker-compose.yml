@@ -15,7 +15,7 @@ services:
 
   web:
     container_name: ${COMPOSE_PROJECT_NAME}_web
-    image: ${WEB_IMAGE:-t3kit/10-php7.3-apache2.4-stretch:1.0.0}
+    image: ${WEB_IMAGE:-t3kit/10-php7.3-apache2.4-stretch:1.1.0}
     environment:
       - VIRTUAL_HOST=${COMPOSE_PROJECT_NAME}
       - TYPO3_CONTEXT=${TYPO3_CONTEXT:-Development/local}
@@ -25,8 +25,7 @@ services:
       - DB_NAME=${DB_NAME:-t3kit10}
       - DB_USER=${DB_USER:-root}
 
-      - USER_ID=${USER_ID:-}
-      - APACHE_RUN_USER=#${USER_ID:-33}
+      - USER_ID=${USER_ID:-1000}
     volumes:
       - ../../:/var/www/html${FILE_SYSTEM_MODE:-:delegated}
       - typo3temp:/var/www/html/public/typo3temp
