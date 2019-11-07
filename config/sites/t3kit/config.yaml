@@ -1,7 +1,7 @@
 base: 'http://demo.t3kit.com'
 baseVariants:
   -
-    base: 'http://t3kit10.local'
+    base: '%env(VIRTUAL_HOST)%'
     condition: 'applicationContext == "Development/local"'
 errorHandling: {  }
 languages:
