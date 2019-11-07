@@ -24,12 +24,12 @@ return [
     ],
     'EXTENSIONS' => [
         'backend' => [
-            'backendFavicon' => '',
-            'backendLogo' => '',
+            'backendFavicon' => 'EXT:t3kit/Resources/Public/Images/Backend/be-favicon.ico',
+            'backendLogo' => 'EXT:t3kit/Resources/Public/Images/Backend/backend-logo.svg',
             'loginBackgroundImage' => '',
-            'loginFootnote' => '',
-            'loginHighlightColor' => '',
-            'loginLogo' => '',
+            'loginFootnote' => 't3kit 10',
+            'loginHighlightColor' => '#010101',
+            'loginLogo' => 'EXT:t3kit/Resources/Public/Images/Backend/login-logo.svg',
         ],
         'extensionmanager' => [
             'automaticInstallation' => '0',
