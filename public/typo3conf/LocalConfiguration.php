@@ -25,7 +25,7 @@ return [
     'EXTENSIONS' => [
         'backend' => [
             'backendFavicon' => 'EXT:t3kit/Resources/Public/Images/Backend/be-favicon.ico',
-            'backendLogo' => 'EXT:t3kit/Resources/Public/Images/Backend/backend-logo.svg',
+            'backendLogo' => '',
             'loginBackgroundImage' => '',
             'loginFootnote' => 't3kit 10',
             'loginHighlightColor' => '#010101',
@@ -33,7 +33,7 @@ return [
         ],
         'extensionmanager' => [
             'automaticInstallation' => '0',
-            'offlineMode' => '0',
+            'offlineMode' => '1',
         ],
         'scheduler' => [
             'maxLifetime' => '1440',
