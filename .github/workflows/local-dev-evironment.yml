@@ -44,11 +44,11 @@ jobs:
       - name: Setup t3kit database
         run: docker-compose exec -T web /var/www/html/.t3kit/db/setupdb.sh
 
-      - name: curl t3kit10.local
-        run: "curl -vfsSL -H 'Host: t3kit10.local' --url 'localhost/'"
+      - name: curl t3kit10.t3.localhost
+        run: "curl -vfsSL -H 'Host: t3kit10.t3.localhost' --url 'localhost/'"
 
-      - name: curl t3kit10.local from container
-        run: "docker run --network=nproxy appropriate/curl -vfsSL -H 'Host: t3kit10.local' --url 'nproxy/'"
+      - name: curl t3kit10.t3.localhost from container
+        run: "docker run --network=nproxy appropriate/curl -vfsSL -H 'Host: t3kit10.t3.localhost' --url 'nproxy/'"
 
-      - name: curl t3kit10.local/typo3
-        run: "curl -vfsSL -H 'Host: t3kit10.local' --url 'localhost/typo3/'"
+      - name: curl t3kit10.t3.localhost/typo3
+        run: "curl -vfsSL -H 'Host: t3kit10.t3.localhost' --url 'localhost/typo3/'"
