@@ -7,5 +7,8 @@ public/typo3conf/*
 !public/typo3conf/LocalConfiguration.php
 !public/typo3conf/AdditionalConfiguration.php
 !public/typo3conf/PackageStates.php
-
+!public/fileadmin
+public/fileadmin/*
+!public/fileadmin/example_content
 .env
+.vscode/
