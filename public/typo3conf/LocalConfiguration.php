@@ -111,7 +111,6 @@ return [
         ],
         'sitename' => 'TYPO3 :: t3kit10 :: Dev mode *(local)',
         'systemLocale' => 'en_US.UTF-8',
-        'systemLogLevel' => 0,
         'systemMaintainers' => [
             1,
         ],
