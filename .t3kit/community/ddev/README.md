@@ -6,10 +6,12 @@ These instructions require that you have installed DDEV. Read how to install [DD
 
 2. `cd [project-dir]` (e.g. `cd t3kit-starter`)
 
-3. Run `composer ddev:config`. Specify a project name or use the suggested project name. The other options should be correct, so keep the defaults.
+3. Run `composer install`
 
-4. Run `ddev start`
+4. Run `composer ddev-config`. Specify a project name or use the suggested project name. The other options should be correct, so keep the defaults.
 
-5. Run `ddev t3kit setupdb`
+5. Run `ddev start`
 
-6. Visit your site at the project URL. (e.g. t3kit-starter.ddev.site)
+6. Run `ddev t3kit setupdb`
+
+7. Visit your site at the project URL. (e.g. https://t3kit-starter.ddev.site)
