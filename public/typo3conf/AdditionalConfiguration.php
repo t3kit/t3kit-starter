@@ -31,6 +31,8 @@ switch (\TYPO3\CMS\Core\Core\Environment::getContext()) {
         $GLOBALS['TYPO3_CONF_VARS']['SYS']['errorHandlerErrors'] = 30466; // Default = 30466
         $GLOBALS['TYPO3_CONF_VARS']['SYS']['belogErrorReporting'] = 30711; // Default = 30711
         $GLOBALS['TYPO3_CONF_VARS']['SYS']['exceptionalErrors'] = 12290; // Default = 12290
+
+        $GLOBALS['TYPO3_CONF_VARS']['SYS']['trustedHostsPattern'] = '.*';
         break; //_______________________________________________________________________________________
 
     /*
