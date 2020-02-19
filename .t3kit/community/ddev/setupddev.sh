@@ -4,7 +4,7 @@
 if [ -n "$(command -v ddev)" ]; then
     BASEDIR=$(dirname "$0")
 
-    cp -r "$BASEDIR"/dot-ddev-directory ../../../.ddev
+    cp -r "$BASEDIR"/dot-ddev-directory .ddev
 
     echo "The .ddev directory has been created."
 
