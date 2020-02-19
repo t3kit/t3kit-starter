@@ -2,7 +2,7 @@
 
 These instructions require that you have installed DDEV. Read how to install [DDEV](https://ddev.readthedocs.io/en/stable/#installation)
 
-1. Quickstart your project as described above.
+1. Quickstart your project by running `composer create-project -s dev --remove-vcs t3kit/t3kit-starter [<directory>] [<version>]`
 
 2. `cd [project-dir]` (e.g. `cd t3kit-starter`)
 
