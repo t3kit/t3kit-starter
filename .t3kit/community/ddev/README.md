@@ -6,7 +6,7 @@ These instructions require that you have installed DDEV. Read how to install [DD
 
 2. `cd [project-dir]` (e.g. `cd t3kit-starter`)
 
-3. Run `ddev config`. Specify a project name or use the suggested project name. The other options should be correct, so keep the defaults.
+3. Run `composer ddev:config`. Specify a project name or use the suggested project name. The other options should be correct, so keep the defaults.
 
 4. Run `ddev start`
 

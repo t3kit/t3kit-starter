@@ -97,6 +97,7 @@
     "lint": [
       "@lint-php",
       "@lint-yaml"
-    ]
+    ],
+    "ddev-config": ".t3kit/community/ddev/setupddev.sh"
   }
 }
