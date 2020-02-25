@@ -4,29 +4,29 @@ name: Code Guidelines
 on: [push, pull_request]
 
 jobs:
-  build:
 
+
+  build-composer:
     name: Lint code
-
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v2
 
       - name: Lint shell scripts with Shellcheck
         run: docker run --rm -v "$PWD:/mnt" koalaman/shellcheck-alpine:stable find . -type f -name '*.sh' -exec shellcheck '{}' +
 
-      - run: npm install eclint
-
       - name: EditorConfig check
-        run: node_modules/eclint/bin/eclint.js check "**/*.{sh,yml,yaml,json,xml,xlf,html}"
+        run: npx eclint check '**/*.{sh,yml,yaml,json,xml,xlf,html}' '!public/typo3conf/ext/**/*'
 
-      - name: Install t3kit Composer dependencies
-        uses: docker://composer:1.9
-        with:
-          args: "install"
+      - name: Validate composer.json and composer.lock
+        run: composer validate
 
-      - name: Run composer lint
-        uses: docker://composer:1.9
-        with:
-          args: "run-script lint"
+      - name: Composer version
+        run: composer --version
+
+      - name: Install Composer dependencies
+        run: composer install --prefer-dist --no-progress --no-suggest
+
+      - name: Run default Composer lint tests
+        run: composer run-script test
