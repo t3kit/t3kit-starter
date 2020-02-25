@@ -12,23 +12,22 @@ jobs:
 
     steps:
 
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v2
+
+      - name: Composer version
+        run: composer --version
 
       - name: Install t3kit Composer dependencies
-        uses: docker://composer:1.9
-        with:
-          args: "install"
+        run: composer install --prefer-dist --no-progress --no-suggest
 
       - name: Add t3kit dev environment variables
-        uses: docker://composer:1.9
-        with:
-          args: "run-script env"
+        run: composer run-script env
 
       - name: Create nproxy Docker network
         run: docker network create nproxy
 
       - name: Run nginx-proxy for t3kit
-        run: docker run -d -p=80:80 --name=nproxy --network=nproxy -v=/var/run/docker.sock:/tmp/docker.sock:ro t3kit/nproxy:1.0.0
+        run: docker run -d -p 80:80 -p 443:443 --name=nproxy --network=nproxy -v ~/.certs/server:/etc/nginx/certs -v /var/run/docker.sock:/tmp/docker.sock:ro t3kit/nproxy:1.1.0
 
       - name: Run t3kit containers
         run: docker-compose up -d
