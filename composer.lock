@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e6a35e6679e1a7926962f285958270ac",
+    "content-hash": "cb9a334f15fc1b306fa76d8de01668ed",
     "packages": [
         {
             "name": "cogpowered/finediff",
@@ -3834,6 +3834,63 @@
             "time": "2020-02-25T13:49:37+00:00"
         },
         {
+            "name": "typo3/cms-dashboard",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/TYPO3-CMS/dashboard.git",
+                "reference": "ceaa8f318c5b51bf7c5c3a7877c263b6d7174779"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/TYPO3-CMS/dashboard/zipball/ceaa8f318c5b51bf7c5c3a7877c263b6d7174779",
+                "reference": "ceaa8f318c5b51bf7c5c3a7877c263b6d7174779",
+                "shasum": ""
+            },
+            "require": {
+                "typo3/cms-backend": "10.4.*@dev",
+                "typo3/cms-core": "10.4.*@dev",
+                "typo3/cms-extbase": "10.4.*@dev",
+                "typo3/cms-fluid": "10.4.*@dev",
+                "typo3/cms-frontend": "10.4.*@dev"
+            },
+            "conflict": {
+                "typo3/cms": "*"
+            },
+            "type": "typo3-cms-framework",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "10.4.x-dev"
+                },
+                "typo3/cms": {
+                    "extension-key": "dashboard",
+                    "Package": {
+                        "serviceProvider": "TYPO3\\CMS\\Dashboard\\ServiceProvider",
+                        "partOfFactoryDefault": true
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "TYPO3\\CMS\\Dashboard\\": "Classes/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "TYPO3 Core Team",
+                    "email": "typo3cms@typo3.org",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Dashboard for TYPO3.",
+            "homepage": "https://typo3.org",
+            "time": "2020-03-09T09:14:20+00:00"
+        },
+        {
             "name": "typo3/cms-extbase",
             "version": "dev-master",
             "source": {
@@ -5526,23 +5583,30 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "typo3/cms-backend": 20,
-        "typo3/cms-core": 20,
-        "typo3/cms-extbase": 20,
-        "typo3/cms-extensionmanager": 20,
-        "typo3/cms-filelist": 20,
-        "typo3/cms-fluid": 20,
-        "typo3/cms-frontend": 20,
-        "typo3/cms-install": 20,
-        "typo3/cms-recordlist": 20,
+        "t3kit/t3kit": 20,
         "typo3/cms-about": 20,
         "typo3/cms-adminpanel": 20,
+        "typo3/cms-backend": 20,
         "typo3/cms-belog": 20,
         "typo3/cms-beuser": 20,
+        "typo3/cms-core": 20,
+        "typo3/cms-dashboard": 20,
+        "typo3/cms-extbase": 20,
+        "typo3/cms-extensionmanager": 20,
+        "typo3/cms-felogin": 20,
+        "typo3/cms-filelist": 20,
+        "typo3/cms-filemetadata": 20,
+        "typo3/cms-fluid": 20,
         "typo3/cms-form": 20,
+        "typo3/cms-frontend": 20,
         "typo3/cms-impexp": 20,
+        "typo3/cms-indexed-search": 20,
         "typo3/cms-info": 20,
+        "typo3/cms-install": 20,
+        "typo3/cms-linkvalidator": 20,
         "typo3/cms-lowlevel": 20,
+        "typo3/cms-opendocs": 20,
+        "typo3/cms-recordlist": 20,
         "typo3/cms-recycler": 20,
         "typo3/cms-redirects": 20,
         "typo3/cms-reports": 20,
@@ -5550,16 +5614,10 @@
         "typo3/cms-scheduler": 20,
         "typo3/cms-seo": 20,
         "typo3/cms-setup": 20,
-        "typo3/cms-tstemplate": 20,
-        "typo3/cms-viewpage": 20,
-        "typo3/cms-t3editor": 20,
-        "typo3/cms-felogin": 20,
-        "typo3/cms-filemetadata": 20,
         "typo3/cms-sys-note": 20,
-        "typo3/cms-indexed-search": 20,
-        "typo3/cms-linkvalidator": 20,
-        "typo3/cms-opendocs": 20,
-        "t3kit/t3kit": 20
+        "typo3/cms-t3editor": 20,
+        "typo3/cms-tstemplate": 20,
+        "typo3/cms-viewpage": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
