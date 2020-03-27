@@ -23,6 +23,12 @@ return [
         'install' => [
             'packagePath' => 'typo3/sysext/install/',
         ],
+        'info' => [
+            'packagePath' => 'typo3/sysext/info/',
+        ],
+        'linkvalidator' => [
+            'packagePath' => 'typo3/sysext/linkvalidator/',
+        ],
         'reports' => [
             'packagePath' => 'typo3/sysext/reports/',
         ],
@@ -40,6 +46,9 @@ return [
         ],
         'form' => [
             'packagePath' => 'typo3/sysext/form/',
+        ],
+        'indexed_search' => [
+            'packagePath' => 'typo3/sysext/indexed_search/',
         ],
         'recycler' => [
             'packagePath' => 'typo3/sysext/recycler/',
@@ -76,9 +85,6 @@ return [
         ],
         'frontend' => [
             'packagePath' => 'typo3/sysext/frontend/',
-        ],
-        'info' => [
-            'packagePath' => 'typo3/sysext/info/',
         ],
         'lowlevel' => [
             'packagePath' => 'typo3/sysext/lowlevel/',
