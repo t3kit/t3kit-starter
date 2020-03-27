@@ -3,6 +3,9 @@ baseVariants:
   -
     base: '%env(VIRTUAL_HOST)%'
     condition: 'applicationContext == "Development/local"'
+  -
+    base: '%env(VIRTUAL_HOST)%'
+    condition: 'applicationContext == "Production/local"'
 errorHandling: {  }
 languages:
   -
