@@ -3441,12 +3441,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/TYPO3-CMS/backend.git",
-                "reference": "fe5533a682822849440489625c9e7b1e9cea2d3f"
+                "reference": "093f5babd6cdb1ae3998a402b1d8bbd218bc5da8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/TYPO3-CMS/backend/zipball/fe5533a682822849440489625c9e7b1e9cea2d3f",
-                "reference": "fe5533a682822849440489625c9e7b1e9cea2d3f",
+                "url": "https://api.github.com/repos/TYPO3-CMS/backend/zipball/093f5babd6cdb1ae3998a402b1d8bbd218bc5da8",
+                "reference": "093f5babd6cdb1ae3998a402b1d8bbd218bc5da8",
                 "shasum": ""
             },
             "require": {
@@ -3505,7 +3505,7 @@
             ],
             "description": "Classes for the TYPO3 backend.",
             "homepage": "https://typo3.org",
-            "time": "2020-04-06T09:40:54+00:00"
+            "time": "2020-04-07T03:57:47+00:00"
         },
         {
             "name": "typo3/cms-belog",
@@ -3713,12 +3713,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/TYPO3-CMS/core.git",
-                "reference": "97a48458ed2686f3fe8ecbccc4765b04dfb3a8c2"
+                "reference": "8685a4c6ce77743724caef79041e21fcd61474ee"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/TYPO3-CMS/core/zipball/97a48458ed2686f3fe8ecbccc4765b04dfb3a8c2",
-                "reference": "97a48458ed2686f3fe8ecbccc4765b04dfb3a8c2",
+                "url": "https://api.github.com/repos/TYPO3-CMS/core/zipball/8685a4c6ce77743724caef79041e21fcd61474ee",
+                "reference": "8685a4c6ce77743724caef79041e21fcd61474ee",
                 "shasum": ""
             },
             "require": {
@@ -3842,7 +3842,7 @@
             ],
             "description": "The core library of TYPO3.",
             "homepage": "https://typo3.org",
-            "time": "2020-04-06T10:45:12+00:00"
+            "time": "2020-04-07T05:37:55+00:00"
         },
         {
             "name": "typo3/cms-dashboard",
@@ -4400,12 +4400,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/TYPO3-CMS/indexed_search.git",
-                "reference": "e1cdc2423d32f1b231be2d9c43d977e945f4d93c"
+                "reference": "d56b1d31a383d974419ca991db70362abe36f9ac"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/TYPO3-CMS/indexed_search/zipball/e1cdc2423d32f1b231be2d9c43d977e945f4d93c",
-                "reference": "e1cdc2423d32f1b231be2d9c43d977e945f4d93c",
+                "url": "https://api.github.com/repos/TYPO3-CMS/indexed_search/zipball/d56b1d31a383d974419ca991db70362abe36f9ac",
+                "reference": "d56b1d31a383d974419ca991db70362abe36f9ac",
                 "shasum": ""
             },
             "require": {
@@ -4444,7 +4444,7 @@
             ],
             "description": "Indexed Search Engine for TYPO3 pages, PDF-files, Word-files, HTML and text files. Provides a backend module for statistics of the indexer and a frontend plugin. Documentation can be found in the extension \"doc_indexed_search\".",
             "homepage": "https://typo3.org",
-            "time": "2020-04-06T09:40:54+00:00"
+            "time": "2020-04-06T19:28:22+00:00"
         },
         {
             "name": "typo3/cms-info",
@@ -4507,12 +4507,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/TYPO3-CMS/install.git",
-                "reference": "a6da8dad13e50b79c7d434320becd3e13cd3ac75"
+                "reference": "f8b5c884429637d745bce31b40a8faded5b4ef3b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/TYPO3-CMS/install/zipball/a6da8dad13e50b79c7d434320becd3e13cd3ac75",
-                "reference": "a6da8dad13e50b79c7d434320becd3e13cd3ac75",
+                "url": "https://api.github.com/repos/TYPO3-CMS/install/zipball/f8b5c884429637d745bce31b40a8faded5b4ef3b",
+                "reference": "f8b5c884429637d745bce31b40a8faded5b4ef3b",
                 "shasum": ""
             },
             "require": {
@@ -4558,7 +4558,7 @@
             ],
             "description": "The Install Tool mounted as the module Tools>Install in TYPO3.",
             "homepage": "https://typo3.org",
-            "time": "2020-04-06T09:40:54+00:00"
+            "time": "2020-04-06T19:28:22+00:00"
         },
         {
             "name": "typo3/cms-linkvalidator",
