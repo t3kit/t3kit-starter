@@ -3201,12 +3201,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/t3kit/t3kit.git",
-                "reference": "d5ad47f4b841f1b5af02eaaf6f9a0c5a5604dd03"
+                "reference": "61c6a4f0fc0e4ca5ffcb2aea34e6a13c4b44231a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/t3kit/t3kit/zipball/d5ad47f4b841f1b5af02eaaf6f9a0c5a5604dd03",
-                "reference": "d5ad47f4b841f1b5af02eaaf6f9a0c5a5604dd03",
+                "url": "https://api.github.com/repos/t3kit/t3kit/zipball/61c6a4f0fc0e4ca5ffcb2aea34e6a13c4b44231a",
+                "reference": "61c6a4f0fc0e4ca5ffcb2aea34e6a13c4b44231a",
                 "shasum": ""
             },
             "require": {
@@ -3263,7 +3263,7 @@
                 "t3kit10",
                 "typo3"
             ],
-            "time": "2020-04-07T07:46:14+00:00"
+            "time": "2020-04-09T15:08:51+00:00"
         },
         {
             "name": "typo3/class-alias-loader",
@@ -3441,12 +3441,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/TYPO3-CMS/backend.git",
-                "reference": "093f5babd6cdb1ae3998a402b1d8bbd218bc5da8"
+                "reference": "eaae99309d47ade15e14252a4e48ebdea36e94a6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/TYPO3-CMS/backend/zipball/093f5babd6cdb1ae3998a402b1d8bbd218bc5da8",
-                "reference": "093f5babd6cdb1ae3998a402b1d8bbd218bc5da8",
+                "url": "https://api.github.com/repos/TYPO3-CMS/backend/zipball/eaae99309d47ade15e14252a4e48ebdea36e94a6",
+                "reference": "eaae99309d47ade15e14252a4e48ebdea36e94a6",
                 "shasum": ""
             },
             "require": {
@@ -3505,7 +3505,7 @@
             ],
             "description": "Classes for the TYPO3 backend.",
             "homepage": "https://typo3.org",
-            "time": "2020-04-07T03:57:47+00:00"
+            "time": "2020-04-09T07:40:21+00:00"
         },
         {
             "name": "typo3/cms-belog",
@@ -3513,12 +3513,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/TYPO3-CMS/belog.git",
-                "reference": "b88d17ea899a8196b342d95fa17696bf596b6540"
+                "reference": "2a2dd7e53354c4f7357089ecb6b5794af2f18305"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/TYPO3-CMS/belog/zipball/b88d17ea899a8196b342d95fa17696bf596b6540",
-                "reference": "b88d17ea899a8196b342d95fa17696bf596b6540",
+                "url": "https://api.github.com/repos/TYPO3-CMS/belog/zipball/2a2dd7e53354c4f7357089ecb6b5794af2f18305",
+                "reference": "2a2dd7e53354c4f7357089ecb6b5794af2f18305",
                 "shasum": ""
             },
             "require": {
@@ -3557,7 +3557,7 @@
             ],
             "description": "Displays backend log, both per page and system wide. Available as the module Tools>Log (system wide overview) and Web>Info/Log (page relative overview).",
             "homepage": "https://typo3.org",
-            "time": "2020-04-06T09:40:54+00:00"
+            "time": "2020-04-08T19:58:53+00:00"
         },
         {
             "name": "typo3/cms-beuser",
@@ -3713,12 +3713,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/TYPO3-CMS/core.git",
-                "reference": "8685a4c6ce77743724caef79041e21fcd61474ee"
+                "reference": "fdfa7080f49da72e6fe2567442429753f7668dda"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/TYPO3-CMS/core/zipball/8685a4c6ce77743724caef79041e21fcd61474ee",
-                "reference": "8685a4c6ce77743724caef79041e21fcd61474ee",
+                "url": "https://api.github.com/repos/TYPO3-CMS/core/zipball/fdfa7080f49da72e6fe2567442429753f7668dda",
+                "reference": "fdfa7080f49da72e6fe2567442429753f7668dda",
                 "shasum": ""
             },
             "require": {
@@ -3787,7 +3787,7 @@
                 "phpspec/prophecy": "^1.7.5",
                 "phpstan/phpstan": "^0.12.13",
                 "typo3/cms-styleguide": "~10.0.2",
-                "typo3/testing-framework": "^6.2.0"
+                "typo3/testing-framework": "^6.2.2"
             },
             "suggest": {
                 "ext-fileinfo": "Used for proper file type detection in the file abstraction layer",
@@ -3842,7 +3842,7 @@
             ],
             "description": "The core library of TYPO3.",
             "homepage": "https://typo3.org",
-            "time": "2020-04-07T05:37:55+00:00"
+            "time": "2020-04-09T13:57:28+00:00"
         },
         {
             "name": "typo3/cms-dashboard",
@@ -3907,12 +3907,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/TYPO3-CMS/extbase.git",
-                "reference": "d8402dbd2e98b8759bfb9f9efd17b91d4ba67ee0"
+                "reference": "d39abf3e4cf298c0e2878d9cbad9bf21f83200f7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/TYPO3-CMS/extbase/zipball/d8402dbd2e98b8759bfb9f9efd17b91d4ba67ee0",
-                "reference": "d8402dbd2e98b8759bfb9f9efd17b91d4ba67ee0",
+                "url": "https://api.github.com/repos/TYPO3-CMS/extbase/zipball/d39abf3e4cf298c0e2878d9cbad9bf21f83200f7",
+                "reference": "d39abf3e4cf298c0e2878d9cbad9bf21f83200f7",
                 "shasum": ""
             },
             "require": {
@@ -3962,7 +3962,7 @@
             ],
             "description": "A framework to build extensions for TYPO3 CMS.",
             "homepage": "https://typo3.org",
-            "time": "2020-04-06T09:40:54+00:00"
+            "time": "2020-04-10T03:29:04+00:00"
         },
         {
             "name": "typo3/cms-extensionmanager",
@@ -3970,12 +3970,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/TYPO3-CMS/extensionmanager.git",
-                "reference": "dfcf1f8ccd8d7ae5adb9ba2a9050a4e4fb509e61"
+                "reference": "409c047438715101ed177afe7486ba4c857803bc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/TYPO3-CMS/extensionmanager/zipball/dfcf1f8ccd8d7ae5adb9ba2a9050a4e4fb509e61",
-                "reference": "dfcf1f8ccd8d7ae5adb9ba2a9050a4e4fb509e61",
+                "url": "https://api.github.com/repos/TYPO3-CMS/extensionmanager/zipball/409c047438715101ed177afe7486ba4c857803bc",
+                "reference": "409c047438715101ed177afe7486ba4c857803bc",
                 "shasum": ""
             },
             "require": {
@@ -4016,7 +4016,7 @@
             ],
             "description": "TYPO3 Extension Manager",
             "homepage": "https://typo3.org",
-            "time": "2020-04-06T09:40:54+00:00"
+            "time": "2020-04-08T19:58:53+00:00"
         },
         {
             "name": "typo3/cms-felogin",
@@ -4175,12 +4175,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/TYPO3-CMS/fluid.git",
-                "reference": "60da31d6766d17293a3f59c0f2c364fee273609f"
+                "reference": "a7fe7af57e7f3dcd7f693035fac71e9f5c3a7740"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/TYPO3-CMS/fluid/zipball/60da31d6766d17293a3f59c0f2c364fee273609f",
-                "reference": "60da31d6766d17293a3f59c0f2c364fee273609f",
+                "url": "https://api.github.com/repos/TYPO3-CMS/fluid/zipball/a7fe7af57e7f3dcd7f693035fac71e9f5c3a7740",
+                "reference": "a7fe7af57e7f3dcd7f693035fac71e9f5c3a7740",
                 "shasum": ""
             },
             "require": {
@@ -4224,7 +4224,7 @@
             ],
             "description": "Fluid is a next-generation templating engine which makes the life of extension authors a lot easier!",
             "homepage": "https://typo3.org",
-            "time": "2020-03-28T22:04:31+00:00"
+            "time": "2020-04-08T19:58:53+00:00"
         },
         {
             "name": "typo3/cms-form",
@@ -4290,12 +4290,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/TYPO3-CMS/frontend.git",
-                "reference": "d7021799f6f5c102d4966ff915e72fe1ec3da325"
+                "reference": "83c35da0c4c82cc498902ec895575c7a9edaedf2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/TYPO3-CMS/frontend/zipball/d7021799f6f5c102d4966ff915e72fe1ec3da325",
-                "reference": "d7021799f6f5c102d4966ff915e72fe1ec3da325",
+                "url": "https://api.github.com/repos/TYPO3-CMS/frontend/zipball/83c35da0c4c82cc498902ec895575c7a9edaedf2",
+                "reference": "83c35da0c4c82cc498902ec895575c7a9edaedf2",
                 "shasum": ""
             },
             "require": {
@@ -4340,7 +4340,7 @@
             ],
             "description": "Classes for the frontend of TYPO3.",
             "homepage": "https://typo3.org",
-            "time": "2020-04-06T09:40:54+00:00"
+            "time": "2020-04-08T19:58:53+00:00"
         },
         {
             "name": "typo3/cms-impexp",
@@ -4348,12 +4348,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/TYPO3-CMS/impexp.git",
-                "reference": "6099b48eb99d52b0f25ab52c27d3550c446bcf77"
+                "reference": "a7233be44155bf41c976ae53290def0f514f6059"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/TYPO3-CMS/impexp/zipball/6099b48eb99d52b0f25ab52c27d3550c446bcf77",
-                "reference": "6099b48eb99d52b0f25ab52c27d3550c446bcf77",
+                "url": "https://api.github.com/repos/TYPO3-CMS/impexp/zipball/a7233be44155bf41c976ae53290def0f514f6059",
+                "reference": "a7233be44155bf41c976ae53290def0f514f6059",
                 "shasum": ""
             },
             "require": {
@@ -4392,7 +4392,7 @@
             ],
             "description": "Import and Export of records from TYPO3 in a custom serialized format (.T3D) for data exchange with other TYPO3 systems.",
             "homepage": "https://typo3.org",
-            "time": "2020-04-02T08:44:05+00:00"
+            "time": "2020-04-08T16:42:30+00:00"
         },
         {
             "name": "typo3/cms-indexed-search",
@@ -4400,12 +4400,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/TYPO3-CMS/indexed_search.git",
-                "reference": "d56b1d31a383d974419ca991db70362abe36f9ac"
+                "reference": "a5571098652cd2f031555d02e9003265724676cd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/TYPO3-CMS/indexed_search/zipball/d56b1d31a383d974419ca991db70362abe36f9ac",
-                "reference": "d56b1d31a383d974419ca991db70362abe36f9ac",
+                "url": "https://api.github.com/repos/TYPO3-CMS/indexed_search/zipball/a5571098652cd2f031555d02e9003265724676cd",
+                "reference": "a5571098652cd2f031555d02e9003265724676cd",
                 "shasum": ""
             },
             "require": {
@@ -4444,7 +4444,7 @@
             ],
             "description": "Indexed Search Engine for TYPO3 pages, PDF-files, Word-files, HTML and text files. Provides a backend module for statistics of the indexer and a frontend plugin. Documentation can be found in the extension \"doc_indexed_search\".",
             "homepage": "https://typo3.org",
-            "time": "2020-04-06T19:28:22+00:00"
+            "time": "2020-04-08T19:58:53+00:00"
         },
         {
             "name": "typo3/cms-info",
@@ -4507,12 +4507,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/TYPO3-CMS/install.git",
-                "reference": "f8b5c884429637d745bce31b40a8faded5b4ef3b"
+                "reference": "cfb8fad24bb568b79e8854f541c573fd1ecb1577"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/TYPO3-CMS/install/zipball/f8b5c884429637d745bce31b40a8faded5b4ef3b",
-                "reference": "f8b5c884429637d745bce31b40a8faded5b4ef3b",
+                "url": "https://api.github.com/repos/TYPO3-CMS/install/zipball/cfb8fad24bb568b79e8854f541c573fd1ecb1577",
+                "reference": "cfb8fad24bb568b79e8854f541c573fd1ecb1577",
                 "shasum": ""
             },
             "require": {
@@ -4558,7 +4558,7 @@
             ],
             "description": "The Install Tool mounted as the module Tools>Install in TYPO3.",
             "homepage": "https://typo3.org",
-            "time": "2020-04-06T19:28:22+00:00"
+            "time": "2020-04-08T20:11:12+00:00"
         },
         {
             "name": "typo3/cms-linkvalidator",
