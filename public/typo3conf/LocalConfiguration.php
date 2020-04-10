@@ -71,7 +71,6 @@ return [
         ],
     ],
     'GFX' => [
-        'imagefile_ext' => 'jpg,jpeg,png,svg',
         'jpg_quality' => 70,
         'processor' => 'GraphicsMagick',
         'processor_allowTemporaryMasksAsPng' => false,
