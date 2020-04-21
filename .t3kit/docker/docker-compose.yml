@@ -15,7 +15,7 @@ services:
 
   web:
     container_name: ${COMPOSE_PROJECT_NAME}_web
-    image: ${WEB_IMAGE:-t3kit/10-php7.4-apache2.4-buster:1.0.0}
+    image: ${WEB_IMAGE:-t3kit/10-php7.4-apache2.4-buster:1.1.0}
     environment:
       - VIRTUAL_HOST=${COMPOSE_PROJECT_NAME}
       - TYPO3_CONTEXT=${TYPO3_CONTEXT:-Development/local}
