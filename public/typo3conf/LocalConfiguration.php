@@ -128,6 +128,10 @@ return [
         'encryptionKey' => '64eb536b1991548715418cec7af4da774f9ec80718aa336a26f0011e89eb8c52f2919035c28199851af0b6f5c3fb40a1',
         'exceptionalErrors' => 12290,
         'features' => [
+            'felogin.extbase' => true,
+            'fluidBasedPageModule' => true,
+            'form.legacyUploadMimeTypes' => false,
+            'rearrangedRedirectMiddlewares' => true,
             'redirects.hitCount' => false,
             'security.frontend.keepSessionDataOnLogout' => false,
         ],
