@@ -20,7 +20,7 @@
 - [Required dependencies](#required-dependencies)
 - [File structure](#file-structure)
 - [Quick start a new project on t3kit base](#quick-start-a-new-project-on-t3kit-base)
-- [Local development environment based on Docker](#local-development-environment-based-on-docker)
+- [Start with t3kit development](#start-with-t3kit-development)
 - [Local development tools](#local-development-tools)
 - [Changelog](CHANGELOG.md)
 
@@ -103,7 +103,7 @@ If there no needs to use **t3kit** starter database or **Docker configuration** 
 2. Use as a template in GitHub
     If you are using GitHub to store your future project, then you can just clone t3kit-starter as a template to your new project repository with `Use this template` green button.
 
-## Local development environment based on Docker
+## Start with t3kit development
 
 1. Check that [nginx-proxy](#nginx-proxy) started
 2. Clone the repository `git clone git@github.com:t3kit/t3kit-starter.git`
@@ -139,7 +139,7 @@ docker run --name pma -d -e PMA_ARBITRARY=1 --restart=unless-stopped --network n
 
 ### nginx-proxy
 
-#### [nginx-proxy for t3kit10 project](https://github.com/t3kit/t3kit-dockerhub/tree/master/nproxy)
+#### [nginx-proxy for t3kit10 project](https://github.com/t3kit/t3kit-dockerhub#nproxy)
 
 For all t3kit projects, we need just a one `nginx-proxy` started as a separate Docker container. [Based on Automated Nginx Reverse Proxy for Docker](https://github.com/jwilder/nginx-proxy)
 
