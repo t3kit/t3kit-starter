@@ -1,6 +1,6 @@
 <p align="center">
     <a href="http://t3kit.com/">
-        <img src="http://t3kit.com/fileadmin/example_content/images/logo.png" alt="t3kit logo" width="120" height="56">
+        <img src="https://user-images.githubusercontent.com/5150636/82044420-ff053600-96b5-11ea-8313-4158d6c0be5d.png" alt="t3kit logo" width="150" height="76">
     </a>
 </p>
 
@@ -92,39 +92,34 @@ If there no needs to use **t3kit** starter database or **Docker configuration** 
 
 ***
 
-## Quick start a new project on t3kit base
+## Quick start a new project on t3kit base (two options)
 
-```shell
-composer create-project -s dev --remove-vcs t3kit/t3kit-starter [<directory>] [<version>]
+1. Start with `composer create-project`
 
-```
+    ```shell
+    composer create-project -s dev --remove-vcs t3kit/t3kit-starter [<directory>] [<version>]
+    ```
+
+2. Use as a template in GitHub
+    If you are using GitHub to store your future project, then you can just clone t3kit-starter as a template to your new project repository with `Use this template` green button.
 
 ## Local development environment based on Docker
 
 1. Check that [nginx-proxy](#nginx-proxy) started
-
-2. Add new virtual host on your local machine
-
-    _*Note: use this pattern `PROJECT_NAME.local` to add new virtual host. For example `t3kit10.local`_
-
-    - `nano /etc/hosts`
-    - add a new line at the end `127.0.0.1 PROJECT_NAME.local`
-
+2. Clone the repository `git clone git@github.com:t3kit/t3kit-starter.git`
 3. Configure local development environment variables
 
-    _*Note: To continue with Docker you need to create an environment `.env` file for your project based on an example `local.env`. It will be created automatically with `composer create-project` command, but if you are starting a project using another method (e.g., `git clone & composer install`) then you need to created `.env` file manually: `composer env` or `cp .t3kit/docker/local.env .env`._
+    _*Note: To continue with Docker you need to create an environment `.env` file for your project based on an example `local.env`. It will be created automatically with `composer create-project` command, but if you are starting a project using another method (e.g., `git clone & composer install`) then you need to create `.env` file manually by running: `composer env` or `cp .t3kit/docker/local.env .env`._
 
-    - Change `COMPOSE_PROJECT_NAME` variable in `.env` file. It should be the same as a virtual host name. By default, it is `t3kit10.local`
-
+    - Check environment variables and change them if it needed. By default no changes required.
     - OS-specific settings in `.env` file
         - **Linux**
-            - Uncomment and set your host user id `USER_ID=` in `.env` file to make shared folder writable.
+            - Uncomment and set your host user id `USER_ID` in `.env` file to make shared folder writable. If your host `UID = 1000`, then you can skip this step. We are using UID 1000 by default.
 
-4. Start all Docker services for a local development environment `docker-compose up -d`
-
-5. Setup t3kit starter database `composer dbup` or `docker-compose exec web /var/www/html/.t3kit/db/setupdb.sh`
-
-6. Open `t3kit10.local` in browser
+4. Install dependencies `composer install`
+5. Start all Docker services for a local development environment `docker-compose up -d`
+6. Setup t3kit starter database `composer dbup` or `docker-compose exec web /var/www/html/.t3kit/db/setupdb.sh`
+7. Open `t3kit10.t3.localhost` in browser
 
 ## Local development tools
 
@@ -144,13 +139,14 @@ docker run --name pma -d -e PMA_ARBITRARY=1 --restart=unless-stopped --network n
 
 ### nginx-proxy
 
-#### [nginx-proxy for t3kit10 projects](https://github.com/t3kit/t3kit-dockerhub/tree/master/nproxy)
+#### [nginx-proxy for t3kit10 project](https://github.com/t3kit/t3kit-dockerhub/tree/master/nproxy)
 
 For all t3kit projects, we need just a one `nginx-proxy` started as a separate Docker container. [Based on Automated Nginx Reverse Proxy for Docker](https://github.com/jwilder/nginx-proxy)
 
-##### Run nproxy with docker
+##### Run nproxy with docker-compose
 
 ```shell
-docker network create nproxy
-docker run -d -p=80:80 --name=nproxy --restart=unless-stopped --network=nproxy -v=/var/run/docker.sock:/tmp/docker.sock:ro t3kit/nproxy:1.0.0
+git clone git@github.com:t3kit/nproxy.git
+cd nproxy
+docker-compose up -d
 ```
