@@ -91,6 +91,11 @@ languages:
     fallbacks: '0'
     flag: fr
 rootPageId: 1
+routeEnhancers:
+  PageTypeSuffix:
+    type: PageType
+    map:
+      sitemap.xml: 1533906435
 routes:
   -
     route: robots.txt
@@ -100,9 +105,5 @@ routes:
     route: humans.txt
     type: staticText
     content: "/* TEAM */\r\nTeam: t3kit\r\nSite: https://github.com/t3kit, http://t3kit.com\r\n\r\n/* SITE */\r\nStandards: HTML5, CSS3, PHP7\r\nComponents: TYPO3 v10, t3kit10, Bootstrap 4"
-  -
-    route: sitemap.xml
-    type: uri
-    source: 't3://page?uid=1 - - - &type=1533906435'
 theme: t3kit
 websiteTitle: ''
