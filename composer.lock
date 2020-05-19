@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9fca574e107151df39f049f964f105ee",
+    "content-hash": "d2cec52ea207625e62a318a4f698bc01",
     "packages": [
         {
             "name": "cogpowered/finediff",
@@ -3200,12 +3200,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/t3kit/t3kit.git",
-                "reference": "d433755b7adcdc63dba554d74d00967cc84be956"
+                "reference": "34968365e18a3d4939e37ebe68631823513afb75"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/t3kit/t3kit/zipball/d433755b7adcdc63dba554d74d00967cc84be956",
-                "reference": "d433755b7adcdc63dba554d74d00967cc84be956",
+                "url": "https://api.github.com/repos/t3kit/t3kit/zipball/34968365e18a3d4939e37ebe68631823513afb75",
+                "reference": "34968365e18a3d4939e37ebe68631823513afb75",
                 "shasum": ""
             },
             "require": {
@@ -3261,7 +3261,7 @@
                 "t3kit10",
                 "typo3"
             ],
-            "time": "2020-05-15T08:30:26+00:00"
+            "time": "2020-05-18T15:14:45+00:00"
         },
         {
             "name": "typo3/class-alias-loader",

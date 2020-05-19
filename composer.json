@@ -79,7 +79,7 @@
     "typo3-cms-scripts": [
     ],
     "pre-install-cmd": [
-      "composer validate --no-check-all --no-check-lock --strict",
+      "composer validate --no-check-all --strict",
       "cghooks add --ignore-lock"
     ],
     "post-update-cmd": [
