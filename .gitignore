@@ -12,3 +12,5 @@ public/fileadmin/*
 !public/fileadmin/example_content
 .env
 .vscode/
+cghooks.lock
+

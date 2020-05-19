@@ -61,8 +61,9 @@
     "typo3/cms-viewpage": "^10.4.2"
   },
   "require-dev": {
-    "squizlabs/php_codesniffer": "^3.5.5",
-    "heahdude/yaml-linter": "^1.0.3"
+    "brainmaestro/composer-git-hooks": "^2.8",
+    "heahdude/yaml-linter": "^1.0.3",
+    "squizlabs/php_codesniffer": "^3.5.5"
   },
   "suggest": {},
   "autoload": {},
@@ -78,7 +79,11 @@
     "typo3-cms-scripts": [
     ],
     "pre-install-cmd": [
-      "composer validate --no-check-all --strict"
+      "composer validate --no-check-all --no-check-lock --strict",
+      "cghooks add --ignore-lock"
+    ],
+    "post-update-cmd": [
+      "cghooks update"
     ],
     "post-autoload-dump": [
     ],
@@ -96,5 +101,12 @@
       "@lint-yaml"
     ],
     "ddev-config": "bash .t3kit/community/ddev/setupddev.sh"
+  },
+  "extra": {
+    "hooks": {
+      "pre-commit": [
+        "composer test"
+      ]
+    }
   }
 }
