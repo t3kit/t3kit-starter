@@ -365,3 +365,16 @@ FileETag None
 
 
 # Add your own rules here.
+# Rewrite Content-type for html and svg
+<IfModule mod_mime.c>
+    RemoveType .html .htm
+    <FilesMatch ".+\.html?$">
+        AddType text/html .html
+        AddType text/html .htm
+    </FilesMatch>
+    RemoveType .svg .svgz
+    <FilesMatch ".+\.svgz?$">
+        AddType image/svg+xml .svg
+        AddType image/svg+xml .svgz
+    </FilesMatch>
+</IfModule>
