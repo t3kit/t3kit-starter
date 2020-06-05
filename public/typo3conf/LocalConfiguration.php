@@ -61,6 +61,14 @@ return [
             'maxLifetime' => '1440',
             'showSampleTasks' => '1',
         ],
+        't3kit' => [
+            'disableBELayouts' => '0',
+            'disableContentElements' => '0',
+            'disableRTE' => '0',
+            'disableTCAdefaults' => '0',
+            'disableTCEFORM' => '0',
+            'disableTCEMAIN' => '0',
+        ],
     ],
     'FE' => [
         'debug' => true,
@@ -133,6 +141,7 @@ return [
             'form.legacyUploadMimeTypes' => false,
             'rearrangedRedirectMiddlewares' => true,
             'redirects.hitCount' => false,
+            'security.backend.enforceReferrer' => true,
             'security.frontend.keepSessionDataOnLogout' => false,
         ],
         'sitename' => 'TYPO3 :: t3kit10 :: Dev mode *(local)',
