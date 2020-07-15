@@ -47,9 +47,6 @@ return [
         'form' => [
             'packagePath' => 'typo3/sysext/form/',
         ],
-        'indexed_search' => [
-            'packagePath' => 'typo3/sysext/indexed_search/',
-        ],
         'recycler' => [
             'packagePath' => 'typo3/sysext/recycler/',
         ],
@@ -76,9 +73,6 @@ return [
         ],
         'extensionmanager' => [
             'packagePath' => 'typo3/sysext/extensionmanager/',
-        ],
-        'felogin' => [
-            'packagePath' => 'typo3/sysext/felogin/',
         ],
         'filemetadata' => [
             'packagePath' => 'typo3/sysext/filemetadata/',
