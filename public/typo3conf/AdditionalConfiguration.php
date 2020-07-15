@@ -3,8 +3,8 @@
 switch (\TYPO3\CMS\Core\Core\Environment::getContext()) {
     /*
     * ################################################
-    * Development context for t3kit local development environment based on Docker Compose configuration
-    * (.t3kit/docker/docker-compose.yml)
+    * Development context for local development environment based on Docker Compose configuration
+    * (.localconf/docker/docker-compose.yml)
     * ===============================================
     */
     case 'Development/local':
@@ -37,8 +37,8 @@ switch (\TYPO3\CMS\Core\Core\Environment::getContext()) {
 
     /*
     * ################################################
-    * Production context for t3kit local testing environment based on Docker Compose configuration
-    * (.t3kit/docker/docker-compose.yml)
+    * Production context for local testing environment based on Docker Compose configuration
+    * (.localconf/docker/docker-compose.yml)
     * ===============================================
     */
     case 'Production/local':

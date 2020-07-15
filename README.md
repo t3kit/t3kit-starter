@@ -66,7 +66,7 @@
 ```text
 t3kit-dockerhub/
 ├── .github/          # github actions
-├── .t3kit/
+├── .localconf/
 │   ├── community/   # community configuration for t3kit, not supported by t3kit team
 │   ├── db/          # t3kit database manipulation - Setup/Restore/Pack
 │   └── docker/      # t3kit local development config based on Docker
@@ -83,12 +83,12 @@ t3kit-dockerhub/
 
 We are open to any additional configuration on top of the t3kit. To add it just follow two rules below:
 
-1. It always should be inside `.t3kit/community/` folder
+1. It always should be inside `.localconf/community/` folder
 2. t3kit team will not support it
 
 ### Clean up the project
 
-If there no needs to use **t3kit** starter database or **Docker configuration** for local development, then just delete folder `.t3kit` from the root of your project - `rm -r .t3kit`
+If there no needs to use **t3kit** starter database or **Docker configuration** for local development, then just delete folder `.localconf` from the root of your project - `rm -r .localconf`
 
 ***
 
@@ -109,7 +109,7 @@ If there no needs to use **t3kit** starter database or **Docker configuration** 
 2. Clone the repository `git clone git@github.com:t3kit/t3kit-starter.git`
 3. Configure local development environment variables
 
-    _*Note: To continue with Docker you need to create an environment `.env` file for your project based on an example `local.env`. It will be created automatically with `composer create-project` command, but if you are starting a project using another method (e.g., `git clone & composer install`) then you need to create `.env` file manually by running: `composer env` or `cp .t3kit/docker/local.env .env`._
+    _*Note: To continue with Docker you need to create an environment `.env` file for your project based on an example `local.env`. It will be created automatically with `composer create-project` command, but if you are starting a project using another method (e.g., `git clone & composer install`) then you need to create `.env` file manually by running: `composer env` or `cp .localconf/docker/local.env .env`._
 
     - Check environment variables and change them if it needed. By default no changes required.
     - OS-specific settings in `.env` file
@@ -118,16 +118,16 @@ If there no needs to use **t3kit** starter database or **Docker configuration** 
 
 4. Install dependencies `composer install`
 5. Start all Docker services for a local development environment `docker-compose up -d`
-6. Setup t3kit starter database `composer dbup` or `docker-compose exec web /var/www/html/.t3kit/db/setupdb.sh`
-7. Open `t3kit10.t3.localhost` in browser
+6. Setup t3kit starter database `composer dbup` or `docker-compose exec web /var/www/html/.localconf/db/setupdb.sh`
+7. Open `t3kit10.t3.localhost` in browser *_Google Chrome_
 
 ## Local development tools
 
 ### t3kit database manipulation - Setup/Restore/Pack
 
-- Setup t3kit db: `composer dbup` or `docker-compose exec web /var/www/html/.t3kit/db/setupdb.sh`
-- Restore t3kit db: `composer dbre` or `docker-compose exec web /var/www/html/.t3kit/db/restoredb.sh`
-- Pack (save) t3kit db: `composer dbp` or `docker-compose exec web /var/www/html/.t3kit/db/packdb.sh`
+- Setup t3kit db: `composer dbup` or `docker-compose exec web /var/www/html/.localconf/db/setupdb.sh`
+- Restore t3kit db: `composer dbre` or `docker-compose exec web /var/www/html/.localconf/db/restoredb.sh`
+- Pack (save) t3kit db: `composer dbp` or `docker-compose exec web /var/www/html/.localconf/db/packdb.sh`
 
 ### phpMyAdmin
 

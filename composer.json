@@ -92,17 +92,17 @@
     "post-create-project-cmd": [
       "composer env"
     ],
-    "env": "cp .t3kit/docker/local.env .env",
-    "dbup": "docker-compose exec -T web /var/www/html/.t3kit/db/setupdb.sh",
-    "dbre": "docker-compose exec -T web /var/www/html/.t3kit/db/restoredb.sh",
-    "dbp": "docker-compose exec -T web /var/www/html/.t3kit/db/packdb.sh",
+    "env": "cp .localconf/docker/local.env .env",
+    "dbup": "docker-compose exec -T web /var/www/html/.localconf/db/setupdb.sh",
+    "dbre": "docker-compose exec -T web /var/www/html/.localconf/db/restoredb.sh",
+    "dbp": "docker-compose exec -T web /var/www/html/.localconf/db/packdb.sh",
     "lint-php": "vendor/bin/phpcs --colors",
-    "lint-yaml": "vendor/bin/yaml-linter --ansi config/ .t3kit/",
+    "lint-yaml": "vendor/bin/yaml-linter --ansi config/ .localconf/",
     "test": [
       "@lint-php",
       "@lint-yaml"
     ],
-    "ddev-config": "bash .t3kit/community/ddev/setupddev.sh"
+    "ddev-config": "bash .localconf/community/ddev/setupddev.sh"
   },
   "extra": {
     "hooks": {
