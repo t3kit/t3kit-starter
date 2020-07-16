@@ -44,7 +44,7 @@ jobs:
           args: "100"
 
       - name: Setup t3kit database
-        run: docker-compose exec -T web /var/www/html/.localconf/db/setupdb.sh
+        run: composer run-script dbup
 
       - name: curl typo3 FE
         run: '. ./.env && curl -vfsSLI -H "Host: $COMPOSE_PROJECT_NAME" --url localhost/'
