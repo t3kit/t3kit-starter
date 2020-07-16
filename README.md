@@ -57,9 +57,9 @@
 ## Required dependencies
 
 - [Git](https://git-scm.com/)
-- [Composer](https://getcomposer.org/) >= v1.8.6
-- [Docker](https://docs.docker.com/install/) >= v19.03.1
-- [Docker Compose](https://docs.docker.com/compose/install/) >= v1.24.1
+- [Composer](https://getcomposer.org/) >= v1.9.1
+- [Docker](https://docs.docker.com/install/) >= v19.03.8
+- [Docker Compose](https://docs.docker.com/compose/install/) >= v1.25.5
 
 ## File structure
 
@@ -103,21 +103,23 @@ If there no needs to use **t3kit** starter database or **Docker configuration** 
 2. Use as a template in GitHub
     If you are using GitHub to store your future project, then you can just clone t3kit-starter as a template to your new project repository with `Use this template` green button.
 
+    3. remove default t3kit BE user and change password foor installtool
+
 ## Start with t3kit development
 
 1. Check that [nginx-proxy](#nginx-proxy) started
-2. Clone the repository `git clone git@github.com:t3kit/t3kit-starter.git`
-3. Configure local development environment variables
+2. `git clone git@github.com:t3kit/t3kit-starter.git` - Clone the repository
+3. `composer env` - Configure local development environment variables
 
-    _*Note: To continue with Docker you need to create an environment `.env` file for your project based on an example `local.env`. It will be created automatically with `composer create-project` command, but if you are starting a project using another method (e.g., `git clone & composer install`) then you need to create `.env` file manually by running: `composer env` or `cp .localconf/docker/local.env .env`._
+    _*Note: To continue with Docker you need to create an environment `.env` file for your project based on an example `local.env`. You need to create `.env` file manually by running: `composer env` or `cp .localconf/local.env .env`._
 
     - Check environment variables and change them if it needed. By default no changes required.
     - OS-specific settings in `.env` file
         - **Linux**
             - Uncomment and set your host user id `USER_ID` in `.env` file to make shared folder writable. If your host `UID = 1000`, then you can skip this step. We are using UID 1000 by default.
 
-4. Install dependencies `composer install`
-5. Start all Docker services for a local development environment `docker-compose up -d`
+4. `composer install` - Install dependencies
+5. `docker-compose up -d` - Start all Docker services for a local development environment
 6. Setup t3kit starter database `composer dbup` or `docker-compose exec web /var/www/html/.localconf/db/setupdb.sh`
 7. Open `t3kit10.t3.localhost` in browser *_Google Chrome_
 
