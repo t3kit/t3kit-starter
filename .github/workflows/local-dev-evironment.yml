@@ -50,4 +50,5 @@ jobs:
         run: '. ./.env && curl -vfsSLI -H "Host: $COMPOSE_PROJECT_NAME" --url localhost/'
 
       - name: ccurl typo3 BE
-        run: "curl -vfsSL -H 'Host: t3kit10.t3.localhost' --url 'localhost/typo3/'"
+        run: '. ./.env && curl -vfsSLI -H "Host: $COMPOSE_PROJECT_NAME" --url localhost/typo3/'
+
