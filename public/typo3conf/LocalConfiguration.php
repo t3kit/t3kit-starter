@@ -3,7 +3,7 @@ return [
     'BE' => [
         'debug' => true,
         'explicitADmode' => 'explicitAllow',
-        'installToolPassword' => '$argon2i$v=19$m=65536,t=16,p=2$VUl2ODRHZ0pleWZLZTlMNg$FfXh0HKjUGLBnqMq7cgRBKtNHAd3G4SJIv3zLWFcA6s',
+        'installToolPassword' => '$argon2i$v=19$m=65536,t=16,p=1$elFQZWtCMFRGcnp5ZGpMMA$Yl2NcTkCJkVtfyhFuOce7sMwBdnnuZ+zZq1GN6CTf1w',
         'loginSecurityLevel' => 'normal',
         'passwordHashing' => [
             'className' => 'TYPO3\\CMS\\Core\\Crypto\\PasswordHashing\\Argon2idPasswordHash',
@@ -69,9 +69,24 @@ return [
         'processor_path_lzw' => '/usr/bin/',
         'processor_stripColorProfileCommand' => '+profile \'*\'',
     ],
+    'LOG' => [
+        'TYPO3' => [
+            'CMS' => [
+                'deprecations' => [
+                    'writerConfiguration' => [
+                        'notice' => [
+                            'TYPO3\CMS\Core\Log\Writer\FileWriter' => [
+                                'disabled' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+    ],
     'MAIL' => [
         'transport' => 'sendmail',
-        'transport_sendmail_command' => '/usr/sbin/sendmail -t -i ',
+        'transport_sendmail_command' => '/usr/sbin/sendmail -t -i',
         'transport_smtp_encrypt' => '',
         'transport_smtp_password' => '',
         'transport_smtp_server' => '',
@@ -111,7 +126,7 @@ return [
         ],
         'devIPmask' => '*',
         'displayErrors' => 1,
-        'encryptionKey' => '64eb536b1991548715418cec7af4da774f9ec80718aa336a26f0011e89eb8c52f2919035c28199851af0b6f5c3fb40a1',
+        'encryptionKey' => 'c2559bd9c61ccf05059bdef05807275b79e6c36bee2563265062138ff4a4e110965d8ff21971cd621f97c4429cec2221',
         'exceptionalErrors' => 12290,
         'features' => [
             'felogin.extbase' => true,
@@ -121,9 +136,9 @@ return [
             'redirects.hitCount' => false,
             'security.backend.enforceReferrer' => true,
             'security.frontend.keepSessionDataOnLogout' => false,
+            'unifiedPageTranslationHandling' => true,
         ],
         'sitename' => 'TYPO3 :: t3kit10 :: Dev mode *(local)',
-        'systemLocale' => 'en_US.UTF-8',
         'systemMaintainers' => [
             1,
         ],
