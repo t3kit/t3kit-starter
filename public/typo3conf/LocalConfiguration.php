@@ -3,7 +3,7 @@ return [
     'BE' => [
         'debug' => true,
         'explicitADmode' => 'explicitAllow',
-        'installToolPassword' => '$argon2i$v=19$m=65536,t=16,p=1$elFQZWtCMFRGcnp5ZGpMMA$Yl2NcTkCJkVtfyhFuOce7sMwBdnnuZ+zZq1GN6CTf1w',
+        'installToolPassword' => '$argon2id$v=19$m=65536,t=16,p=1$c2ZMejFiZmNKeHo1WElUZQ$865eIoY3fy0qtRdfP611cYhkpz6Mg/IoR7Dj44QKDzg',
         'loginSecurityLevel' => 'normal',
         'passwordHashing' => [
             'className' => 'TYPO3\\CMS\\Core\\Crypto\\PasswordHashing\\Argon2idPasswordHash',
@@ -139,6 +139,7 @@ return [
             'unifiedPageTranslationHandling' => true,
         ],
         'sitename' => 'TYPO3 :: t3kit10 :: Dev mode *(local)',
+        'systemLocale' => 'C.UTF-8',
         'systemMaintainers' => [
             1,
         ],
