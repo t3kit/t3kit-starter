@@ -100,10 +100,7 @@ If there no needs to use **t3kit** starter database or **Docker configuration** 
     composer create-project -s dev --remove-vcs t3kit/t3kit-starter [<directory>] [<version>]
     ```
 
-2. Use as a template in GitHub
-    If you are using GitHub to store your future project, then you can just clone t3kit-starter as a template to your new project repository with `Use this template` green button.
-
-    3. remove default t3kit BE user and change password foor installtool
+2. Use as a template in *GitHub*. If you are using *GitHub* to store your future project, then you can just clone *t3kit-starter* as a template to your new project repository with `Use this template` green button.
 
 ## Start with t3kit development
 
@@ -121,7 +118,9 @@ If there no needs to use **t3kit** starter database or **Docker configuration** 
 4. `composer install` - Install dependencies
 5. `docker-compose up -d` - Start all Docker services for a local development environment
 6. Setup t3kit starter database `composer dbup` or `docker-compose exec web /var/www/html/.localconf/db/setupdb.sh`
-7. Open `t3kit10.t3.localhost` in browser *_Google Chrome_
+7. Open `t3kit10.t3.localhost` in browser _Google Chrome_
+8. Open TYPO3 BE `t3kit10.t3.localhost/typo3` ---> *[user: `admin`, password: `admin1234`]*
+9. Open TYPO3 Install tool `t3kit10.t3.localhost/typo3/install.php` ---> *[password: `admin1234`]*
 
 ## Local development tools
 
