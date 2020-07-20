@@ -74,6 +74,9 @@ return [
         'extensionmanager' => [
             'packagePath' => 'typo3/sysext/extensionmanager/',
         ],
+        'felogin' => [
+            'packagePath' => 'typo3/sysext/felogin/',
+        ],
         'filemetadata' => [
             'packagePath' => 'typo3/sysext/filemetadata/',
         ],
