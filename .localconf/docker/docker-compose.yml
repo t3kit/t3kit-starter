@@ -28,8 +28,10 @@ services:
       - USER_ID=${USER_ID:-1000}
     volumes:
       - ../../:/var/www/html${FILE_SYSTEM_MODE:-:delegated}
-      - typo3temp:/var/www/html/public/typo3temp
-      - var:/var/www/html/var
+      - typo3temp:/var/www/html/public/typo3temp/
+      - var:/var/www/html/var/
+      - t3kit_vendor:/var/www/html/public/typo3conf/ext/t3kit/build/
+      - t3kit_node_modules:/var/www/html/public/typo3conf/ext/t3kit/node_modules/
 
 networks:
   default:
@@ -43,3 +45,7 @@ volumes:
     name: ${COMPOSE_PROJECT_NAME}_var
   db:
     name: ${COMPOSE_PROJECT_NAME}_db
+  t3kit_node_modules:
+    name: ${COMPOSE_PROJECT_NAME}_t3kitnodemodules
+  t3kit_vendor:
+    name: ${COMPOSE_PROJECT_NAME}_t3kitvendor
