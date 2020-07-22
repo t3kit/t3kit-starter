@@ -27,7 +27,7 @@ return [
             'backendFavicon' => 'EXT:t3kit/Resources/Public/Images/Backend/be-favicon.ico',
             'backendLogo' => '',
             'loginBackgroundImage' => '',
-            'loginFootnote' => 't3kit 10',
+            'loginFootnote' => 't3kit',
             'loginHighlightColor' => '#010101',
             'loginLogo' => 'EXT:t3kit/Resources/Public/Images/Backend/login-logo.svg',
         ],
