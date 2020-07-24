@@ -8,7 +8,11 @@ services:
     environment:
       - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD:-1234}
     volumes:
-      - db:/var/lib/mysql
+      - type: volume
+        source: db
+        target: /var/lib/mysql
+        volume:
+          nocopy: true
     command:
       - --character-set-server=utf8mb4
       - --collation-server=utf8mb4_unicode_ci
@@ -28,10 +32,26 @@ services:
       - USER_ID=${USER_ID:-1000}
     volumes:
       - ../../:/var/www/html${FILE_SYSTEM_MODE:-:delegated}
-      - typo3temp:/var/www/html/public/typo3temp/
-      - var:/var/www/html/var/
-      - t3kit_vendor:/var/www/html/public/typo3conf/ext/t3kit/build/
-      - t3kit_node_modules:/var/www/html/public/typo3conf/ext/t3kit/node_modules/
+      - type: volume
+        source: typo3temp
+        target: /var/www/html/public/typo3temp
+        volume:
+          nocopy: true
+      - type: volume
+        source: var
+        target: /var/www/html/var
+        volume:
+          nocopy: true
+      - type: volume
+        source: t3kitnodemodules
+        target: /var/www/html/public/typo3conf/ext/t3kit/node_modules
+        volume:
+          nocopy: true
+      - type: volume
+        source: t3kitvendor
+        target: /var/www/html/public/typo3conf/ext/t3kit/build
+        volume:
+          nocopy: true
 
 networks:
   default:
@@ -45,7 +65,7 @@ volumes:
     name: ${COMPOSE_PROJECT_NAME}_var
   db:
     name: ${COMPOSE_PROJECT_NAME}_db
-  t3kit_node_modules:
+  t3kitnodemodules:
     name: ${COMPOSE_PROJECT_NAME}_t3kitnodemodules
-  t3kit_vendor:
+  t3kitvendor:
     name: ${COMPOSE_PROJECT_NAME}_t3kitvendor
