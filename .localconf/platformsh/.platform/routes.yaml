@@ -1,0 +1,36 @@
+"https://www.{default}/":
+  type: upstream
+  upstream: "app:http"
+  id: "main"
+  cache:
+    enabled: true
+    default_ttl: 300
+    cookies:
+      - 'be_typo_user'
+      - 'fe_typo_user'
+      - 'PHPSESSID'
+      - 'Typo3InstallTool'
+
+"https://{default}/":
+  type: redirect
+  to: "https://www.{default}/"
+
+
+# in case of using typo3 multisite
+# Site 2
+# "https://www.site2.com/":
+#   type: upstream
+#   upstream: "app:http"
+#   id: "site2"
+#   cache:
+#     enabled: true
+#     default_ttl: 300
+#     cookies:
+#       - 'be_typo_user'
+#       - 'fe_typo_user'
+#       - 'PHPSESSID'
+#       - 'Typo3InstallTool'
+
+# "https://site2.com/":
+#   type: redirect
+#   to: "https://www.site2.com/"

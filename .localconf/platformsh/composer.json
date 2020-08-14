@@ -1,0 +1,5 @@
+{
+  "require": {
+    "platformsh/config-reader": "^2.3"
+  }
+}
