@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d97ffc63122e595978b5ccc9bc7ac601",
+    "content-hash": "c954395bbfe2de547535674462ba4edb",
     "packages": [
         {
             "name": "cogpowered/finediff",
@@ -986,6 +986,53 @@
             ],
             "description": "A PSR-5 based resolver of Class names, Types and Structural Element Names",
             "time": "2020-06-27T10:12:23+00:00"
+        },
+        {
+            "name": "pixelant/pxa-lpeh",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pixelant/pxa_lpeh.git",
+                "reference": "152922ee3971d3398f4813454bc232cd664c5041"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pixelant/pxa_lpeh/zipball/152922ee3971d3398f4813454bc232cd664c5041",
+                "reference": "152922ee3971d3398f4813454bc232cd664c5041",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.2",
+                "typo3/cms-core": "^9.5.0 || ^10.1.0"
+            },
+            "replace": {
+                "pixelant/pxa-lpeh": "self.version",
+                "pxa_lpeh": "self.version"
+            },
+            "type": "typo3-cms-extension",
+            "autoload": {
+                "psr-4": {
+                    "Pixelant\\PxaLpeh\\": "Classes/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Pixelant",
+                    "email": "info@pixelant.net",
+                    "homepage": "https://www.pixelant.se",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Speeds up error page handling and frees up PHP workers by loading local page content without issuing an external HTTP request.",
+            "homepage": "https://github.com/pixelant/pxa_lpeh",
+            "keywords": [
+                "typo3"
+            ],
+            "time": "2020-06-10T08:47:55+00:00"
         },
         {
             "name": "psr/cache",

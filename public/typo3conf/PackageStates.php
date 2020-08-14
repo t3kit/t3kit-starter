@@ -101,6 +101,9 @@ return [
         'viewpage' => [
             'packagePath' => 'typo3/sysext/viewpage/',
         ],
+        'pxa_lpeh' => [
+            'packagePath' => 'typo3conf/ext/pxa_lpeh/',
+        ],
         't3kit' => [
             'packagePath' => 'typo3conf/ext/t3kit/',
         ],

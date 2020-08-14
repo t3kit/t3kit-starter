@@ -35,6 +35,9 @@ return [
             'automaticInstallation' => '0',
             'offlineMode' => '1',
         ],
+        'pxa_lpeh' => [
+            'disableXClass' => '0',
+        ],
         'scheduler' => [
             'maxLifetime' => '1440',
             'showSampleTasks' => '1',
@@ -46,6 +49,7 @@ return [
             'disableTCAdefaults' => '0',
             'disableTCEFORM' => '0',
             'disableTCEMAIN' => '0',
+            'disableUserTSoptions' => '0',
         ],
     ],
     'FE' => [

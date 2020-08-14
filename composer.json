@@ -24,6 +24,7 @@
     "docs": "https://github.com/t3kit/t3kit-starter"
   },
   "require": {
+    "pixelant/pxa-lpeh": "^1.0",
     "t3kit/t3kit": "dev-t3kit10",
     "typo3/cms-about": "^10.4.5",
     "typo3/cms-adminpanel": "^10.4.5",
@@ -65,7 +66,9 @@
     "heahdude/yaml-linter": "^1.0.3",
     "squizlabs/php_codesniffer": "^3.5.5"
   },
-  "suggest": {},
+  "suggest": {
+    "platformsh/config-reader": "It provides convenience wrappers for accessing the Platform.sh environment variables"
+  },
   "autoload": {},
   "minimum-stability": "dev",
   "prefer-stable": true,
