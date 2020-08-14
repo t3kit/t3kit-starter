@@ -85,10 +85,10 @@
       "composer validate --no-check-all --strict"
     ],
     "post-install-cmd": [
-      "cghooks add --ignore-lock"
+      "vendor/bin/cghooks add --ignore-lock"
     ],
     "post-update-cmd": [
-      "cghooks update"
+      "vendor/bin/cghooks update"
     ],
     "post-autoload-dump": [
     ],
