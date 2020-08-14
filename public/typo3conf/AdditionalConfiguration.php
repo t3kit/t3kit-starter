@@ -53,9 +53,11 @@ switch (\TYPO3\CMS\Core\Core\Environment::getContext()) {
         // BE
         $GLOBALS['TYPO3_CONF_VARS']['BE']['sessionTimeout'] = 3600;
         $GLOBALS['TYPO3_CONF_VARS']['BE']['debug'] = false;
+        $GLOBALS['TYPO3_CONF_VARS']['BE']['compressionLevel'] = 5;
 
         // FE
         $GLOBALS['TYPO3_CONF_VARS']['FE']['debug'] = false;
+        $GLOBALS['TYPO3_CONF_VARS']['FE']['compressionLevel'] = 5;
 
         // SYS
         $GLOBALS['TYPO3_CONF_VARS']['SYS']['sitename'] = 'TYPO3 :: t3kit10 :: Production *(local)';
@@ -95,9 +97,11 @@ switch (\TYPO3\CMS\Core\Core\Environment::getContext()) {
         // BE
         $GLOBALS['TYPO3_CONF_VARS']['BE']['sessionTimeout'] = 3600;
         $GLOBALS['TYPO3_CONF_VARS']['BE']['debug'] = false;
+        $GLOBALS['TYPO3_CONF_VARS']['BE']['compressionLevel'] = 5;
 
         // FE
         $GLOBALS['TYPO3_CONF_VARS']['FE']['debug'] = false;
+        $GLOBALS['TYPO3_CONF_VARS']['FE']['compressionLevel'] = 5;
 
         // SYS
         $GLOBALS['TYPO3_CONF_VARS']['SYS']['sitename'] = 'TYPO3 :: t3kit10 :: Production';
