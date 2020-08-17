@@ -58,13 +58,13 @@
 
 - [Git](https://git-scm.com/)
 - [Composer](https://getcomposer.org/) >= v1.9.1
-- [Docker](https://docs.docker.com/install/) >= v19.03.8
-- [Docker Compose](https://docs.docker.com/compose/install/) >= v1.25.5
+- [Docker](https://docs.docker.com/install/) >= v19.03.12
+- [Docker Compose](https://docs.docker.com/compose/install/) >= v1.26.2
 
 ## File structure
 
 ```text
-t3kit-dockerhub/
+t3kit-starter/
 ├── .github/          # github actions
 ├── .localconf/
 │   ├── community/   # community configuration for t3kit, not supported by t3kit team
@@ -97,7 +97,7 @@ If there no needs to use **t3kit** starter database or **Docker configuration** 
 1. Start with `composer create-project`
 
     ```shell
-    composer create-project -s dev --remove-vcs t3kit/t3kit-starter [<directory>] [<version>]
+    composer create-project --remove-vcs t3kit/t3kit-starter my-new-project
     ```
 
 2. Use as a template in *GitHub*. If you are using *GitHub* to store your future project, then you can just clone *t3kit-starter* as a template to your new project repository with `Use this template` green button.

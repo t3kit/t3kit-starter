@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2d05cab79cb1981790807aa63fe4f10c",
+    "content-hash": "e093118d26bb2be83d30ae383e850949",
     "packages": [
         {
             "name": "cogpowered/finediff",
@@ -3673,39 +3673,46 @@
         },
         {
             "name": "t3kit/t3kit",
-            "version": "dev-t3kit10",
+            "version": "10.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/t3kit/t3kit.git",
-                "reference": "d33bc992d5dc642fa5979bd52909c8c68de6196e"
+                "reference": "11cdac7a84aa53711b23c227fdf079ce31879904"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/t3kit/t3kit/zipball/d33bc992d5dc642fa5979bd52909c8c68de6196e",
-                "reference": "d33bc992d5dc642fa5979bd52909c8c68de6196e",
+                "url": "https://api.github.com/repos/t3kit/t3kit/zipball/11cdac7a84aa53711b23c227fdf079ce31879904",
+                "reference": "11cdac7a84aa53711b23c227fdf079ce31879904",
                 "shasum": ""
             },
             "require": {
-                "typo3/cms-backend": "^10.4.2",
-                "typo3/cms-core": "^10.4.2",
-                "typo3/cms-extbase": "^10.4.2",
-                "typo3/cms-extensionmanager": "^10.4.2",
-                "typo3/cms-felogin": "^10.4.2",
-                "typo3/cms-filelist": "^10.4.2",
-                "typo3/cms-fluid": "^10.4.2",
-                "typo3/cms-form": "^10.4.2",
-                "typo3/cms-frontend": "^10.4.2",
-                "typo3/cms-install": "^10.4.2",
-                "typo3/cms-recordlist": "^10.4.2",
-                "typo3/cms-rte-ckeditor": "^10.4.2",
-                "typo3/cms-seo": "^10.4.2",
-                "typo3/cms-tstemplate": "^10.4.2"
+                "typo3/cms-backend": "^10.4.6",
+                "typo3/cms-core": "^10.4.6",
+                "typo3/cms-extbase": "^10.4.6",
+                "typo3/cms-extensionmanager": "^10.4.6",
+                "typo3/cms-felogin": "^10.4.6",
+                "typo3/cms-filelist": "^10.4.6",
+                "typo3/cms-filemetadata": "^10.4.6",
+                "typo3/cms-fluid": "^10.4.6",
+                "typo3/cms-form": "^10.4.6",
+                "typo3/cms-frontend": "^10.4.6",
+                "typo3/cms-install": "^10.4.6",
+                "typo3/cms-recordlist": "^10.4.6",
+                "typo3/cms-rte-ckeditor": "^10.4.6",
+                "typo3/cms-seo": "^10.4.6",
+                "typo3/cms-tstemplate": "^10.4.6"
             },
             "require-dev": {
                 "heahdude/yaml-linter": "^1.0.3",
                 "helmich/typo3-typoscript-lint": "^2.1.1",
-                "sclable/xml-lint": "^0.2.4",
-                "squizlabs/php_codesniffer": "^3.5.5"
+                "sclable/xml-lint": "^0.3.0",
+                "squizlabs/php_codesniffer": "^3.5.6"
+            },
+            "suggest": {
+                "apache-solr-for-typo3/solr": "Apache Solr for TYPO3",
+                "friendsoftypo3/frontend-editing": "Enable editors to work with the content in the most intuitive way possible",
+                "typo3/cms-indexed-search": "TYPO3 indexed search",
+                "yoast-seo-for-typo3/yoast_seo": "Yoast SEO for TYPO3"
             },
             "type": "typo3-cms-extension",
             "extra": {
@@ -3738,7 +3745,7 @@
                 "t3kit10",
                 "typo3"
             ],
-            "time": "2020-07-24T13:36:02+00:00"
+            "time": "2020-08-17T14:41:29+00:00"
         },
         {
             "name": "typo3/class-alias-loader",
@@ -6138,9 +6145,7 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {
-        "t3kit/t3kit": 20
-    },
+    "stability-flags": [],
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": [],
