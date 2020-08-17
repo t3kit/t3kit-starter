@@ -96,6 +96,7 @@ routeEnhancers:
     type: PageType
     map:
       sitemap.xml: 1533906435
+      yoast-snippetpreview.json: 1480321830
 routes:
   -
     route: robots.txt

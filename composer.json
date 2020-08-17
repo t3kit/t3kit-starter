@@ -67,7 +67,11 @@
     "squizlabs/php_codesniffer": "^3.5.6"
   },
   "suggest": {
-    "platformsh/config-reader": "It provides convenience wrappers for accessing the Platform.sh environment variables"
+    "platformsh/config-reader": "It provides convenience wrappers for accessing the Platform.sh environment variables",
+    "helhum/typo3-console": "A reliable and powerful command line interface for TYPO3 CMS",
+    "yoast-seo-for-typo3/yoast_seo": "Yoast SEO for TYPO3",
+    "friendsoftypo3/frontend-editing": "Enable editors to work with the content in the most intuitive way possible",
+    "apache-solr-for-typo3/solr": "Apache Solr for TYPO3"
   },
   "autoload": {},
   "minimum-stability": "dev",
@@ -106,7 +110,8 @@
       "@lint-php",
       "@lint-yaml"
     ],
-    "ddev-config": "bash .localconf/community/ddev/setupddev.sh"
+    "ddev-config": "bash .localconf/community/ddev/setupddev.sh",
+    "t3kit-upgrade": "git merge -X theirs --squash --allow-unrelated-histories t3kit/master"
   },
   "extra": {
     "hooks": {
