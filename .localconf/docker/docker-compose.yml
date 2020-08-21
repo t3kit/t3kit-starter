@@ -19,7 +19,7 @@ services:
 
   web:
     container_name: ${COMPOSE_PROJECT_NAME}_web
-    image: ${WEB_IMAGE:-t3kit/10-php7.4-apache2.4-buster:1.1.1}
+    image: ${WEB_IMAGE:-t3kit/10-php7.4-apache2.4-buster:1.2.0}
     environment:
       - VIRTUAL_HOST=${COMPOSE_PROJECT_NAME}
       - TYPO3_CONTEXT=${TYPO3_CONTEXT:-Development/local}
@@ -33,25 +33,11 @@ services:
     volumes:
       - ../../:/var/www/html${FILE_SYSTEM_MODE:-:delegated}
       - type: volume
-        source: typo3temp
-        target: /var/www/html/public/typo3temp
-        volume:
-          nocopy: true
-      - type: volume
         source: var
         target: /var/www/html/var
-        volume:
-          nocopy: true
       - type: volume
-        source: t3kitnodemodules
-        target: /var/www/html/public/typo3conf/ext/t3kit/node_modules
-        volume:
-          nocopy: true
-      - type: volume
-        source: t3kitvendor
-        target: /var/www/html/public/typo3conf/ext/t3kit/build
-        volume:
-          nocopy: true
+        source: typo3temp
+        target: /var/www/html/public/typo3temp
 
 networks:
   default:
@@ -65,7 +51,3 @@ volumes:
     name: ${COMPOSE_PROJECT_NAME}_var
   db:
     name: ${COMPOSE_PROJECT_NAME}_db
-  t3kitnodemodules:
-    name: ${COMPOSE_PROJECT_NAME}_t3kitnodemodules
-  t3kitvendor:
-    name: ${COMPOSE_PROJECT_NAME}_t3kitvendor
