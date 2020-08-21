@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e093118d26bb2be83d30ae383e850949",
+    "content-hash": "4381be6c5834b2a75970b40763f83a04",
     "packages": [
         {
             "name": "cogpowered/finediff",
@@ -3673,16 +3673,16 @@
         },
         {
             "name": "t3kit/t3kit",
-            "version": "10.0.0",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/t3kit/t3kit.git",
-                "reference": "11cdac7a84aa53711b23c227fdf079ce31879904"
+                "reference": "f3b5e0c9390b494aae27c5ede4bed87f30b0bd56"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/t3kit/t3kit/zipball/11cdac7a84aa53711b23c227fdf079ce31879904",
-                "reference": "11cdac7a84aa53711b23c227fdf079ce31879904",
+                "url": "https://api.github.com/repos/t3kit/t3kit/zipball/f3b5e0c9390b494aae27c5ede4bed87f30b0bd56",
+                "reference": "f3b5e0c9390b494aae27c5ede4bed87f30b0bd56",
                 "shasum": ""
             },
             "require": {
@@ -3745,7 +3745,7 @@
                 "t3kit10",
                 "typo3"
             ],
-            "time": "2020-08-17T14:41:29+00:00"
+            "time": "2020-08-21T15:17:01+00:00"
         },
         {
             "name": "typo3/class-alias-loader",
@@ -6145,7 +6145,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "t3kit/t3kit": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": [],
