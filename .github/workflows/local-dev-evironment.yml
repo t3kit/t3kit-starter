@@ -4,6 +4,8 @@ name: Local development environment
 on: [push, pull_request]
 
 jobs:
+
+
   build:
 
     name: Setup t3kit local development environment
@@ -49,6 +51,6 @@ jobs:
       - name: curl typo3 FE
         run: '. ./.env && curl -vfsSLI -H "Host: $COMPOSE_PROJECT_NAME" --url localhost/'
 
-      - name: ccurl typo3 BE
+      - name: curl typo3 BE
         run: '. ./.env && curl -vfsSLI -H "Host: $COMPOSE_PROJECT_NAME" --url localhost/typo3/'
 
