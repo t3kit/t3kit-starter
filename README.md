@@ -151,3 +151,9 @@ git clone git@github.com:t3kit/nproxy.git
 cd nproxy
 docker-compose up -d
 ```
+
+## Community-contributed platforms
+
+These platforms are not officially supported by the t3kit team.
+
+* [Use t3kit with DDEV](.localconf/community/ddev/README.md)
