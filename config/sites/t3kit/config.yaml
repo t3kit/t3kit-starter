@@ -101,10 +101,10 @@ routes:
   -
     route: robots.txt
     type: staticText
-    content: "User-agent: *\r\n\r\nDisallow: /typo3/\r\nDisallow: /typo3conf/\r\nAllow: /typo3conf/ext/\r\n\r\n# sitemap\r\nSitemap: https://BASE_DOMAIN/sitemap.xml"
+    content: "User-agent: *\r\n\r\nDisallow: /typo3/\r\nDisallow: /typo3conf/\r\nAllow: /typo3conf/ext/\r\n\r\n# sitemap\r\nSitemap: https://%env(VIRTUAL_HOST)%/sitemap.xml"
   -
     route: humans.txt
     type: staticText
-    content: "/* TEAM */\r\nTeam: t3kit\r\nSite: https://github.com/t3kit, http://t3kit.com\r\n\r\n/* SITE */\r\nStandards: HTML5, CSS3, PHP7\r\nComponents: TYPO3 v10, t3kit10, Bootstrap 4"
+    content: "/* TEAM */\r\nTeam: t3kit\r\nSite: https://github.com/t3kit\r\n\r\n/* SITE */\r\nStandards: HTML5, CSS3, PHP7\r\nComponents: TYPO3 v10, t3kit10, Bootstrap 5"
 theme: t3kit
 websiteTitle: ''

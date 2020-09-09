@@ -15,7 +15,7 @@ services:
 
   web:
     container_name: ${COMPOSE_PROJECT_NAME}_web
-    image: ${WEB_IMAGE:-t3kit/10-nginx1.19-buster:1.0.0}
+    image: ${WEB_IMAGE:-t3kit/10-nginx1.19-buster:1.1.0}
     environment:
       - VIRTUAL_HOST=${COMPOSE_PROJECT_NAME}
 
@@ -25,7 +25,7 @@ services:
       - DB_USER=${DB_USER:-root}
 
     volumes:
-      - ../../:/var/www/html${FILE_SYSTEM_MODE:-:delegated}
+      - ../../:/var/www/html:${FILE_SYSTEM_MODE:-delegated}
       - type: volume
         source: var
         target: /var/www/html/var
@@ -47,7 +47,7 @@ services:
 
       - USER_ID=${USER_ID:-1000}
     volumes:
-      - ../../:/var/www/html${FILE_SYSTEM_MODE:-:delegated}
+      - ../../:/var/www/html:${FILE_SYSTEM_MODE:-delegated}
       - type: volume
         source: var
         target: /var/www/html/var
