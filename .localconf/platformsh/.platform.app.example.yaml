@@ -28,62 +28,68 @@ relationships:
 web:
   locations:
     '/':
-      # The public directory of the app, relative to its root.
-      # check if web convention
       root: 'public'
       passthru: '/index.php'
       index:
         - 'index.php'
       allow: false
+      headers:
+        X-Content-Type-Options: nosniff
       rules:
-        # Allow access to common static files.
-        '\.(jpe?g|png|gif|svgz?|html|map|ico|bmp|eot|woff2?|otf|ttf|webmanifest|xsl)$':
+        '^\/typo3conf\/ext\/.*\/Resources\/Public\/assets\/development\/?.*\.(css|js)$':
           allow: true
           passthru: false
-          expires: 1M
-        '\.(css|js)$':
+          scripts: false
+          expires: -1
+        '^\/typo3conf\/ext\/.*\/Resources\/Public\/assets\/production\/?.*\.(css|js)$':
           allow: true
           passthru: false
+          scripts: false
           expires: 1y
-        '^/robots\.txt$':
+        '\.(jpe?g|png|gif|svgz?|html|css|js|map|ico|bmp|eot|woff2?|otf|ttf|webmanifest|xsl)$':
           allow: true
-        '^/sitemap\.xml$':
-          allow: true
-        '/(wp-login\.php|wp-login|login\.php|wp-content|wp-admin|wp-cofigs\.php|wp-pot\.php|wp-404\.php|xmlrpc\.php|wp-load\.php|wp-json|cgi|CGI|home\.php|seo-joy\.cgi|light\.cgi|gastenboek\.php|bbs\.cgi|aska\.cgi|jax_guestbook\.php|wp/|phpmyadmin|phpMyAdmin|pma|sql|default\.htm|backup|bitcoin|admin\.php)':
           passthru: false
-          allow: false
-        '(/tel:|test\.php|modules\.php|install\.php|autodiscover\.xml)':
-          passthru: false
-          allow: false
-        '\.(asp|aspx|esp|cgi|dat)$':
-          passthru: false
-          allow: false
+          scripts: false
+          expires: 1M
     '/fileadmin':
       root: 'public/fileadmin'
       expires: 1M
       scripts: false
+      passthru: false
       allow: true
-    '/typo3temp/assets':
-      root: 'public/typo3temp/assets'
+    '/typo3temp':
+      root: 'public/typo3temp'
       expires: 1M
       scripts: false
-      allow: true
       passthru: false
+      allow: true
       rules:
         '\.js\.gzip$':
-          expires: 1m
+          expires: 1M
           headers:
             Content-Type: text/javascript
             Content-Encoding: gzip
         '\.css\.gzip$':
-          expires: 1m
+          expires: 1M
           headers:
             Content-Type: text/css
             Content-Encoding: gzip
     '/typo3conf/LocalConfiguration.php':
+      scripts: false
       allow: false
+      passthru: false
     '/typo3conf/AdditionalConfiguration.php':
+      scripts: false
       allow: false
+      passthru: false
+    '/typo3conf/PlatformshConfiguration.php':
+      scripts: false
+      allow: false
+      passthru: false
+    '/typo3conf/PackageStates.php':
+      scripts: false
+      allow: false
+      passthru: false
 
 # The size of the persistent disk of the application (in MB).
 disk: 2048
