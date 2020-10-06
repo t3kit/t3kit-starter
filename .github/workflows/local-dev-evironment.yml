@@ -49,8 +49,8 @@ jobs:
         run: composer run-script dbup
 
       - name: curl typo3 FE
-        run: '. ./.env && curl -vfsSLI -H "Host: $COMPOSE_PROJECT_NAME" --url localhost/'
+        run: '. ./.env && curl -vfsSLI -H "Host: $VIRTUAL_HOST_1" --url localhost/'
 
       - name: curl typo3 BE
-        run: '. ./.env && curl -vfsSLI -H "Host: $COMPOSE_PROJECT_NAME" --url localhost/typo3/'
+        run: '. ./.env && curl -vfsSLI -H "Host: $VIRTUAL_HOST_1" --url localhost/typo3/'
 

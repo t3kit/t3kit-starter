@@ -15,9 +15,13 @@ services:
 
   web:
     container_name: ${COMPOSE_PROJECT_NAME}_web
-    image: ${WEB_IMAGE:-t3kit/10-php7.4-fpm-nginx-buster:1.0.0}
+    image: ${WEB_IMAGE:-t3kit/10-php7.4-fpm-nginx-buster:1.1.1}
     environment:
-      - VIRTUAL_HOST=${COMPOSE_PROJECT_NAME}
+      - VIRTUAL_HOST=${VIRTUAL_HOST_1},${VIRTUAL_HOST_2}
+
+      - PLATFORM_ROUTES_MAIN=http://${VIRTUAL_HOST_1}
+      - PLATFORM_ROUTES_SITE2=http://${VIRTUAL_HOST_2}
+
       - TYPO3_CONTEXT=${TYPO3_CONTEXT:-Development/local}
 
       - DB_HOST=${COMPOSE_PROJECT_NAME}_db

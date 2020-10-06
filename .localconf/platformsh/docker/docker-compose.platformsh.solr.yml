@@ -22,6 +22,12 @@ services:
       - PLATFORM_ROUTES_MAIN=http://${VIRTUAL_HOST_1}
       - PLATFORM_ROUTES_SITE2=http://${VIRTUAL_HOST_2}
 
+      - SOLR_CORE_MAIN=core_main
+      - SOLR_CORE_SITE2=core_site2
+      - SOLR_HOST_MAIN=${COMPOSE_PROJECT_NAME}_solr
+      - SOLR_HOST_SITE2=${COMPOSE_PROJECT_NAME}_solr
+      - SOLR_PORT=${SOLR_PORT:-8983}
+
       - TYPO3_CONTEXT=${TYPO3_CONTEXT:-Development/local}
 
       - DB_HOST=${COMPOSE_PROJECT_NAME}_db
@@ -43,6 +49,14 @@ services:
         source: typo3temp
         target: /var/www/html/public/typo3temp
 
+  solr:
+    container_name: ${COMPOSE_PROJECT_NAME}_solr
+    image: typo3solr/ext-solr:11.0.3
+    ports:
+      - "${SOLR_PORT:-8983}:8983"
+    volumes:
+      - solr:/var/solr
+
 networks:
   default:
     external:
@@ -55,6 +69,7 @@ volumes:
     name: ${COMPOSE_PROJECT_NAME}_var
   db:
     name: ${COMPOSE_PROJECT_NAME}_db
-
+  solr:
+    name: ${COMPOSE_PROJECT_NAME}_solr
 
 

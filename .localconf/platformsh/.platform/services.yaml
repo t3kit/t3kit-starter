@@ -11,16 +11,16 @@ cache:
 #       configsets:
 #         mainconfig: !archive "configsets/ext_solr_11_0_0"
 #       cores:
-#         core_sv:
+#         core_main:
 #           core_properties: |
 #             configSet=mainconfig
 #             schema=swedish/schema.xml
-#         core_en:
+#         core_site2:
 #           core_properties: |
 #             configSet=mainconfig
 #             schema=english/schema.xml
 #       endpoints:
-#         swedish:
-#           core: core_sv
-#         english:
-#           core: core_en
+#         main:
+#           core: core_main
+#         site2:
+#           core: core_site2

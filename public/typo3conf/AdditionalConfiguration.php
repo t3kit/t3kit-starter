@@ -32,8 +32,9 @@ switch (\TYPO3\CMS\Core\Core\Environment::getContext()) {
         $GLOBALS['TYPO3_CONF_VARS']['SYS']['belogErrorReporting'] = 30711; // Default = 30711
         $GLOBALS['TYPO3_CONF_VARS']['SYS']['exceptionalErrors'] = 12290; // Default = 12290
 
-        $GLOBALS['TYPO3_CONF_VARS']['SYS']['trustedHostsPattern'] = getenv('VIRTUAL_HOST');
         $GLOBALS['TYPO3_CONF_VARS']['SYS']['features']['security.backend.enforceReferrer'] = 0;
+        $GLOBALS['TYPO3_CONF_VARS']['SYS']['trustedHostsPattern'] = '.*\.t3\.localhost';
+        // $GLOBALS['TYPO3_CONF_VARS']['SYS']['trustedHostsPattern'] = '.*';
         break; //_______________________________________________________________________________________
 
     /*
@@ -68,8 +69,9 @@ switch (\TYPO3\CMS\Core\Core\Environment::getContext()) {
         $GLOBALS['TYPO3_CONF_VARS']['SYS']['belogErrorReporting'] = 0;
         $GLOBALS['TYPO3_CONF_VARS']['SYS']['exceptionalErrors'] = 4096; // Default = 4096
 
-        $GLOBALS['TYPO3_CONF_VARS']['SYS']['trustedHostsPattern'] = getenv('VIRTUAL_HOST');
         $GLOBALS['TYPO3_CONF_VARS']['SYS']['features']['security.backend.enforceReferrer'] = 0;
+        $GLOBALS['TYPO3_CONF_VARS']['SYS']['trustedHostsPattern'] = '.*\.t3\.localhost';
+        // $GLOBALS['TYPO3_CONF_VARS']['SYS']['trustedHostsPattern'] = '.*';
         break; //_______________________________________________________________________________________
 
     case 'Development':

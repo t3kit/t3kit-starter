@@ -1,6 +1,114 @@
 base: '%env(PLATFORM_ROUTES_MAIN)%'
+baseVariants: {  }
+errorHandling:
+  -
+    errorCode: '404'
+    errorHandler: Page
+    errorContentSource: 't3://page?uid=73'
+languages:
+  -
+    title: English
+    enabled: true
+    languageId: '0'
+    base: /
+    typo3Language: default
+    locale: en_US.UTF-8
+    iso-639-1: en
+    navigationTitle: English
+    hreflang: en-US
+    direction: ltr
+    flag: us
+  -
+    title: Swedish
+    enabled: true
+    languageId: '1'
+    base: /se/
+    typo3Language: sv
+    locale: sv_SE.UTF-8
+    iso-639-1: sv
+    navigationTitle: Swedish
+    hreflang: sv-SE
+    direction: ltr
+    fallbackType: fallback
+    fallbacks: '0'
+    flag: se
+  -
+    title: German
+    enabled: true
+    languageId: '2'
+    base: /de/
+    typo3Language: de
+    locale: de_DE.UTF-8
+    iso-639-1: de
+    navigationTitle: German
+    hreflang: de-DE
+    direction: ltr
+    fallbackType: fallback
+    fallbacks: '0'
+    flag: de
+  -
+    title: Norwegian
+    enabled: true
+    languageId: '3'
+    base: /no/
+    typo3Language: 'no'
+    locale: no_NO.UTF-8
+    iso-639-1: 'no'
+    navigationTitle: Norwegian
+    hreflang: no-NO
+    direction: ltr
+    fallbackType: fallback
+    fallbacks: '0'
+    flag: 'no'
+  -
+    title: Danish
+    enabled: true
+    languageId: '4'
+    base: /dk/
+    typo3Language: da
+    locale: da_DK.UTF-8
+    iso-639-1: da
+    navigationTitle: Danish
+    hreflang: da-DK
+    direction: ltr
+    fallbackType: fallback
+    fallbacks: '0'
+    flag: dk
+  -
+    title: French
+    enabled: true
+    languageId: '5'
+    base: /fr/
+    typo3Language: fr
+    locale: fr_FR.UTF-8
+    iso-639-1: fr
+    navigationTitle: French
+    hreflang: fr-FR
+    direction: ltr
+    fallbackType: fallback
+    fallbacks: '0'
+    flag: fr
+rootPageId: 1
+routeEnhancers:
+  PageTypeSuffix:
+    type: PageType
+    map:
+      sitemap.xml: 1533906435
+      yoast-snippetpreview.json: 1480321830
 routes:
   -
     route: robots.txt
     type: staticText
-    content: "User-agent: *\r\n\r\nDisallow: /typo3/\r\nDisallow: /typo3conf/\r\nAllow: /typo3conf/ext/\r\n\r\n# sitemap\r\nSitemap: https://%env(PLATFORM_ROUTES_MAIN)%/sitemap.xml"
+    content: "User-agent: *\r\n\r\nDisallow: /typo3/\r\nDisallow: /typo3conf/\r\nAllow: /typo3conf/ext/\r\n\r\n# sitemap\r\nSitemap: %env(PLATFORM_ROUTES_MAIN)%/sitemap.xml"
+  -
+    route: humans.txt
+    type: staticText
+    content: "/* SITE */\r\nSite: https://github.com/t3kit\r\nStandards: HTML5, CSS3, PHP7\r\nComponents: TYPO3 v10, t3kit10, Bootstrap 5"
+solr_enabled_read: true
+solr_host_read: '%env(SOLR_HOST_MAIN)%'
+solr_path_read: /solr/
+solr_port_read: '%env(SOLR_PORT)%'
+solr_scheme_read: http
+solr_use_write_connection: false
+theme: t3kit
+websiteTitle: t3kit10

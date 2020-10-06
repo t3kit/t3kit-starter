@@ -1,4 +1,4 @@
-base: '%env(PLATFORM_ROUTES_SITE2)%'
+base: '%env(VIRTUAL_HOST_2)%'
 baseVariants: {  }
 errorHandling: {  }
 languages:
@@ -26,16 +26,10 @@ routes:
   -
     route: robots.txt
     type: staticText
-    content: "User-agent: *\r\n\r\nDisallow: /typo3/\r\nDisallow: /typo3conf/\r\nAllow: /typo3conf/ext/\r\n\r\n# sitemap\r\nSitemap: %env(PLATFORM_ROUTES_SITE2)%/sitemap.xml"
+    content: "User-agent: *\r\n\r\nDisallow: /typo3/\r\nDisallow: /typo3conf/\r\nAllow: /typo3conf/ext/\r\n\r\n# sitemap\r\nSitemap: %env(VIRTUAL_HOST_2)%/sitemap.xml"
   -
     route: humans.txt
     type: staticText
     content: "/* SITE */\r\nSite: https://github.com/t3kit\r\nStandards: HTML5, CSS3, PHP7\r\nComponents: TYPO3 v10, t3kit10, Bootstrap 5"
-solr_enabled_read: true
-solr_host_read: '%env(SOLR_HOST_SITE2)%'
-solr_path_read: /solr/
-solr_port_read: '%env(SOLR_PORT)%'
-solr_scheme_read: http
-solr_use_write_connection: false
 theme: t3kit
 websiteTitle: 'Site 2'
