@@ -103,6 +103,12 @@
     "dbup": "./.localconf/db/setupdb.sh",
     "dbre": "./.localconf/db/restoredb.sh",
     "dbp": "./.localconf/db/packdb.sh",
+    "syncdb": "./.localconf/platformsh/scripts/db/syncdb.sh",
+    "syncfiles": "./.localconf/platformsh/scripts/files/syncfiles.sh",
+    "syncall": [
+      "@syncdb",
+      "@syncfiles"
+    ],
     "refindex": "docker-compose exec -T web php /var/www/html/public/typo3/sysext/core/bin/typo3 referenceindex:update",
     "lint-php": "vendor/bin/phpcs --colors",
     "lint-yaml": "vendor/bin/yaml-linter --ansi config/ .localconf/",

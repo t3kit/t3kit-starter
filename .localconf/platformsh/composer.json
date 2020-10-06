@@ -1,5 +1,6 @@
 {
   "require": {
-    "platformsh/config-reader": "^2.3"
+    "platformsh/config-reader": "^2.3",
+    "helhum/typo3-console": "^6.3"
   }
 }

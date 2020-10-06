@@ -14,3 +14,4 @@ public/fileadmin/*
 .env
 .vscode/
 cghooks.lock
+.localconf/platformsh/scripts/db/*.sql

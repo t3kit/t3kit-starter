@@ -10,11 +10,22 @@ build:
   flavor: composer
 
 runtime:
-  request_terminate_timeout: 240
+  request_terminate_timeout: 50
   sizing_hints:
     request_memory: 20
   extensions:
     - redis
+
+variables:
+  php:
+    max_execution_time: 45
+  # -SOLR- uncomment if using solr
+  # env:
+  #   SOLR_CORE_SV: 'core_sv'
+  #   SOLR_CORE_EN: 'core_en'
+  #   SOLR_HOST_SV: 'solrsv.internal'
+  #   SOLR_HOST_EN: 'solren.internal'
+  #   SOLR_PORT: '8080'
 
 # The relationships of the application with services or other applications.
 # The left-hand side is the name of the relationship as it will be exposed
@@ -23,6 +34,9 @@ runtime:
 relationships:
   database: 'db:mysql'
   rediscache: 'cache:redis'
+  # -SOLR- uncomment if using solr
+  # solrsv: 'solrsearch:swedish'
+  # solren: 'solrsearch:english'
 
 # The configuration of app when it is exposed to the web.
 web:
@@ -51,6 +65,19 @@ web:
           passthru: false
           scripts: false
           expires: 1M
+        # Disallow access to:
+        '^/(wp-login\.php|wp-login|login\.php|wp-content|wp-admin|wp-cofigs\.php|wp-pot\.php|wp-404\.php|xmlrpc\.php|wp-load\.php|wp-json|cgi|CGI|home\.php|seo-joy\.cgi|light\.cgi|gastenboek\.php|bbs\.cgi|aska\.cgi|jax_guestbook\.php|wp/|phpmyadmin|phpMyAdmin|pma|sql|default\.htm|index\.html|backup|bitcoin|admin\.php|autodiscover/autodiscover\.xml)':
+          scripts: false
+          allow: false
+          passthru: false
+        '(/tel:|test\.php|modules\.php|install\.php)':
+          scripts: false
+          allow: false
+          passthru: false
+        '\.(asp|aspx|esp|cgi|dat)$':
+          scripts: false
+          allow: false
+          passthru: false
     '/fileadmin':
       root: 'public/fileadmin'
       expires: 1M
@@ -114,15 +141,19 @@ hooks:
     # Install the CLI on a Platform.sh environment
     curl -sS https://platform.sh/cli/installer | php
 
-    if [ -f public/typo3conf/LocalConfiguration.php ]; then
-        mv public/typo3conf/LocalConfiguration.php public/typo3conf/LocalConfiguration.FromSource.php
-        ln -sf ../../var/LocalConfiguration.php public/typo3conf/LocalConfiguration.php
-    fi;
+    # if [ -f public/typo3conf/LocalConfiguration.php ]; then
+    #    mv public/typo3conf/LocalConfiguration.php public/typo3conf/LocalConfiguration.FromSource.php
+    #    ln -sf ../../var/LocalConfiguration.php public/typo3conf/LocalConfiguration.php
+    # fi;
 
   deploy: |
     set -e
 
-    cp public/typo3conf/LocalConfiguration.FromSource.php var/LocalConfiguration.php
+    # cp public/typo3conf/LocalConfiguration.FromSource.php var/LocalConfiguration.php
+
+    vendor/bin/typo3cms install:fixfolderstructure
+    vendor/bin/typo3cms database:updateschema
+    vendor/bin/typo3cms cache:flush
 
 crons:
   typo3scheduler:
