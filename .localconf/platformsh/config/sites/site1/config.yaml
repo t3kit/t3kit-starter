@@ -18,6 +18,8 @@ languages:
     hreflang: en-US
     direction: ltr
     flag: us
+    websiteTitle: ''
+    solr_core_read: '%env(SOLR_CORE_EN)%'
   -
     title: Swedish
     enabled: true
@@ -32,6 +34,8 @@ languages:
     fallbackType: fallback
     fallbacks: '0'
     flag: se
+    websiteTitle: ''
+    solr_core_read: '%env(SOLR_CORE_SV)%'
   -
     title: German
     enabled: true
@@ -46,6 +50,8 @@ languages:
     fallbackType: fallback
     fallbacks: '0'
     flag: de
+    websiteTitle: ''
+    solr_core_read: '%env(SOLR_CORE_DE)%'
   -
     title: Norwegian
     enabled: true
@@ -60,6 +66,8 @@ languages:
     fallbackType: fallback
     fallbacks: '0'
     flag: 'no'
+    websiteTitle: ''
+    solr_core_read: '%env(SOLR_CORE_NO)%'
   -
     title: Danish
     enabled: true
@@ -74,6 +82,8 @@ languages:
     fallbackType: fallback
     fallbacks: '0'
     flag: dk
+    websiteTitle: ''
+    solr_core_read: '%env(SOLR_CORE_DA)%'
   -
     title: French
     enabled: true
@@ -88,6 +98,8 @@ languages:
     fallbackType: fallback
     fallbacks: '0'
     flag: fr
+    websiteTitle: ''
+    solr_core_read: '%env(SOLR_CORE_FR)%'
 rootPageId: 1
 routeEnhancers:
   PageTypeSuffix:

@@ -21,11 +21,15 @@ variables:
     max_execution_time: 45
   # -SOLR- uncomment if using solr
   # env:
-  #   SOLR_CORE_MAIN: 'core_main'
-  #   SOLR_CORE_SITE2: 'core_site2'
-  #   SOLR_HOST_MAIN: 'solrmain.internal'
-  #   SOLR_HOST_SITE2: 'solrsite2.internal'
-  #   SOLR_PORT: '8080'
+    # SOLR_CORE_EN: 'core_en'
+    # SOLR_CORE_SV: 'core_sv'
+    # SOLR_CORE_DE: 'core_de'
+    # SOLR_CORE_NO: 'core_no'
+    # SOLR_CORE_DA: 'core_da'
+    # SOLR_CORE_FR: 'core_fr'
+    # SOLR_HOST_MAIN: 'solrmain.internal'
+    # SOLR_HOST_SITE2: 'solrsite2.internal'
+    # SOLR_PORT: '8080'
 
 # The relationships of the application with services or other applications.
 # The left-hand side is the name of the relationship as it will be exposed

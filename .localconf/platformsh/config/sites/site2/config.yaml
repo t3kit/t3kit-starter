@@ -15,6 +15,7 @@ languages:
     direction: ltr
     flag: us
     websiteTitle: ''
+    solr_core_read: '%env(SOLR_CORE_EN)%'
 rootPageId: 74
 routeEnhancers:
   PageTypeSuffix:

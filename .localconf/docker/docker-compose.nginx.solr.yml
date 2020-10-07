@@ -22,8 +22,12 @@ services:
       - VIRTUAL_HOST_1=http://${VIRTUAL_HOST_1}
       - VIRTUAL_HOST_2=http://${VIRTUAL_HOST_2}
 
-      - SOLR_CORE_MAIN=core_main
-      - SOLR_CORE_SITE2=core_site2
+      - SOLR_CORE_EN=core_en
+      - SOLR_CORE_SV=core_sv
+      - SOLR_CORE_DE=core_de
+      - SOLR_CORE_NO=core_no
+      - SOLR_CORE_DA=core_da
+      - SOLR_CORE_FR=core_fr
       - SOLR_HOST_MAIN=${COMPOSE_PROJECT_NAME}_solr
       - SOLR_HOST_SITE2=${COMPOSE_PROJECT_NAME}_solr
       - SOLR_PORT=${SOLR_PORT:-8983}
