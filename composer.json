@@ -110,7 +110,7 @@
     ],
     "refindex": "docker-compose exec -T web php /var/www/html/public/typo3/sysext/core/bin/typo3 referenceindex:update",
     "lint-php": "vendor/bin/phpcs --colors",
-    "lint-yaml": "vendor/bin/yaml-linter --ansi config/ .localconf/",
+    "lint-yaml": "vendor/bin/yaml-lint --ansi config/ .localconf/",
     "test": [
       "@lint-php",
       "@lint-yaml"
