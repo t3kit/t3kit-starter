@@ -8,3 +8,4 @@ services:
       - MYSQL_ROOT_PASSWORD=db
       - DB_NAME=db
       - DB_USER=db
+      - VIRTUAL_HOST_1=$DDEV_PRIMARY_URL
