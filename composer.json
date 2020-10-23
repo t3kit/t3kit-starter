@@ -94,6 +94,7 @@
       "vendor/bin/cghooks update"
     ],
     "post-autoload-dump": [
+      "typo3cms install:generatepackagestates"
     ],
     "post-create-project-cmd": [
       "composer env"
