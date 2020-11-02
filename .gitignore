@@ -7,6 +7,11 @@ public/typo3conf/*
 !public/typo3conf/LocalConfiguration.php
 !public/typo3conf/AdditionalConfiguration.php
 !public/typo3conf/PackageStates.php
+
+!public/typo3conf/ext
+public/typo3conf/ext/*
+!public/typo3conf/ext/theme_t3kit_*
+
 !public/typo3conf/PlatformshConfiguration.php
 !public/fileadmin
 public/fileadmin/*
