@@ -114,6 +114,8 @@ If there no needs to use **t3kit** starter database or **Docker configuration** 
     - OS-specific settings in `.env` file
         - **Linux**
             - Uncomment and set your host user id `USER_ID` in `.env` file to make shared folder writable. If your host `UID = 1000`, then you can skip this step. We are using UID 1000 by default.
+        - **macOS**
+            - Uncomment `USER_ID-mac` variabl. This will improve Docker performance by skipping usermod script on container.
 
 4. `composer install` - Install dependencies
 5. `docker-compose up -d` - Start all Docker services for a local development environment
