@@ -13,12 +13,8 @@ return [
     'DB' => [
         'Connections' => [
             'Default' => [
-                'charset' => 'utf8mb4',
-                'driver' => 'mysqli',
-                'tableoptions' => [
-                    'charset' => 'utf8mb4',
-                    'collate' => 'utf8mb4_unicode_ci',
-                ],
+                'charset' => 'utf8',
+                'driver' => 'mysqli'
             ],
         ],
     ],
@@ -54,6 +50,7 @@ return [
     ],
     'FE' => [
         'debug' => true,
+        'disableNoCacheParameter' => true,
         'loginSecurityLevel' => 'normal',
         'passwordHashing' => [
             'className' => 'TYPO3\\CMS\\Core\\Crypto\\PasswordHashing\\Argon2idPasswordHash',
