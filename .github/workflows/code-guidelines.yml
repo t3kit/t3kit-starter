@@ -17,7 +17,7 @@ jobs:
         run: shellcheck -e SC1091 .localconf/**/*.sh
 
       - name: EditorConfig check
-        run: run: npx eclint check '**/*.{sh,yml,yaml,json,xml,xlf,html}' '!public/typo3conf/ext/**/*' '!.localconf/platformsh/.platform/ext_solr_11_0_0/**/*' '!.platform/ext_solr_11_0_0/**/*'
+        run: npx eclint check '**/*.{sh,yml,yaml,json,xml,xlf,html}' '!public/typo3conf/ext/**/*' '!.localconf/platformsh/.platform/ext_solr_11_0_0/**/*' '!.platform/ext_solr_11_0_0/**/*'
 
       - name: Validate composer.json and composer.lock
         run: composer validate
