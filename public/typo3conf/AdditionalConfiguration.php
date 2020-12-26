@@ -26,11 +26,12 @@ switch (\TYPO3\CMS\Core\Core\Environment::getContext()) {
         $GLOBALS['TYPO3_CONF_VARS']['SYS']['sitename'] = 'TYPO3 :: t3kit10 :: Dev mode *(local)';
         $GLOBALS['TYPO3_CONF_VARS']['SYS']['devIPmask'] = '*';
 
-        $GLOBALS['TYPO3_CONF_VARS']['SYS']['systemLogLevel'] = 0;
+        // Error and exception handling
+        // https://maximivanov.github.io/php-error-reporting-calculator/
         $GLOBALS['TYPO3_CONF_VARS']['SYS']['displayErrors'] = 1;
-        $GLOBALS['TYPO3_CONF_VARS']['SYS']['errorHandlerErrors'] = 30466; // Default = 30466
-        $GLOBALS['TYPO3_CONF_VARS']['SYS']['belogErrorReporting'] = 30711; // Default = 30711
-        $GLOBALS['TYPO3_CONF_VARS']['SYS']['exceptionalErrors'] = 12290; // Default = 12290
+        $GLOBALS['TYPO3_CONF_VARS']['SYS']['exceptionalErrors'] = 28674;
+        $GLOBALS['TYPO3_CONF_VARS']['SYS']['errorHandlerErrors'] = 30466;
+        $GLOBALS['TYPO3_CONF_VARS']['SYS']['belogErrorReporting'] = 30711;
 
         $GLOBALS['TYPO3_CONF_VARS']['SYS']['features']['security.backend.enforceReferrer'] = 0;
         $GLOBALS['TYPO3_CONF_VARS']['SYS']['trustedHostsPattern'] = '.*(\.t3\.localhost|\.ddev\.site)';
@@ -64,10 +65,11 @@ switch (\TYPO3\CMS\Core\Core\Environment::getContext()) {
         $GLOBALS['TYPO3_CONF_VARS']['SYS']['sitename'] = 'TYPO3 :: t3kit10 :: Production *(local)';
         $GLOBALS['TYPO3_CONF_VARS']['SYS']['devIPmask'] = '';
 
-        $GLOBALS['TYPO3_CONF_VARS']['SYS']['systemLogLevel'] = 2;
+        // Error and exception handling
+        // https://maximivanov.github.io/php-error-reporting-calculator/
         $GLOBALS['TYPO3_CONF_VARS']['SYS']['displayErrors'] = 0;
-        $GLOBALS['TYPO3_CONF_VARS']['SYS']['belogErrorReporting'] = 0;
-        $GLOBALS['TYPO3_CONF_VARS']['SYS']['exceptionalErrors'] = 4096; // Default = 4096
+        // Disable deprecation log
+        $GLOBALS['TYPO3_CONF_VARS']['LOG']['TYPO3']['CMS']['deprecations']['writerConfiguration'][\TYPO3\CMS\Core\Log\LogLevel::NOTICE][\TYPO3\CMS\Core\Log\Writer\FileWriter::class]['disabled'] = true; // phpcs:ignore
 
         $GLOBALS['TYPO3_CONF_VARS']['SYS']['features']['security.backend.enforceReferrer'] = 0;
         $GLOBALS['TYPO3_CONF_VARS']['SYS']['trustedHostsPattern'] = '.*\.t3\.localhost';
@@ -87,11 +89,12 @@ switch (\TYPO3\CMS\Core\Core\Environment::getContext()) {
         $GLOBALS['TYPO3_CONF_VARS']['SYS']['sitename'] = 'TYPO3 :: t3kit10 :: Dev mode';
         $GLOBALS['TYPO3_CONF_VARS']['SYS']['devIPmask'] = '*';
 
-        $GLOBALS['TYPO3_CONF_VARS']['SYS']['systemLogLevel'] = 0;
+        // Error and exception handling
+        // https://maximivanov.github.io/php-error-reporting-calculator/
         $GLOBALS['TYPO3_CONF_VARS']['SYS']['displayErrors'] = 1;
-        $GLOBALS['TYPO3_CONF_VARS']['SYS']['errorHandlerErrors'] = 30466; // Default = 30466
-        $GLOBALS['TYPO3_CONF_VARS']['SYS']['belogErrorReporting'] = 30711; // Default = 30711
-        $GLOBALS['TYPO3_CONF_VARS']['SYS']['exceptionalErrors'] = 12290; // Default = 12290
+        $GLOBALS['TYPO3_CONF_VARS']['SYS']['exceptionalErrors'] = 28674;
+        $GLOBALS['TYPO3_CONF_VARS']['SYS']['errorHandlerErrors'] = 30466;
+        $GLOBALS['TYPO3_CONF_VARS']['SYS']['belogErrorReporting'] = 30711;
         break; //_______________________________________________________________________________________
 
     case 'Production':
@@ -109,9 +112,10 @@ switch (\TYPO3\CMS\Core\Core\Environment::getContext()) {
         $GLOBALS['TYPO3_CONF_VARS']['SYS']['sitename'] = 'TYPO3 :: t3kit10 :: Production';
         $GLOBALS['TYPO3_CONF_VARS']['SYS']['devIPmask'] = '';
 
-        $GLOBALS['TYPO3_CONF_VARS']['SYS']['systemLogLevel'] = 2;
+        // Error and exception handling
+        // https://maximivanov.github.io/php-error-reporting-calculator/
         $GLOBALS['TYPO3_CONF_VARS']['SYS']['displayErrors'] = 0;
-        $GLOBALS['TYPO3_CONF_VARS']['SYS']['belogErrorReporting'] = 0;
-        $GLOBALS['TYPO3_CONF_VARS']['SYS']['exceptionalErrors'] = 4096; // Default = 4096
+        // Disable deprecation log
+        $GLOBALS['TYPO3_CONF_VARS']['LOG']['TYPO3']['CMS']['deprecations']['writerConfiguration'][\TYPO3\CMS\Core\Log\LogLevel::NOTICE][\TYPO3\CMS\Core\Log\Writer\FileWriter::class]['disabled'] = true; // phpcs:ignore
         break; //_______________________________________________________________________________________
 }

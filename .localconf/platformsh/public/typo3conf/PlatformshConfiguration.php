@@ -69,21 +69,18 @@ if ($platformConfig->hasRelationship('rediscache')) {
         // BE
         $GLOBALS['TYPO3_CONF_VARS']['BE']['sessionTimeout'] = 28800;
         $GLOBALS['TYPO3_CONF_VARS']['BE']['debug'] = true;
-        $GLOBALS['TYPO3_CONF_VARS']['BE']['compressionLevel'] = 0;
 
         // FE
         $GLOBALS['TYPO3_CONF_VARS']['FE']['debug'] = true;
-        $GLOBALS['TYPO3_CONF_VARS']['FE']['compressionLevel'] = 0;
 
         // SYS
         $GLOBALS['TYPO3_CONF_VARS']['SYS']['sitename'] = 'TYPO3 :: t3kit10 :: Dev mode';
         $GLOBALS['TYPO3_CONF_VARS']['SYS']['devIPmask'] = '*';
 
-        $GLOBALS['TYPO3_CONF_VARS']['SYS']['systemLogLevel'] = 0;
         $GLOBALS['TYPO3_CONF_VARS']['SYS']['displayErrors'] = 1;
-        $GLOBALS['TYPO3_CONF_VARS']['SYS']['errorHandlerErrors'] = 30466; // Default = 30466
-        $GLOBALS['TYPO3_CONF_VARS']['SYS']['belogErrorReporting'] = 30711; // Default = 30711
-        $GLOBALS['TYPO3_CONF_VARS']['SYS']['exceptionalErrors'] = 12290; // Default = 12290
+        $GLOBALS['TYPO3_CONF_VARS']['SYS']['exceptionalErrors'] = 28674;
+        $GLOBALS['TYPO3_CONF_VARS']['SYS']['errorHandlerErrors'] = 30466;
+        $GLOBALS['TYPO3_CONF_VARS']['SYS']['belogErrorReporting'] = 30711;
     }
 }
 

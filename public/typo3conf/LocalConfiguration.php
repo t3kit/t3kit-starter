@@ -14,7 +14,7 @@ return [
         'Connections' => [
             'Default' => [
                 'charset' => 'utf8',
-                'driver' => 'mysqli'
+                'driver' => 'mysqli',
             ],
         ],
     ],
@@ -56,6 +56,7 @@ return [
             'className' => 'TYPO3\\CMS\\Core\\Crypto\\PasswordHashing\\Argon2idPasswordHash',
             'options' => [],
         ],
+        'versionNumberInFilename' => '',
     ],
     'GFX' => [
         'jpg_quality' => 70,
