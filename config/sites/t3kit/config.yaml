@@ -1,15 +1,14 @@
 base: '%env(VIRTUAL_HOST_1)%'
-baseVariants: {  }
 errorHandling:
   -
-    errorCode: '404'
+    errorCode: 404
     errorHandler: Page
     errorContentSource: 't3://page?uid=73'
 languages:
   -
     title: English
     enabled: true
-    languageId: '0'
+    languageId: 0
     base: /
     typo3Language: default
     locale: en_US.UTF-8
@@ -21,7 +20,7 @@ languages:
   -
     title: Swedish
     enabled: true
-    languageId: '1'
+    languageId: 1
     base: /se/
     typo3Language: sv
     locale: sv_SE.UTF-8
@@ -35,7 +34,7 @@ languages:
   -
     title: German
     enabled: true
-    languageId: '2'
+    languageId: 2
     base: /de/
     typo3Language: de
     locale: de_DE.UTF-8
@@ -49,7 +48,7 @@ languages:
   -
     title: Norwegian
     enabled: true
-    languageId: '3'
+    languageId: 3
     base: /no/
     typo3Language: 'no'
     locale: no_NO.UTF-8
@@ -63,7 +62,7 @@ languages:
   -
     title: Danish
     enabled: true
-    languageId: '4'
+    languageId: 4
     base: /dk/
     typo3Language: da
     locale: da_DK.UTF-8
@@ -77,7 +76,7 @@ languages:
   -
     title: French
     enabled: true
-    languageId: '5'
+    languageId: 5
     base: /fr/
     typo3Language: fr
     locale: fr_FR.UTF-8
