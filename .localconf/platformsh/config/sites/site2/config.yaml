@@ -1,11 +1,9 @@
 base: '%env(PLATFORM_ROUTES_SITE2)%'
-baseVariants: {  }
-errorHandling: {  }
 languages:
   -
     title: English
     enabled: true
-    languageId: '0'
+    languageId: 0
     base: /
     typo3Language: default
     locale: en_US.UTF-8
