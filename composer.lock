@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "380f4500d6de3c1f28819bc90f6f4df5",
+    "content-hash": "2f159814281787d035ee4686748c2ace",
     "packages": [
         {
             "name": "cogpowered/finediff",
@@ -6794,6 +6794,57 @@
                 "source": "https://github.com/BrainMaestro/composer-git-hooks/tree/v2.8.3"
             },
             "time": "2019-12-09T09:49:20+00:00"
+        },
+        {
+            "name": "editorconfig-checker/editorconfig-checker",
+            "version": "10.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/editorconfig-checker/editorconfig-checker.php.git",
+                "reference": "97fec6cd942f1326e9a594a3552581e4e4619ca0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/editorconfig-checker/editorconfig-checker.php/zipball/97fec6cd942f1326e9a594a3552581e4e4619ca0",
+                "reference": "97fec6cd942f1326e9a594a3552581e4e4619ca0",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.2 || ^8.0"
+            },
+            "require-dev": {
+                "php-coveralls/php-coveralls": "^2.1",
+                "phpunit/phpunit": "^8.3",
+                "squizlabs/php_codesniffer": "^3.4"
+            },
+            "bin": [
+                "bin/editorconfig-checker",
+                "bin/ec"
+            ],
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "EditorconfigChecker\\": "src/EditorconfigChecker"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Max Strübing",
+                    "email": "mxstrbng@gmail.com",
+                    "homepage": "https://github.com/mstruebing",
+                    "role": "Maintainer"
+                }
+            ],
+            "description": "A tool to verify that your files follow the rules of your .editorconfig",
+            "support": {
+                "issues": "https://github.com/editorconfig-checker/editorconfig-checker.php/issues",
+                "source": "https://github.com/editorconfig-checker/editorconfig-checker.php"
+            },
+            "time": "2021-01-09T11:13:54+00:00"
         },
         {
             "name": "squizlabs/php_codesniffer",

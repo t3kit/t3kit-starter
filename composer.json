@@ -63,6 +63,7 @@
   },
   "require-dev": {
     "brainmaestro/composer-git-hooks": "^2.8.2",
+    "editorconfig-checker/editorconfig-checker": "^10.2",
     "squizlabs/php_codesniffer": "^3.5.6"
   },
   "suggest": {
@@ -109,9 +110,9 @@
       "@syncfiles"
     ],
     "refindex": "docker-compose exec -T web php /var/www/html/public/typo3/sysext/core/bin/typo3 referenceindex:update",
-    "lint-php": "vendor/bin/phpcs --colors",
-    "lint-yaml": "vendor/bin/yaml-lint --ansi config/ .localconf/",
-    "lint-editorconfig": "npx editorconfig-checker -exclude LICENSE.txt",
+    "lint-php": "phpcs --colors",
+    "lint-yaml": "yaml-lint --ansi config/ .localconf/",
+    "lint-editorconfig": "ec -exclude LICENSE.txt",
     "test": [
       "@lint-php",
       "@lint-yaml",
