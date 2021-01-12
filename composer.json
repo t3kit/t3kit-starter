@@ -111,9 +111,11 @@
     "refindex": "docker-compose exec -T web php /var/www/html/public/typo3/sysext/core/bin/typo3 referenceindex:update",
     "lint-php": "vendor/bin/phpcs --colors",
     "lint-yaml": "vendor/bin/yaml-lint --ansi config/ .localconf/",
+    "lint-editorconfig": "npx editorconfig-checker -exclude LICENSE.txt",
     "test": [
       "@lint-php",
-      "@lint-yaml"
+      "@lint-yaml",
+      "@lint-editorconfig"
     ],
     "ddev-config": "bash .localconf/community/ddev/setupddev.sh",
     "t3kit-upgrade": "git merge -X theirs --squash --allow-unrelated-histories t3kit/master"
