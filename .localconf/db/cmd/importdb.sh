@@ -13,7 +13,7 @@ source "$BASEDIR"/var.sh
 # ####################################
 
 echo -e "\nImport $DBDUMP_NAME dump into $DB_NAME database"
-mysql --defaults-extra-file="$BASEDIR"/mysql.cnf "$DB_NAME" < "$BASEDIR"/../"$DBDUMP_NAME"
+mysql --defaults-extra-file="$BASEDIR"/mysql.cnf "$DB_NAME" < "$BASEDIR"/../dbdump/"$DBDUMP_NAME"
 
 # Remove temporary DB configuration
 rm "$MYSQL_CONFIG"

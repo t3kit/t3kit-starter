@@ -13,7 +13,7 @@ source "$BASEDIR"/var.sh
 # ####################################
 
 echo -e "\nCreate $DB_NAME database dump -> $DBDUMP_NAME"
-mysqldump --defaults-extra-file="$BASEDIR"/mysql.cnf "$DB_NAME" > "$BASEDIR"/../"$DBDUMP_NAME"
+mysqldump --defaults-extra-file="$BASEDIR"/mysql.cnf "$DB_NAME" > "$BASEDIR"/../dbdump/"$DBDUMP_NAME"
 
 # Remove temporary DB configuration
 rm "$MYSQL_CONFIG"
