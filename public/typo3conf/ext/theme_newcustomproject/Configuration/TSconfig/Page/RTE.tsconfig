@@ -1,0 +1,5 @@
+# ###################################
+# RTE
+# ==================================
+// RTE.default.preset = default
+RTE.default.preset = newcustomproject_default

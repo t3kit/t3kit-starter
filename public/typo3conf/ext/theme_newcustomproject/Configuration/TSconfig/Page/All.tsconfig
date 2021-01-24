@@ -1,0 +1,13 @@
+// BackendLayouts
+@import 'EXT:theme_newcustomproject/Configuration/TSconfig/Page/Mod/WebLayout/BackendLayouts.tsconfig'
+// ContentElements
+@import 'EXT:theme_newcustomproject/Configuration/TSconfig/Page/Mod/Wizards/ContentElements.tsconfig'
+
+// RTE
+@import 'EXT:theme_newcustomproject/Configuration/TSconfig/Page/RTE.tsconfig'
+// TCAdefaults
+@import 'EXT:theme_newcustomproject/Configuration/TSconfig/Page/TCAdefaults.tsconfig'
+// TCEFORM
+@import 'EXT:theme_newcustomproject/Configuration/TSconfig/Page/TCEFORM.tsconfig'
+// TCEMAIN
+@import 'EXT:theme_newcustomproject/Configuration/TSconfig/Page/TCEMAIN.tsconfig'

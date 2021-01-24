@@ -1,0 +1,15 @@
+# TYPO3 TSconfig Reference
+# https://docs.typo3.org/m/typo3/reference-tsconfig/master/en-us/Index.html
+
+# ###########################
+# Import configurations for all Content elements
+# ===========================
+// Static
+@import 'EXT:theme_newcustomproject/Configuration/TSconfig/Page/Mod/Wizards/ContentElements/Static/*.tsconfig'
+
+// Dynamic
+// @import 'EXT:theme_newcustomproject/Configuration/TSconfig/Page/Mod/Wizards/ContentElements/Dynamic/*.tsconfig'
+
+// Special
+// @import 'EXT:theme_newcustomproject/Configuration/TSconfig/Page/Mod/Wizards/ContentElements/Special/*.tsconfig'
+# ___________________________

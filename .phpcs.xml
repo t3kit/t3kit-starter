@@ -1,6 +1,18 @@
 <?xml version="1.0"?>
 <ruleset name="t3kit">
 	<rule ref="PSR2"/>
+		<rule ref="Generic.Files.LineLength">
+			<properties>
+				<property name="lineLimit" value="160"/>
+				<property name="absoluteLineLimit" value="170"/>
+			</properties>
+		</rule>
 	<file>public/typo3conf/AdditionalConfiguration.php</file>
 	<file>public/typo3conf/PackageStates.php</file>
+	<file>public/typo3conf/ext/theme_newcustomproject/Classes/</file>
+	<file>public/typo3conf/ext/theme_newcustomproject/Configuration/TCA/</file>
+	<file>public/typo3conf/ext/theme_newcustomproject/ext_emconf.php</file>
+	<file>public/typo3conf/ext/theme_newcustomproject/ext_localconf.php</file>
+	<file>public/typo3conf/ext/theme_newcustomproject/ext_tables.php</file>
 </ruleset>
+

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Beck-End Content elements translations -->
+<!-- Configuration/TCA/Overrides ____ everything except content elements -->
+<!-- 55_sys_template -->
+<!-- 65_sys_file_reference -->
+<!-- 71_tt_content_CType -->
+<!-- 75_tt_content.php -->
+<xliff version="1.0" xmlns:t3="http://typo3.org/schemas/xliff">
+	<file source-language="en" datatype="plaintext" original="EXT:theme_newcustomproject/Resources/Private/Language/ContentElements/locallang.xlf" date="2019-04-20UTC12:53:470" product-name="t3kit">
+		<header/>
+		<body>
+
+			<trans-unit id="" resname="">
+				<source></source>
+			</trans-unit>
+
+		</body>
+	</file>
+</xliff>

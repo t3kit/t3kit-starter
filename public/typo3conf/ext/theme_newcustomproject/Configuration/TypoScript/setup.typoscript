@@ -1,0 +1,16 @@
+# ###########################
+# root setup.typoscript
+# ===========================
+
+# TYPO3 TypoScript Reference
+# https://docs.typo3.org/m/typo3/reference-typoscript/master/en-us/Index.html
+
+# ###########################
+# Import all TypoScript setup
+# ===========================
+# import all ContentElements setup
+@import 'EXT:theme_newcustomproject/Configuration/TypoScript/ContentElement/setup.typoscript'
+# import all Page setup
+@import 'EXT:theme_newcustomproject/Configuration/TypoScript/Page/setup.typoscript'
+# import Config setup
+@import 'EXT:theme_newcustomproject/Configuration/TypoScript/Config/setup.typoscript'

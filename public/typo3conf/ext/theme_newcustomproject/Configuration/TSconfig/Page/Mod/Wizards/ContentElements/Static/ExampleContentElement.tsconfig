@@ -1,0 +1,10 @@
+# ###########################
+# exampleContentElement Content element
+# ===========================
+mod.wizards.newContentElement.wizardItems.static.elements.exampleContentElement {
+  iconIdentifier = ce-custom
+  title = LLL:EXT:theme_newcustomproject/Resources/Private/Language/ContentElements/Static/locallang_exampleContentElement.xlf:exampleContentElement.title
+  description = LLL:EXT:theme_newcustomproject/Resources/Private/Language/ContentElements/Static/locallang_exampleContentElement.xlf:exampleContentElement.description
+  tt_content_defValues.CType = exampleContentElement
+}
+mod.wizards.newContentElement.wizardItems.static.show := addToList(exampleContentElement)

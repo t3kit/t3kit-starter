@@ -1,0 +1,7 @@
+# Default FLUIDTEMPLATE configuration for content elements
+// lib.contentElement {}
+
+# ###########################
+# Extended Fluid templates for PageLayoutView
+# ===========================
+module.tx_backend.view.partialRootPaths.350 = EXT:theme_newcustomproject/Resources/Private/Partials/

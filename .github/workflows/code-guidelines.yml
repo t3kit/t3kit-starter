@@ -5,25 +5,35 @@ on: [push, pull_request]
 
 jobs:
 
-
-  build-composer:
-    name: Lint code
+  build:
+    name: Run composer test
     runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [14.x]
 
     steps:
       - uses: actions/checkout@v2
 
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+
       - name: Lint shell scripts with Shellcheck
         run: shellcheck -e SC1091 .localconf/**/*.sh
-
-      - name: Validate composer.json and composer.lock
-        run: composer validate
 
       - name: Composer version
         run: composer --version
 
+      - name: Validate composer.json and composer.lock
+        run: composer validate
+
       - name: Install Composer dependencies
         run: composer install --prefer-dist --no-progress --no-suggest
+
+      - run: composer run-script npm-ci
 
       - name: Run default Composer lint tests
         run: composer run-script test

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.0" xmlns:t3="http://typo3.org/schemas/xliff">
+	<file source-language="en" datatype="plaintext" original="EXT:theme_newcustomproject/Resources/Private/Language/ContentElements/Static/locallang_exampleContentElement.xlf" date="2019-04-20UTC12:53:470" product-name="t3kit">
+		<header/>
+		<body>
+
+			<trans-unit id="exampleContentElement.title" resname="exampleContentElement.title">
+				<source>Example content element</source>
+			</trans-unit>
+			<trans-unit id="exampleContentElement.description" resname="exampleContentElement.description">
+				<source>Example content element. The base example for building custom content elements</source>
+			</trans-unit>
+
+			<trans-unit id="flexform.stretched_link" resname="flexform.stretched_link">
+				<source>Enable whole area link</source>
+			</trans-unit>
+			<trans-unit id="flexform.internal_margins" resname="flexform.internal_margins">
+				<source>Enable internal margins</source>
+			</trans-unit>
+			<trans-unit id="flexform.inverted_color" resname="flexform.inverted_color">
+				<source>Inverted color</source>
+			</trans-unit>
+			<trans-unit id="flexform.image_height" resname="flexform.image_height">
+				<source>Image height</source>
+			</trans-unit>
+
+		</body>
+	</file>
+</xliff>

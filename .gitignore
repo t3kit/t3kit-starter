@@ -10,7 +10,7 @@ public/typo3conf/*
 
 !public/typo3conf/ext
 public/typo3conf/ext/*
-!public/typo3conf/ext/theme_t3kit_*
+!public/typo3conf/ext/theme_*
 
 !public/typo3conf/PlatformshConfiguration.php
 !public/fileadmin

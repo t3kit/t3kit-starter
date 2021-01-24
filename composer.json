@@ -64,7 +64,9 @@
   "require-dev": {
     "brainmaestro/composer-git-hooks": "^2.8.2",
     "editorconfig-checker/editorconfig-checker": "^10.2",
-    "squizlabs/php_codesniffer": "^3.5.6"
+    "squizlabs/php_codesniffer": "^3.5.6",
+    "helmich/typo3-typoscript-lint": "^2.1.1",
+    "sclable/xml-lint": "^0.3.0"
   },
   "suggest": {
     "platformsh/config-reader": "It provides convenience wrappers for accessing the Platform.sh environment variables",
@@ -73,7 +75,11 @@
     "friendsoftypo3/frontend-editing": "Enable editors to work with the content in the most intuitive way possible",
     "apache-solr-for-typo3/solr": "Apache Solr for TYPO3"
   },
-  "autoload": {},
+  "autoload": {
+    "psr-4": {
+      "T3k\\newcustomproject\\": "public/typo3conf/ext/theme_newcustomproject/Classes/"
+    }
+  },
   "minimum-stability": "dev",
   "prefer-stable": true,
   "config": {
@@ -111,13 +117,20 @@
     ],
     "refindex": "docker-compose exec -T web php /var/www/html/public/typo3/sysext/core/bin/typo3 referenceindex:update",
     "lint-php": "phpcs --colors",
-    "lint-yaml": "yaml-lint --ansi config/ .localconf/",
+    "lint-yaml": "yaml-lint --ansi config/ .localconf/ public/typo3conf/ext/theme_newcustomproject/Resources/ public/typo3conf/ext/theme_newcustomproject/Configuration/ public/typo3conf/ext/theme_newcustomproject/Classes/",
     "lint-editorconfig": "ec -exclude LICENSE.txt",
+    "lint-typoscript": "typoscript-lint --ansi",
+    "lint-xml": "xmllint --ansi public/typo3conf/ext/theme_newcustomproject/",
+    "npm-test": "npm test --prefix public/typo3conf/ext/theme_newcustomproject/",
     "test": [
       "@lint-php",
       "@lint-yaml",
-      "@lint-editorconfig"
+      "@lint-editorconfig",
+      "@lint-xml",
+      "@lint-typoscript",
+      "@npm-test"
     ],
+    "npm-ci": "npm ci --prefix public/typo3conf/ext/theme_newcustomproject/",
     "ddev-config": "bash .localconf/community/ddev/setupddev.sh",
     "t3kit-upgrade": "git merge -X theirs --squash --allow-unrelated-histories t3kit/master"
   },

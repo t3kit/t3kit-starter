@@ -1,0 +1,7 @@
+# import lib ContentElement
+@import 'EXT:theme_newcustomproject/Configuration/TypoScript/ContentElement/Lib/'
+
+# import ContentElements
+@import 'EXT:theme_newcustomproject/Configuration/TypoScript/ContentElement/Groups/Static/'
+// @import 'EXT:theme_newcustomproject/Configuration/TypoScript/ContentElement/Groups/Dynamic/'
+// @import 'EXT:theme_newcustomproject/Configuration/TypoScript/ContentElement/Groups/Special/'

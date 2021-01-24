@@ -1,0 +1,2 @@
+# import Page TypoScript
+@import 'EXT:theme_newcustomproject/Configuration/TypoScript/Page/Config/'

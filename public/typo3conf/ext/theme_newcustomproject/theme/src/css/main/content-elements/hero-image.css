@@ -1,0 +1,43 @@
+/* X-Small devices (portrait phones, less than 576px) */
+/* No media query for `xs` since this is the default in Bootstrap */
+/* .ce-hero-image { */
+/* --t3-ce-hero-image-header-color: var(--t3-primary); */
+/* --t3-ce-hero-image-subheader-color: var(--t3-white); */
+/* --t3-ce-hero-image-bodytext-color: var(--t3-white); */
+/* --t3-ce-hero-image-bodytext-width: 75%; */
+/* --t3-ce-hero-image-min-height-on-mobile: 460px; */
+/* --t3-ce-hero-image-primary-overlay: hsla(var(--t3-primary-hs), var(--t3-primary-l), 0.4); */
+/* --t3-ce-hero-image-secondary-overlay: hsla(var(--t3-secondary-hs), var(--t3-secondary-l), 0.4); */
+/* --t3-ce-hero-image-light-overlay: hsla(var(--t3-light-hs), var(--t3-light-l), 0.4); */
+/* --t3-ce-hero-image-dark-overlay: hsla(var(--t3-dark-hs), var(--t3-dark-l), 0.4); */
+/* --t3-ce-hero-image-primary-bg: var(--t3-primary); */
+/* --t3-ce-hero-image-secondary-bg: var(--t3-secondary); */
+/* --t3-ce-hero-image-dark-bg: var(--t3-dark); */
+/* } */
+
+/* -------------------------------------------------------- */
+/* X-Small devices (portrait phones, less than 576px) xs */
+/* Small devices (landscape phones, 576px and up) sm */
+/* @media (min-width: 576px) { ... } */
+
+/* -------------------------------------------------------- */
+/* Small devices (landscape phones, less than 768px) sm */
+/* @media (max-width: 767.98px) { ... } */
+/* Medium devices (tablets, 768px and up) md */
+
+/* -------------------------------------------------------- */
+/* Medium devices (tablets, less than 992px) md */
+/* @media (max-width: 991.98px) { ... } */
+/* Large devices (desktops, 992px and up) lg */
+
+/* -------------------------------------------------------- */
+/* Large devices (desktops, less than 1200px) lg */
+/* @media (max-width: 1199.98px) { ... } */
+/* X-Large devices (large desktops, 1200px and up) xl */
+/* @media (min-width: 1200px) { ... } */
+
+/* -------------------------------------------------------- */
+/* X-Large devices (large desktops, less than 1400px) xl */
+/* @media (max-width: 1399.98px) { ... } */
+/* XX-Large devices (larger desktops, 1400px and up) xxl */
+/* @media (min-width: 1400px) { ... } */

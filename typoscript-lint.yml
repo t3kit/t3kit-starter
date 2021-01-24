@@ -1,0 +1,15 @@
+paths:
+  - public/typo3conf/ext/theme_newcustomproject/Configuration/TypoScript/
+  - public/typo3conf/ext/theme_newcustomproject/Configuration/TSconfig/
+
+sniffs:
+  - class: Indentation
+    parameters:
+      indentPerLevel: 2
+  - class: RepeatingRValue
+    disabled: true
+  - class: DeadCode
+    disabled: true
+  - class: NestingConsistency
+    parameters:
+      commonPathPrefixThreshold: 3
