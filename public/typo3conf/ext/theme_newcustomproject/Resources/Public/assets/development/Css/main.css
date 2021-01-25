@@ -7334,9 +7334,9 @@ fieldset:disabled .btn {
   position: absolute;
   display: block;
   text-align: center;
-  top: 1.4rem;
+  bottom: -1.3rem;
   width: 13em;
-  left: 1rem;
+  left: 0.5rem;
   background-color: var(--t3-target-blank-msg-bg);
   color: var(--t3-target-blank-msg-color);
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.08);
@@ -7355,7 +7355,9 @@ fieldset:disabled .btn {
   border: 0 !important;
 }
 /* .target-blank-link__icon-wrp {} */
-/* .target-blank-link__icon {} */
+.target-blank-link__icon {
+  margin-bottom: 0.3rem;
+}
 .scroll-to-top {
   background-color: #fff;
   display: flex;
@@ -9384,9 +9386,6 @@ button.swiper-pagination-bullet {
 /* ============================== */
 /* custom variables */
 /* ============================== */
-/* ============================== */
-/* t3kit variables */
-/* ============================== */
 :root {
   /* primary color */
   --t3-primary: red;
@@ -9431,6 +9430,110 @@ button.swiper-pagination-bullet {
 /* @import 'main/content-elements/divider-icon.css'; */
 /* @import 'main/content-elements/divider.css'; */
 /* @import 'main/content-elements/slider.css'; */
+/* X-Small devices (portrait phones, less than 576px) */
+/* No media query for `xs` since this is the default in Bootstrap */
+.ce-example-content-element__wrp {
+  --t3-ce-itl-color: var(--t3-body-color);
+  --t3-ce-itl-header-color: var(--t3-ce-itl-color);
+  --t3-ce-itl-subheader-color: var(--t3-ce-itl-color);
+  --t3-ce-itl-bodytext-color: var(--t3-ce-itl-color);
+  --t3-ce-itl-link-color: var(--t3-ce-itl-color);
+
+  position: relative;
+  color: var(--t3-ce-itl-color);
+}
+.ce-example-content-element__wrp.inverted-color {
+  --t3-ce-itl-color: var(--t3-body-bg);
+}
+.inverted-color .ce-example-content-element__subheader .subheader-item {
+  color: var(--t3-primary);
+}
+.internal-margins .ce-example-content-element__body {
+  padding-left: 1.6rem;
+  padding-right: 1.6rem;
+  padding-bottom: 1.8rem;
+}
+.ce-example-content-element__picture,
+.ce-example-content-element__svg-image {
+  margin-bottom: 1rem;
+}
+.ce-example-content-element__svg-image {
+  margin-top: 1rem;
+}
+.fixed-height,
+.fixed-height .picture-partial,
+.fixed-height .svg-partial {
+  display: flex;
+  flex: auto;
+}
+.fixed-height .picture-partial__simple,
+.fixed-height .svg-partial__simple {
+  flex: auto;
+}
+.fixed-height .picture-partial__item-img {
+  height: 100%;
+  object-fit: cover;
+}
+.fixed-height .svg-partial__item {
+  height: 100%;
+  object-fit: cover;
+  width: auto;
+}
+.ce-example-content-element__header .header-item {
+  color: var(--t3-ce-itl-header-color);
+}
+.ce-example-content-element__subheader .subheader-item {
+  font-weight: 600;
+  color: var(--t3-ce-itl-subheader-color);
+}
+.ce-example-content-element__bodytext .bodytext-partial {
+  color: var(--t3-ce-itl-bodytext-color);
+}
+.ce-example-content-element__body {
+  padding-bottom: 1.2rem;
+}
+.ce-example-content-element__link .link-partial {
+  color: var(--t3-ce-itl-link-color);
+}
+.ce-example-content-element__link .button-partial__wrp {
+  color: var(--t3-ce-itl-link-color);
+}
+.ce-example-content-element__link .stretched-link:after {
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+}
+@media (prefers-reduced-motion: reduce) {
+  .ce-example-content-element__link .stretched-link:after {
+    transition: none;
+  }
+}
+.ce-example-content-element__link .stretched-link:hover:after {
+  background-color: hsla(0, 0, 0%, 0.03);
+}
+/* -------------------------------------------------------- */
+/* X-Small devices (portrait phones, less than 576px) xs */
+/* @media (max-width: 575.98px) { ... } */
+/* Small devices (landscape phones, 576px and up) sm */
+/* @media (min-width: 576px) { ... } */
+/* -------------------------------------------------------- */
+/* Small devices (landscape phones, less than 768px) sm */
+/* @media (max-width: 767.98px) { ... } */
+/* Medium devices (tablets, 768px and up) md */
+/* @media (min-width: 768px) { ... } */
+/* -------------------------------------------------------- */
+/* Medium devices (tablets, less than 992px) md */
+/* @media (max-width: 991.98px) { ... } */
+/* Large devices (desktops, 992px and up) lg */
+/* @media (min-width: 992px) { ... } */
+/* -------------------------------------------------------- */
+/* Large devices (desktops, less than 1200px) lg */
+/* @media (max-width: 1199.98px) { ... } */
+/* X-Large devices (large desktops, 1200px and up) xl */
+/* @media (min-width: 1200px) { ... } */
+/* -------------------------------------------------------- */
+/* X-Large devices (large desktops, less than 1400px) xl */
+/* @media (max-width: 1399.98px) { ... } */
+/* XX-Large devices (larger desktops, 1400px and up) xxl */
+/* @media (min-width: 1400px) { ... } */
 /* ===== appearance ===== */
 /* @import 'main/appearance/color.css'; */
 /* @import 'main/appearance/background.css'; */
