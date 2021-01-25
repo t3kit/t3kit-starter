@@ -1,6 +1,6 @@
 paths:
-  - public/typo3conf/ext/theme_newcustomproject/Configuration/TypoScript/
-  - public/typo3conf/ext/theme_newcustomproject/Configuration/TSconfig/
+  - public/typo3conf/ext/theme_*/Configuration/TypoScript/
+  - public/typo3conf/ext/theme_*/Configuration/TSconfig/
 
 sniffs:
   - class: Indentation

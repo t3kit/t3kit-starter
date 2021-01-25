@@ -117,20 +117,24 @@
     ],
     "refindex": "docker-compose exec -T web php /var/www/html/public/typo3/sysext/core/bin/typo3 referenceindex:update",
     "lint-php": "phpcs --colors",
-    "lint-yaml": "yaml-lint --ansi config/ .localconf/ public/typo3conf/ext/theme_newcustomproject/Resources/ public/typo3conf/ext/theme_newcustomproject/Configuration/ public/typo3conf/ext/theme_newcustomproject/Classes/",
+    "lint-yaml": "yaml-lint --ansi config/ .localconf/",
     "lint-editorconfig": "ec -exclude LICENSE.txt",
     "lint-typoscript": "typoscript-lint --ansi",
-    "lint-xml": "xmllint --ansi public/typo3conf/ext/theme_newcustomproject/",
-    "npm-test": "npm test --prefix public/typo3conf/ext/theme_newcustomproject/",
+    "lint_theme_newcustomproject": [
+      "npm test --prefix public/typo3conf/ext/theme_newcustomproject/",
+      "xmllint --ansi public/typo3conf/ext/theme_newcustomproject/",
+      "yaml-lint --ansi config/ .localconf/ public/typo3conf/ext/theme_newcustomproject/Resources/ public/typo3conf/ext/theme_newcustomproject/Configuration/ public/typo3conf/ext/theme_newcustomproject/Classes/"
+    ],
     "test": [
       "@lint-php",
       "@lint-yaml",
       "@lint-editorconfig",
-      "@lint-xml",
       "@lint-typoscript",
-      "@npm-test"
+      "@lint_theme_newcustomproject"
     ],
-    "npm-ci": "npm ci --prefix public/typo3conf/ext/theme_newcustomproject/",
+    "npm-ci": [
+      "npm ci --prefix public/typo3conf/ext/theme_newcustomproject/"
+    ],
     "ddev-config": "bash .localconf/community/ddev/setupddev.sh",
     "t3kit-upgrade": "git merge -X theirs --squash --allow-unrelated-histories t3kit/master"
   },
