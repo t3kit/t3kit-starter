@@ -31,7 +31,7 @@ jobs:
         run: composer validate
 
       - name: Install Composer dependencies
-        run: composer install --prefer-dist --no-progress --no-suggest
+        run: composer install --prefer-dist --no-progress --ignore-platform-reqs
 
       - run: composer run-script npm-ci
 

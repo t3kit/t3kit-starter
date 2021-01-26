@@ -20,7 +20,7 @@ jobs:
         run: composer --version
 
       - name: Install t3kit Composer dependencies
-        run: composer install --prefer-dist --no-progress --no-suggest
+        run: composer install --prefer-dist --no-progress --ignore-platform-reqs
 
       - name: Add t3kit dev environment variables
         run: composer run-script env
@@ -37,7 +37,7 @@ jobs:
       - name: Show running containers
         run: docker ps
 
-      - name: Show running containers
+      - name: nproxy logs
         run: docker logs nproxy
 
       - name: Sleep 100s
