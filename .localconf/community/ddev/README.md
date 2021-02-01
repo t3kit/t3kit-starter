@@ -12,7 +12,7 @@ These instructions require that you have installed DDEV. Read how to install [DD
 
 5. Run `ddev composer install`
 
-6. Run `ddev import-db --src=.localconf/db/t3kit10.sql`
+6. Run `ddev import-db --src=.localconf/db/dbdump/t3kit10.sql`
 
 7. Visit your site at the project URL. (e.g. https://t3kit-starter.ddev.site)
 
