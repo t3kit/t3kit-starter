@@ -21,6 +21,7 @@
 - [File structure](#file-structure)
 - [Quick start a new project on t3kit base](#quick-start-a-new-project-on-t3kit-base)
 - [Start with t3kit development](#start-with-t3kit-development)
+- [Implement your custom theme based on t3kit](#implement-your-custom-theme-based-on-t3kit)
 - [Local development tools](#local-development-tools)
 - [Changelog](CHANGELOG.md)
 
@@ -57,9 +58,11 @@
 ## Required dependencies
 
 - [Git](https://git-scm.com/)
-- [Composer](https://getcomposer.org/) >= v1.9.1
-- [Docker](https://docs.docker.com/install/) >= v19.03.12
-- [Docker Compose](https://docs.docker.com/compose/install/) >= v1.26.2
+- [Composer](https://getcomposer.org/) >= v2.0.8
+- [Docker](https://docs.docker.com/install/) >= v20.10.2
+- [Docker Compose](https://docs.docker.com/compose/install/) >= v1.27.4
+- [Node.js](https://nodejs.org/en/download/) >= v14.15.1
+- [NPM](https://nodejs.org/en/download/) >= v6.14.10
 
 ## File structure
 
@@ -100,7 +103,7 @@ If there no needs to use **t3kit** starter database or **Docker configuration** 
     composer create-project --remove-vcs t3kit/t3kit-starter my-new-project
     ```
 
-2. Use as a template in *GitHub*. If you are using *GitHub* to store your future project, then you can just clone *t3kit-starter* as a template to your new project repository with `Use this template` green button.
+2. Use as a template in *GitHub* (recommended). If you are using *GitHub* to store your future project, then you can just clone *t3kit-starter* as a template to your new project repository with `Use this template` green button.
 
 ## Start with t3kit development
 
@@ -123,6 +126,34 @@ If there no needs to use **t3kit** starter database or **Docker configuration** 
 7. Open `t3kit10.t3.localhost` in browser _Google Chrome_
 8. Open TYPO3 BE `t3kit10.t3.localhost/typo3` ---> *[user: `admin`, password: `admin1234`]*
 9. Open TYPO3 Install tool `t3kit10.t3.localhost/typo3/install.php` ---> *[password: `admin1234`]*
+
+***
+
+## Implement your custom theme based on t3kit
+
+`public/typo3conf/ext/theme_newcustomproject` in this folder you can find an example of TYPO3 extension that can be a good starting point for extending the default t3kit theme. With this "subtheme" extension, you can change the design and add the necessary content elements while maintaining the main features of t3kit, and the ability to easily upgrade to newer versions of TYPO3 and t3kit.
+
+### Quick start
+
+1. Define `projectname`
+2. Create a new extension based on `theme_newcustomproject`
+    ```shell
+    cp -r public/typo3conf/ext/theme_newcustomproject public/typo3conf/ext/theme_projectname
+    ```
+3. Rename `newcustomproject` to your `projectname`
+    ```shell
+    grep -rl 'newcustomproject' public/typo3conf/ext/theme_projectname | xargs sed -i '' 's/newcustomproject/projectname/g'
+    ```
+4. Update `composer.json` autoload config
+    - `"T3k\\projectname\\": "public/typo3conf/ext/theme_projectname/Classes/"`
+
+5. Update tests config (optional)
+    - `.phpcs.xml`
+    - `composer.json`
+        - add `lint_theme_projectname` composer script based on `lint_theme_newcustomproject`
+        - update `npm-ci` composer script by adding `npm ci --prefix public/typo3conf/ext/theme_projectname/`
+
+***
 
 ## Local development tools
 
