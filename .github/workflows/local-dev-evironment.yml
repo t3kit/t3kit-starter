@@ -1,14 +1,13 @@
 name: Local development environment
-# https://github.com/t3kit/t3kit-starter#local-development-environment-based-on-docker
+# https://github.com/t3kit/t3kit-starter#quick-start-a-new-project-on-t3kit-base
 
 on: [push, pull_request]
 
 jobs:
 
-
   build:
 
-    name: Setup t3kit local development environment
+    name: Check local development environment
 
     runs-on: ubuntu-latest
 
@@ -19,38 +18,50 @@ jobs:
       - name: Composer version
         run: composer --version
 
-      - name: Install t3kit Composer dependencies
+      - name: Composer Cache
+        id: composer-cache
+        run: |
+          echo "::set-output name=dir::$(composer config cache-files-dir)"
+
+      - uses: actions/cache@v2
+        with:
+          path: ${{ steps.composer-cache.outputs.dir }}
+          key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-composer-
+
+      - name: Install Composer dependencies
+        # env:
+        #   COMPOSER_AUTH: '{"github-oauth": {"github.com": "${{ secrets.COMPOSER_SECRET }}" }}'
         run: composer install --prefer-dist --no-progress --ignore-platform-reqs
 
-      - name: Add t3kit dev environment variables
+      - name: Add environment variables
         run: composer run-script env
 
       - name: Create nproxy Docker network
         run: docker network create nproxy
 
-      - name: Run nginx-proxy for t3kit
-        run: docker run -d -p 80:80 -p 443:443 --name=nproxy --network=nproxy -v ~/.certs/server:/etc/nginx/certs -v /var/run/docker.sock:/tmp/docker.sock:ro t3kit/nproxy:1.1.1
+      - name: Run nginx-proxy
+        run: docker run -d -p 80:80 --name=nproxy --network=nproxy -v ~/.certs/server:/etc/nginx/certs -v /var/run/docker.sock:/tmp/docker.sock:ro t3kit/nproxy:1.2.1
 
-      - name: Run t3kit containers
+      - name: Run all containers
         run: docker-compose up -d
 
       - name: Show running containers
         run: docker ps
 
-      - name: nproxy logs
+      - name: Show nproxy logs
         run: docker logs nproxy
 
-      - name: Sleep 100s
-        uses: maddox/actions/sleep@master
-        with:
-          args: "100"
+      - name: Wait for db container
+        run: . ./.env && docker run --rm --network=nproxy toschneck/wait-for-it ${COMPOSE_PROJECT_NAME}_db:3306 -t 100
 
-      - name: Setup t3kit database
+      - name: Import t3kit-starter database
         run: composer run-script dbup
 
-      - name: curl typo3 FE
+      - name: curl TYPO3 FE
         run: '. ./.env && curl -vfsSLI -H "Host: $VIRTUAL_HOST_1" --url localhost/'
 
-      - name: curl typo3 BE
+      - name: curl TYPO3 BE
         run: '. ./.env && curl -vfsSLI -H "Host: $VIRTUAL_HOST_1" --url localhost/typo3/'
 
