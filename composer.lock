@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c3073eca24c800dc6b35147a95bbaa20",
+    "content-hash": "750dff4d730abb310776f7df9eff05d7",
     "packages": [
         {
             "name": "cogpowered/finediff",
@@ -4135,12 +4135,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/t3kit/t3kit.git",
-                "reference": "484f0df7d4263ceb65f0f65fa41d7be29e35db62"
+                "reference": "95283597d0ebee6334fe51c98d0262296b253ef2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/t3kit/t3kit/zipball/484f0df7d4263ceb65f0f65fa41d7be29e35db62",
-                "reference": "484f0df7d4263ceb65f0f65fa41d7be29e35db62",
+                "url": "https://api.github.com/repos/t3kit/t3kit/zipball/95283597d0ebee6334fe51c98d0262296b253ef2",
+                "reference": "95283597d0ebee6334fe51c98d0262296b253ef2",
                 "shasum": ""
             },
             "require": {
@@ -4210,7 +4210,7 @@
                 "issues": "https://github.com/t3kit/t3kit/issues",
                 "source": "https://github.com/t3kit/t3kit"
             },
-            "time": "2021-01-27T15:44:46+00:00"
+            "time": "2021-02-01T19:46:22+00:00"
         },
         {
             "name": "typo3/class-alias-loader",
@@ -7083,7 +7083,7 @@
         }
     ],
     "aliases": [],
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "stability-flags": {
         "t3kit/t3kit": 20
     },

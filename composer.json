@@ -80,7 +80,7 @@
       "T3k\\newcustomproject\\": "public/typo3conf/ext/theme_newcustomproject/Classes/"
     }
   },
-  "minimum-stability": "dev",
+  "minimum-stability": "stable",
   "prefer-stable": true,
   "config": {
     "platform": {
