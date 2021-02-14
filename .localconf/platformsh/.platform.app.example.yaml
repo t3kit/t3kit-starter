@@ -23,8 +23,11 @@ dependencies:
 variables:
   php:
     max_execution_time: 45
-  # -SOLR- uncomment if using solr
   # env:
+    # Overwrite the default TYPO3 Cache-control header with env:OVERWRITE_DEFAULT_CACHE_CONTROL_HEADER
+    OVERWRITE_DEFAULT_CACHE_CONTROL_HEADER: Cache-control:max-age=300
+
+    # uncomment env-s below if using solr
     # SOLR_CORE_EN: 'core_en'
     # SOLR_CORE_SV: 'core_sv'
     # SOLR_CORE_DE: 'core_de'
