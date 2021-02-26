@@ -119,7 +119,7 @@
     "lint-php": "phpcs --colors",
     "lint-yaml": "yaml-lint --ansi config/ .localconf/",
     "lint-editorconfig": "ec -exclude LICENSE.txt",
-    "lint-typoscript": "typoscript-lint --ansi",
+    "lint-typoscript": "typoscript-lint --ansi --fail-on-warnings",
     "lint_theme_newcustomproject": [
       "npm test --prefix public/typo3conf/ext/theme_newcustomproject/",
       "xmllint --ansi public/typo3conf/ext/theme_newcustomproject/",
