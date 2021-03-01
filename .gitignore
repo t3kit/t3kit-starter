@@ -20,3 +20,4 @@ public/fileadmin/*
 .vscode/
 cghooks.lock
 .localconf/platformsh/scripts/db/*.sql
+.idea
