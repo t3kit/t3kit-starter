@@ -17,7 +17,6 @@
   },
   "dependencies": {
     "bootstrap": "v5.0.0-beta2",
-    "file-icon-vectors": "1.0.0",
     "simplelightbox": "2.7.0",
     "swiper": "6.4.15"
   },
