@@ -24,7 +24,7 @@
     "docs": "https://github.com/t3kit/t3kit-starter"
   },
   "require": {
-    "pixelant/pxa-lpeh": "^1.0.0",
+    "pixelant/pxa-lpeh": "dev-master",
     "t3kit/t3kit": "dev-master",
     "typo3/cms-about": "^10.4.6",
     "typo3/cms-adminpanel": "^10.4.6",
