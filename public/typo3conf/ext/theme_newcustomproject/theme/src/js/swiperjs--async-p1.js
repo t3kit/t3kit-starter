@@ -8,25 +8,23 @@ const swiper = function (className, options) {
   return new Swiper(className, options)
 }
 
-swiper('.swiper-container', {
+swiper('.t3kit-swiper-container', {
   // Optional parameters
   direction: 'horizontal',
   loop: false,
-  autoplay: {
-    delay: 3000
-  },
   a11y: {
     prevSlideMessage: 'Previous slide',
     nextSlideMessage: 'Next slide'
   },
   // If we need pagination
   pagination: {
-    el: '.swiper-pagination'
+    el: '.t3kit-swiper-pagination',
+    clickable: true
   },
 
   // Navigation arrows
   navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev'
+    nextEl: '.t3kit-swiper-button-next',
+    prevEl: '.t3kit-swiper-button-prev'
   }
 })

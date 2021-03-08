@@ -14,6 +14,9 @@
 @import '../../../../t3kit/theme/src/css/main/global/helpers/border-radius.css';
 @import '../../../../t3kit/theme/src/css/main/global/helpers/print.css';
 
+/* ===== plugins ===== */
+@import 'main/plugins/swiperjs.css';
+
 /* ===== nav ===== */
 @import '../../../../t3kit/theme/src/css/main/global/nav/breadcrumb.css';
 @import '../../../../t3kit/theme/src/css/main/global/nav/side-navigation.css';
@@ -42,9 +45,6 @@
 @import '../../../../t3kit/theme/src/css/main/appearance/color.css';
 @import '../../../../t3kit/theme/src/css/main/appearance/background.css';
 @import '../../../../t3kit/theme/src/css/main/appearance/content-margins.css';
-
-/* ===== plugins ===== */
-@import 'vendor/swiperjs.css';
 
 /* ======================================== */
 /* ======================================== */
