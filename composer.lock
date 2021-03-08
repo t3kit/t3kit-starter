@@ -726,16 +726,16 @@
         },
         {
             "name": "guzzlehttp/promises",
-            "version": "1.4.0",
+            "version": "1.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/promises.git",
-                "reference": "60d379c243457e073cff02bc323a2a86cb355631"
+                "reference": "8e7d04f1f6450fef59366c399cfad4b9383aa30d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/promises/zipball/60d379c243457e073cff02bc323a2a86cb355631",
-                "reference": "60d379c243457e073cff02bc323a2a86cb355631",
+                "url": "https://api.github.com/repos/guzzle/promises/zipball/8e7d04f1f6450fef59366c399cfad4b9383aa30d",
+                "reference": "8e7d04f1f6450fef59366c399cfad4b9383aa30d",
                 "shasum": ""
             },
             "require": {
@@ -775,9 +775,9 @@
             ],
             "support": {
                 "issues": "https://github.com/guzzle/promises/issues",
-                "source": "https://github.com/guzzle/promises/tree/1.4.0"
+                "source": "https://github.com/guzzle/promises/tree/1.4.1"
             },
-            "time": "2020-09-30T07:37:28+00:00"
+            "time": "2021-03-07T09:25:29+00:00"
         },
         {
             "name": "guzzlehttp/psr7",
@@ -1074,12 +1074,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/pixelant/pxa_lpeh.git",
-                "reference": "54b77278047803fa0742799a0a9c48749b6f2e6c"
+                "reference": "97285ee6bc9f9ba05f2afa1126d34c0b34d8e3f0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pixelant/pxa_lpeh/zipball/54b77278047803fa0742799a0a9c48749b6f2e6c",
-                "reference": "54b77278047803fa0742799a0a9c48749b6f2e6c",
+                "url": "https://api.github.com/repos/pixelant/pxa_lpeh/zipball/97285ee6bc9f9ba05f2afa1126d34c0b34d8e3f0",
+                "reference": "97285ee6bc9f9ba05f2afa1126d34c0b34d8e3f0",
                 "shasum": ""
             },
             "require": {
@@ -1119,7 +1119,7 @@
                 "issues": "https://github.com/pixelant/pxa_lpeh/issues",
                 "source": "https://github.com/pixelant/pxa_lpeh/tree/master"
             },
-            "time": "2021-03-05T15:24:47+00:00"
+            "time": "2021-03-05T15:25:14+00:00"
         },
         {
             "name": "psr/cache",
@@ -1172,27 +1172,22 @@
         },
         {
             "name": "psr/container",
-            "version": "1.0.0",
+            "version": "1.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-fig/container.git",
-                "reference": "b7ce3b176482dbbc1245ebf52b181af44c2cf55f"
+                "reference": "8622567409010282b7aeebe4bb841fe98b58dcaf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-fig/container/zipball/b7ce3b176482dbbc1245ebf52b181af44c2cf55f",
-                "reference": "b7ce3b176482dbbc1245ebf52b181af44c2cf55f",
+                "url": "https://api.github.com/repos/php-fig/container/zipball/8622567409010282b7aeebe4bb841fe98b58dcaf",
+                "reference": "8622567409010282b7aeebe4bb841fe98b58dcaf",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.0"
+                "php": ">=7.2.0"
             },
             "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.0.x-dev"
-                }
-            },
             "autoload": {
                 "psr-4": {
                     "Psr\\Container\\": "src/"
@@ -1205,7 +1200,7 @@
             "authors": [
                 {
                     "name": "PHP-FIG",
-                    "homepage": "http://www.php-fig.org/"
+                    "homepage": "https://www.php-fig.org/"
                 }
             ],
             "description": "Common Container Interface (PHP FIG PSR-11)",
@@ -1219,9 +1214,9 @@
             ],
             "support": {
                 "issues": "https://github.com/php-fig/container/issues",
-                "source": "https://github.com/php-fig/container/tree/master"
+                "source": "https://github.com/php-fig/container/tree/1.1.1"
             },
-            "time": "2017-02-14T16:28:37+00:00"
+            "time": "2021-03-05T17:36:06+00:00"
         },
         {
             "name": "psr/event-dispatcher",
@@ -4132,12 +4127,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/t3kit/t3kit.git",
-                "reference": "918634ec18fa4cb58688696fd98880b8fc727b81"
+                "reference": "86a6336090df27c578019bf7f05426e14033034d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/t3kit/t3kit/zipball/918634ec18fa4cb58688696fd98880b8fc727b81",
-                "reference": "918634ec18fa4cb58688696fd98880b8fc727b81",
+                "url": "https://api.github.com/repos/t3kit/t3kit/zipball/86a6336090df27c578019bf7f05426e14033034d",
+                "reference": "86a6336090df27c578019bf7f05426e14033034d",
                 "shasum": ""
             },
             "require": {
@@ -4208,7 +4203,7 @@
                 "issues": "https://github.com/t3kit/t3kit/issues",
                 "source": "https://github.com/t3kit/t3kit"
             },
-            "time": "2021-03-05T15:14:29+00:00"
+            "time": "2021-03-08T18:31:23+00:00"
         },
         {
             "name": "typo3/class-alias-loader",
