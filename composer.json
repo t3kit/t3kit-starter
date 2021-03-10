@@ -65,8 +65,7 @@
     "brainmaestro/composer-git-hooks": "^2.8.3",
     "editorconfig-checker/editorconfig-checker": "^10.2.1",
     "squizlabs/php_codesniffer": "^3.5.8",
-    "helmich/typo3-typoscript-lint": "^2.4.1",
-    "sclable/xml-lint": "^0.3.0"
+    "helmich/typo3-typoscript-lint": "^2.4.1"
   },
   "suggest": {
     "platformsh/config-reader": "It provides convenience wrappers for accessing the Platform.sh environment variables",
@@ -83,16 +82,14 @@
   "minimum-stability": "stable",
   "prefer-stable": true,
   "config": {
-    "platform": {
-      "php": "7.4"
-    },
     "sort-packages": true
   },
   "scripts": {
     "typo3-cms-scripts": [
     ],
     "pre-install-cmd": [
-      "composer validate --no-check-all --strict"
+      "composer validate --no-check-all --strict",
+      "composer check-platform-reqs"
     ],
     "post-install-cmd": [
       "vendor/bin/cghooks add --ignore-lock"
@@ -105,6 +102,22 @@
     "post-create-project-cmd": [
       "composer env"
     ],
+    "lint-php": "phpcs --colors",
+    "lint-yaml": "yaml-lint --ansi config/ .localconf/",
+    "lint-editorconfig": "ec -exclude LICENSE.txt",
+    "lint-typoscript": "typoscript-lint --ansi --fail-on-warnings",
+    "test": [
+      "@lint-php",
+      "@lint-yaml",
+      "@lint-editorconfig",
+      "@lint-typoscript"
+    ],
+    "test-themes": [
+      "npm test --prefix public/typo3conf/ext/theme_newcustomproject/"
+    ],
+    "npm-ci": [
+      "npm ci --prefix public/typo3conf/ext/theme_newcustomproject/"
+    ],
     "env": "cp .localconf/local.env .env",
     "dbup": "./.localconf/db/setupdb.sh",
     "dbre": "./.localconf/db/restoredb.sh",
@@ -116,32 +129,14 @@
       "@syncfiles"
     ],
     "refindex": "docker-compose exec -T web php /var/www/html/public/typo3/sysext/core/bin/typo3 referenceindex:update",
-    "lint-php": "phpcs --colors",
-    "lint-yaml": "yaml-lint --ansi config/ .localconf/",
-    "lint-editorconfig": "ec -exclude LICENSE.txt",
-    "lint-typoscript": "typoscript-lint --ansi --fail-on-warnings",
-    "lint_theme_newcustomproject": [
-      "npm test --prefix public/typo3conf/ext/theme_newcustomproject/",
-      "xmllint --ansi public/typo3conf/ext/theme_newcustomproject/",
-      "yaml-lint --ansi config/ .localconf/ public/typo3conf/ext/theme_newcustomproject/Resources/ public/typo3conf/ext/theme_newcustomproject/Configuration/ public/typo3conf/ext/theme_newcustomproject/Classes/"
-    ],
-    "test": [
-      "@lint-php",
-      "@lint-yaml",
-      "@lint-editorconfig",
-      "@lint-typoscript",
-      "@lint_theme_newcustomproject"
-    ],
-    "npm-ci": [
-      "npm ci --prefix public/typo3conf/ext/theme_newcustomproject/"
-    ],
     "ddev-config": "bash .localconf/community/ddev/setupddev.sh",
     "t3kit-upgrade": "git merge -X theirs --squash --allow-unrelated-histories t3kit/master"
   },
   "extra": {
     "hooks": {
       "pre-commit": [
-        "composer test"
+        "composer test",
+        "composer test-themes"
       ]
     }
   }

@@ -61,6 +61,9 @@ jobs:
       - name: Run Composer test
         run: composer run-script test
 
+      - name: Run Composer test-themes
+        run: composer run-script test-themes
+
       - name: PKG versions
         run: |
           composer -v
