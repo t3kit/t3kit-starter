@@ -6,26 +6,30 @@ on: [push, pull_request]
 jobs:
 
   build:
-    name: Run composer test
+    name: Run composer test & composer test-themes
     runs-on: ubuntu-latest
 
     strategy:
       matrix:
         node-version: [14.x]
+        php-version: ['7.4']
 
     steps:
       - uses: actions/checkout@v2
 
-      - name: Use Node.js v${{ matrix.node-version }}
-        uses: actions/setup-node@v2
-        with:
-          node-version: ${{ matrix.node-version }}
-
       - name: Lint shell scripts with Shellcheck
         run: shellcheck -e SC1091 .localconf/**/*.sh
 
-      - name: Composer version
-        run: composer --version
+      - name: Set up PHP v${{ matrix.php-version }}
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php-version }}
+          tools: composer:v2
+
+      - name: Set up Node.js v${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
 
       - name: Composer Cache
         id: composer-cache
@@ -42,7 +46,7 @@ jobs:
       - name: Install Composer dependencies
         # env:
         #   COMPOSER_AUTH: '{"github-oauth": {"github.com": "${{ secrets.COMPOSER_SECRET }}" }}'
-        run: composer install --prefer-dist --no-progress --ignore-platform-reqs
+        run: composer install --prefer-dist --no-progress --no-suggest
 
       - uses: actions/cache@v2
         with:
@@ -56,3 +60,10 @@ jobs:
 
       - name: Run Composer test
         run: composer run-script test
+
+      - name: PKG versions
+        run: |
+          composer -v
+          php -v
+          node -v
+          npm -v
