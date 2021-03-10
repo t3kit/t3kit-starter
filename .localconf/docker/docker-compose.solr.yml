@@ -1,10 +1,10 @@
-version: "3.7"
+version: "3.8"
 
 services:
 
   db:
     container_name: ${COMPOSE_PROJECT_NAME}_db
-    image: ${DB_IMAGE:-mariadb:10.3}
+    image: ${DB_IMAGE}
     environment:
       - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD:-1234}
     volumes:
@@ -15,29 +15,27 @@ services:
 
   web:
     container_name: ${COMPOSE_PROJECT_NAME}_web
-    image: ${WEB_IMAGE:-t3kit/10-php7.4-fpm-nginx-buster:1.1.2}
-    environment:
-      - VIRTUAL_HOST=${VIRTUAL_HOST_1},${VIRTUAL_HOST_2:?err}
-
-      - VIRTUAL_HOST_1=http://${VIRTUAL_HOST_1}
-      - VIRTUAL_HOST_2=http://${VIRTUAL_HOST_2}
-
-      - TYPO3_CONTEXT=${TYPO3_CONTEXT:-Development/local}
-
-      - DB_HOST=${COMPOSE_PROJECT_NAME}_db
-      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD:-1234}
-      - DB_NAME=${DB_NAME:-t3kit10}
-      - DB_USER=${DB_USER:-root}
-
-      - USER_ID=${USER_ID:-1000}
+    image: ${WEB_IMAGE}
+    env_file:
+      - ../../.env
     volumes:
-      - ../../:/var/www/html:${FILE_SYSTEM_MODE:-delegated}
+      - type: bind
+        source: ../../
+        target: /var/www/html
       - type: volume
         source: var
         target: /var/www/html/var
       - type: volume
         source: typo3temp
         target: /var/www/html/public/typo3temp
+
+  solr:
+    container_name: ${COMPOSE_PROJECT_NAME}_solr
+    image: ${SOLR_IMAGE}
+    ports:
+      - "${SOLR_PORT:-8983}:8983"
+    volumes:
+      - solr:/var/solr
 
 networks:
   default:
@@ -51,6 +49,5 @@ volumes:
     name: ${COMPOSE_PROJECT_NAME}_var
   db:
     name: ${COMPOSE_PROJECT_NAME}_db
-
-
-
+  solr:
+    name: ${COMPOSE_PROJECT_NAME}_solr

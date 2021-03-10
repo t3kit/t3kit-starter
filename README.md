@@ -113,14 +113,12 @@ If there no needs to use **t3kit** starter database or **Docker configuration** 
 
     _*Note: To continue with Docker you need to create an environment `.env` file for your project based on an example `local.env`. You need to create `.env` file manually by running: `composer env` or `cp .localconf/local.env .env`._
 
-    - Check environment variables and change them if it needed. By default no changes required.
+    - Check all environment variables in `.env` file and change them if it needed
     - OS-specific settings in `.env` file
         - **Linux**
-            - Uncomment and set your host user id `USER_ID` in `.env` file to make shared folder writable. If your host `UID = 1000`, then you can skip this step. We are using UID 1000 by default.
-        - **macOS**
-            - Uncomment `USER_ID-mac` variabl. This will improve Docker performance by skipping usermod script on container.
+            - Uncomment `USER_ID` var and set up your host user id to make the shared folder writable. (Skip this step if you are a Mac user)
 
-4. `composer install` - Install dependencies
+4. `composer install` - Install dependencies. Or run `composer ci` to install dependencies from a container in case if platform requirements on local host are not correct.
 5. `docker-compose up -d` - Start all Docker services for a local development environment
 6. Setup t3kit starter database `composer dbup` or `docker-compose exec web /var/www/html/.localconf/db/setupdb.sh`
 7. Open `t3kit10.t3.localhost` in browser _Google Chrome_
@@ -150,7 +148,7 @@ If there no needs to use **t3kit** starter database or **Docker configuration** 
 5. Update tests config (optional)
     - `.phpcs.xml`
     - `composer.json`
-        - add `lint_theme_projectname` composer script based on `lint_theme_newcustomproject`
+        - update `test-themes` composer script by adding `npm test --prefix public/typo3conf/ext/theme_projectname/`
         - update `npm-ci` composer script by adding `npm ci --prefix public/typo3conf/ext/theme_projectname/`
 
 ***
