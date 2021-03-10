@@ -6,17 +6,22 @@ on: [push, pull_request]
 jobs:
 
   build:
-
     name: Check local development environment
-
     runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        php-version: ['7.4']
 
     steps:
 
       - uses: actions/checkout@v2
 
-      - name: Composer version
-        run: composer --version
+      - name: Set up PHP v${{ matrix.php-version }}
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php-version }}
+          tools: composer:v2
 
       - name: Composer Cache
         id: composer-cache
@@ -33,7 +38,7 @@ jobs:
       - name: Install Composer dependencies
         # env:
         #   COMPOSER_AUTH: '{"github-oauth": {"github.com": "${{ secrets.COMPOSER_SECRET }}" }}'
-        run: composer install --prefer-dist --no-progress --ignore-platform-reqs
+        run: composer install --prefer-dist --no-progress --no-suggest
 
       - name: Add environment variables
         run: composer run-script env

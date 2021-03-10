@@ -6,7 +6,7 @@ on: [push, pull_request]
 jobs:
 
   build:
-    name: Run composer test
+    name: Run composer test & composer test-themes
     runs-on: ubuntu-latest
 
     strategy:
@@ -30,13 +30,6 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: ${{ matrix.node-version }}
-
-      - name: Versions
-        run: composer --version
-
-      - run: php --version
-
-      - run: node --version
 
       - name: Composer Cache
         id: composer-cache
@@ -67,3 +60,10 @@ jobs:
 
       - name: Run Composer test
         run: composer run-script test
+
+      - name: PKG versions
+        run: |
+          composer -v
+          php -v
+          node -v
+          npm -v
