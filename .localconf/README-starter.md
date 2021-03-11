@@ -26,14 +26,12 @@
 
     _*Note: To continue with Docker you need to create an environment `.env` file for your project based on an example `local.env`. You need to create `.env` file manually by running: `composer env` or `cp .localconf/local.env .env`._
 
-    - Check environment variables and change them if it needed. By default no changes required.
+    - Check all environment variables in `.env` file and change them if it needed
     - OS-specific settings in `.env` file
         - **Linux**
-            - Uncomment and set your host user id `USER_ID` in `.env` file to make shared folder writable. If your host `UID = 1000`, then you can skip this step. We are using UID 1000 by default.
-        - **macOS**
-            - Uncomment `USER_ID-mac` variabl. This will improve Docker performance by skipping usermod script on container.
+            - Uncomment `USER_ID` var and set up your host user id to make the shared folder writable. (Skip this step if you are a Mac user)
 
-4. `composer install` - Install dependencies
+4. `composer install` - Install dependencies. Or run `composer ci` to install dependencies from a container in case if platform requirements on local host are not correct.
 5. `docker-compose up -d` - Start all Docker services for a local development environment
 6. Open `%$_project-name_$%.t3.localhost` in browser *_Google Chrome_
 
