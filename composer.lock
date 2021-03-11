@@ -4128,12 +4128,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/t3kit/t3kit.git",
-                "reference": "b87ca078077c71cdece1a2389263e29f2b4008a9"
+                "reference": "e88d6f2455675d4bee36ac2c77f3945abdb525c1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/t3kit/t3kit/zipball/b87ca078077c71cdece1a2389263e29f2b4008a9",
-                "reference": "b87ca078077c71cdece1a2389263e29f2b4008a9",
+                "url": "https://api.github.com/repos/t3kit/t3kit/zipball/e88d6f2455675d4bee36ac2c77f3945abdb525c1",
+                "reference": "e88d6f2455675d4bee36ac2c77f3945abdb525c1",
                 "shasum": ""
             },
             "require": {
@@ -4156,7 +4156,7 @@
             "require-dev": {
                 "editorconfig-checker/editorconfig-checker": "^10.2.1",
                 "helmich/typo3-typoscript-lint": "^2.4.1",
-                "sclable/xml-lint": "^0.3.0",
+                "sclable/xml-lint": "^0.4.0",
                 "squizlabs/php_codesniffer": "^3.5.8"
             },
             "suggest": {
@@ -4204,7 +4204,7 @@
                 "issues": "https://github.com/t3kit/t3kit/issues",
                 "source": "https://github.com/t3kit/t3kit"
             },
-            "time": "2021-03-10T19:15:16+00:00"
+            "time": "2021-03-11T13:26:34+00:00"
         },
         {
             "name": "typo3/class-alias-loader",
