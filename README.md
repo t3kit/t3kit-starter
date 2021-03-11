@@ -139,9 +139,16 @@ If there no needs to use **t3kit** starter database or **Docker configuration** 
     cp -r public/typo3conf/ext/theme_newcustomproject public/typo3conf/ext/theme_projectname
     ```
 3. Rename `newcustomproject` to your `projectname`
+
+    - **Mac**
     ```shell
-    grep -rl 'newcustomproject' public/typo3conf/ext/theme_projectname | xargs sed -i '' 's/newcustomproject/projectname/g'
+        grep -rl 'newcustomproject' public/typo3conf/ext/theme_projectname | xargs sed -i '' 's/newcustomproject/projectname/g'
     ```
+    - **Linux**
+    ```shell
+        grep -rl 'newcustomproject' public/typo3conf/ext/theme_projectname | xargs sed -i 's/newcustomproject/projectname/g'
+    ```
+
 4. Update `composer.json` autoload config
     - `"T3k\\projectname\\": "public/typo3conf/ext/theme_projectname/Classes/"`
 
