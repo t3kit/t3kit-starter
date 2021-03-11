@@ -115,6 +115,10 @@
     "test-themes": [
       "npm test --prefix public/typo3conf/ext/theme_newcustomproject/"
     ],
+    "pre-commit-hook": [
+      "composer ctest",
+      "composer test-themes"
+    ],
     "npm-ci": [
       "npm ci --prefix public/typo3conf/ext/theme_newcustomproject/"
     ],
@@ -130,14 +134,14 @@
     ],
     "refindex": "docker-compose exec -T web php /var/www/html/public/typo3/sysext/core/bin/typo3 referenceindex:update",
     "ddev-config": "bash .localconf/community/ddev/setupddev.sh",
-    "t3kit-upgrade": "git merge -X theirs --squash --allow-unrelated-histories t3kit/master"
+    "t3kit-upgrade": "git merge -X theirs --squash --allow-unrelated-histories t3kit/master",
+    "ci": "docker-compose --env-file .localconf/composer/composer.env run --rm web composer i",
+    "cup": "docker-compose --env-file .localconf/composer/composer.env run --rm web composer up",
+    "ctest": "docker-compose --env-file .localconf/composer/composer.env run --rm web composer test"
   },
   "extra": {
     "hooks": {
-      "pre-commit": [
-        "composer test",
-        "composer test-themes"
-      ]
+      "pre-commit": "composer pre-commit-hook"
     }
   }
 }

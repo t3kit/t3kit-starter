@@ -1,0 +1,15 @@
+version: "3.8"
+
+services:
+
+  web:
+    container_name: composer
+    image: ${WEB_IMAGE}
+    env_file:
+      - ./composer.env
+    volumes:
+      - ${SSH_AUTH_SOCK_VOL:-.}:${SSH_AUTH_SOCK_VOL:-/tmp/}
+      - ~/.composer/cache:/root/.composer/cache/
+      - type: bind
+        source: ../../
+        target: /var/www/html
