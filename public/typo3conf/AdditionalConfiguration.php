@@ -103,6 +103,7 @@ switch (\TYPO3\CMS\Core\Core\Environment::getContext()) {
         $GLOBALS['TYPO3_CONF_VARS']['BE']['sessionTimeout'] = 3600;
         $GLOBALS['TYPO3_CONF_VARS']['BE']['debug'] = false;
         $GLOBALS['TYPO3_CONF_VARS']['BE']['compressionLevel'] = 5;
+        $GLOBALS['TYPO3_CONF_VARS']['BE']['lockSSL'] = true;
 
         // FE
         $GLOBALS['TYPO3_CONF_VARS']['FE']['debug'] = false;
