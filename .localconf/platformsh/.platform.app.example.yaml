@@ -6,6 +6,9 @@ name: app
 
 # The type of the application to build.
 type: php:7.4
+
+timezone: "Europe/Stockholm"
+
 build:
   flavor: composer
 
