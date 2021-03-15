@@ -95,6 +95,8 @@ web:
       scripts: false
       passthru: false
       allow: true
+      headers:
+        Content-Security-Policy: default-src 'self'; script-src 'none'; style-src 'none'; object-src 'none';
     '/typo3temp':
       root: 'public/typo3temp'
       expires: 1M
