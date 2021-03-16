@@ -1,4 +1,4 @@
-const localConf = require('../localConf')
+const localConf = require('../localconf')
 const nodeEngine = require('../../../package').engines.node
 const fs = require('fs')
 
