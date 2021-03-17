@@ -32,13 +32,14 @@
             - Uncomment `USER_ID` var and set up your host user id to make the shared folder writable. (Skip this step if you are a Mac user)
 
 4. `composer install` - Install dependencies. Or run `composer ci` to install dependencies from a container in case if platform requirements on local host are not correct.
-5. `docker-compose up -d` - Start all Docker services for a local development environment
-6. `composer syncdb` - Sync database with PlatformSH DB
+5. `composer npm-install-and-build` or `composer ni` - Install dependencies and build assests for themes.
+6. `docker-compose up -d` - Start all Docker services for a local development environment
+7. `composer syncdb` - Sync database with PlatformSH DB
 
     _*Note: You can run `composer syncdb` many times. Every time when you want to update your local db from PlatformSH, run `composer syncdb`._
 
-7. `composer syncfiles` - Sync files with PlatformSH
-8. Open `%$_project-name_$%.t3.localhost` in browser *_Google Chrome_
+8. `composer syncfiles` - Sync files with PlatformSH
+9. Open `%$_project-name_$%.t3.localhost` in browser *_Google Chrome_
 
 ## nginx-proxy
 

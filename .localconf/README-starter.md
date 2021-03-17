@@ -32,8 +32,9 @@
             - Uncomment `USER_ID` var and set up your host user id to make the shared folder writable. (Skip this step if you are a Mac user)
 
 4. `composer install` - Install dependencies. Or run `composer ci` to install dependencies from a container in case if platform requirements on local host are not correct.
-5. `docker-compose up -d` - Start all Docker services for a local development environment
-6. Open `%$_project-name_$%.t3.localhost` in browser *_Google Chrome_
+5. `composer npm-install-and-build` or `composer ni` - Install dependencies and build assests for themes.
+6. `docker-compose up -d` - Start all Docker services for a local development environment
+7. Open `%$_project-name_$%.t3.localhost` in browser *_Google Chrome_
 
 ## nginx-proxy
 
