@@ -120,8 +120,17 @@
       "composer test-themes"
     ],
     "npm-ci": [
-      "npm ci --prefix public/typo3conf/ext/theme_newcustomproject/"
+      "npm ci --prefix public/typo3conf/ext/t3kit",
+      "npm ci --prefix public/typo3conf/ext/theme_newcustomproject"
     ],
+    "npm-build": [
+      "npm run build --prefix public/typo3conf/ext/theme_newcustomproject"
+    ],
+    "npm-install-and-build": [
+      "@npm-ci",
+      "@npm-build"
+    ],
+    "ni": "@npm-install-and-build",
     "env": "cp .localconf/local.env .env",
     "dbup": "./.localconf/db/setupdb.sh",
     "dbre": "./.localconf/db/restoredb.sh",
