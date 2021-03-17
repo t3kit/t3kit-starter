@@ -119,11 +119,12 @@ If there no needs to use **t3kit** starter database or **Docker configuration** 
             - Uncomment `USER_ID` var and set up your host user id to make the shared folder writable. (Skip this step if you are a Mac user)
 
 4. `composer install` - Install dependencies. Or run `composer ci` to install dependencies from a container in case if platform requirements on local host are not correct.
-5. `docker-compose up -d` - Start all Docker services for a local development environment
-6. Setup t3kit starter database `composer dbup` or `docker-compose exec web /var/www/html/.localconf/db/setupdb.sh`
-7. Open `t3kit10.t3.localhost` in browser _Google Chrome_
-8. Open TYPO3 BE `t3kit10.t3.localhost/typo3` ---> *[user: `admin`, password: `admin1234`]*
-9. Open TYPO3 Install tool `t3kit10.t3.localhost/typo3/install.php` ---> *[password: `admin1234`]*
+5. `composer npm-install-and-build` or `composer ni` - Install dependencies and build assests for themes.
+6. `docker-compose up -d` - Start all Docker services for a local development environment
+7. Setup t3kit starter database `composer dbup` or `docker-compose exec web /var/www/html/.localconf/db/setupdb.sh`
+8. Open `t3kit10.t3.localhost` in browser _Google Chrome_
+9. Open TYPO3 BE `t3kit10.t3.localhost/typo3` ---> *[user: `admin`, password: `admin1234`]*
+10. Open TYPO3 Install tool `t3kit10.t3.localhost/typo3/install.php` ---> *[password: `admin1234`]*
 
 ***
 
