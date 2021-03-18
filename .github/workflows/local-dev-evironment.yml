@@ -53,7 +53,7 @@ jobs:
             ${{ runner.os }}-node-
 
       - name: Install npm dependencies
-        run: composer run-script npm-install-and-build
+        run: composer run-script npm-build-dev
 
       - name: Add environment variables
         run: composer run-script env
