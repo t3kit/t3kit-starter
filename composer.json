@@ -123,12 +123,6 @@
       "npm ci --prefix public/typo3conf/ext/t3kit",
       "npm ci --prefix public/typo3conf/ext/theme_newcustomproject"
     ],
-    "npm-build-dev": [
-      "npm run dev --prefix public/typo3conf/ext/theme_newcustomproject"
-    ],
-    "npm-build-prod": [
-      "npm run prod --prefix public/typo3conf/ext/theme_newcustomproject"
-    ],
     "npm-build": [
       "npm run build --prefix public/typo3conf/ext/theme_newcustomproject"
     ],
