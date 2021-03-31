@@ -201,10 +201,3 @@ crons:
       if [ "$PLATFORM_BRANCH" = master ]; then
         platform backup:create --yes --no-wait
       fi
-  renewcert:
-    # Force a redeploy at 5 am (UTC) on the 1st and 15th of every month.
-    spec: '0 5 1,15 * *'
-    cmd: |
-      if [ "$PLATFORM_BRANCH" = master ]; then
-        platform redeploy --yes --no-wait
-      fi
