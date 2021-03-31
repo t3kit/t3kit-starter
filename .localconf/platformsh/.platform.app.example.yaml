@@ -77,6 +77,11 @@ web:
           passthru: false
           scripts: false
           expires: 1y
+        '^\/typo3conf\/ext\/.*\/Resources\/Public\/assets\/Favicons\/browserconfig.xml$':
+          allow: true
+          passthru: false
+          scripts: false
+          expires: 1M
         '\.(jpe?g|png|gif|svgz?|html|css|js|map|ico|bmp|eot|woff2?|otf|ttf|webmanifest|xsl)$':
           allow: true
           passthru: false
