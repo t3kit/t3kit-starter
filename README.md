@@ -100,7 +100,7 @@ If there no needs to use **t3kit** starter database or **Docker configuration** 
 1. Start with `composer create-project`
 
     ```shell
-    composer create-project --remove-vcs t3kit/t3kit-starter my-new-project v10.0.0-beta
+    composer create-project --no-dev --no-scripts --remove-vcs t3kit/t3kit-starter my-new-project v10.0.0-beta
     ```
 
 2. Use as a template in *GitHub* (recommended). If you are using *GitHub* to store your future project, then you can just clone *t3kit-starter* as a template to your new project repository with `Use this template` green button.

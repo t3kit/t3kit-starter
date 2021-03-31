@@ -100,7 +100,6 @@
     "post-autoload-dump": [
     ],
     "post-create-project-cmd": [
-      "composer env"
     ],
     "lint-php": "phpcs --colors",
     "lint-yaml": "yaml-lint --ansi config/ .localconf/",
