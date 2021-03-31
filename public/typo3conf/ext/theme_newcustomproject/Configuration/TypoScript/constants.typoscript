@@ -1,0 +1,6 @@
+# ###########################
+# import TypoScript constants
+# ===========================
+
+# import plugins constants
+@import 'EXT:theme_newcustomproject/Configuration/TypoScript/Plugin/constants.typoscript'
