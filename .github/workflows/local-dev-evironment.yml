@@ -52,8 +52,14 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node-
 
+      - name: Install npm@latest
+        run: npm install -g npm@latest
+
       - name: Install npm dependencies
-        run: composer run-script npm-install-and-build
+        run: npm ci --ignore-scripts
+
+      - name: Compile files
+        run: npm run dev
 
       - name: Add environment variables
         run: composer run-script env
