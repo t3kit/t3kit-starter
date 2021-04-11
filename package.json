@@ -1,0 +1,17 @@
+{
+  "name": "themes",
+  "scripts": {
+    "prepare": "husky install",
+    "test": "npm run lint -ws",
+    "dev": "npm run build-dev -ws",
+    "prod": "npm run build-prod -ws"
+  },
+  "workspaces": [
+    "./public/typo3conf/ext/t3kit",
+    "./public/typo3conf/ext/theme_*"
+  ],
+  "engines": {
+    "node": ">=14.15.1",
+    "npm": ">=7.9.0"
+  }
+}
