@@ -16,7 +16,7 @@
 - [Docker](https://docs.docker.com/install/) >= v20.10.2
 - [Docker Compose](https://docs.docker.com/compose/install/) >= v1.27.4
 - [Node.js](https://nodejs.org/en/download/) >= v14.15.1
-- [NPM](https://nodejs.org/en/download/) >= v6.14.10
+- [NPM](https://nodejs.org/en/download/) >= v7.9.0
 
 ## Quick start
 
@@ -31,9 +31,10 @@
         - **Linux**
             - Uncomment `USER_ID` var and set up your host user id to make the shared folder writable. (Skip this step if you are a Mac user)
 
-4. `composer install` - Install dependencies. Or run `composer ci` to install dependencies from a container in case if platform requirements on local host are not correct.
-5. `composer npm-install-and-build` or `composer ni` - Install dependencies and build assests for themes.
-6. `docker-compose up -d` - Start all Docker services for a local development environment
+4. `composer install` - Install composer dependencies. Or run `composer ci` to install dependencies from a container in case if platform requirements on local host are not correct.
+5. `npm install` - Install npm dependencies.
+6. `npm run build` - Build development assests for themes.
+7. `docker-compose up -d` - Start all Docker services for a local development environment
 7. `composer syncdb` - Sync database with PlatformSH DB
 
     _*Note: You can run `composer syncdb` many times. Every time when you want to update your local db from PlatformSH, run `composer syncdb`._

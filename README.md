@@ -21,7 +21,7 @@
 - [File structure](#file-structure)
 - [Quick start a new project on t3kit base](#quick-start-a-new-project-on-t3kit-base)
 - [Start with t3kit development](#start-with-t3kit-development)
-- [Implement your custom theme based on t3kit](#implement-your-custom-theme-based-on-t3kit)
+- [Create your custom theme based on t3kit to extend the functionality](#create-your-custom-theme-based-on-t3kit-to-extend-the-functionality)
 - [Local development tools](#local-development-tools)
 - [Changelog](CHANGELOG.md)
 
@@ -62,7 +62,7 @@
 - [Docker](https://docs.docker.com/install/) >= v20.10.2
 - [Docker Compose](https://docs.docker.com/compose/install/) >= v1.27.4
 - [Node.js](https://nodejs.org/en/download/) >= v14.15.1
-- [NPM](https://nodejs.org/en/download/) >= v6.14.10
+- [NPM](https://nodejs.org/en/download/) >= v7.9.0
 
 ## File structure
 
@@ -118,46 +118,45 @@ If there no needs to use **t3kit** starter database or **Docker configuration** 
         - **Linux**
             - Uncomment `USER_ID` var and set up your host user id to make the shared folder writable. (Skip this step if you are a Mac user)
 
-4. `composer install` - Install dependencies. Or run `composer ci` to install dependencies from a container in case if platform requirements on local host are not correct.
-5. `composer npm-install-and-build` or `composer ni` - Install dependencies and build assests for themes.
-6. `docker-compose up -d` - Start all Docker services for a local development environment
-7. Setup t3kit starter database `composer dbup` or `docker-compose exec web /var/www/html/.localconf/db/setupdb.sh`
-8. Open `t3kit10.t3.localhost` in browser _Google Chrome_
-9. Open TYPO3 BE `t3kit10.t3.localhost/typo3` ---> *[user: `admin`, password: `admin1234`]*
-10. Open TYPO3 Install tool `t3kit10.t3.localhost/typo3/install.php` ---> *[password: `admin1234`]*
+4. `composer install` - Install composer dependencies. Or run `composer ci` to install dependencies from a container in case if platform requirements on local host are not correct.
+5. `npm install` - Install npm dependencies.
+6. `npm run build` - Build development assests for themes.
+7. `docker-compose up -d` - Start all Docker services for a local development environment
+8. Setup t3kit starter database `composer dbup` or `docker-compose exec web /var/www/html/.localconf/db/setupdb.sh`
+9. Open `t3kit10.t3.localhost` in browser _Google Chrome_
+10. Open TYPO3 BE `t3kit10.t3.localhost/typo3` ---> *[user: `admin`, password: `admin1234`]*
+11. Open TYPO3 Install tool `t3kit10.t3.localhost/typo3/install.php` ---> *[password: `admin1234`]*
 
 ***
 
-## Implement your custom theme based on t3kit
+## Create your custom theme based on t3kit to extend the functionality.
 
 `public/typo3conf/ext/theme_newcustomproject` in this folder you can find an example of TYPO3 extension that can be a good starting point for extending the default t3kit theme. With this "subtheme" extension, you can change the design and add the necessary content elements while maintaining the main features of t3kit, and the ability to easily upgrade to newer versions of TYPO3 and t3kit.
 
 ### Quick start
 
-1. Define `projectname`
+1. Define a `name` for your new theme. For example, let's take the name `mega`
 2. Create a new extension based on `theme_newcustomproject`
     ```shell
-    cp -r public/typo3conf/ext/theme_newcustomproject public/typo3conf/ext/theme_projectname
+    cp -r public/typo3conf/ext/theme_newcustomproject public/typo3conf/ext/theme_mega
     ```
-3. Rename `newcustomproject` to your `projectname`
+    _Note: Change the `mega` part in `public/typo3conf/ext/theme_mega` to your real project neme_
+3. Rename `newcustomproject` to your project name. In our example, we are using `mega` as a project name.
 
     - **Mac**
     ```shell
-        grep -rl 'newcustomproject' public/typo3conf/ext/theme_projectname | xargs sed -i '' 's/newcustomproject/projectname/g'
+        grep -rl 'newcustomproject' public/typo3conf/ext/theme_mega | xargs sed -i '' 's/newcustomproject/mega/g'
     ```
     - **Linux**
     ```shell
-        grep -rl 'newcustomproject' public/typo3conf/ext/theme_projectname | xargs sed -i 's/newcustomproject/projectname/g'
+        grep -rl 'newcustomproject' public/typo3conf/ext/theme_mega | xargs sed -i 's/newcustomproject/mega/g'
     ```
+_Note: Change the `mega` part in `**/ext/theme_mega` and `s/newcustomproject/mega/g` to your real project neme_
+4. Add new composer autoload config to the root `composer.json` for your new extension.
+    - `"T3k\\mega\\": "public/typo3conf/ext/theme_mega/Classes/"`
 
-4. Update `composer.json` autoload config
-    - `"T3k\\projectname\\": "public/typo3conf/ext/theme_projectname/Classes/"`
-
-5. Update tests config (optional)
-    - `.phpcs.xml`
-    - `composer.json`
-        - update `test-themes` composer script by adding `npm test --prefix public/typo3conf/ext/theme_projectname/`
-        - update `npm-ci` composer script by adding `npm ci --prefix public/typo3conf/ext/theme_projectname/`
+6. `npm install` - Install npm dependencies.
+9. `npm run build` - Build development assests for themes.
 
 ***
 
