@@ -26,46 +26,45 @@
   "require": {
     "pixelant/pxa-lpeh": "dev-master",
     "t3kit/t3kit": "dev-master",
-    "typo3/cms-about": "^10.4.6",
-    "typo3/cms-adminpanel": "^10.4.6",
-    "typo3/cms-backend": "^10.4.6",
-    "typo3/cms-belog": "^10.4.6",
-    "typo3/cms-beuser": "^10.4.6",
-    "typo3/cms-core": "^10.4.6",
-    "typo3/cms-dashboard": "^10.4.6",
-    "typo3/cms-extbase": "^10.4.6",
-    "typo3/cms-extensionmanager": "^10.4.6",
-    "typo3/cms-felogin": "^10.4.6",
-    "typo3/cms-filelist": "^10.4.6",
-    "typo3/cms-filemetadata": "^10.4.6",
-    "typo3/cms-fluid": "^10.4.6",
-    "typo3/cms-form": "^10.4.6",
-    "typo3/cms-frontend": "^10.4.6",
-    "typo3/cms-impexp": "^10.4.6",
-    "typo3/cms-indexed-search": "^10.4.6",
-    "typo3/cms-info": "^10.4.6",
-    "typo3/cms-install": "^10.4.6",
-    "typo3/cms-linkvalidator": "^10.4.6",
-    "typo3/cms-lowlevel": "^10.4.6",
-    "typo3/cms-opendocs": "^10.4.6",
-    "typo3/cms-recordlist": "^10.4.6",
-    "typo3/cms-recycler": "^10.4.6",
-    "typo3/cms-redirects": "^10.4.6",
-    "typo3/cms-reports": "^10.4.6",
-    "typo3/cms-rte-ckeditor": "^10.4.6",
-    "typo3/cms-scheduler": "^10.4.6",
-    "typo3/cms-seo": "^10.4.6",
-    "typo3/cms-setup": "^10.4.6",
-    "typo3/cms-sys-note": "^10.4.6",
-    "typo3/cms-t3editor": "^10.4.6",
-    "typo3/cms-tstemplate": "^10.4.6",
-    "typo3/cms-viewpage": "^10.4.6"
+    "typo3/cms-about": "^10.4.14",
+    "typo3/cms-adminpanel": "^10.4.14",
+    "typo3/cms-backend": "^10.4.14",
+    "typo3/cms-belog": "^10.4.14",
+    "typo3/cms-beuser": "^10.4.14",
+    "typo3/cms-core": "^10.4.14",
+    "typo3/cms-dashboard": "^10.4.14",
+    "typo3/cms-extbase": "^10.4.14",
+    "typo3/cms-extensionmanager": "^10.4.14",
+    "typo3/cms-felogin": "^10.4.14",
+    "typo3/cms-filelist": "^10.4.14",
+    "typo3/cms-filemetadata": "^10.4.14",
+    "typo3/cms-fluid": "^10.4.14",
+    "typo3/cms-form": "^10.4.14",
+    "typo3/cms-frontend": "^10.4.14",
+    "typo3/cms-impexp": "^10.4.14",
+    "typo3/cms-indexed-search": "^10.4.14",
+    "typo3/cms-info": "^10.4.14",
+    "typo3/cms-install": "^10.4.14",
+    "typo3/cms-linkvalidator": "^10.4.14",
+    "typo3/cms-lowlevel": "^10.4.14",
+    "typo3/cms-opendocs": "^10.4.14",
+    "typo3/cms-recordlist": "^10.4.14",
+    "typo3/cms-recycler": "^10.4.14",
+    "typo3/cms-redirects": "^10.4.14",
+    "typo3/cms-reports": "^10.4.14",
+    "typo3/cms-rte-ckeditor": "^10.4.14",
+    "typo3/cms-scheduler": "^10.4.14",
+    "typo3/cms-seo": "^10.4.14",
+    "typo3/cms-setup": "^10.4.14",
+    "typo3/cms-sys-note": "^10.4.14",
+    "typo3/cms-t3editor": "^10.4.14",
+    "typo3/cms-tstemplate": "^10.4.14",
+    "typo3/cms-viewpage": "^10.4.14"
   },
   "require-dev": {
-    "brainmaestro/composer-git-hooks": "^2.8.3",
-    "editorconfig-checker/editorconfig-checker": "^10.2.1",
-    "squizlabs/php_codesniffer": "^3.5.8",
-    "helmich/typo3-typoscript-lint": "^2.4.1"
+    "editorconfig-checker/editorconfig-checker": "^10.2.3",
+    "squizlabs/php_codesniffer": "^3.6.0",
+    "helmich/typo3-typoscript-lint": "^2.5.0"
   },
   "suggest": {
     "platformsh/config-reader": "It provides convenience wrappers for accessing the Platform.sh environment variables",
@@ -92,10 +91,8 @@
       "composer check-platform-reqs"
     ],
     "post-install-cmd": [
-      "vendor/bin/cghooks add --ignore-lock"
     ],
     "post-update-cmd": [
-      "vendor/bin/cghooks update"
     ],
     "post-autoload-dump": [
     ],
@@ -111,25 +108,6 @@
       "@lint-editorconfig",
       "@lint-typoscript"
     ],
-    "test-themes": [
-      "npm test --prefix public/typo3conf/ext/theme_newcustomproject/"
-    ],
-    "pre-commit-hook": [
-      "composer ctest",
-      "composer test-themes"
-    ],
-    "npm-ci": [
-      "npm ci --prefix public/typo3conf/ext/t3kit",
-      "npm ci --prefix public/typo3conf/ext/theme_newcustomproject"
-    ],
-    "npm-build": [
-      "npm run build --prefix public/typo3conf/ext/theme_newcustomproject"
-    ],
-    "npm-install-and-build": [
-      "@npm-ci",
-      "@npm-build"
-    ],
-    "ni": "@npm-install-and-build",
     "env": "cp .localconf/local.env .env",
     "dbup": "./.localconf/db/setupdb.sh",
     "dbre": "./.localconf/db/restoredb.sh",
@@ -140,16 +118,10 @@
       "@syncdb",
       "@syncfiles"
     ],
-    "refindex": "docker-compose exec -T web php /var/www/html/public/typo3/sysext/core/bin/typo3 referenceindex:update",
     "ddev-config": "bash .localconf/community/ddev/setupddev.sh",
     "t3kit-upgrade": "git merge -X theirs --squash --allow-unrelated-histories t3kit/master",
     "ci": "docker-compose --env-file .localconf/composer/composer.env run --rm web composer i",
     "cup": "docker-compose --env-file .localconf/composer/composer.env run --rm web composer up",
     "ctest": "docker-compose --env-file .localconf/composer/composer.env run --rm web composer test"
-  },
-  "extra": {
-    "hooks": {
-      "pre-commit": "composer pre-commit-hook"
-    }
   }
 }
