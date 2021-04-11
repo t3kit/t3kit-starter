@@ -7,12 +7,12 @@
 			<property name="absoluteLineLimit" value="170"/>
 		</properties>
 	</rule>
-	<file>public/typo3conf/AdditionalConfiguration.php</file>
-	<file>public/typo3conf/PackageStates.php</file>
-	<file>public/typo3conf/ext/theme_newcustomproject/Classes/</file>
-	<file>public/typo3conf/ext/theme_newcustomproject/Configuration/TCA/</file>
-	<file>public/typo3conf/ext/theme_newcustomproject/ext_emconf.php</file>
-	<file>public/typo3conf/ext/theme_newcustomproject/ext_localconf.php</file>
-	<file>public/typo3conf/ext/theme_newcustomproject/ext_tables.php</file>
+	<file>public/typo3conf</file>
+	<exclude-pattern>*/node_modules/*</exclude-pattern>
+	<exclude-pattern>*/Resources/Public/*</exclude-pattern>
+	<exclude-pattern>*/theme/*</exclude-pattern>
+	<exclude-pattern>*/vendor/*</exclude-pattern>
+	<exclude-pattern>*/build/*</exclude-pattern>
+	<exclude-pattern>public/typo3conf/ext\/(?!theme_.+\/).*</exclude-pattern>
 </ruleset>
 
