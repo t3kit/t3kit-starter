@@ -9,7 +9,6 @@ services:
       - ./composer.env
     volumes:
       - ${SSH_AUTH_SOCK_VOL:-.}:${SSH_AUTH_SOCK_VOL:-/tmp/}
-      - ~/.composer/cache:/root/.composer/cache/
       - type: bind
         source: ../../
         target: /var/www/html
