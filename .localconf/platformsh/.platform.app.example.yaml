@@ -27,7 +27,7 @@ variables:
   php:
     max_execution_time: 45
   env:
-    NVM_VERSION: v0.37.0
+    NVM_VERSION: v0.38.0
     NODE_VERSION: v14.15.1
 
     # Overwrite the default TYPO3 Cache-control header with env:OVERWRITE_DEFAULT_CACHE_CONTROL_HEADER
@@ -162,15 +162,25 @@ hooks:
   build: |
     set -e
 
-    # instal NodeJS
+    # Instal NodeJS
     unset NPM_CONFIG_PREFIX
     export NVM_DIR="$PLATFORM_APP_DIR/.nvm"
     # install.sh will automatically install NodeJS based on the presence of $NODE_VERSION
     curl -f -o- https://raw.githubusercontent.com/nvm-sh/nvm/$NVM_VERSION/install.sh | bash
     [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
-    # Install dependencies and build assests for themes
-    composer run-script npm-install-and-build
+    # Install npm@^7.9
+    npm install -g npm@^7.9
+
+    # Install npm dependencies
+    npm ci --ignore-scripts
+
+    # Build assests for themes
+    if [ "$TYPO3_CONTEXT" = Development ]; then
+      npm run dev
+    else
+      npm run prod
+    fi
 
     # Install the CLI on a Platform.sh environment
     curl -sS https://platform.sh/cli/installer | php
