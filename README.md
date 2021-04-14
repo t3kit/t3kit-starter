@@ -120,7 +120,7 @@ If there no needs to use **t3kit** starter database or **Docker configuration** 
 
 4. `composer install` - Install composer dependencies. Or run `composer ci` to install dependencies from a container in case if platform requirements on local host are not correct.
 5. `npm install` - Install npm dependencies.
-6. `npm run build` - Build development assests for themes.
+6. `npm run dev` - Build development assests for themes.
 7. `docker-compose up -d` - Start all Docker services for a local development environment
 8. Setup t3kit starter database `composer dbup` or `docker-compose exec web /var/www/html/.localconf/db/setupdb.sh`
 9. Open `t3kit10.t3.localhost` in browser _Google Chrome_
