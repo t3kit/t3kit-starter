@@ -33,7 +33,7 @@
 
 4. `composer install` - Install composer dependencies. Or run `composer ci` to install dependencies from a container in case if platform requirements on local host are not correct.
 5. `npm install` - Install npm dependencies.
-6. `npm run build` - Build development assests for themes.
+6. `npm run dev` - Build development assests for themes.
 7. `docker-compose up -d` - Start all Docker services for a local development environment
 7. Open `%$_project-name_$%.t3.localhost` in browser *_Google Chrome_
 
