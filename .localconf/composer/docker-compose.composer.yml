@@ -6,7 +6,7 @@ services:
     container_name: composer
     image: ${WEB_IMAGE}
     env_file:
-      - ./composer.env
+      - ./.env
     volumes:
       - ${SSH_AUTH_SOCK_VOL:-.}:${SSH_AUTH_SOCK_VOL:-/tmp/}
       - type: bind
