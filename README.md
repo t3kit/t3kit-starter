@@ -20,7 +20,7 @@
 - [Required dependencies](#required-dependencies)
 - [File structure](#file-structure)
 - [Quick start a new project on t3kit base](#quick-start-a-new-project-on-t3kit-base)
-- [Start with t3kit development](#start-with-t3kit-development)
+- [Start with t3kit local development](#start-with-t3kit-local-development)
 - [Create your custom theme based on t3kit to extend the functionality](#create-your-custom-theme-based-on-t3kit-to-extend-the-functionality)
 - [Local development tools](#local-development-tools)
 - [Changelog](CHANGELOG.md)
@@ -91,7 +91,7 @@ We are open to any additional configuration on top of the t3kit. To add it just 
 
 ### Clean up the project
 
-If there no needs to use **t3kit** starter database or **Docker configuration** for local development, then just delete folder `.localconf` from the root of your project - `rm -r .localconf`
+If there no needs to use **t3kit** starter database or **Docker configuration** for local development, then just delete folder `.localconf` from the root of your project `rm -r .localconf`
 
 ***
 
@@ -100,18 +100,18 @@ If there no needs to use **t3kit** starter database or **Docker configuration** 
 1. Start with `composer create-project`
 
     ```shell
-    composer create-project --no-dev --no-scripts --remove-vcs t3kit/t3kit-starter my-new-project v10.0.0-beta
+    composer create-project --no-dev --no-scripts --remove-vcs t3kit/t3kit-starter my-new-project v10.0.0-beta.2
     ```
 
-2. Use as a template in *GitHub* (recommended). If you are using *GitHub* to store your future project, then you can just clone *t3kit-starter* as a template to your new project repository with `Use this template` green button.
+2. Use as a template in *GitHub* (recommended). If you are using *GitHub* to store your future project, then you can just clone *t3kit-starter* as a template to your new project repository with `Use this template` green button in *t3kit* organization in the *t3kit-starter* repository.
 
-## Start with t3kit development
+## Start with t3kit local development
 
 1. Check that [nginx-proxy](#nginx-proxy) started
 2. `git clone git@github.com:t3kit/t3kit-starter.git` - Clone the repository
 3. `composer env` - Configure local development environment variables
 
-    _*Note: To continue with Docker you need to create an environment `.env` file for your project based on an example `local.env`. You need to create `.env` file manually by running: `composer env` or `cp .localconf/local.env .env`._
+    _*Note: To continue with Docker based local development you need to create an environment `.env` file for your project based on an example `local.env`. You can create `.env` file by running: `composer env` as described above or `cp .localconf/local.env .env`._
 
     - Check all environment variables in `.env` file and change them if it needed
     - OS-specific settings in `.env` file

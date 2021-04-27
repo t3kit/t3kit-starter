@@ -24,12 +24,20 @@
 2. Clone the repository
 3. `composer env` - Configure local development environment variables
 
-    _*Note: To continue with Docker you need to create an environment `.env` file for your project based on an example `local.env`. You need to create `.env` file manually by running: `composer env` or `cp .localconf/local.env .env`._
+    **It will create two .env files:**
 
-    - Check all environment variables in `.env` file and change them if it needed
-    - OS-specific settings in `.env` file
-        - **Linux**
-            - Uncomment `USER_ID` var and set up your host user id to make the shared folder writable. (Skip this step if you are a Mac user)
+    1. `.env` file with environment variables for local development
+        - Check all environment variables in `.env` file and change them if it needed
+        - OS-specific settings in `.env` file
+            - **Linux**
+                - Uncomment `USER_ID` var and set up your host user id to make the shared folder writable. (Skip this step if you are a Mac user)
+    2. `.localconf/composer/.env` file with environment variables to install composer dependencies based on proper PHP libs without relying on local PHP version.
+        - OS-specific settings in `.localconf/composer/.env` file
+            - **Linux**
+                - Uncomment `USER_ID` var and set up your host user id to make the shared folder writable.
+                - Uncomment `SSH_AUTH_SOCK_VOL=${SSH_AUTH_SOCK}` to enable ssh-agent forwarding on Linux if you are using private packages as composer dependencies
+            - **Mac**
+                - Uncomment `SSH_AUTH_SOCK_VOL=/run/host-services/ssh-auth.sock` to enable ssh-agent forwarding on Mac if you are using private packages as composer dependencies
 
 4. `composer install` - Install composer dependencies. Or run `composer ci` to install dependencies from a container in case if platform requirements on local host are not correct.
 5. `npm install` - Install npm dependencies.
