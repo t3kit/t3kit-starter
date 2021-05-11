@@ -118,5 +118,9 @@ switch (\TYPO3\CMS\Core\Core\Environment::getContext()) {
         $GLOBALS['TYPO3_CONF_VARS']['SYS']['displayErrors'] = 0;
         // Disable deprecation log
         $GLOBALS['TYPO3_CONF_VARS']['LOG']['TYPO3']['CMS']['deprecations']['writerConfiguration'][\TYPO3\CMS\Core\Log\LogLevel::NOTICE][\TYPO3\CMS\Core\Log\Writer\FileWriter::class]['disabled'] = true; // phpcs:ignore
+        // Disable warning-level logging
+        $GLOBALS['TYPO3_CONF_VARS']['LOG']['writerConfiguration'][\TYPO3\CMS\Core\Log\LogLevel::WARNING][\TYPO3\CMS\Core\Log\Writer\FileWriter::class]['disabled'] = 1; // phpcs:ignore
+        // Enable error-level logging
+        $GLOBALS['TYPO3_CONF_VARS']['LOG']['writerConfiguration'][\TYPO3\CMS\Core\Log\LogLevel::ERROR][\TYPO3\CMS\Core\Log\Writer\FileWriter::class]['disabled'] = 0; // phpcs:ignore
         break; //_______________________________________________________________________________________
 }
