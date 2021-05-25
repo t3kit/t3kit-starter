@@ -23,15 +23,15 @@ languages:
     title: Swedish
     enabled: true
     languageId: 1
-    base: /se/
+    base: /sv/
     typo3Language: sv
     locale: sv_SE.UTF-8
     iso-639-1: sv
     navigationTitle: Swedish
     hreflang: sv-SE
     direction: ltr
-    fallbackType: fallback
-    fallbacks: '0'
+    fallbackType: free
+    fallbacks: ''
     flag: se
     websiteTitle: ''
     solr_core_read: '%env(SOLR_CORE_SV)%'
@@ -46,8 +46,8 @@ languages:
     navigationTitle: German
     hreflang: de-DE
     direction: ltr
-    fallbackType: fallback
-    fallbacks: '0'
+    fallbackType: free
+    fallbacks: ''
     flag: de
     websiteTitle: ''
     solr_core_read: '%env(SOLR_CORE_DE)%'
@@ -62,8 +62,8 @@ languages:
     navigationTitle: Norwegian
     hreflang: no-NO
     direction: ltr
-    fallbackType: fallback
-    fallbacks: '0'
+    fallbackType: free
+    fallbacks: ''
     flag: 'no'
     websiteTitle: ''
     solr_core_read: '%env(SOLR_CORE_NO)%'
@@ -71,15 +71,15 @@ languages:
     title: Danish
     enabled: true
     languageId: 4
-    base: /dk/
+    base: /da/
     typo3Language: da
     locale: da_DK.UTF-8
     iso-639-1: da
     navigationTitle: Danish
     hreflang: da-DK
     direction: ltr
-    fallbackType: fallback
-    fallbacks: '0'
+    fallbackType: free
+    fallbacks: ''
     flag: dk
     websiteTitle: ''
     solr_core_read: '%env(SOLR_CORE_DA)%'
@@ -94,8 +94,8 @@ languages:
     navigationTitle: French
     hreflang: fr-FR
     direction: ltr
-    fallbackType: fallback
-    fallbacks: '0'
+    fallbackType: free
+    fallbacks: ''
     flag: fr
     websiteTitle: ''
     solr_core_read: '%env(SOLR_CORE_FR)%'
