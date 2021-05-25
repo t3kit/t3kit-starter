@@ -120,9 +120,9 @@
     ],
     "ddev-config": "bash .localconf/community/ddev/setupddev.sh",
     "t3kit-upgrade": "git merge -X theirs --squash --allow-unrelated-histories t3kit/master",
-    "ci": "docker-compose --env-file .localconf/composer/composer.env run --rm web composer i",
-    "cup": "docker-compose --env-file .localconf/composer/composer.env run --rm web composer up",
-    "cre": "docker-compose --env-file .localconf/composer/composer.env run --rm web composer require",
-    "ctest": "docker-compose --env-file .localconf/composer/composer.env run --rm web composer test"
+    "ci": "./.localconf/composer/sshauth.sh composer i",
+    "cup": "./.localconf/composer/sshauth.sh composer up",
+    "cre": "./.localconf/composer/sshauth.sh composer require",
+    "ctest": "./.localconf/composer/sshauth.sh composer test"
   }
 }
