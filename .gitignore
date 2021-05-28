@@ -1,6 +1,5 @@
 var
 vendor
-hooks
 node_modules
 public/*
 !public/.htaccess
