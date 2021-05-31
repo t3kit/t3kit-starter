@@ -108,7 +108,7 @@
       "@lint-editorconfig",
       "@lint-typoscript"
     ],
-    "env": "cp .localconf/local.env .env; cp .localconf/composer/composer.env .localconf/composer/.env",
+    "env": "cp .localconf/local.env .env",
     "dbup": "./.localconf/db/setupdb.sh",
     "dbre": "./.localconf/db/restoredb.sh",
     "dbp": "./.localconf/db/packdb.sh",
