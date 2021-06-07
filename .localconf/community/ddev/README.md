@@ -10,10 +10,14 @@ These instructions require that you have installed DDEV. Read how to install [DD
 
 4. Run `ddev start`
 
-5. Run `ddev composer install`
+5. Run `ddev composer install` to install Composer dependencies.
 
-6. Run `ddev import-db --src=.localconf/db/dbdump/t3kit10.sql`
+6. Run `ddev exec npm install` to install NPM dependencies.
 
-7. Visit your site at the project URL. (e.g. https://t3kit-starter.ddev.site)
+7. Run `ddev exec npm run dev` to build development assests for themes.
+
+8. Run `ddev import-db --src=.localconf/db/dbdump/t3kit10.sql` to import the database.
+
+9. Visit your site at the project URL. (e.g. https://t3kit-starter.ddev.site)
 
 You can run `ddev typo3 [COMMAND]` and `ddev typo3cms [COMMAND]` to directly execute the TYPO3 CLI and helhum/typo3-console commands.
