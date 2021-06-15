@@ -3,3 +3,28 @@
 
 # BackendLayouts
 @import 'EXT:theme_newcustomproject/Configuration/TSconfig/Page/Mod/WebLayout/BackendLayouts/*.tsconfig'
+
+
+# uncomment to disable unneeded BE layouts
+// mod.web_layout.BackendLayouts {
+//   1column >
+//   1column75_sidenav25 >
+//   2columns_sidenav >
+//   2columns >
+//   2columns25_50_sidenav25 >
+//   2columns25_75 >
+//   2columns75_25 >
+//   3columns_sidenav >
+//   3columns >
+//   3columns25_50_25 >
+//   4columns >
+//   default >
+//   empty >
+//   sidenav_2columns >
+//   sidenav_3columns >
+//   sidenav25_1column75 >
+//   sidenav25_2columns50_25 >
+//   start_page >
+//   custom_start_page >
+//   custom_sub_page >
+// }
