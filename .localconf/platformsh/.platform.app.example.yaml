@@ -26,6 +26,7 @@ dependencies:
 variables:
   php:
     max_execution_time: 45
+    "date.timezone": "Europe/Stockholm"
   env:
     NVM_VERSION: v0.38.0
     NODE_VERSION: v14.15.1
