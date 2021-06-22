@@ -18,6 +18,7 @@ languages:
     direction: ltr
     flag: us
     websiteTitle: ''
+    solr_core_read: '%env(SOLR_CORE_EN)%'
   -
     title: Swedish
     enabled: true
@@ -33,6 +34,7 @@ languages:
     fallbacks: ''
     flag: se
     websiteTitle: ''
+    solr_core_read: '%env(SOLR_CORE_SV)%'
   -
     title: German
     enabled: true
@@ -48,6 +50,7 @@ languages:
     fallbacks: ''
     flag: de
     websiteTitle: ''
+    solr_core_read: '%env(SOLR_CORE_DE)%'
   -
     title: Norwegian
     enabled: true
@@ -63,6 +66,7 @@ languages:
     fallbacks: ''
     flag: 'no'
     websiteTitle: ''
+    solr_core_read: '%env(SOLR_CORE_NO)%'
   -
     title: Danish
     enabled: true
@@ -78,6 +82,7 @@ languages:
     fallbacks: ''
     flag: dk
     websiteTitle: ''
+    solr_core_read: '%env(SOLR_CORE_DA)%'
   -
     title: French
     enabled: true
@@ -93,6 +98,7 @@ languages:
     fallbacks: ''
     flag: fr
     websiteTitle: ''
+    solr_core_read: '%env(SOLR_CORE_FR)%'
 rootPageId: 1
 routeEnhancers:
   PageTypeSuffix:
@@ -109,5 +115,11 @@ routes:
     route: humans.txt
     type: staticText
     content: "/* SITE */\r\nSite: https://github.com/t3kit\r\nStandards: HTML5, CSS3, PHP7\r\nComponents: TYPO3 v10, t3kit10, Bootstrap 5"
+solr_enabled_read: true
+solr_host_read: '%env(SOLR_HOST_MAIN)%'
+solr_path_read: /solr/
+solr_port_read: '%env(SOLR_PORT)%'
+solr_scheme_read: http
+solr_use_write_connection: false
 theme: t3kit
 websiteTitle: t3kit10
