@@ -4,7 +4,6 @@ return [
         'debug' => true,
         'explicitADmode' => 'explicitAllow',
         'installToolPassword' => '$argon2id$v=19$m=65536,t=16,p=1$c2ZMejFiZmNKeHo1WElUZQ$865eIoY3fy0qtRdfP611cYhkpz6Mg/IoR7Dj44QKDzg',
-        'loginSecurityLevel' => 'normal',
         'passwordHashing' => [
             'className' => 'TYPO3\\CMS\\Core\\Crypto\\PasswordHashing\\Argon2idPasswordHash',
             'options' => [],
@@ -26,13 +25,33 @@ return [
             'loginFootnote' => 't3kit',
             'loginHighlightColor' => '#010101',
             'loginLogo' => 'EXT:t3kit/Resources/Public/Images/Backend/login-logo.svg',
+            'loginLogoAlt' => '',
         ],
         'extensionmanager' => [
             'automaticInstallation' => '0',
             'offlineMode' => '1',
         ],
-        'pxa_lpeh' => [
-            'disableXClass' => '0',
+        'indexed_search' => [
+            'catdoc' => '/usr/bin/',
+            'debugMode' => '0',
+            'deleteFromIndexAfterEditing' => '1',
+            'disableFrontendIndexing' => '0',
+            'enableMetaphoneSearch' => '1',
+            'flagBitMask' => '192',
+            'fullTextDataLength' => '0',
+            'ignoreExtensions' => '',
+            'indexExternalURLs' => '0',
+            'maxAge' => '0',
+            'maxExternalFiles' => '5',
+            'minAge' => '24',
+            'pdf_mode' => '20',
+            'pdftools' => '/usr/bin/',
+            'ppthtml' => '/usr/bin/',
+            'unrtf' => '/usr/bin/',
+            'unzip' => '/usr/bin/',
+            'useCrawlerForExternalFiles' => '0',
+            'useMysqlFulltext' => '0',
+            'xlhtml' => '/usr/bin/',
         ],
         'scheduler' => [
             'maxLifetime' => '1440',
@@ -51,7 +70,6 @@ return [
     'FE' => [
         'debug' => true,
         'disableNoCacheParameter' => true,
-        'loginSecurityLevel' => 'normal',
         'passwordHashing' => [
             'className' => 'TYPO3\\CMS\\Core\\Crypto\\PasswordHashing\\Argon2idPasswordHash',
             'options' => [],
@@ -133,7 +151,6 @@ return [
         'features' => [
             'felogin.extbase' => true,
             'fluidBasedPageModule' => true,
-            'form.legacyUploadMimeTypes' => false,
             'rearrangedRedirectMiddlewares' => true,
             'redirects.hitCount' => false,
             'security.backend.enforceReferrer' => true,
