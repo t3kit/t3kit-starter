@@ -110,7 +110,7 @@ routes:
   -
     route: robots.txt
     type: staticText
-    content: "User-agent: *\r\n\r\nDisallow: /typo3/\r\nDisallow: /typo3conf/\r\nAllow: /typo3conf/ext/\r\n\r\n# sitemap\r\nSitemap: %env(VIRTUAL_HOST_1)%/sitemap.xml"
+    content: "User-agent: *\r\n\r\nDisallow: /typo3/\r\nDisallow: /typo3conf/\r\nAllow: /typo3conf/ext/\r\n\r\n# sitemap\r\nSitemap: https://%env(HTTP_HOST)%/sitemap.xml"
   -
     route: humans.txt
     type: staticText
