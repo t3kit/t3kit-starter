@@ -18,7 +18,7 @@
   "dependencies": {
     "awesomplete": "~1.1.5",
     "bootstrap": "~v5.1.1",
-    "simplelightbox": "https://github.com/dmh/simplelightbox.git#nodeps",
+    "simplelightbox": "~2.8.1",
     "swiper": "~7.0.6"
   },
   "devDependencies": {},
