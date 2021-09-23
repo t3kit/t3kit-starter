@@ -4429,12 +4429,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/t3kit/t3kit.git",
-                "reference": "6660c4e5f0389df3b68a0862d4f4c859741b8f64"
+                "reference": "0ef3f0f7c2172c6e4e978bde429ae8ce26629115"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/t3kit/t3kit/zipball/6660c4e5f0389df3b68a0862d4f4c859741b8f64",
-                "reference": "6660c4e5f0389df3b68a0862d4f4c859741b8f64",
+                "url": "https://api.github.com/repos/t3kit/t3kit/zipball/0ef3f0f7c2172c6e4e978bde429ae8ce26629115",
+                "reference": "0ef3f0f7c2172c6e4e978bde429ae8ce26629115",
                 "shasum": ""
             },
             "require": {
@@ -4506,7 +4506,7 @@
                 "issues": "https://github.com/t3kit/t3kit/issues",
                 "source": "https://github.com/t3kit/t3kit"
             },
-            "time": "2021-09-22T14:56:39+00:00"
+            "time": "2021-09-23T15:13:22+00:00"
         },
         {
             "name": "typo3/class-alias-loader",
