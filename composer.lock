@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e7e9aff7ece2a4d31deea401ce0b9a37",
+    "content-hash": "cdde6b282afa9edc8f433f01f26b850f",
     "packages": [
         {
             "name": "b13/container",
@@ -4425,16 +4425,16 @@
         },
         {
             "name": "t3kit/t3kit",
-            "version": "dev-master",
+            "version": "10.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/t3kit/t3kit.git",
-                "reference": "0ef3f0f7c2172c6e4e978bde429ae8ce26629115"
+                "reference": "f8e98d92c9fb5a055d11212f7f2dcb715a194409"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/t3kit/t3kit/zipball/0ef3f0f7c2172c6e4e978bde429ae8ce26629115",
-                "reference": "0ef3f0f7c2172c6e4e978bde429ae8ce26629115",
+                "url": "https://api.github.com/repos/t3kit/t3kit/zipball/f8e98d92c9fb5a055d11212f7f2dcb715a194409",
+                "reference": "f8e98d92c9fb5a055d11212f7f2dcb715a194409",
                 "shasum": ""
             },
             "require": {
@@ -4467,7 +4467,6 @@
                 "typo3/cms-indexed-search": "TYPO3 indexed search",
                 "yoast-seo-for-typo3/yoast_seo": "Yoast SEO for TYPO3"
             },
-            "default-branch": true,
             "type": "typo3-cms-extension",
             "extra": {
                 "typo3/cms": {
@@ -4506,7 +4505,7 @@
                 "issues": "https://github.com/t3kit/t3kit/issues",
                 "source": "https://github.com/t3kit/t3kit"
             },
-            "time": "2021-09-23T15:13:22+00:00"
+            "time": "2021-09-24T14:10:44+00:00"
         },
         {
             "name": "typo3/class-alias-loader",
@@ -7389,8 +7388,7 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "pixelant/pxa-lpeh": 20,
-        "t3kit/t3kit": 20
+        "pixelant/pxa-lpeh": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
