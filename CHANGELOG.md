@@ -1,4 +1,38 @@
 
+#### v10.0.0 `September 24, 2021`
+
+- **[TASK]** update t3kit to v10.0.0 ([c87fb8f](https://github.com/t3kit/t3kit-starter/commit/c87fb8f))
+- **[TASK]** update favicons ([d5e7f87](https://github.com/t3kit/t3kit-starter/commit/d5e7f87))
+- **[TASK]** theme_newcustomproject - use original simplelightbox ([706e154](https://github.com/t3kit/t3kit-starter/commit/706e154))
+- **[TASK]** update composer dep-s, TYPO3 to v10.4.21, t3kit ([fca7a3d](https://github.com/t3kit/t3kit-starter/commit/fca7a3d))
+- **[TASK]** update npm dep-s, bootstrap to v5.1.1, swiper to v7.0.6 ([d8ef848](https://github.com/t3kit/t3kit-starter/commit/d8ef848))
+- **[TASK]** DDEV: Add build-essential to web-build (#61) ([1cb89f4](https://github.com/t3kit/t3kit-starter/commit/1cb89f4))
+- **[FEATURE]** Multi-domain support in robots.txt (#62) ([237353e](https://github.com/t3kit/t3kit-starter/commit/237353e))
+- **[FEATURE]** Update language packs on deploy (#60) ([6746de0](https://github.com/t3kit/t3kit-starter/commit/6746de0))
+- **[TASK]** update t3kit ext, add b13/container, add grid CE-s ([e304d6a](https://github.com/t3kit/t3kit-starter/commit/e304d6a))
+- **[TASK]** update npm dep-s, remove p-lock form theme_newcustomproject, use ~ for dep-s in theme_newcustomproject ([5c57ba4](https://github.com/t3kit/t3kit-starter/commit/5c57ba4))
+- **[TASK]** update docker solr config for local development ([3f4b514](https://github.com/t3kit/t3kit-starter/commit/3f4b514))
+- **[TASK]** update theme_newcustomproject, add siteHeader CE import ([4f2a0a1](https://github.com/t3kit/t3kit-starter/commit/4f2a0a1))
+- **[TASK]** update starter DB, add Image Text Left/Right CE ([c04e943](https://github.com/t3kit/t3kit-starter/commit/c04e943))
+- **[TASK]** update starter DB, add search page ([4622166](https://github.com/t3kit/t3kit-starter/commit/4622166))
+- **[TASK]** update typo3 to v10.4.17 ([08a44b2](https://github.com/t3kit/t3kit-starter/commit/08a44b2))
+- **[TASK]** set platform.sh app runtime timezone to Europe/Stockholm ([65eee82](https://github.com/t3kit/t3kit-starter/commit/65eee82))
+- **[TASK]** add posibility to disable unneeded BE layouts in themes ([d1dc8c8](https://github.com/t3kit/t3kit-starter/commit/d1dc8c8))
+- **[BUGFIX]** DDEV: Improvements to NPM support (#58) ([a083529](https://github.com/t3kit/t3kit-starter/commit/a083529))
+- **[TASK]** deprecate composer mode with the extra docker-compose file ([1ae7e4d](https://github.com/t3kit/t3kit-starter/commit/1ae7e4d))
+- **[TASK]** update t3kit ext, add new image-text-left-right CE ([a73257c](https://github.com/t3kit/t3kit-starter/commit/a73257c))
+- **[TASK]** update theme_newcustomproject, import new image-text-left-right CE from t3kit ([2dcb1ff](https://github.com/t3kit/t3kit-starter/commit/2dcb1ff))
+- **[TASK]** remove hooks folder from .gitignore ([d9a0c73](https://github.com/t3kit/t3kit-starter/commit/d9a0c73))
+- **[TASK]** update main web image to v1.3.0, use script to run composer install with ssh-agent forwarding ([4d7d063](https://github.com/t3kit/t3kit-starter/commit/4d7d063))
+- **[TASK]** change lang fallbackType to free mode ([578806b](https://github.com/t3kit/t3kit-starter/commit/578806b))
+- **[TASK]** update npm dep-s, up typo3 v10.4.16, t3kit ([e275d05](https://github.com/t3kit/t3kit-starter/commit/e275d05))
+- **[TASK]** update theme_newcustomproject, update bootstrap 5.0.1, swiper ([4ab556f](https://github.com/t3kit/t3kit-starter/commit/4ab556f))
+- **[TASK]** Enable error-level logging in Production (#56) ([0e196c3](https://github.com/t3kit/t3kit-starter/commit/0e196c3))
+- **[DOC]** update documentation with more info on how to use php container env to install composer deps ([a9d44ba](https://github.com/t3kit/t3kit-starter/commit/a9d44ba))
+- **[TASK]** update docker-compose config for composer dependencies to use .env file as a config ([a44cb28](https://github.com/t3kit/t3kit-starter/commit/a44cb28))
+
+***
+
 #### v10.0.0-beta.2 `April 14, 2021`
 
 - **[TASK]** update t3kit ext to v10.0.0-beta.2 ([33af658](https://github.com/t3kit/t3kit-starter/commit/33af658))
