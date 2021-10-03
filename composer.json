@@ -77,7 +77,7 @@
       "T3k\\newcustomproject\\": "public/typo3conf/ext/theme_newcustomproject/Classes/"
     }
   },
-  "minimum-stability": "stable",
+  "minimum-stability": "dev",
   "prefer-stable": true,
   "config": {
     "sort-packages": true
