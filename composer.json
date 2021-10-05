@@ -119,7 +119,7 @@
     ],
     "ddev-config": "bash .localconf/community/ddev/setupddev.sh",
     "t3kit-upgrade": "git merge -X theirs --squash --allow-unrelated-histories t3kit/master",
-    "ci": "./.localconf/composer/sshauth.sh composer i",
+    "ci": "./.localconf/composer/sshauth.sh composer i --prefer-install=auto",
     "cup": "./.localconf/composer/sshauth.sh composer up",
     "cre": "./.localconf/composer/sshauth.sh composer require",
     "ctest": "./.localconf/composer/sshauth.sh composer test"
