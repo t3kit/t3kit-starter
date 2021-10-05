@@ -58,9 +58,9 @@
 ## Required dependencies
 
 - [Git](https://git-scm.com/)
-- [Composer](https://getcomposer.org/) >= v2.0.8
-- [Docker](https://docs.docker.com/install/) >= v20.10.2
-- [Docker Compose](https://docs.docker.com/compose/install/) >= v1.27.4
+- [Composer](https://getcomposer.org/) >= v2.1.8
+- [Docker](https://docs.docker.com/install/) >= v20.10.8
+- [Docker Compose](https://docs.docker.com/compose/install/) >= v2.0.0
 - [Node.js](https://nodejs.org/en/download/) >= v14.15.1
 - [NPM](https://nodejs.org/en/download/) >= v7.9.0
 
@@ -100,7 +100,7 @@ If there no needs to use **t3kit** starter database or **Docker configuration** 
 1. Start with `composer create-project`
 
     ```shell
-    composer create-project --no-dev --no-scripts --remove-vcs t3kit/t3kit-starter my-new-project v10.0.0-beta.2
+
     ```
 
 2. Use as a template in *GitHub* (recommended). If you are using *GitHub* to store your future project, then you can just clone *t3kit-starter* as a template to your new project repository with `Use this template` green button in *t3kit* organization in the *t3kit-starter* repository.
@@ -118,14 +118,14 @@ If there no needs to use **t3kit** starter database or **Docker configuration** 
         - **Linux**
             - Uncomment `USER_ID` var and set up your host user id to make the shared folder writable. (Skip this step if you are a Mac user)
 
-4. `composer install` - Install composer dependencies. Or run `composer ci` to install dependencies from a container in case if platform requirements on local host are not correct.
-5. `npm install` - Install npm dependencies.
-6. `npm run dev` - Build development assests for themes.
-7. `docker-compose up -d` - Start all Docker services for a local development environment
-8. Setup t3kit starter database `composer dbup` or `docker-compose exec web /var/www/html/.localconf/db/setupdb.sh`
-9. Open `t3kit10.t3.localhost` in browser _Google Chrome_
-10. Open TYPO3 BE `t3kit10.t3.localhost/typo3` ---> *[user: `admin`, password: `admin1234`]*
-11. Open TYPO3 Install tool `t3kit10.t3.localhost/typo3/install.php` ---> *[password: `admin1234`]*
+4. `composer ci` - Install composer dependencies
+5. `npm install` - Install npm dependencies
+6. `npm run dev` - Build development assests for themes
+7. `docker compose up -d` - Start all Docker services for a local development environment
+8. Setup t3kit starter database `composer dbup`
+9. Open `t3kit11.t3.localhost` in browser _Google Chrome_
+10. Open TYPO3 BE `t3kit11.t3.localhost/typo3` ---> *[user: `admin`, password: `admin1234`]*
+11. Open TYPO3 Install tool `t3kit11.t3.localhost/typo3/install.php` ---> *[password: `admin1234`]*
 
 ***
 
@@ -164,9 +164,9 @@ _Note: Change the `mega` part in `**/ext/theme_mega` and `s/newcustomproject/meg
 
 ### t3kit database manipulation - Setup/Restore/Pack
 
-- Setup t3kit db: `composer dbup` or `docker-compose exec web /var/www/html/.localconf/db/setupdb.sh`
-- Restore t3kit db: `composer dbre` or `docker-compose exec web /var/www/html/.localconf/db/restoredb.sh`
-- Pack (save) t3kit db: `composer dbp` or `docker-compose exec web /var/www/html/.localconf/db/packdb.sh`
+- Setup t3kit db: `composer dbup`
+- Restore t3kit db: `composer dbre`
+- Pack (save) t3kit db: `composer dbp`
 
 ### phpMyAdmin
 
@@ -178,16 +178,16 @@ docker run --name pma -d -e PMA_ARBITRARY=1 --restart=unless-stopped --network n
 
 ### nginx-proxy
 
-#### [nginx-proxy for t3kit10 project](https://github.com/t3kit/t3kit-dockerhub#nproxy)
+#### [nginx-proxy for t3kit11 project](https://github.com/t3kit/t3kit-dockerhub#nproxy)
 
 For all t3kit projects, we need just a one `nginx-proxy` started as a separate Docker container. [Based on Automated Nginx Reverse Proxy for Docker](https://github.com/jwilder/nginx-proxy)
 
-##### Run nproxy with docker-compose
+##### Run nproxy with docker compose
 
 ```shell
 git clone git@github.com:t3kit/nproxy.git
 cd nproxy
-docker-compose up -d
+docker compose up -d
 ```
 
 ## Community-contributed platforms

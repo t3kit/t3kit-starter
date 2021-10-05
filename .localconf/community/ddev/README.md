@@ -16,7 +16,7 @@ These instructions require that you have installed DDEV. Read how to install [DD
 
 7. Run `ddev exec npm run dev` to build development assests for themes.
 
-8. Run `ddev import-db --src=.localconf/db/dbdump/t3kit10.sql` to import the database.
+8. Run `ddev import-db --src=.localconf/db/dbdump/t3kit11.sql` to import the database.
 
 9. Visit your site at the project URL. (e.g. https://t3kit-starter.ddev.site)
 
