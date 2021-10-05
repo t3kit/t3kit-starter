@@ -4,7 +4,7 @@ switch (\TYPO3\CMS\Core\Core\Environment::getContext()) {
     /*
     * ################################################
     * Development context for local development environment based on Docker Compose configuration
-    * (.localconf/docker/docker-compose.yml)
+    * (.localconf/docker/docker compose.yml)
     * ===============================================
     */
     case 'Development/local':
@@ -23,7 +23,7 @@ switch (\TYPO3\CMS\Core\Core\Environment::getContext()) {
         $GLOBALS['TYPO3_CONF_VARS']['FE']['debug'] = true;
 
         // SYS
-        $GLOBALS['TYPO3_CONF_VARS']['SYS']['sitename'] = 'TYPO3 :: t3kit10 :: Dev mode *(local)';
+        $GLOBALS['TYPO3_CONF_VARS']['SYS']['sitename'] = 'TYPO3 :: t3kit11 :: Dev mode *(local)';
         $GLOBALS['TYPO3_CONF_VARS']['SYS']['devIPmask'] = '*';
 
         // Error and exception handling
@@ -41,7 +41,7 @@ switch (\TYPO3\CMS\Core\Core\Environment::getContext()) {
     /*
     * ################################################
     * Production context for local testing environment based on Docker Compose configuration
-    * (.localconf/docker/docker-compose.yml)
+    * (.localconf/docker/docker compose.yml)
     * ===============================================
     */
     case 'Production/local':
@@ -62,7 +62,7 @@ switch (\TYPO3\CMS\Core\Core\Environment::getContext()) {
         $GLOBALS['TYPO3_CONF_VARS']['FE']['compressionLevel'] = 5;
 
         // SYS
-        $GLOBALS['TYPO3_CONF_VARS']['SYS']['sitename'] = 'TYPO3 :: t3kit10 :: Production *(local)';
+        $GLOBALS['TYPO3_CONF_VARS']['SYS']['sitename'] = 'TYPO3 :: t3kit11 :: Production *(local)';
         $GLOBALS['TYPO3_CONF_VARS']['SYS']['devIPmask'] = '';
 
         // Error and exception handling
@@ -86,7 +86,7 @@ switch (\TYPO3\CMS\Core\Core\Environment::getContext()) {
         $GLOBALS['TYPO3_CONF_VARS']['FE']['debug'] = true;
 
         // SYS
-        $GLOBALS['TYPO3_CONF_VARS']['SYS']['sitename'] = 'TYPO3 :: t3kit10 :: Dev mode';
+        $GLOBALS['TYPO3_CONF_VARS']['SYS']['sitename'] = 'TYPO3 :: t3kit11 :: Dev mode';
         $GLOBALS['TYPO3_CONF_VARS']['SYS']['devIPmask'] = '*';
 
         // Error and exception handling
@@ -110,7 +110,7 @@ switch (\TYPO3\CMS\Core\Core\Environment::getContext()) {
         $GLOBALS['TYPO3_CONF_VARS']['FE']['compressionLevel'] = 5;
 
         // SYS
-        $GLOBALS['TYPO3_CONF_VARS']['SYS']['sitename'] = 'TYPO3 :: t3kit10 :: Production';
+        $GLOBALS['TYPO3_CONF_VARS']['SYS']['sitename'] = 'TYPO3 :: t3kit11 :: Production';
         $GLOBALS['TYPO3_CONF_VARS']['SYS']['devIPmask'] = '';
 
         // Error and exception handling

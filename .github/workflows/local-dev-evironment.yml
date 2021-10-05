@@ -77,7 +77,7 @@ jobs:
         run: docker run -d -p 80:80 --name=nproxy --network=nproxy -v ~/.certs/server:/etc/nginx/certs -v /var/run/docker.sock:/tmp/docker.sock:ro t3kit/nproxy:1.2.1
 
       - name: Run all containers
-        run: docker-compose up -d
+        run: docker compose up -d
 
       - name: Show running containers
         run: docker ps
