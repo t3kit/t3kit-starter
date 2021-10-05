@@ -1,7 +1,7 @@
 {
   "name": "theme_newcustomproject",
-  "version": "10.0.0",
-  "description": "newcustomproject project. Based on t3kit10",
+  "version": "11.0.0",
+  "description": "newcustomproject project. Based on t3kit11",
   "scripts": {
     "lint-css": "stylelint 'theme/src/css/**/*.css'",
     "lint-scss": "stylelint 'theme/src/scss/**/*.scss'",
