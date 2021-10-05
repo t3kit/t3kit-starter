@@ -114,7 +114,7 @@ routes:
   -
     route: humans.txt
     type: staticText
-    content: "/* SITE */\r\nSite: https://github.com/t3kit\r\nStandards: HTML5, CSS3, PHP7\r\nComponents: TYPO3 v10, t3kit10, Bootstrap 5"
+    content: "/* SITE */\r\nSite: https://github.com/t3kit\r\nStandards: HTML5, CSS3, PHP7\r\nComponents: TYPO3 v11, t3kit11, Bootstrap 5"
 solr_enabled_read: true
 solr_host_read: '%env(SOLR_HOST_MAIN)%'
 solr_path_read: /solr/
@@ -122,4 +122,4 @@ solr_port_read: '%env(SOLR_PORT)%'
 solr_scheme_read: http
 solr_use_write_connection: false
 theme: t3kit
-websiteTitle: t3kit10
+websiteTitle: t3kit11

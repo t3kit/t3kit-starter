@@ -74,7 +74,7 @@ if ($platformConfig->hasRelationship('rediscache')) {
         $GLOBALS['TYPO3_CONF_VARS']['FE']['debug'] = true;
 
         // SYS
-        $GLOBALS['TYPO3_CONF_VARS']['SYS']['sitename'] = 'TYPO3 :: t3kit10 :: Dev mode';
+        $GLOBALS['TYPO3_CONF_VARS']['SYS']['sitename'] = 'TYPO3 :: t3kit11 :: Dev mode';
         $GLOBALS['TYPO3_CONF_VARS']['SYS']['devIPmask'] = '*';
 
         $GLOBALS['TYPO3_CONF_VARS']['SYS']['displayErrors'] = 1;

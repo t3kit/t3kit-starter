@@ -5,7 +5,7 @@ set -o pipefail
 
 # Variables
 # shellcheck disable=SC2034
-DBDUMP_NAME="t3kit10.sql"
+DBDUMP_NAME="t3kit11.sql"
 
 # shellcheck disable=SC2034
 CLEAR_TABLES=(

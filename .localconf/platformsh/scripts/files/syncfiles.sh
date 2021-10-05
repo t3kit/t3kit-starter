@@ -17,4 +17,4 @@ fi
 echo -e "\nPLATFORM_ID [$PLATFORM_ID]"
 
 echo "Sync folder fileadmin"
-rsync -az --exclude '_processed_' --exclude '_temp_' "$(platform ssh --project "$PLATFORM_ID" --environment master --pipe)":/app/public/fileadmin/ public/fileadmin
+rsync -azv --stats --progress --human-readable --exclude '_processed_' --exclude '_temp_' "$(platform ssh --project "$PLATFORM_ID" --environment master --pipe)":/app/public/fileadmin/ public/fileadmin

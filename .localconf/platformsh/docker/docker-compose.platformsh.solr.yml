@@ -40,8 +40,7 @@ services:
 
 networks:
   default:
-    external:
-      name: nproxy
+    name: nproxy
 
 volumes:
   typo3temp:
