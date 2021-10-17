@@ -95,10 +95,10 @@ jobs:
         run: mkdir -p output/curl
 
       - name: curl TYPO3 FE
-        run: '. ./.env && curl -vsfSLI -H "Host: $VIRTUAL_HOST_1" --url localhost/layouts/empty > 2>&1 > output/curl/typo3-fe.html'
+        run: '. ./.env && curl -vsfSLI -H "Host: $VIRTUAL_HOST_1" --url localhost/layouts/empty 2>&1 > output/curl/typo3-fe.html'
 
       - name: curl TYPO3 BE
-        run: '. ./.env && curl -vsfSLI -H "Host: $VIRTUAL_HOST_1" --url localhost/typo3/ > 2>&1 > output/curl/typo3-fe.html'
+        run: '. ./.env && curl -vsfSLI -H "Host: $VIRTUAL_HOST_1" --url localhost/typo3/ 2>&1 > output/curl/typo3-fe.html'
 
       - name: Archive CURL output
         if: always()
