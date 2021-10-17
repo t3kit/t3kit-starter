@@ -92,14 +92,14 @@ jobs:
         run: composer run-script dbup
 
       - name: curl TYPO3 FE
-        run: '. ./.env && curl -vsSLI -o output/curl/typo3-fe.html -H "Host: $VIRTUAL_HOST_1" --url localhost/layouts/empty'
+        run: '. ./.env && mkdir -p output/curl && curl -vsSLI -o output/curl/typo3-fe.html -H "Host: $VIRTUAL_HOST_1" --url localhost/layouts/empty'
 
       - name: curl TYPO3 BE
-        run: '. ./.env && curl -vsSLI -o output/curl/typo3-be.html -H "Host: $VIRTUAL_HOST_1" --url localhost/typo3/'
+        run: '. ./.env && mkdir -p output/curl && curl -vsSLI -o output/curl/typo3-be.html -H "Host: $VIRTUAL_HOST_1" --url localhost/typo3/'
 
       - name: Archive CURL output
         if: always()
-        uses: actions/upload-artifact@v1
+        uses: actions/upload-artifact@v2
         with:
           name: curl-typo3-output
           path: output/curl/*.html
