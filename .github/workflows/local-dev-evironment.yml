@@ -93,13 +93,14 @@ jobs:
 
       - name: curl TYPO3 FE
         run: '. ./.env && curl -vsSLI -o output/curl/typo3-fe.html -H "Host: $VIRTUAL_HOST_1" --url localhost/layouts/empty'
-        with:
-          name: curl-typo3-fe
-          path: output/curl/typo3-fe.html
 
       - name: curl TYPO3 BE
         run: '. ./.env && curl -vsSLI -o output/curl/typo3-be.html -H "Host: $VIRTUAL_HOST_1" --url localhost/typo3/'
+
+      - name: Archive CURL output
+        if: always()
+        uses: actions/upload-artifact@v1
         with:
-          name: curl-typo3-be
-          path: output/curl/typo3-be.html
+          name: curl-typo3-output
+          path: output/curl/*.html
 
