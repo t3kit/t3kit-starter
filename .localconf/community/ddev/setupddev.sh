@@ -8,7 +8,7 @@ if [ -n "$(command -v ddev)" ]; then
 
     echo "The .ddev directory has been created."
 
-    cd "$BASEDIR"/../../.. && ddev config --docroot=public --project-type=typo3 --php-version=7.4
+    cd "$BASEDIR"/../../.. && ddev config --docroot=public --project-type=typo3 --php-version=8.0
 else
     echo "DDEV is not installed."
 fi
