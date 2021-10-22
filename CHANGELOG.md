@@ -1,4 +1,12 @@
 
+#### v10.1.0 `October 22, 2021`
+
+- **[DOC]** update README, update CI badge, update composer create-project cmd ([a2fb897](https://github.com/t3kit/t3kit-starter/commit/a2fb897))
+- **[FEATURE]** update t3kit with new element accordion, fix #64 ([437e44f](https://github.com/t3kit/t3kit-starter/commit/437e44f))
+- **[TASK]** sanitize existing SVG files in fileadmin folder ([b2ec3fb](https://github.com/t3kit/t3kit-starter/commit/b2ec3fb))
+
+***
+
 #### v10.0.0 `September 24, 2021`
 
 - **[TASK]** update t3kit to v10.0.0 ([c87fb8f](https://github.com/t3kit/t3kit-starter/commit/c87fb8f))
