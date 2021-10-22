@@ -25,7 +25,7 @@
   },
   "require": {
     "pixelant/pxa-lpeh": "dev-master",
-    "t3kit/t3kit": "^10.0.0",
+    "t3kit/t3kit": "^10.1.0",
     "typo3/cms-about": "^10.4.14",
     "typo3/cms-adminpanel": "^10.4.14",
     "typo3/cms-backend": "^10.4.14",
