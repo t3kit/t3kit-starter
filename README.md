@@ -8,8 +8,8 @@
 <h3 align="center">Starter point for a new project based on t3kit</h3>
 <p align="center"><a href="https://t3kit.gitbook.io/doc/"><strong>t3kit documentation</strong></a></p>
 
-![](https://github.com/t3kit/t3kit-starter/workflows/Code%20Guidelines/badge.svg)
-![](https://github.com/t3kit/t3kit-starter/workflows/Local%20development%20environment/badge.svg)
+[![Code Guidelines](https://github.com/t3kit/t3kit-starter/actions/workflows/code-guidelines.yml/badge.svg?branch=t3kit10)](https://github.com/t3kit/t3kit-starter/actions/workflows/code-guidelines.yml)
+[![Local development environment](https://github.com/t3kit/t3kit-starter/actions/workflows/local-dev-evironment.yml/badge.svg?branch=t3kit10)](https://github.com/t3kit/t3kit-starter/actions/workflows/local-dev-evironment.yml)
 
 ## Table of contents
 
@@ -100,7 +100,7 @@ If there no needs to use **t3kit** starter database or **Docker configuration** 
 1. Start with `composer create-project`
 
     ```shell
-    composer create-project --no-dev --no-scripts --remove-vcs t3kit/t3kit-starter my-new-project v10.0.0-beta.2
+    composer create-project --no-dev --no-scripts --remove-vcs t3kit/t3kit-starter my-new-project v10.1.0
     ```
 
 2. Use as a template in *GitHub* (recommended). If you are using *GitHub* to store your future project, then you can just clone *t3kit-starter* as a template to your new project repository with `Use this template` green button in *t3kit* organization in the *t3kit-starter* repository.
