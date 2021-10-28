@@ -8,8 +8,8 @@
 <h3 align="center">Starter point for a new project based on t3kit</h3>
 <p align="center"><a href="https://t3kit.gitbook.io/doc/"><strong>t3kit documentation</strong></a></p>
 
-![](https://github.com/t3kit/t3kit-starter/workflows/Code%20Guidelines/badge.svg)
-![](https://github.com/t3kit/t3kit-starter/workflows/Local%20development%20environment/badge.svg)
+[![Code Guidelines](https://github.com/t3kit/t3kit-starter/actions/workflows/code-guidelines.yml/badge.svg)](https://github.com/t3kit/t3kit-starter/actions/workflows/code-guidelines.yml)
+[![Local development environment](https://github.com/t3kit/t3kit-starter/actions/workflows/local-dev-evironment.yml/badge.svg)](https://github.com/t3kit/t3kit-starter/actions/workflows/local-dev-evironment.yml)
 
 ## Table of contents
 
@@ -60,9 +60,9 @@
 - [Git](https://git-scm.com/)
 - [Composer](https://getcomposer.org/) >= v2.1.8
 - [Docker](https://docs.docker.com/install/) >= v20.10.8
-- [Docker Compose](https://docs.docker.com/compose/install/) >= v2.0.0
-- [Node.js](https://nodejs.org/en/download/) >= v14.15.1
-- [NPM](https://nodejs.org/en/download/) >= v7.9.0
+- [Docker Compose](https://docs.docker.com/compose/cli-command/#installing-compose-v2) >= v2.0.0
+- [Node.js](https://nodejs.org/en/download/) >= v16.12.0
+- [NPM](https://nodejs.org/en/download/) >= v8.0.0
 
 ## File structure
 
@@ -180,13 +180,13 @@ docker run --name pma -d -e PMA_ARBITRARY=1 --restart=unless-stopped --network n
 
 #### [nginx-proxy for t3kit11 project](https://github.com/t3kit/t3kit-dockerhub#nproxy)
 
-For all t3kit projects, we need just a one `nginx-proxy` started as a separate Docker container. [Based on Automated Nginx Reverse Proxy for Docker](https://github.com/jwilder/nginx-proxy)
+For all t3kit projects, we need just a one `nginx-proxy` started as a separate Docker container. [Based on Automated Nginx Reverse Proxy for Docker](https://github.com/nginx-proxy/nginx-proxy)
 
-##### Run nproxy with docker compose
+##### Setup
 
 ```shell
-git clone git@github.com:t3kit/nproxy.git
-cd nproxy
+git clone git@github.com:t3kit/t3kit-dockerhub.git
+cd t3kit-dockerhub/nproxy
 docker compose up -d
 ```
 
