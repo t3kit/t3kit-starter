@@ -55,12 +55,12 @@ languages:
     title: Norwegian
     enabled: true
     languageId: 3
-    base: /no/
+    base: /nb/
     typo3Language: 'no'
-    locale: no_NO.UTF-8
-    iso-639-1: 'no'
+    locale: nb_NO.UTF-8
+    iso-639-1: 'nb'
     navigationTitle: Norwegian
-    hreflang: no-NO
+    hreflang: nb-NO
     direction: ltr
     fallbackType: free
     fallbacks: ''
