@@ -1,9 +1,6 @@
-const localConf = module.exports = {}
+const localConf = {}
 localConf.rootPath = process.cwd()
 localConf.dirName = localConf.rootPath.split('/').pop()
-
-// parse project package.json
-// const PKG = require(`${localConf.rootPath}/package`)
 
 // SRC, DIST and temp dirs path
 localConf.THEME_FOLDER = 'theme/'
@@ -47,7 +44,7 @@ localConf.external = [
 ]
 // replace (https://github.com/rollup/plugins/tree/master/packages/replace)
 localConf.replace = {
-  global: 'window'
+  'global.SimpleLightbox': 'window.SimpleLightbox'
 }
 // globals (https://rollupjs.org/guide/en/#outputglobals)
 localConf.globals = {
@@ -131,3 +128,5 @@ localConf.FAVICON_OPTIONS = {
     paramValue: 'test'
   }
 }
+
+export { localConf }
