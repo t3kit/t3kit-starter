@@ -1,15 +1,16 @@
-const localConf = require('./localconf')
-require('./check/t3kit').checkt3kitExt()
-require('t3kit/theme/config/check/node').checkNode()
-
-const { clean } = require('t3kit/theme/config/clean')
-const { compileCss } = require('t3kit/theme/config/css')
-const { compileScss } = require('t3kit/theme/config/sass')
-const { compileJs } = require('t3kit/theme/config/rollup')
-const { addCssTemplate, addJsTemplate } = require('t3kit/theme/config/template')
-const { compressCss, compressJs } = require('t3kit/theme/config/compress')
-const { revCss, revJs } = require('t3kit/theme/config/rev')
-const utils = require('t3kit/theme/config/utils')
+import { localConf } from './localconf.js'
+import { checkt3kitExt } from './check.js'
+import { checkNode } from 't3kit/module/check'
+import { clean } from 't3kit/module/clean'
+import { compileCss } from 't3kit/module/css'
+import { compileScss } from 't3kit/module/sass'
+import { compileJs } from 't3kit/module/rollup'
+import { addCssTemplate, addJsTemplate } from 't3kit/module/template'
+import { compressCss, compressJs } from 't3kit/module/compress'
+import { revCss, revJs } from 't3kit/module/rev'
+import * as utils from 't3kit/module/utils'
+checkNode(localConf)
+checkt3kitExt(localConf)
 
 async function build () {
   const timeStart = utils.mainTaskStart('Build task')
@@ -26,4 +27,5 @@ async function build () {
 
   utils.mainTaskEnd({ taskName: 'Build task', timeStart: timeStart })
 }
+
 build()

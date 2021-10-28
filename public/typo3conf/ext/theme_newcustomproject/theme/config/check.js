@@ -1,7 +1,6 @@
-const localConf = require('../localconf')
-const fs = require('fs')
+import fs from 'fs'
 
-function checkt3kitExt () {
+function checkt3kitExt (localConf) {
   if (localConf.dirName !== 't3kit') {
     if (!fs.existsSync(`${localConf.rootPath}/../../../../node_modules/t3kit`)) {
       console.log(`Error: Extension ${localConf.dirName} cannot find t3kit extension`)
@@ -11,4 +10,4 @@ function checkt3kitExt () {
   }
 }
 
-exports.checkt3kitExt = checkt3kitExt
+export { checkt3kitExt }

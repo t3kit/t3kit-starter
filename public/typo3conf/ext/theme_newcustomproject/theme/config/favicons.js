@@ -1,10 +1,11 @@
-const localConf = require('./localconf')
-require('./check/t3kit').checkt3kitExt()
-require('t3kit/theme/config/check/node').checkNode()
-
-const utils = require('t3kit/theme/config/utils')
-const { cleanFavicons } = require('t3kit/theme/config/clean')
-const { generateFavicons } = require('t3kit/theme/config/real-favicon')
+import { localConf } from './localconf.js'
+import { checkt3kitExt } from './check.js'
+import { checkNode } from 't3kit/module/check'
+import { cleanFavicons } from 't3kit/module/clean'
+import { generateFavicons } from 't3kit/module/real-favicon'
+import * as utils from 't3kit/module/utils'
+checkNode(localConf)
+checkt3kitExt(localConf)
 
 async function favicons () {
   const timeStart = utils.mainTaskStart('Add favicons task')
@@ -12,4 +13,5 @@ async function favicons () {
   await generateFavicons(localConf)
   utils.mainTaskEnd({ taskName: 'Add favicons task', timeStart: timeStart, skipContext: true })
 }
+
 favicons()

@@ -2,6 +2,7 @@
   "name": "theme_newcustomproject",
   "version": "11.0.0",
   "description": "newcustomproject project. Based on t3kit11",
+  "type": "module",
   "scripts": {
     "lint-css": "stylelint 'theme/src/css/**/*.css'",
     "lint-scss": "stylelint 'theme/src/scss/**/*.scss'",
@@ -18,18 +19,16 @@
   "dependencies": {
     "awesomplete": "~1.1.5",
     "bootstrap": "~v5.1.1",
-    "simplelightbox": "~2.8.1",
-    "swiper": "~7.0.6"
+    "simplelightbox": "~2.9.0",
+    "swiper": "~7.2.0"
   },
   "devDependencies": {},
   "engines": {
-    "node": ">=14.15.1",
-    "npm": ">=7.9.0"
+    "node": ">=16.12.0",
+    "npm": ">=8.0.0"
   },
   "browserslist": [
-    "> 1.6% and last 2 versions",
-    "IOS >= 13 and > 1.5%",
-    "Safari >= 13 and > 1.5%"
+    "> 1.5% and last 2 versions"
   ],
   "standard": {
     "ignore": [
@@ -39,16 +38,21 @@
     ]
   },
   "stylelint": {
-    "extends": "stylelint-config-standard",
+    "extends": [
+      "stylelint-config-standard",
+      "stylelint-config-standard-scss"
+    ],
     "plugins": [
       "stylelint-no-unsupported-browser-features"
     ],
     "rules": {
+      "selector-class-pattern": null,
       "selector-pseudo-element-colon-notation": "single",
-      "no-descending-specificity": null,
       "comment-empty-line-before": null,
-      "at-rule-no-unknown": null,
-      "plugin/no-unsupported-browser-features": true
+      "max-line-length":180,
+      "plugin/no-unsupported-browser-features": true,
+      "scss/at-import-no-partial-leading-underscore": null,
+      "scss/at-import-partial-extension": null
     },
     "ignoreFiles": [
       "**/vendor/**/*.css",
