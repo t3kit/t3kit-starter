@@ -1,5 +1,3 @@
-version: "3.8"
-
 services:
 
   db:
@@ -19,16 +17,24 @@ services:
     env_file:
       - ../../../.env
     volumes:
-      - ./conf.d/:/etc/nginx/conf.d
+      # - ../../../public/fileadmin/:/var/www/html/public/fileadmin
+      # - ../../../.localconf/:/var/www/html/.localconf
+      - type: bind
+        source: ../../server/nginx/conf.d/${VIRTUAL_PROTO:-http}/
+        target: /etc/nginx/conf.d
       - type: bind
         source: ../../../
         target: /var/www/html
+        # read_only: true
       - type: volume
         source: var
         target: /var/www/html/var
       - type: volume
         source: typo3temp
         target: /var/www/html/public/typo3temp
+      - type: volume
+        source: nproxy_certs
+        target: /etc/nginx/certs
 
   solr:
     container_name: ${COMPOSE_PROJECT_NAME}_solr
@@ -36,7 +42,9 @@ services:
     environment:
       - VIRTUAL_HOST=solr.${VIRTUAL_HOST_1}
     volumes:
-      - solr:/var/solr
+      - type: volume
+        source: solr
+        target: /var/solr
 
 networks:
   default:
@@ -51,3 +59,5 @@ volumes:
     name: ${COMPOSE_PROJECT_NAME}_db
   solr:
     name: ${COMPOSE_PROJECT_NAME}_solr
+  nproxy_certs:
+    external: true

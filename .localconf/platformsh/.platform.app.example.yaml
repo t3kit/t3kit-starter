@@ -5,7 +5,7 @@
 name: app
 
 # The type of the application to build.
-type: php:7.4
+type: php:8
 
 timezone: "Europe/Stockholm"
 
@@ -21,15 +21,15 @@ runtime:
 
 dependencies:
   php:
-    composer/composer: '^2.0'
+    composer/composer: '^2.1'
 
 variables:
   php:
     max_execution_time: 45
     "date.timezone": "Europe/Stockholm"
   env:
-    NVM_VERSION: v0.38.0
-    NODE_VERSION: v14.15.1
+    NVM_VERSION: v0.39.0
+    NODE_VERSION: v16.13.0
 
     # Overwrite the default TYPO3 Cache-control header with env:OVERWRITE_DEFAULT_CACHE_CONTROL_HEADER
     OVERWRITE_DEFAULT_CACHE_CONTROL_HEADER: Cache-control:max-age=300
@@ -68,6 +68,8 @@ web:
       headers:
         X-Content-Type-Options: nosniff
       rules:
+        '/typo3/':
+          passthru: '/typo3/index.php$is_args$args'
         '^\/typo3conf\/ext\/.*\/Resources\/Public\/assets\/development\/?.*\.(css|js)$':
           allow: true
           passthru: false
@@ -138,10 +140,6 @@ web:
       scripts: false
       allow: false
       passthru: false
-    '/typo3conf/PackageStates.php':
-      scripts: false
-      allow: false
-      passthru: false
 
 # The size of the persistent disk of the application (in MB).
 disk: 2048
@@ -170,8 +168,8 @@ hooks:
     curl -f -o- https://raw.githubusercontent.com/nvm-sh/nvm/$NVM_VERSION/install.sh | bash
     [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
-    # Install npm@^7.9
-    npm install -g npm@^7.9
+    # Install npm@^8
+    npm install -g npm@^8
 
     # Install npm dependencies
     npm ci --ignore-scripts
