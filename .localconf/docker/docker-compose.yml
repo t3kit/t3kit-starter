@@ -1,5 +1,3 @@
-version: "3.8"
-
 services:
 
   db:
@@ -20,6 +18,9 @@ services:
       - ../../.env
     volumes:
       - type: bind
+        source: ../server/nginx/conf.d/${VIRTUAL_PROTO:-http}/
+        target: /etc/nginx/conf.d
+      - type: bind
         source: ../../
         target: /var/www/html
       - type: volume
@@ -28,6 +29,9 @@ services:
       - type: volume
         source: typo3temp
         target: /var/www/html/public/typo3temp
+      - type: volume
+        source: nproxy_certs
+        target: /etc/nginx/certs
 
 networks:
   default:
@@ -40,3 +44,5 @@ volumes:
     name: ${COMPOSE_PROJECT_NAME}_var
   db:
     name: ${COMPOSE_PROJECT_NAME}_db
+  nproxy_certs:
+    external: true
