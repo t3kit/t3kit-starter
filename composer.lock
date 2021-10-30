@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ce2dcfd783da7dd952adc4d493676c81",
+    "content-hash": "b9cd5cd495b350ae60c7ce6ab2f37973",
     "packages": [
         {
             "name": "b13/container",
@@ -4954,6 +4954,42 @@
                 "source": "https://github.com/t3kit/t3kit"
             },
             "time": "2021-10-29T08:19:45+00:00"
+        },
+        {
+            "name": "typo3-local/theme-newcustomproject",
+            "version": "dev-local",
+            "dist": {
+                "type": "path",
+                "url": "public/typo3conf/ext/theme_newcustomproject",
+                "reference": "22799d106d6a4244327d4b0a254ab9ebb38b430d"
+            },
+            "require": {
+                "t3kit/t3kit": "*"
+            },
+            "type": "typo3-cms-extension",
+            "extra": {
+                "typo3/cms": {
+                    "extension-key": "theme_newcustomproject"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "T3k\\newcustomproject\\": "Classes/"
+                }
+            },
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "t3kit Community",
+                    "homepage": "https://github.com/t3kit"
+                }
+            ],
+            "description": "Custom project theme for t3kit",
+            "transport-options": {
+                "relative": true
+            }
         },
         {
             "name": "typo3/class-alias-loader",

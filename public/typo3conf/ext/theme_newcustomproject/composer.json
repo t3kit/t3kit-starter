@@ -1,0 +1,28 @@
+{
+  "name": "typo3-local/theme-newcustomproject",
+  "description": "Custom project theme for t3kit",
+  "license": "GPL-2.0-or-later",
+  "type": "typo3-cms-extension",
+  "authors": [
+    {
+      "name": "t3kit Community",
+      "homepage": "https://github.com/t3kit"
+    }
+  ],
+  "require": {
+    "t3kit/t3kit": "*"
+  },
+  "suggest": {},
+  "conflict": {},
+  "extra": {
+    "typo3/cms": {
+      "extension-key": "theme_newcustomproject"
+    }
+  },
+  "autoload": {
+    "psr-4": {
+      "T3k\\newcustomproject\\": "Classes/"
+    }
+  },
+  "version": "dev-local"
+}

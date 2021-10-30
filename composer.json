@@ -24,6 +24,12 @@
     "source": "https://github.com/t3kit/t3kit-starter",
     "docs": "https://github.com/t3kit/t3kit-starter"
   },
+  "repositories": [
+    {
+      "type": "path",
+      "url": "public/typo3conf/ext/theme_newcustomproject"
+    }
+  ],
   "require": {
     "t3kit/t3kit": "dev-master",
     "typo3/cms-about": "^11.5.0",
@@ -58,7 +64,8 @@
     "typo3/cms-sys-note": "^11.5.0",
     "typo3/cms-t3editor": "^11.5.0",
     "typo3/cms-tstemplate": "^11.5.0",
-    "typo3/cms-viewpage": "^11.5.0"
+    "typo3/cms-viewpage": "^11.5.0",
+    "typo3-local/theme-newcustomproject": "*"
   },
   "require-dev": {
     "editorconfig-checker/editorconfig-checker": "^10.2.3",
@@ -71,11 +78,6 @@
     "yoast-seo-for-typo3/yoast_seo": "Yoast SEO for TYPO3",
     "friendsoftypo3/frontend-editing": "Enable editors to work with the content in the most intuitive way possible",
     "apache-solr-for-typo3/solr": "Apache Solr for TYPO3"
-  },
-  "autoload": {
-    "psr-4": {
-      "T3k\\newcustomproject\\": "public/typo3conf/ext/theme_newcustomproject/Classes/"
-    }
   },
   "minimum-stability": "dev",
   "prefer-stable": true,
