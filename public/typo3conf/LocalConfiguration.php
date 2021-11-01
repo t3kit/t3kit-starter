@@ -14,6 +14,7 @@ return [
             'Default' => [
                 'charset' => 'utf8',
                 'driver' => 'mysqli',
+                'port' => 3306,
             ],
         ],
     ],
