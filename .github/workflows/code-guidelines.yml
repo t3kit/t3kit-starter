@@ -46,7 +46,7 @@ jobs:
       - name: Install Composer dependencies
         # env:
         #   COMPOSER_AUTH: '{"github-oauth": {"github.com": "${{ secrets.COMPOSER_SECRET }}" }}'
-        run: composer install --prefer-dist --no-progress --no-suggest
+        run: composer install --prefer-dist --no-progress
 
       - name: Run composer test
         run: composer test
