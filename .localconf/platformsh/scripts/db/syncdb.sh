@@ -18,7 +18,8 @@ docker compose exec -T web /var/www/html/"$BASEDIR"/cmd/createdb.sh
 docker compose exec -T web /var/www/html/"$BASEDIR"/cmd/importdb.sh
 docker compose exec -T -u www-data web /var/www/html/vendor/bin/typo3cms install:fixfolderstructure
 docker compose exec -T -u www-data web /var/www/html/vendor/bin/typo3cms database:updateschema
-docker compose exec -T -u www-data web /var/www/html/vendor/bin/typo3cms cache:flush
+docker compose exec -T -u www-data web /var/www/html/vendor/bin/typo3 language:update
+docker compose exec -T -u www-data web /var/www/html/vendor/bin/typo3 cache:flush
 # ####################################
 
 echo -e "\nDone\n"
