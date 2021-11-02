@@ -89,10 +89,13 @@ jobs:
         run: . ./.env && docker run --rm --network=nproxy toschneck/wait-for-it ${COMPOSE_PROJECT_NAME}_db:3306 -t 100
 
       - name: test
-        run: docker compose exec web cat var/build/PackageArtifact.php
+        run: docker compose exec web composer install
 
       - name: test
         run: id
+
+      - name: test
+        run: docker compose exec web cat var/build/PackageArtifact.php
 
       - name: test
         run: docker compose exec -T -u www-data web /var/www/html/vendor/bin/typo3 extension:setup
