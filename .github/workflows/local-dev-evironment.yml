@@ -97,9 +97,6 @@ jobs:
       - name: test
         run: docker compose exec web cat var/build/PackageArtifact.php
 
-      - name: test
-        run: docker compose exec -T -u www-data web /var/www/html/vendor/bin/typo3 extension:setup
-
       - name: Import t3kit-starter database
         run: composer run-script dbup
 
