@@ -194,8 +194,7 @@ hooks:
 
     # cp public/typo3conf/LocalConfiguration.FromSource.php var/LocalConfiguration.php
 
-    vendor/bin/typo3cms install:fixfolderstructure
-    vendor/bin/typo3cms database:updateschema
+    vendor/bin/typo3 extension:setup
     vendor/bin/typo3 language:update
     vendor/bin/typo3 cache:flush
 
