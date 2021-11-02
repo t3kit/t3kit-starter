@@ -23,6 +23,5 @@
     "psr-4": {
       "T3k\\newcustomproject\\": "Classes/"
     }
-  },
-  "version": "dev-local"
+  }
 }
