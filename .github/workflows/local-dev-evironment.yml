@@ -12,7 +12,7 @@ jobs:
     strategy:
       matrix:
         node-version: [16.x]
-        php-version: ['8']
+        php-version: ['8.0']
 
     steps:
 
@@ -88,14 +88,8 @@ jobs:
       - name: Wait for db container
         run: . ./.env && docker run --rm --network=nproxy toschneck/wait-for-it ${COMPOSE_PROJECT_NAME}_db:3306 -t 100
 
-      - name: test
+      - name: Create Package artifact
         run: docker compose exec web composer install
-
-      - name: test
-        run: id
-
-      - name: test
-        run: docker compose exec web cat var/build/PackageArtifact.php
 
       - name: Import t3kit-starter database
         run: composer run-script dbup
