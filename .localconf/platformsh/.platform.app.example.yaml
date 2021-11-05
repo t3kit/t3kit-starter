@@ -68,8 +68,6 @@ web:
       headers:
         X-Content-Type-Options: nosniff
       rules:
-        '/typo3/':
-          passthru: '/typo3/index.php$is_args$args'
         '^\/typo3conf\/ext\/.*\/Resources\/Public\/assets\/development\/?.*\.(css|js)$':
           allow: true
           passthru: false
@@ -103,6 +101,18 @@ web:
           scripts: false
           allow: false
           passthru: false
+    '/typo3':
+      root: 'public/typo3'
+      passthru: '/typo3/index.php'
+      index:
+        - 'index.php'
+      allow: false
+      rules:
+        '\.(jpe?g|png|gif|svgz?|html|css|js|map|ico|bmp|eot|woff2?|otf|ttf|webmanifest|xsl)$':
+          allow: true
+          passthru: false
+          scripts: false
+          expires: 1M
     '/fileadmin':
       root: 'public/fileadmin'
       expires: 1M
@@ -152,9 +162,24 @@ mounts:
   "public/fileadmin":
     source: local
     source_path: "fileadmin"
-  "var":
+  "var/cache":
     source: local
-    source_path: "var"
+    source_path: "var-cache"
+  "var/charset":
+    source: local
+    source_path: "var-charset"
+  "var/lock":
+    source: local
+    source_path: "var-lock"
+  "var/log":
+    source: local
+    source_path: "var-log"
+  "var/transient":
+    source: local
+    source_path: "var-transient"
+  "var/session":
+    source: local
+    source_path: "var-session"
 
 # The hooks that will be performed when the package is deployed.
 hooks:
