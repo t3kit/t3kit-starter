@@ -53,7 +53,7 @@
 /* ======================================== */
 /* custom styles */
 /* ======================================== */
-/* @import "main/global/root.css"; */
+@import "main/global/root.css";
 
 /* ===== typography ===== */
 /* @import "main/global/typography.css"; */
