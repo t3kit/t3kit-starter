@@ -123,8 +123,7 @@
     "t3kit-upgrade": "git merge -X theirs --squash --allow-unrelated-histories t3kit/master",
     "cf": "docker compose exec -T -u www-data web /var/www/html/vendor/bin/typo3 cache:flush",
     "ci": "./.localconf/composer/sshauth.sh composer i --prefer-install=auto",
-    "cup": "./.localconf/composer/sshauth.sh composer up",
-    "cre": "./.localconf/composer/sshauth.sh composer require",
+    "co": "./.localconf/composer/sshauth.sh composer",
     "ctest": "./.localconf/composer/sshauth.sh composer test"
   }
 }

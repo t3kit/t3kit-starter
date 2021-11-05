@@ -152,11 +152,27 @@ If there no needs to use **t3kit** starter database or **Docker configuration** 
         grep -rl 'newcustomproject' public/typo3conf/ext/theme_mega | xargs sed -i 's/newcustomproject/mega/g'
     ```
 _Note: Change the `mega` part in `**/ext/theme_mega` and `s/newcustomproject/mega/g` to your real project neme_
-4. Add new composer autoload config to the root `composer.json` for your new extension.
-    - `"T3k\\mega\\": "public/typo3conf/ext/theme_mega/Classes/"`
 
-6. `npm install` - Install npm dependencies.
-9. `npm run build` - Build development assests for themes.
+4. Activate `theme_mega` extension
+
+    - add new repository to root `composer.json`
+    ```json
+        "repositories": [
+            {
+            "type": "path",
+            "url": "public/typo3conf/ext/theme_mega"
+            }
+        ],
+    ```
+
+    - Install a new `theme_mega` extension
+    ```shell
+        composer co require typo3-local/theme_mega
+        npm install
+        npm run dev
+    ```
+
+5. Enable `theme_mega` for the site `Site Management -> Sites -> Site Theme`
 
 ***
 
