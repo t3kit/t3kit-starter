@@ -118,7 +118,7 @@ If there no needs to use **t3kit** starter database or **Docker configuration** 
         - **Linux**
             - Uncomment `USER_ID` var and set up your host user id to make the shared folder writable. (Skip this step if you are a Mac user)
 
-4. `composer ci` - Install composer dependencies
+4. `composer i` - Install composer dependencies, or run `composer ci` if you don't have PHP v8 as your main local environment
 5. `npm install` - Install npm dependencies
 6. `npm run dev` - Build development assests for themes
 7. `docker compose up -d` - Start all Docker services for a local development environment
