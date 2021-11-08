@@ -1,4 +1,52 @@
 
+#### v11.0.0-beta `November 8, 2021`
+
+- **[TASK]** update composer deps, update t3kit ext. to v11.0.0-beta ([0c3a3e0](https://github.com/t3kit/t3kit-starter/commit/0c3a3e0))
+- **[DOC]** update readme, suggest composer install as a main option to install comp. deps ([208b084](https://github.com/t3kit/t3kit-starter/commit/208b084))
+- **[TASK]** update npm deps, update config for node engine and browserslist ([1f6e34b](https://github.com/t3kit/t3kit-starter/commit/1f6e34b))
+- **[BUGFIX]** DDEV: Install GraphicsMagick (#71) ([5596b22](https://github.com/t3kit/t3kit-starter/commit/5596b22))
+- **[BUGFIX]** fix css styling for theme_newcustomproject ([69cf57c](https://github.com/t3kit/t3kit-starter/commit/69cf57c))
+- **[DOC]** update readme about how to create a custom theme based on t3kit11 ([047ea33](https://github.com/t3kit/t3kit-starter/commit/047ea33))
+- **[BUGFIX]** fix platform.sh configuration for t3kit11 ([4829897](https://github.com/t3kit/t3kit-starter/commit/4829897))
+- **[TASK]** update local nginx config ([1214cdb](https://github.com/t3kit/t3kit-starter/commit/1214cdb))
+- **[TASK]** update t3kit11 starter db, add accordion, update heroImage CE ([689b17c](https://github.com/t3kit/t3kit-starter/commit/689b17c))
+- **[BUGFIX]** use a valid PHP service type in Platform.sh ([33df689](https://github.com/t3kit/t3kit-starter/commit/33df689))
+- **[DOC]** update readme templates ([709a71f](https://github.com/t3kit/t3kit-starter/commit/709a71f))
+- **[TASK]** update typo3 to v11.5.2, update t3kit ext ([e4c6cc0](https://github.com/t3kit/t3kit-starter/commit/e4c6cc0))
+- **[TASK]** remove t3kit10 started db ([a47920e](https://github.com/t3kit/t3kit-starter/commit/a47920e))
+- **[TASK]** use typo3 cli instead of typo3-console ([c9e5a26](https://github.com/t3kit/t3kit-starter/commit/c9e5a26))
+- **[TEST]** update GA tests, add Package artifact setup step (#70) ([354b641](https://github.com/t3kit/t3kit-starter/commit/354b641))
+- **[TASK]** update theme_newcustomproject, use TYPO3 FlexFormProcessor ([13253ed](https://github.com/t3kit/t3kit-starter/commit/13253ed))
+- **[TASK]** update theme_newcustomproject, declare strict types in ext_localconf.php file ([0f9ea8a](https://github.com/t3kit/t3kit-starter/commit/0f9ea8a))
+- **[TASK]** update XLIFF version to 1.2 ([c3b82e9](https://github.com/t3kit/t3kit-starter/commit/c3b82e9))
+- **[TASK]** update theme_newcustomproject, use constant TYPO3 in global script files ([f3f6cd2](https://github.com/t3kit/t3kit-starter/commit/f3f6cd2))
+- **[TASK]** add DB port config to LocalConfiguration file ([2fa0eb1](https://github.com/t3kit/t3kit-starter/commit/2fa0eb1))
+- **[TASK]** use TYPO3 CLI to flush cache ([aaa9fbd](https://github.com/t3kit/t3kit-starter/commit/aaa9fbd))
+- **[TASK]** update t3kit ext, use TYPO3 dev-master ([02e73c2](https://github.com/t3kit/t3kit-starter/commit/02e73c2))
+- **[TASK]** update t3kit starter db, add accordion CE, run typo3 v11 upgrade wizard ([2c57b95](https://github.com/t3kit/t3kit-starter/commit/2c57b95))
+- **[FEATURE]** Include theme as composer path repo (#69) ([2b6282b](https://github.com/t3kit/t3kit-starter/commit/2b6282b))
+- **[TEST]** update github action test with new matrix strategy, php8, node16 ([0084198](https://github.com/t3kit/t3kit-starter/commit/0084198))
+- **[TASK]** update platform.sh server configuration and platform docker local config ([630349a](https://github.com/t3kit/t3kit-starter/commit/630349a))
+- **[TASK]** update local docker config for t3kit11 ([3f26a88](https://github.com/t3kit/t3kit-starter/commit/3f26a88))
+- **[DOC]** update readme, update nproxy info, update required dependencies ([fc46d2b](https://github.com/t3kit/t3kit-starter/commit/fc46d2b))
+- **[BUGFIX]** Correctly set Norwegian to Norwegian bokmål: nb (#68) ([8a61597](https://github.com/t3kit/t3kit-starter/commit/8a61597))
+- **[TASK]** update theme_newcustomproject, node v16, ES modules, fix stylelint issues, update deps ([587650e](https://github.com/t3kit/t3kit-starter/commit/587650e))
+- **[TASK]** Set DDEV configuration to PHP 8 (#66) ([ac15838](https://github.com/t3kit/t3kit-starter/commit/ac15838))
+- **[TASK]** DDEV: Install g++, python, node, nvm in Dockerfile (#67) ([75cd41c](https://github.com/t3kit/t3kit-starter/commit/75cd41c))
+- **[TASK]** TYPO3 11.5.1 and remove PackageStates.php (#65) ([1dd6bf7](https://github.com/t3kit/t3kit-starter/commit/1dd6bf7))
+- **[TASK]** update to t3kit11 - use --prefer-install=auto to install composer dep-s ([e1da7fb](https://github.com/t3kit/t3kit-starter/commit/e1da7fb))
+- **[TASK]** update to t3kit11 - update README files ([8e85eeb](https://github.com/t3kit/t3kit-starter/commit/8e85eeb))
+- **[TASK]** update to t3kit11 - update LocalConfiguration and AdditionalConfiguration ([a7532c6](https://github.com/t3kit/t3kit-starter/commit/a7532c6))
+- **[TASK]** update to t3kit11 - sanitize SVG files in fileadmin folder ([aaedec1](https://github.com/t3kit/t3kit-starter/commit/aaedec1))
+- **[TASK]** update to t3kit11 - add t3kit11.sql started db ([4636813](https://github.com/t3kit/t3kit-starter/commit/4636813))
+- **[TASK]** update to t3kit11 - update npm dep-s ([4d87c51](https://github.com/t3kit/t3kit-starter/commit/4d87c51))
+
+:heavy_exclamation_mark:**Breaking Changes:**
+- **[!!!]** **[TASK]** update to t3kit11 - update local development configuration ([8318cd1](https://github.com/t3kit/t3kit-starter/commit/8318cd1))
+- **[!!!]** **[TASK]** update to t3kit11 - update composer dep-s, TYPO3 v11.5.0 ([841e22a](https://github.com/t3kit/t3kit-starter/commit/841e22a))
+
+***
+
 #### v10.0.0 `September 24, 2021`
 
 - **[TASK]** update t3kit to v10.0.0 ([c87fb8f](https://github.com/t3kit/t3kit-starter/commit/c87fb8f))
