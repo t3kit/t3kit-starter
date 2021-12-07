@@ -19,8 +19,8 @@
   "dependencies": {
     "awesomplete": "~1.1.5",
     "bootstrap": "~v5.1.1",
-    "simplelightbox": "~2.9.0",
-    "swiper": "~7.2.0"
+    "simplelightbox": "~2.10.1",
+    "swiper": "~7.3.1"
   },
   "devDependencies": {},
   "engines": {
