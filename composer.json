@@ -65,7 +65,7 @@
     "typo3/cms-t3editor": "^11.5.2",
     "typo3/cms-tstemplate": "^11.5.2",
     "typo3/cms-viewpage": "^11.5.2",
-    "typo3-local/theme-newcustomproject": "*"
+    "typo3-local/theme-newcustomproject": "dev-master"
   },
   "require-dev": {
     "editorconfig-checker/editorconfig-checker": "^10.2.3",
@@ -79,7 +79,7 @@
     "friendsoftypo3/frontend-editing": "Enable editors to work with the content in the most intuitive way possible",
     "apache-solr-for-typo3/solr": "Apache Solr for TYPO3"
   },
-  "minimum-stability": "dev",
+  "minimum-stability": "stable",
   "prefer-stable": true,
   "config": {
     "sort-packages": true

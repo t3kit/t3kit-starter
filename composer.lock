@@ -4,11 +4,11 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9d9d6b90a51da344f6c5799938469415",
+    "content-hash": "b11f3c1686c10520c28470a91ae47f0b",
     "packages": [
         {
             "name": "b13/container",
-            "version": "dev-master",
+            "version": "1.4.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/b13/container.git",
@@ -42,7 +42,6 @@
                 "typo3/coding-standards": "^0.2.0",
                 "typo3/testing-framework": "^6"
             },
-            "default-branch": true,
             "type": "typo3-cms-extension",
             "extra": {
                 "typo3/cms": {
@@ -4890,16 +4889,16 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/t3kit/t3kit.git",
-                "reference": "9bdf18cd4deb2ad740d1e9d2b27be555fca11a6d"
+                "reference": "361418ab26e30bca1efd67f07029e1df156a62de"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/t3kit/t3kit/zipball/9bdf18cd4deb2ad740d1e9d2b27be555fca11a6d",
-                "reference": "9bdf18cd4deb2ad740d1e9d2b27be555fca11a6d",
+                "url": "https://api.github.com/repos/t3kit/t3kit/zipball/361418ab26e30bca1efd67f07029e1df156a62de",
+                "reference": "361418ab26e30bca1efd67f07029e1df156a62de",
                 "shasum": ""
             },
             "require": {
-                "b13/container": "dev-master",
+                "b13/container": "^1.4.2",
                 "typo3/cms-backend": "^11.5.0",
                 "typo3/cms-core": "^11.5.0",
                 "typo3/cms-extbase": "^11.5.0",
@@ -4967,7 +4966,7 @@
                 "issues": "https://github.com/t3kit/t3kit/issues",
                 "source": "https://github.com/t3kit/t3kit"
             },
-            "time": "2021-12-07T09:27:13+00:00"
+            "time": "2021-12-07T11:30:51+00:00"
         },
         {
             "name": "typo3-local/theme-newcustomproject",
@@ -7694,9 +7693,10 @@
         }
     ],
     "aliases": [],
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "stability-flags": {
-        "t3kit/t3kit": 20
+        "t3kit/t3kit": 20,
+        "typo3-local/theme-newcustomproject": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
