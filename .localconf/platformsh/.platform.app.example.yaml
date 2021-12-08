@@ -162,24 +162,9 @@ mounts:
   "public/fileadmin":
     source: local
     source_path: "fileadmin"
-  "var/cache":
+  "var":
     source: local
-    source_path: "var-cache"
-  "var/charset":
-    source: local
-    source_path: "var-charset"
-  "var/lock":
-    source: local
-    source_path: "var-lock"
-  "var/log":
-    source: local
-    source_path: "var-log"
-  "var/transient":
-    source: local
-    source_path: "var-transient"
-  "var/session":
-    source: local
-    source_path: "var-session"
+    source_path: "var"
 
 # The hooks that will be performed when the package is deployed.
 hooks:
