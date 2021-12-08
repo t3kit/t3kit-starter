@@ -4889,12 +4889,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/t3kit/t3kit.git",
-                "reference": "361418ab26e30bca1efd67f07029e1df156a62de"
+                "reference": "ba47fe676e6bda484e0c6f9da7a6e3c829ab6575"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/t3kit/t3kit/zipball/361418ab26e30bca1efd67f07029e1df156a62de",
-                "reference": "361418ab26e30bca1efd67f07029e1df156a62de",
+                "url": "https://api.github.com/repos/t3kit/t3kit/zipball/ba47fe676e6bda484e0c6f9da7a6e3c829ab6575",
+                "reference": "ba47fe676e6bda484e0c6f9da7a6e3c829ab6575",
                 "shasum": ""
             },
             "require": {
@@ -4966,7 +4966,7 @@
                 "issues": "https://github.com/t3kit/t3kit/issues",
                 "source": "https://github.com/t3kit/t3kit"
             },
-            "time": "2021-12-07T11:30:51+00:00"
+            "time": "2021-12-08T12:01:00+00:00"
         },
         {
             "name": "typo3-local/theme-newcustomproject",
