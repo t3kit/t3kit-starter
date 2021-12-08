@@ -1,4 +1,16 @@
 
+#### v11.0.0-beta.2 `December 8, 2021`
+
+- **[TASK]** update t3kit ext to v11.0.0-beta.2 ([53d3027](https://github.com/t3kit/t3kit-starter/commit/53d3027))
+- **[TASK]** update platform.sh config, use only one parrent var mount instead on several child var/... mounts ([9edb8f4](https://github.com/t3kit/t3kit-starter/commit/9edb8f4))
+- **[TASK]** update t3kit ext with b13/container, use minimum-stability:stable for composer ([2968151](https://github.com/t3kit/t3kit-starter/commit/2968151))
+- **[TASK]** update t3kit starter DB ([956d6de](https://github.com/t3kit/t3kit-starter/commit/956d6de))
+- **[TASK]** update t3kit npm deps, swiper, simplelightbox ([439e1b8](https://github.com/t3kit/t3kit-starter/commit/439e1b8))
+- **[TASK]** update TYPO3 to v11.5.3 ([64b34bb](https://github.com/t3kit/t3kit-starter/commit/64b34bb))
+- **[TASK]** DDEV: update NVM/NODE/NPM versions (#72) ([ca9890d](https://github.com/t3kit/t3kit-starter/commit/ca9890d))
+
+***
+
 #### v11.0.0-beta `November 8, 2021`
 
 - **[TASK]** update composer deps, update t3kit ext. to v11.0.0-beta ([0c3a3e0](https://github.com/t3kit/t3kit-starter/commit/0c3a3e0))
