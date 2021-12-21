@@ -74,7 +74,7 @@ jobs:
         run: docker network create nproxy
 
       - name: Run nginx-proxy
-        run: docker run -d -p 80:80 --name=nproxy --network=nproxy -v ~/.certs/server:/etc/nginx/certs -v /var/run/docker.sock:/tmp/docker.sock:ro t3kit/nproxy:2.0.2
+        run: docker run -d -p 80:80 --name=nproxy --network=nproxy -v ~/.certs/server:/etc/nginx/certs -v /var/run/docker.sock:/tmp/docker.sock:ro -v nproxy_certs:/etc/nginx/certs t3kit/nproxy:2.0.2
 
       - name: Run all containers
         run: docker compose up -d
