@@ -63,6 +63,7 @@
 - [Docker Compose](https://docs.docker.com/compose/cli-command/#installing-compose-v2) >= v2.0.0
 - [Node.js](https://nodejs.org/en/download/) >= v16.12.0
 - [NPM](https://nodejs.org/en/download/) >= v8.0.0
+- [nproxy](https://github.com/t3kit/t3kit-dockerhub#nproxy) >= v3.0.0
 
 ## File structure
 
