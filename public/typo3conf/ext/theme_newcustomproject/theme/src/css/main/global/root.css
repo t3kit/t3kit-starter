@@ -6,11 +6,11 @@
   --t3-primary: red;
   --t3-primary-hs: 0, 100%;
   --t3-primary-l: 50%;
-  --t3-primary-overlay: hsla(var(--t3-primary-hs) var(--t3-primary-l) 0.4);
+  --t3-primary-overlay: hsla(var(--t3-primary-hs) var(--t3-primary-l) 40%);
 
   /* secondary color */
   --t3-secondary: green;
   --t3-secondary-hs: 120, 100%;
   --t3-secondary-l: 25%;
-  --t3-secondary-overlay: hsla(var(--t3-secondary-hs) var(--t3-secondary-l) 0.4);
+  --t3-secondary-overlay: hsla(var(--t3-secondary-hs) var(--t3-secondary-l) 40%);
 }
