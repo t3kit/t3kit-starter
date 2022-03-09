@@ -68,7 +68,7 @@
     "typo3-local/theme-newcustomproject": "dev-master"
   },
   "require-dev": {
-    "editorconfig-checker/editorconfig-checker": "^10.2.3",
+    "editorconfig-checker/editorconfig-checker": "^10.3",
     "squizlabs/php_codesniffer": "^3.6.0",
     "helmich/typo3-typoscript-lint": "^2.5.2"
   },
