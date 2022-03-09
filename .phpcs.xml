@@ -14,5 +14,6 @@
 	<exclude-pattern>*/vendor/*</exclude-pattern>
 	<exclude-pattern>*/build/*</exclude-pattern>
 	<exclude-pattern>public/typo3conf/ext\/(?!theme_.+\/).*</exclude-pattern>
+	<exclude-pattern>public/typo3conf/autoload/*</exclude-pattern>
 </ruleset>
 
