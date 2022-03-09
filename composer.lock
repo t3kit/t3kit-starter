@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "18849c25af73a5c59d07944cf93a4766",
+    "content-hash": "bf6350d67fe98eb2a172b79a3ca75355",
     "packages": [
         {
             "name": "b13/container",
@@ -789,58 +789,6 @@
                 }
             ],
             "time": "2022-02-28T11:07:21+00:00"
-        },
-        {
-            "name": "editorconfig-checker/editorconfig-checker",
-            "version": "10.3.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/editorconfig-checker/editorconfig-checker.php.git",
-                "reference": "a0a2b72440d3accbbca0b7838d110b615bf03fca"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/editorconfig-checker/editorconfig-checker.php/zipball/a0a2b72440d3accbbca0b7838d110b615bf03fca",
-                "reference": "a0a2b72440d3accbbca0b7838d110b615bf03fca",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^7.2 || ^8.0"
-            },
-            "require-dev": {
-                "php-coveralls/php-coveralls": "^2.1",
-                "phpstan/phpstan": "^1.4",
-                "phpunit/phpunit": "^8.5.23",
-                "squizlabs/php_codesniffer": "^3.6"
-            },
-            "bin": [
-                "bin/editorconfig-checker",
-                "bin/ec"
-            ],
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "EditorconfigChecker\\": "src/EditorconfigChecker"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Max Strübing",
-                    "email": "mxstrbng@gmail.com",
-                    "homepage": "https://github.com/mstruebing",
-                    "role": "Maintainer"
-                }
-            ],
-            "description": "A tool to verify that your files follow the rules of your .editorconfig",
-            "support": {
-                "issues": "https://github.com/editorconfig-checker/editorconfig-checker.php/issues",
-                "source": "https://github.com/editorconfig-checker/editorconfig-checker.php"
-            },
-            "time": "2022-02-16T12:42:06+00:00"
         },
         {
             "name": "egulias/email-validator",
@@ -7508,6 +7456,58 @@
         }
     ],
     "packages-dev": [
+        {
+            "name": "editorconfig-checker/editorconfig-checker",
+            "version": "10.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/editorconfig-checker/editorconfig-checker.php.git",
+                "reference": "a0a2b72440d3accbbca0b7838d110b615bf03fca"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/editorconfig-checker/editorconfig-checker.php/zipball/a0a2b72440d3accbbca0b7838d110b615bf03fca",
+                "reference": "a0a2b72440d3accbbca0b7838d110b615bf03fca",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.2 || ^8.0"
+            },
+            "require-dev": {
+                "php-coveralls/php-coveralls": "^2.1",
+                "phpstan/phpstan": "^1.4",
+                "phpunit/phpunit": "^8.5.23",
+                "squizlabs/php_codesniffer": "^3.6"
+            },
+            "bin": [
+                "bin/editorconfig-checker",
+                "bin/ec"
+            ],
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "EditorconfigChecker\\": "src/EditorconfigChecker"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Max Strübing",
+                    "email": "mxstrbng@gmail.com",
+                    "homepage": "https://github.com/mstruebing",
+                    "role": "Maintainer"
+                }
+            ],
+            "description": "A tool to verify that your files follow the rules of your .editorconfig",
+            "support": {
+                "issues": "https://github.com/editorconfig-checker/editorconfig-checker.php/issues",
+                "source": "https://github.com/editorconfig-checker/editorconfig-checker.php"
+            },
+            "time": "2022-02-16T12:42:06+00:00"
+        },
         {
             "name": "helmich/typo3-typoscript-lint",
             "version": "v2.5.2",
