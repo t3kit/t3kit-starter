@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "bf6350d67fe98eb2a172b79a3ca75355",
+    "content-hash": "87533c838da61117410a495ea9ca0b23",
     "packages": [
         {
             "name": "b13/container",
@@ -69,16 +69,16 @@
         },
         {
             "name": "bacon/bacon-qr-code",
-            "version": "2.0.6",
+            "version": "2.0.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Bacon/BaconQrCode.git",
-                "reference": "0069435e2a01a57193b25790f105a5d3168653c1"
+                "reference": "d70c840f68657ce49094b8d91f9ee0cc07fbf66c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Bacon/BaconQrCode/zipball/0069435e2a01a57193b25790f105a5d3168653c1",
-                "reference": "0069435e2a01a57193b25790f105a5d3168653c1",
+                "url": "https://api.github.com/repos/Bacon/BaconQrCode/zipball/d70c840f68657ce49094b8d91f9ee0cc07fbf66c",
+                "reference": "d70c840f68657ce49094b8d91f9ee0cc07fbf66c",
                 "shasum": ""
             },
             "require": {
@@ -117,9 +117,9 @@
             "homepage": "https://github.com/Bacon/BaconQrCode",
             "support": {
                 "issues": "https://github.com/Bacon/BaconQrCode/issues",
-                "source": "https://github.com/Bacon/BaconQrCode/tree/2.0.6"
+                "source": "https://github.com/Bacon/BaconQrCode/tree/2.0.7"
             },
-            "time": "2022-02-04T20:16:05+00:00"
+            "time": "2022-03-14T02:02:36+00:00"
         },
         {
             "name": "christian-riesen/base32",
@@ -400,16 +400,16 @@
         },
         {
             "name": "doctrine/dbal",
-            "version": "2.13.7",
+            "version": "2.13.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/dbal.git",
-                "reference": "6e22f6012b42d7932674857989fcf184e9e9b1c3"
+                "reference": "dc9b3c3c8592c935a6e590441f9abc0f9eba335b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/dbal/zipball/6e22f6012b42d7932674857989fcf184e9e9b1c3",
-                "reference": "6e22f6012b42d7932674857989fcf184e9e9b1c3",
+                "url": "https://api.github.com/repos/doctrine/dbal/zipball/dc9b3c3c8592c935a6e590441f9abc0f9eba335b",
+                "reference": "dc9b3c3c8592c935a6e590441f9abc0f9eba335b",
                 "shasum": ""
             },
             "require": {
@@ -422,13 +422,13 @@
             "require-dev": {
                 "doctrine/coding-standard": "9.0.0",
                 "jetbrains/phpstorm-stubs": "2021.1",
-                "phpstan/phpstan": "1.3.0",
-                "phpunit/phpunit": "^7.5.20|^8.5|9.5.11",
+                "phpstan/phpstan": "1.4.6",
+                "phpunit/phpunit": "^7.5.20|^8.5|9.5.16",
                 "psalm/plugin-phpunit": "0.16.1",
                 "squizlabs/php_codesniffer": "3.6.2",
                 "symfony/cache": "^4.4",
                 "symfony/console": "^2.0.5|^3.0|^4.0|^5.0",
-                "vimeo/psalm": "4.16.1"
+                "vimeo/psalm": "4.22.0"
             },
             "suggest": {
                 "symfony/console": "For helpful console commands such as SQL execution and import of files."
@@ -489,7 +489,7 @@
             ],
             "support": {
                 "issues": "https://github.com/doctrine/dbal/issues",
-                "source": "https://github.com/doctrine/dbal/tree/2.13.7"
+                "source": "https://github.com/doctrine/dbal/tree/2.13.8"
             },
             "funding": [
                 {
@@ -505,7 +505,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-01-06T09:08:04+00:00"
+            "time": "2022-03-09T15:25:46+00:00"
         },
         {
             "name": "doctrine/deprecations",
@@ -4891,37 +4891,37 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/t3kit/t3kit.git",
-                "reference": "ba47fe676e6bda484e0c6f9da7a6e3c829ab6575"
+                "reference": "13ad77b37d918bd0614f82d7a481a2d3b77f8f89"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/t3kit/t3kit/zipball/ba47fe676e6bda484e0c6f9da7a6e3c829ab6575",
-                "reference": "ba47fe676e6bda484e0c6f9da7a6e3c829ab6575",
+                "url": "https://api.github.com/repos/t3kit/t3kit/zipball/13ad77b37d918bd0614f82d7a481a2d3b77f8f89",
+                "reference": "13ad77b37d918bd0614f82d7a481a2d3b77f8f89",
                 "shasum": ""
             },
             "require": {
-                "b13/container": "^1.4.2",
-                "typo3/cms-backend": "^11.5.0",
-                "typo3/cms-core": "^11.5.0",
-                "typo3/cms-extbase": "^11.5.0",
-                "typo3/cms-extensionmanager": "^11.5.0",
-                "typo3/cms-felogin": "^11.5.0",
-                "typo3/cms-filelist": "^11.5.0",
-                "typo3/cms-filemetadata": "^11.5.0",
-                "typo3/cms-fluid": "^11.5.0",
-                "typo3/cms-form": "^11.5.0",
-                "typo3/cms-frontend": "^11.5.0",
-                "typo3/cms-install": "^11.5.0",
-                "typo3/cms-recordlist": "^11.5.0",
-                "typo3/cms-rte-ckeditor": "^11.5.0",
-                "typo3/cms-seo": "^11.5.0",
-                "typo3/cms-tstemplate": "^11.5.0"
+                "b13/container": "^1.5.0",
+                "typo3/cms-backend": "^11.5.8",
+                "typo3/cms-core": "^11.5.8",
+                "typo3/cms-extbase": "^11.5.8",
+                "typo3/cms-extensionmanager": "^11.5.8",
+                "typo3/cms-felogin": "^11.5.8",
+                "typo3/cms-filelist": "^11.5.8",
+                "typo3/cms-filemetadata": "^11.5.8",
+                "typo3/cms-fluid": "^11.5.8",
+                "typo3/cms-form": "^11.5.8",
+                "typo3/cms-frontend": "^11.5.8",
+                "typo3/cms-install": "^11.5.8",
+                "typo3/cms-recordlist": "^11.5.8",
+                "typo3/cms-rte-ckeditor": "^11.5.8",
+                "typo3/cms-seo": "^11.5.8",
+                "typo3/cms-tstemplate": "^11.5.8"
             },
             "require-dev": {
-                "editorconfig-checker/editorconfig-checker": "~10.2.3",
-                "helmich/typo3-typoscript-lint": "~2.5.2",
-                "sclable/xml-lint": "~0.4.0",
-                "squizlabs/php_codesniffer": "~3.6.0"
+                "editorconfig-checker/editorconfig-checker": "^10.3",
+                "helmich/typo3-typoscript-lint": "^2.5.2",
+                "sclable/xml-lint": "0.5.0",
+                "squizlabs/php_codesniffer": "^3.6.0"
             },
             "suggest": {
                 "apache-solr-for-typo3/solr": "Apache Solr for TYPO3",
@@ -4968,7 +4968,7 @@
                 "issues": "https://github.com/t3kit/t3kit/issues",
                 "source": "https://github.com/t3kit/t3kit"
             },
-            "time": "2021-12-08T12:01:00+00:00"
+            "time": "2022-03-17T16:37:28+00:00"
         },
         {
             "name": "typo3-local/theme-newcustomproject",
