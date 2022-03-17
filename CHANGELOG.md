@@ -1,4 +1,20 @@
 
+#### v11.0.0 `March 17, 2022`
+
+- **[TASK]** update composer deps (t3kit11.0.0), update npm deps, fix linter errors ([cb8e5f2](https://github.com/t3kit/t3kit-starter/commit/cb8e5f2))
+- **[BUGFIX]** Dev condition on platform.sh + branch name (#81) ([364c8d2](https://github.com/t3kit/t3kit-starter/commit/364c8d2))
+- **[BUGFIX]** Remove commas in HSL properties for CSS (#77) ([214611e](https://github.com/t3kit/t3kit-starter/commit/214611e))
+- **[TEST]** fix github action for local dev, remove unneeded Create Package artifact step ([48a323d](https://github.com/t3kit/t3kit-starter/commit/48a323d))
+- **[TASK]** update TYPO3 to v11.5.8, update other composer deps ([8578eb8](https://github.com/t3kit/t3kit-starter/commit/8578eb8))
+- **[BUGFIX]** Exclude typo3conf/autoload (#78) ([449bbe5](https://github.com/t3kit/t3kit-starter/commit/449bbe5))
+- **[FEATURE]** Platform.sh: Run upgrade wizards on deploy (#80) ([fca144c](https://github.com/t3kit/t3kit-starter/commit/fca144c))
+- **[TASK]** support a multiprocessor architecture for local t3kit11 development, add ARM64 support ([c365d2d](https://github.com/t3kit/t3kit-starter/commit/c365d2d))
+- **[BUGFIX]** Fix typo in comment for local.env (#74) ([15e8472](https://github.com/t3kit/t3kit-starter/commit/15e8472))
+- **[BUGFIX]** fix local development env github action test (#75) ([00aef99](https://github.com/t3kit/t3kit-starter/commit/00aef99))
+- **[BUGFIX]** DDEV: Include g++ and build-essential in extra packages (#73) ([46cbefa](https://github.com/t3kit/t3kit-starter/commit/46cbefa))
+
+***
+
 #### v11.0.0-beta.2 `December 8, 2021`
 
 - **[TASK]** update t3kit ext to v11.0.0-beta.2 ([53d3027](https://github.com/t3kit/t3kit-starter/commit/53d3027))
