@@ -64,8 +64,8 @@ if ($platformConfig->hasRelationship('rediscache')) {
         ];
     }
 
-    // TYPO3_CONTEXT Development in Platform SH
-    if (getenv("PLATFORM_BRANCH") === 'development') {
+    // Development in Platform SH
+    if (getenv('PLATFORM_ENVIRONMENT_TYPE') === 'development') {
         // BE
         $GLOBALS['TYPO3_CONF_VARS']['BE']['sessionTimeout'] = 28800;
         $GLOBALS['TYPO3_CONF_VARS']['BE']['debug'] = true;
@@ -74,13 +74,15 @@ if ($platformConfig->hasRelationship('rediscache')) {
         $GLOBALS['TYPO3_CONF_VARS']['FE']['debug'] = true;
 
         // SYS
-        $GLOBALS['TYPO3_CONF_VARS']['SYS']['sitename'] = 'TYPO3 :: t3kit11 :: Dev mode';
+        $GLOBALS['TYPO3_CONF_VARS']['SYS']['sitename'] .= ' :: DEV ' . getenv('PLATFORM_BRANCH');
         $GLOBALS['TYPO3_CONF_VARS']['SYS']['devIPmask'] = '*';
 
         $GLOBALS['TYPO3_CONF_VARS']['SYS']['displayErrors'] = 1;
         $GLOBALS['TYPO3_CONF_VARS']['SYS']['exceptionalErrors'] = 28674;
         $GLOBALS['TYPO3_CONF_VARS']['SYS']['errorHandlerErrors'] = 30466;
         $GLOBALS['TYPO3_CONF_VARS']['SYS']['belogErrorReporting'] = 30711;
+    } else {
+        $GLOBALS['TYPO3_CONF_VARS']['SYS']['sitename'] .= ' :: PROD';
     }
 }
 
