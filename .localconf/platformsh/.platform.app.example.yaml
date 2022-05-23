@@ -206,6 +206,7 @@ hooks:
 
     vendor/bin/typo3 extension:setup
     vendor/bin/typo3 language:update
+    vendor/bin/typo3cms database:updateschema "*" --verbose
     vendor/bin/typo3 cache:flush
     vendor/bin/typo3 upgrade:run
 
