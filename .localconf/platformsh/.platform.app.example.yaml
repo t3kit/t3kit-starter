@@ -194,15 +194,8 @@ hooks:
     # Install the CLI on a Platform.sh environment
     curl -sS https://platform.sh/cli/installer | php
 
-    # if [ -f public/typo3conf/LocalConfiguration.php ]; then
-    #    mv public/typo3conf/LocalConfiguration.php public/typo3conf/LocalConfiguration.FromSource.php
-    #    ln -sf ../../var/LocalConfiguration.php public/typo3conf/LocalConfiguration.php
-    # fi;
-
   deploy: |
     set -e
-
-    # cp public/typo3conf/LocalConfiguration.FromSource.php var/LocalConfiguration.php
 
     vendor/bin/typo3 extension:setup
     vendor/bin/typo3 language:update
