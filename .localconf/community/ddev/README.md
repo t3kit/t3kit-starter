@@ -26,7 +26,7 @@ You can run `ddev typo3 [COMMAND]` and `ddev typo3cms [COMMAND]` to directly exe
 
 ## Watching for changes with NPM
 
-Since we are running NPM within DDEV's Docker container, watching for file changes should also be done there. 
+Since we are running NPM within DDEV's Docker container, watching for file changes should also be done there.
 This requires that you SSH into the container and execute the code there.
 
 Since it will be running constantly, we recommend opening a new terminal window and tab for this command.
