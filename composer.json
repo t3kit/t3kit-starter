@@ -31,6 +31,7 @@
     }
   ],
   "require": {
+    "helhum/typo3-console": "^7.0.2",
     "t3kit/t3kit": "dev-master",
     "typo3/cms-about": "^11.5.8",
     "typo3/cms-adminpanel": "^11.5.8",
@@ -74,7 +75,6 @@
   },
   "suggest": {
     "platformsh/config-reader": "It provides convenience wrappers for accessing the Platform.sh environment variables",
-    "helhum/typo3-console": "A reliable and powerful command line interface for TYPO3 CMS",
     "yoast-seo-for-typo3/yoast_seo": "Yoast SEO for TYPO3",
     "friendsoftypo3/frontend-editing": "Enable editors to work with the content in the most intuitive way possible",
     "apache-solr-for-typo3/solr": "Apache Solr for TYPO3"
@@ -82,7 +82,11 @@
   "minimum-stability": "stable",
   "prefer-stable": true,
   "config": {
-    "sort-packages": true
+    "sort-packages": true,
+    "allow-plugins": {
+      "typo3/cms-composer-installers": true,
+      "typo3/class-alias-loader": true
+    }
   },
   "scripts": {
     "typo3-cms-scripts": [
