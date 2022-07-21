@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "172a594bffc1aabd8999b4e14a565c2d",
+    "content-hash": "4c27aa65c1e4f14aecf62991f84f8cd6",
     "packages": [
         {
             "name": "b13/container",
@@ -5199,7 +5199,7 @@
             "version": "dev-master",
             "dist": {
                 "type": "path",
-                "url": "public/typo3conf/ext/theme_newcustomproject",
+                "url": "extensions/theme_newcustomproject",
                 "reference": "185b4151f1e0585d8b346af6f745f307e2f51f91"
             },
             "require": {
