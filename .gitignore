@@ -11,9 +11,6 @@ public/typo3conf/*
 
 !public/typo3conf/ext
 public/typo3conf/ext/*
-!public/typo3conf/ext/theme_*
-public/typo3conf/ext/theme_*/Resources/Public/assets/development
-public/typo3conf/ext/theme_*/Resources/Public/assets/production
 
 !public/typo3conf/PlatformshConfiguration.php
 !public/fileadmin
