@@ -27,7 +27,7 @@
   "repositories": [
     {
       "type": "path",
-      "url": "public/typo3conf/ext/theme_newcustomproject"
+      "url": "extensions/*"
     }
   ],
   "require": {

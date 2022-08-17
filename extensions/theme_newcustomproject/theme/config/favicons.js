@@ -1,11 +1,9 @@
 import { localConf } from './localconf.js'
-import { checkt3kitExt } from './check.js'
 import { checkNode } from 't3kit/module/check'
 import { cleanFavicons } from 't3kit/module/clean'
 import { generateFavicons } from 't3kit/module/real-favicon'
 import * as utils from 't3kit/module/utils'
 checkNode(localConf)
-checkt3kitExt(localConf)
 
 async function favicons () {
   const timeStart = utils.mainTaskStart('Add favicons task')

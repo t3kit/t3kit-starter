@@ -75,6 +75,7 @@ t3kit-starter/
 │   ├── db/          # t3kit database manipulation - Setup/Restore/Pack
 │   └── docker/      # t3kit local development config based on Docker
 ├── config/
+├── extensions/      # Themes and other extensions belonging to this repository only
 └── public/
     ├── typo3conf/
     │   ├── AdditionalConfiguration.php
@@ -132,43 +133,33 @@ If there no needs to use **t3kit** starter database or **Docker configuration** 
 
 ## Create your custom theme based on t3kit to extend the functionality.
 
-`public/typo3conf/ext/theme_newcustomproject` in this folder you can find an example of TYPO3 extension that can be a good starting point for extending the default t3kit theme. With this "subtheme" extension, you can change the design and add the necessary content elements while maintaining the main features of t3kit, and the ability to easily upgrade to newer versions of TYPO3 and t3kit.
+`extensions/theme_newcustomproject` in this folder you can find an example of TYPO3 extension that can be a good starting point for extending the default t3kit theme. With this "subtheme" extension, you can change the design and add the necessary content elements while maintaining the main features of t3kit, and the ability to easily upgrade to newer versions of TYPO3 and t3kit.
 
 ### Quick start
 
 1. Define a `name` for your new theme. For example, let's take the name `mega`
 2. Create a new extension based on `theme_newcustomproject`
     ```shell
-    cp -r public/typo3conf/ext/theme_newcustomproject public/typo3conf/ext/theme_mega
+    cp -r extensions/theme_newcustomproject extensions/theme_mega
     ```
-    _Note: Change the `mega` part in `public/typo3conf/ext/theme_mega` to your real project neme_
+    _Note: Change the `mega` part in `extensions/theme_mega` to your real project neme_
 3. Rename `newcustomproject` to your project name. In our example, we are using `mega` as a project name.
 
     - **Mac**
     ```shell
-        grep -rl 'newcustomproject' public/typo3conf/ext/theme_mega | xargs sed -i '' 's/newcustomproject/mega/g'
+        grep -rl 'newcustomproject' extensions/theme_mega | xargs sed -i '' 's/newcustomproject/mega/g'
     ```
     - **Linux**
     ```shell
-        grep -rl 'newcustomproject' public/typo3conf/ext/theme_mega | xargs sed -i 's/newcustomproject/mega/g'
+        grep -rl 'newcustomproject' extensions/theme_mega | xargs sed -i 's/newcustomproject/mega/g'
     ```
-_Note: Change the `mega` part in `**/ext/theme_mega` and `s/newcustomproject/mega/g` to your real project neme_
+_Note: Change the `mega` part in `**/extensions/theme_mega` and `s/newcustomproject/mega/g` to your real project neme_
 
 4. Activate `theme_mega` extension
 
-    - add new repository to root `composer.json`
-    ```json
-        "repositories": [
-            {
-            "type": "path",
-            "url": "public/typo3conf/ext/theme_mega"
-            }
-        ],
-    ```
-
     - Install a new `theme_mega` extension
     ```shell
-        composer co require typo3-local/theme_mega
+        composer co require typo3-local/theme-mega:dev-master
         npm install
         npm run dev
     ```
