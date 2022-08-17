@@ -159,10 +159,12 @@ _Note: Change the `mega` part in `**/extensions/theme_mega` and `s/newcustomproj
 
     - Install a new `theme_mega` extension
     ```shell
-        composer co require typo3-local/theme_mega
+        composer co require typo3-local/theme-mega:dev-master
         npm install
         npm run dev
     ```
+
+5. Enable `theme_mega` for the site `Site Management -> Sites -> Site Theme`
 
 ***
 

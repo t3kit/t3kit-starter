@@ -1,5 +1,4 @@
 import { localConf } from './localconf.js'
-import { checkt3kitExt } from './check.js'
 import { checkNode } from 't3kit/module/check'
 import { clean } from 't3kit/module/clean'
 import { compileCss } from 't3kit/module/css'
@@ -9,7 +8,6 @@ import { addCssTemplate, addJsTemplate } from 't3kit/module/template'
 import { watchAll } from 't3kit/module/watch'
 import * as utils from 't3kit/module/utils'
 checkNode(localConf)
-checkt3kitExt(localConf)
 
 async function start () {
   const timeStart = utils.mainTaskStart('Build task')
