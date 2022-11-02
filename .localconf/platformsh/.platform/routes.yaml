@@ -11,12 +11,15 @@
       - 'PHPSESSID'
       - 'Typo3InstallTool'
     headers: ['Accept', 'Accept-Language', 'X-Tx-Solr-Iq']
-
+  tls:
+    strict_transport_security:
+      enabled: true
+      include_subdomains: true
+      preload: true
 
 "https://{default}/":
   type: redirect
   to: "https://www.{default}/"
-
 
 # uncomment if multisite
 # Site 2
