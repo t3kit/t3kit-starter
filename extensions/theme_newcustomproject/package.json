@@ -21,7 +21,7 @@
     "bootstrap": "~v5.1.1",
     "simplelightbox": "~2.10.2",
     "swiper": "~8.0.7",
-    "t3kit": "~11.0.0"
+    "t3kit": "~11.1.0"
   },
   "devDependencies": {},
   "engines": {
