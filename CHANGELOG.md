@@ -1,4 +1,102 @@
 
+#### v11.1.0 `December 21, 2022`
+
+- **[TASK]** update composer deps (t3kit11.1.0, typo3 v11.5.21), update npm deps ([58e3c0c](https://github.com/t3kit/t3kit-starter/commit/58e3c0c))
+- **[TASK]** Add strict_transport_security for headers in Platform.sh (#93) ([90cc3d2](https://github.com/t3kit/t3kit-starter/commit/90cc3d2))
+- **[BUGFIX]** Add missing typo3-console scripts for syncdb command (#92) ([c592139](https://github.com/t3kit/t3kit-starter/commit/c592139))
+- **[TASK]** Composer upgrade with TYPO3 11.5.12 (#86) ([8cd2500](https://github.com/t3kit/t3kit-starter/commit/8cd2500))
+- **[FEATURE]** TYPO3 Console dep + destructive DB update on Platform.sh (#84) ([b6944d2](https://github.com/t3kit/t3kit-starter/commit/b6944d2))
+- **[DOC]** DDEV: Instructions for watching changes with NPM (#85) ([1fbd6dc](https://github.com/t3kit/t3kit-starter/commit/1fbd6dc))
+
+:heavy_exclamation_mark:**Breaking Changes:**
+- **[!!!]** **[FEATURE]** Separate monorepo extensions folder and use PHP 8.1 (#89) ([d57f2e5](https://github.com/t3kit/t3kit-starter/commit/d57f2e5))
+
+
+# !!!Separate monorepo extensions folder and use PHP 8.1
+## What's new
+
+* **Moves `theme_newcustomproject` to the folder `extensions`** where it can be installed by Composer. This keeps extensions belonging to this repository only (monorepo extensions) separate from the source of all other extensions installed by Composer. This is best-practice and spotting local extensions was sometimes hard when they were maintained in `public/typo3conf/ext`.
+* **Updates composer.json to reflect the new `extensions` folder.** The entire folder is declared a local-file-system Composer repository and extensions there can be installed using normal `compser req vendor/package`.
+* **Make t3kit an NPM package dependency.** This means we longer need to include the `check.js` file in the theme, as the NPM install command will fail if the extension is not present.
+* **Use PHP 8.1**
+* **Update all Composer dependencies**, including TYPO3 11.5.13.
+* **Update all NPM package dependencies**
+* **Updated readme file** including some changes that were not reflected in the v10 to v11 upgrade.
+
+## For existing sites
+
+### Moving monorepo extensions out of public/ext/
+
+You will have a tidier repository if the extensions contained in your site repository are not maintained within the `public/typo3conf/ext/` folder and instead allowing Composer to install them as local filesystem dependencies.
+
+1. **Create the folder "extensions"**
+
+    We recommend placing extensions that are part of your site repository within a folder called "extensions" within your site repository's root folder.
+
+    Create the folder by running the command `mkdir extensions`.
+
+2. **Move your repository's extensions**
+
+    Move the extensions that are maintained within your site repository (i.e. extensions not installed from remote repositories by Composer) to the "extensions" folder.
+
+    This command will move your themes into the "extensions" folder: `mv public/typo3conf/ext/theme_* extensions/`.
+
+3. **Remove exisiting local repository declarations to composer.json**
+
+    These declarations look something like this:
+
+    ```json
+    {
+        "type": "path",
+        "url": "public/typo3conf/ext/theme_mysite"
+    }
+    ```
+
+4. **Add the "extensions" folder to composer.json**
+
+    Add this code to the top of the "repositories" section of the site repository's composer.json file:
+
+    ```json
+    {
+        "type": "path",
+        "url": "extensions/*"
+    },
+    ```
+
+5. **Remove excludes of local extensions from .gitignore**
+
+    Ensure that your .gitignore file does not include any lines like this:
+
+    ```
+    public/typo3conf/ext/theme_*
+    ```
+
+    It should only include lines excluding the contents of the "ext" folder like this:
+
+    ```
+    public/typo3conf/ext/*
+    ```
+
+6. **Clear TYPO3's cache files**
+
+    Run `rm -rf var/cache/*` to clear all TYPO3's cache files.
+
+7. **Add t3kit to the theme's NPM dependencies**
+
+    Within your theme extension:
+
+    i. Delete the file `theme/config/check.js`
+
+    ii. Remove lines 2 and 13 from `theme/config/check.js`.
+
+    `2: import { checkt3kitExt } from './check.js'`
+
+    `13: checkt3kitExt(localConf)`
+
+    iii. Add `"t3kit": "~11.0.0"` to the "dependencies" section of `package.json`
+
+***
+
 #### v11.0.0 `March 17, 2022`
 
 - **[TASK]** update composer deps (t3kit11.0.0), update npm deps, fix linter errors ([cb8e5f2](https://github.com/t3kit/t3kit-starter/commit/cb8e5f2))
