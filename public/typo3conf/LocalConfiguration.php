@@ -135,7 +135,7 @@ return [
             'security.backend.enforceReferrer' => true,
             'security.backend.htmlSanitizeRte' => true,
             'security.frontend.htmlSanitizeParseFuncDefault' => true,
-            'subrequestPageErrors' => true,
+            'subrequestPageErrors' => false,
             'unifiedPageTranslationHandling' => true,
             'yamlImportsFollowDeclarationOrder' => true,
         ],
