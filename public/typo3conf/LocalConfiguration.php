@@ -139,7 +139,7 @@ return [
             'unifiedPageTranslationHandling' => true,
             'yamlImportsFollowDeclarationOrder' => true,
         ],
-        'sitename' => 'TYPO3 :: t3kit10 :: Dev mode *(local)',
+        'sitename' => 'TYPO3 :: t3kit11 :: Dev mode *(local)',
         'systemLocale' => 'C.UTF-8',
         'systemMaintainers' => [
             1,
