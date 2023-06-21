@@ -202,6 +202,7 @@ hooks:
     vendor/bin/typo3cms database:updateschema "*" --verbose
     vendor/bin/typo3 cache:flush
     vendor/bin/typo3 upgrade:run
+    vendor/bin/typo3 cache:warmup
 
 crons:
   typo3scheduler:
